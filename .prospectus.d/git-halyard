@@ -7,6 +7,6 @@ item do
 
   actual do
     homebrew_formula
-    name '-halyard'
+    name 'git-halyard'
   end
 end
