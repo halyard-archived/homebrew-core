@@ -1,0 +1,12 @@
+item do
+  expected do
+    url_xpath
+    url 'https://cgit.freedesktop.org/fontconfig/refs/'
+    xpath '//*[@id="cgit"]/div[1]/table/tbody/tr[12]/td[1]/a'
+  end
+
+  actual do
+    homebrew_formula
+    name 'fontconfig-halyard'
+  end
+end
