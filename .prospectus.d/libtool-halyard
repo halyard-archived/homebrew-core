@@ -1,0 +1,13 @@
+item do
+  expected do
+    url_xpath
+    url 'http://git.savannah.gnu.org/gitweb/?p=libtool.git;a=tags'
+    xpath '/html/body/table/tr[1]/td[2]/a'
+    regex /^v([\d.]+)$/
+  end
+
+  actual
+    homebrew_formula
+    name 'libtool-halyard'
+  end
+end
