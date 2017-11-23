@@ -1,0 +1,13 @@
+item do
+  expected do
+    url_xpath
+    url 'http://git.tukaani.org/?p=xz.git;a=tags'
+    xpath '/html/body/table/tr[1]/td[2]/a'
+    regex /^v(.*)$/
+  end
+
+  actual do
+    homebrew_formula
+    name 'xz-halyard'
+  end
+end
