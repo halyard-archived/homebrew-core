@@ -1,0 +1,13 @@
+item do
+  expected do
+    url_xpath
+    url 'https://nmap.org/changelog.html'
+    xpath '/html/body/table[2]/tbody/tr[1]/td[2]/table/tbody/tr/td/ul[1]/li[1]/a'
+    regex /^Nmap ([\d.]+) \[2017-07-31\]$/
+  end
+
+  actual do
+    homebrew_formula
+    name 'nmap-halyard'
+  end
+end
