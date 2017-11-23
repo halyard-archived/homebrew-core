@@ -11,6 +11,8 @@ class BoostHalyard < Formula
 
   needs :cxx11 if build.cxx11?
 
+  conflicts_with 'boost', :because => 'boost-halyard replaces boost'
+
   def install
     # Force boost to compile with the desired compiler
     open("user-config.jam", "a") do |file|
