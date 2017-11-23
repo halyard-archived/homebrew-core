@@ -4,10 +4,10 @@ item do
     url 'http://git.savannah.gnu.org/cgit/bash.git/log/'
     xpath '//*[@id="cgit"]/div/table/tr[2]/td[2]/a[1]'
     #regex /Bash-([\d.]+) distribution sources and documentation/
-    regex /Bash-([\d.]+) patch (\d+)/, '\1p\2'
+    regex /Bash-([\d.]+) patch (\d+)/, '\1.\2'
   end
 
-  actual
+  actual do
     homebrew_formula
     name 'bash-halyard'
   end

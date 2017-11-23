@@ -6,7 +6,7 @@ item do
     regex /^readline-([.\d]+)/
   end
 
-  actual
+  actual do
     homebrew_formula
     name 'readline-halyard'
   end

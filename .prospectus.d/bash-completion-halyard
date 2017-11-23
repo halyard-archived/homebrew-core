@@ -4,7 +4,7 @@ item do
     repo 'scop/bash-completion'
   end
 
-  actual
+  actual do
     homebrew_formula
     name 'bash-completion-halyard'
   end
