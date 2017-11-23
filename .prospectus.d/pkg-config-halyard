@@ -1,0 +1,13 @@
+item do
+  expected do
+    url_xpath
+    url 'https://cgit.freedesktop.org/pkg-config/refs/'
+    xpath '//*[@id="cgit"]/div[1]/table/tbody/tr[5]/td[1]/a'
+    regex /^pkg-config-([\d.]+)$/
+  end
+
+  actual do
+    homebrew_formula
+    name 'pkg-config-halyard'
+  end
+end
