@@ -10,6 +10,8 @@ class LibtoolHalyard < Formula
 
   revision 1
 
+  conflicts_with 'libtool', :because => 'halyard/homebrew-core/libtool replaces libtool'
+
   def install
     ENV["SED"] = "sed" # prevent libtool from hardcoding sed path from superenv
     system "./configure", "--disable-dependency-tracking",

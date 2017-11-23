@@ -1,0 +1,12 @@
+item do
+  expected do
+    git_tag
+    repo 'zsh-users/zsh'
+    regex /^zsh-([\d.]+)$/
+  end
+
+  actual do
+    homebrew_formula
+    name 'zsh-halyard'
+  end
+end

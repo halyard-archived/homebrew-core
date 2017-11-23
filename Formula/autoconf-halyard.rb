@@ -5,6 +5,8 @@ class AutoconfHalyard < Formula
   mirror "https://ftpmirror.gnu.org/autoconf/autoconf-2.69.tar.gz"
   sha256 "954bd69b391edc12d6a4a51a2dd1476543da5c6bbf05a95b59dc0dd6fd4c2969"
 
+  conflicts_with 'autoconf', :because => 'autoconf-halyard replaces autoconf'
+
   def install
     ENV["PERL"] = "/usr/bin/perl"
 
