@@ -1,4 +1,4 @@
-class Cmake < Formula
+class CmakeHalyard < Formula
   desc "Cross-platform make"
   homepage "https://www.cmake.org/"
   head "https://cmake.org/cmake.git"

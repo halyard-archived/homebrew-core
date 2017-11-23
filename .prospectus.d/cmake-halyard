@@ -9,6 +9,6 @@ item do
 
   actual do
     homebrew_formula
-    name 'cmake'
+    name 'cmake-halyard'
   end
 end
