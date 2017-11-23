@@ -20,7 +20,7 @@ class CmakeHalyard < Formula
     end
 
     patch do
-      url "https://raw.githubusercontent.com/Homebrew/formula-patches/105060cf885/cmake/cmake-backport-kwsys-utimensat-fix.diff"
+      url "https://gist.githubusercontent.com/akerl/58a4253fa6581ebbc815fa4e5fd08032/raw/4933bc75b991a27f1d1f1feb30f587e1e5ef89a4/gistfile1.txt"
       sha256 "3e8aa1a6a1039e7a9be6fd0ca6abf09ca00fb07e1275bb3e55dc44b8b9dc746c"
     end
   end
