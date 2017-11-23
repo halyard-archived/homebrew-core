@@ -13,7 +13,6 @@ class GmpHalyard < Formula
   def install
     ENV.cxx11 if build.cxx11?
     args = %W[--prefix=#{prefix} --enable-cxx]
-    args << "--build=core2-apple-darwin#{`uname -r`.to_i}" if build.bottle?
     system "./configure", "--disable-static", *args
     system "make"
     system "make", "check"
