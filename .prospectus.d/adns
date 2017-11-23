@@ -1,0 +1,13 @@
+item do
+  expected do
+   url_xpath
+   url 'http://www.chiark.greenend.org.uk/ucgi/~ianmdlvl/git?p=adns.git;a=tags'
+   xpath '/html/body/table/tr[1]/td[2]/a'
+   regex /^adns-([\d.]+)$/
+  end
+
+  actual do
+    homebrew_formula
+    name 'adns-halyard'
+  end
+end
