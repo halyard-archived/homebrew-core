@@ -6,11 +6,6 @@ class Zsh < Formula
   sha256 "957bcdb2c57f64c02f673693ea5a7518ef24b6557aeb3a4ce222cefa6d74acc9"
   revision 1
 
-  head do
-    url "https://git.code.sf.net/p/zsh/code.git"
-    depends_on "autoconf-halyard" => :build
-  end
-
   option "without-etcdir", "Disable the reading of Zsh rc files in /etc"
   option "with-unicode9", "Build with Unicode 9 character width support"
 
