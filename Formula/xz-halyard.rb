@@ -1,6 +1,6 @@
 # Upstream project has requested we use a mirror as the main URL
 # https://github.com/Homebrew/homebrew/pull/21419
-class Xz < Formula
+class XzHalyard < Formula
   desc "General-purpose data compression with high compression ratio"
   homepage "https://tukaani.org/xz/"
   url "https://downloads.sourceforge.net/project/lzmautils/xz-5.2.3.tar.gz"
