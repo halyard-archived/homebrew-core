@@ -1,0 +1,11 @@
+item do
+  expected do
+    github_release
+    repo 'scop/bash-completion'
+  end
+
+  actual
+    homebrew_formula
+    name 'bash-completion-halyard'
+  end
+end
