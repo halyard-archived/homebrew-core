@@ -11,6 +11,8 @@ class BoostPythonHalyard < Formula
   depends_on 'python3-halyard' => :optional
   depends_on "boost-halyard"
 
+  conflicts_with 'boost-python', :because => 'boost-python-halyard replaces boost-python'
+
   def install
     # "layout" should be synchronized with boost
     args = ["--prefix=#{prefix}",

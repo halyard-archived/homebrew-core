@@ -8,6 +8,8 @@ class GmpHalyard < Formula
 
   option :cxx11
 
+  conflicts_with 'gmp', :because => 'gmp-halyard replaces gmp'
+
   def install
     ENV.cxx11 if build.cxx11?
     args = %W[--prefix=#{prefix} --enable-cxx]
