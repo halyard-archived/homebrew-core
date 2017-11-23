@@ -1,0 +1,12 @@
+item do
+  expected do
+    url_xpath
+    url 'https://scm.gforge.inria.fr/anonscm/gitweb?p=mpc/mpc.git;a=tags'
+    xpath '/html/body/table/tr[1]/td[2]/a'
+  end
+
+  actual do
+    homebrew_formula
+    name 'libmpc-halyard'
+  end
+end
