@@ -2,7 +2,7 @@ item do
   expected do
     url_xpath
     url 'http://git.savannah.gnu.org/cgit/gettext.git/refs/'
-    xpath '//*[@id="cgit"]/div[1]/table/tbody/tr[15]/td[1]/a'
+    xpath '//*[@id="cgit"]/div[1]/table/tr[15]/td[1]/a'
     regex /^v([\d.]+)$/
   end
 
@@ -10,4 +10,4 @@ item do
     homebrew_formula
     name 'gettext-halyard'
   end
-endi
+end

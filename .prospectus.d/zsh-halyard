@@ -1,6 +1,6 @@
 item do
   expected do
-    git_tag
+    github_tag
     repo 'zsh-users/zsh'
     regex /^zsh-([\d.]+)$/
   end
