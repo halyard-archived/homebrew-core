@@ -1,0 +1,12 @@
+item do
+  expected do
+    github_release
+    repo 'haskell/cabal'
+    regex /^cabal-install-v([\d.]+)$/
+  end
+
+  actual do
+    homebrew_formula
+    name 'cabal-install-halyard'
+  end
+end
