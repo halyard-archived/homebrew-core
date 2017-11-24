@@ -1,0 +1,13 @@
+item do
+  expected do
+    url_xpath
+    url 'http://mama.indstate.edu/users/ice/tree/'
+    xpath '//*[@id="menu"]/li[2]/a/@href'
+    regex /^ftp:\/\/mama\.indstate\.edu\/linux\/tree\/tree-([\d.]+)\.tgz$/
+  end
+
+  actual do
+    homebrew_formula
+    name 'tree-halyard'
+  end
+end
