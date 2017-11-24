@@ -1,0 +1,13 @@
+item do
+  expected do
+    url_xpath
+    url 'https://developer.gnome.org/glib/stable/'
+    xpath '//*[@id="container"]/div[1]/div[1]/div[1]/div/div[2]/p/text()[1]'
+    regex /.*for GLib ([\d.]+)\s+.*/
+  end
+
+  actual do
+    homebrew_formula
+    name 'glib-halyard'
+  end
+end
