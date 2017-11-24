@@ -1,0 +1,13 @@
+item do
+  expected do
+    url_xpath
+    url 'https://luajit.org/download.html'
+    xpath '//*[@id="main"]/table[1]/tbody/tr[2]/td[1]'
+    regex /^LuaJIT-([\d.]+)$/
+  end
+
+  actual do
+    homebrew_formula
+    name 'luajit-halyard'
+  end
+end
