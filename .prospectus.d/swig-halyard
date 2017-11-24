@@ -1,0 +1,12 @@
+item do
+  expected do
+    github_tag
+    repo 'swig/swig'
+    regex /^rel-([\d.]+)$/
+  end
+
+  actual do
+    homebrew_formula
+    name 'swig-halyard'
+  end
+end
