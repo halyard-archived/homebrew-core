@@ -1,0 +1,13 @@
+item do
+  expected do
+    url_xpath
+    url 'https://github.com/Homebrew/homebrew-core/blob/master/Formula/docbook.rb#L4'
+    xpath '//*[@id="LC4"]/span/text()'
+    regex /^"http:\/\/www\.docbook\.org\/xml\/([\d.]+)\/docbook-[\d.]+\.zip"$/
+  end
+
+  actual do
+    homebrew_formula
+    name 'docbook-halyard'
+  end
+end
