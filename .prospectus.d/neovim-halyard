@@ -1,0 +1,12 @@
+item do
+  expected do
+    github_release
+    repo 'neovim/neovim'
+    regex /^v([\d.]+)$/
+  end
+
+  actual do
+    homebrew_formula
+    name 'neovim-halyard'
+  end
+end
