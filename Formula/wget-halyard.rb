@@ -8,10 +8,10 @@ class WgetHalyard < Formula
   head do
     url "https://git.savannah.gnu.org/git/wget.git"
 
-    depends_on "autoconf" => :build
-    depends_on "automake" => :build
-    depends_on "xz" => :build
-    depends_on "gettext"
+    depends_on "autoconf-halyard" => :build
+    depends_on "automake-halyard" => :build
+    depends_on "xz-halyard" => :build
+    depends_on "gettext-halyard"
   end
 
   option "with-debug", "Build with debug support"

@@ -8,10 +8,10 @@ class BoostPythonHalyard < Formula
   option :cxx11
   option "without-python", "Build without python 2 support"
 
-  depends_on 'python3-halyard' => :optional
+  depends_on "python3-halyard" => :optional
   depends_on "boost-halyard"
 
-  conflicts_with 'boost-python', :because => 'boost-python-halyard replaces boost-python'
+  conflicts_with "boost-python", :because => "boost-python-halyard replaces boost-python"
 
   def install
     # "layout" should be synchronized with boost
