@@ -2,7 +2,7 @@ item do
   expected do
     github_release
     repo 'haskell/cabal'
-    regex /^cabal-install-v([\d.]+)$/
+    regex /^Cabal-v([\d.]+)$/
   end
 
   actual do

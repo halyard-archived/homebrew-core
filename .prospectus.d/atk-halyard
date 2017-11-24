@@ -3,7 +3,7 @@ item do
     url_xpath
     url 'https://developer.gnome.org/atk/stable/'
     xpath '//*[@id="container"]/div[1]/div[1]/div[1]/div/div[2]/p/text()[1]'
-    regex /.*for ATK ([\d.]+)\s+.*/
+    regex /.*for ATK ([\d.]+)$/
   end
 
   actual do
