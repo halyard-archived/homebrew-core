@@ -24,4 +24,4 @@ class VoyagerHalyard < Formula
   test do
     system bin/"voyager", "version"
   end
-nd
+end
