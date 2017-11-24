@@ -1,0 +1,12 @@
+item do
+  expected do
+    github_release
+    repo 'libgd/libgd'
+    regex /^gd-([\d.]+)$/
+  end
+
+  actual do
+    homebrew_formula
+    name 'gd-halyard'
+  end
+end
