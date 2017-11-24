@@ -6,6 +6,8 @@ class UnibiliumHalyard < Formula
 
   depends_on "libtool-halyard" => :build
 
+  conflicts_with "unibilium", :because => "unibilium-halyard replaces unibilium"
+
   def install
     system "make"
     system "make", "install", "PREFIX=#{prefix}"
