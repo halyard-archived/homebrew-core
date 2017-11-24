@@ -1,8 +1,9 @@
 item do
   expected do
-    github_tag
-    repo 'gcc-mirror/gcc'
-    regex /^gcc_(\d+)_(\d+)_(\d+)_release$/, '\1.\2.\3'
+    url_xpath
+    url 'http://open-source-box.org/gcc/?C=N;O=D'
+    xpath '/html/body/pre/a[6]'
+    regex /^gcc-([\d.]+)\/$/
   end
 
   actual do
