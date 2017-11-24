@@ -3,7 +3,7 @@ item do
     url_xpath
     url 'http://netcat.sourceforge.net/'
     xpath '/html/body/table/tr[2]/td/table/tr[2]/td[4]/table[2]/tr[3]/td[1]/b[1]/i/a'
-    regex /^Netcat ([\d.]+)$/
+    regex /^Netcat\s+([\d.]+)$/
   end
 
   actual do

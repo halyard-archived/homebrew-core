@@ -1,23 +1,15 @@
 class NcursesHalyard < Formula
   desc "Text-based UI library"
   homepage "https://www.gnu.org/software/ncurses/"
-  url "https://ftp.gnu.org/gnu/ncurses/ncurses-6.0.tar.gz"
-  mirror "https://ftpmirror.gnu.org/ncurses/ncurses-6.0.tar.gz"
-  sha256 "f551c24b30ce8bfb6e96d9f59b42fbea30fa3a6123384172f9e7284bcf647260"
-  revision 4
+  url "https://invisible-mirror.net/archives/ncurses/current/ncurses-6.0-20171118.tgz"
+  sha256 "ff3e500d0dcd3e66591438d8f5e4ed30d3fa51f760aafdb22aecbb6d8095b4d0"
+  revision 1
 
   keg_only :provided_by_osx
 
   depends_on "pkg-config-halyard" => :build
 
   conflicts_with 'ncurses', :because => 'ncurses-halyard replaces ncurses'
-
-  # stable rollup patch created by upstream see
-  # https://invisible-mirror.net/archives/ncurses/6.0/README
-  resource "ncurses-patch.sh" do
-    url "https://invisible-mirror.net/archives/ncurses/6.0/ncurses-6.0-20170930-patch.sh.bz2"
-    sha256 "b179b2acf8838f4ed1c75c47db62109777d36a7e6efc1bd4e52e48cbd1bd4121"
-  end
 
   def install
     # Fix the build for GCC 5.1
@@ -28,10 +20,6 @@ class NcursesHalyard < Formula
     ENV.append "CPPFLAGS", "-P"
 
     (lib/"pkgconfig").mkpath
-
-    # stage and apply patch
-    buildpath.install resource("ncurses-patch.sh")
-    system "sh", "ncurses-patch.sh"
 
     system "./configure", "--prefix=#{prefix}",
                           "--enable-pc-files",

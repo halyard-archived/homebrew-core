@@ -10,8 +10,7 @@ item do
   end
 
   actual do
-    grep
-    file 'Formula/ncurses-halyard.rb'
-    regex /^    url "https:\/\/invisible-mirror\.net\/archives\/ncurses\/6\.0\/ncurses-([\d.-]+)-patch\.sh\.bz2"$/
+    homebrew_formula
+    name 'ncurses-halyard'
   end
 end
