@@ -1,0 +1,11 @@
+item do
+  expected do
+    github_release
+    repo 'zsh-users/zsh-completions'
+  end
+
+  actual do
+    homebrew_formula
+    name 'zsh-completions-halyard'
+  end
+end
