@@ -19,7 +19,7 @@ class OpensshHalyard < Formula
   end
 
   def install
-    ENV.append "CPPFLAGS", "-D__APPLE_SANDBOX_NAMED_EXTERNAL__" if OS.mac?
+    ENV.append "CPPFLAGS", "-D__APPLE_SANDBOX_NAMED_EXTERNAL__"
 
     args = %W[
       --with-libedit

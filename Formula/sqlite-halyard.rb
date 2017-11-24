@@ -21,7 +21,7 @@ class SqliteHalyard < Formula
   option "with-soundex", "Enable the SOUNDEX function"
 
   depends_on "readline-halyard" => :recommended
-  depends_on "icu4ci-halyard" => :optional
+  depends_on "icu4c-halyard" => :optional
 
   conflicts_with "sqlite", :because => "sqlite-halyard replaces sqlite"
 

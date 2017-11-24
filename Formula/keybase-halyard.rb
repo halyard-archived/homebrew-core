@@ -8,8 +8,6 @@ class KeybaseHalyard < Formula
 
   depends_on "go-halyard" => :build
 
-  conflicts_with "keybase", :because => "keybase-halyard replaces keybase"
-
   def install
     ENV["GOPATH"] = buildpath
     ENV["GOBIN"] = buildpath
