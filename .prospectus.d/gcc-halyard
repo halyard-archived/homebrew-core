@@ -2,7 +2,7 @@ item do
   expected do
     github_tag
     repo 'gcc-mirror/gcc'
-    regex /^gcc-(\d+)_(\d+)_(\d+)-release$/, '\1.\2.\3'
+    regex /^gcc_(\d+)_(\d+)_(\d+)-release$/, '\1.\2.\3'
   end
 
   actual do
