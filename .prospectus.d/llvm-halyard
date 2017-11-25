@@ -1,0 +1,12 @@
+item do
+  expected do
+    url_xpath
+    url 'https://llvm.org/'
+    xpath '/html/body/table/tr/td[1]/div[2]/a[1]/b'
+  end
+
+  actual do
+    homebrew_formula
+    name 'llvm-halyard'
+  end
+end
