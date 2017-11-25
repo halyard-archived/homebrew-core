@@ -1,0 +1,12 @@
+item do
+  expected do
+    url_xpath
+    url 'https://sourceforge.net/projects/gts/files/?source=navbar'
+    xpath '//*[@id="files"]/div[1]/strong/a/span'
+  end
+
+  actual do
+    homebrew_formula
+    name 'gts-halyard'
+  end
+end
