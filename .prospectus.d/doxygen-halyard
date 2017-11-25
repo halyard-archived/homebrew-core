@@ -1,0 +1,11 @@
+item do
+  expected do
+    github_tag
+    repo 'doxygen/doxygen'
+  end
+
+  actual do
+    homebrew_formula
+    name 'doxygen-halyard'
+  end
+end
