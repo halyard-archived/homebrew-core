@@ -6,7 +6,6 @@ class GdkPixbufHalyard < Formula
 
   option "with-relocations", "Build with relocation support for bundles"
   option "without-modules", "Disable dynamic module loading"
-  option "with-included-loaders=", "Build the specified loaders into gdk-pixbuf"
 
   depends_on "pkg-config-halyard" => :build
   depends_on "glib-halyard"
@@ -47,9 +46,6 @@ class GdkPixbufHalyard < Formula
 
     args << "--enable-relocations" if build.with?("relocations")
     args << "--disable-modules" if build.without?("modules")
-
-    included_loaders = ARGV.value("with-included-loaders")
-    args << "--with-included-loaders=#{included_loaders}" if included_loaders
 
     system "./configure", *args
     system "make"
