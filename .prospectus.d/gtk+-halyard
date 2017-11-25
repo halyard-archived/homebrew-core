@@ -1,0 +1,12 @@
+item do
+  expected do
+    url_xpath
+    url 'https://www.gtk.org/download/linux.php'
+    xpath '//*[@id="content"]/ul/li[1]/a'
+  end
+
+  actual do
+    homebrew_formula
+    name 'gtk+-halyard'
+  end
+end
