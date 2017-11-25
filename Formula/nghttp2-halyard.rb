@@ -1,8 +1,8 @@
 class Nghttp2Halyard < Formula
   desc "HTTP/2 C Library"
   homepage "https://nghttp2.org/"
-  url "https://github.com/nghttp2/nghttp2/releases/download/v1.27.0/nghttp2-1.27.0.tar.xz"
-  sha256 "e83819560952a3dc3c8d96c46f60745408f46f5f384168c90b9e3dfa53b2c2c8"
+  url "https://github.com/nghttp2/nghttp2/releases/download/v1.28.0/nghttp2-1.28.0.tar.xz"
+  sha256 "0d6c3f00614deca3935e42a27f6ad0ea87c31d8c1baa3a9c52755955c599fd8d"
 
   head do
     url "https://github.com/nghttp2/nghttp2.git"

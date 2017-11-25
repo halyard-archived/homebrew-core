@@ -3,6 +3,7 @@ item do
     url_xpath
     url 'https://wiki.freedesktop.org/www/Software/icon-theme/'
     xpath '//*[@id="content"]/ul/li[1]/a'
+    regex /^hicolor-icon-theme-([\d.]+)\.tar\.gz$/
   end
 
   actual do

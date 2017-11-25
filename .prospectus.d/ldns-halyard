@@ -3,6 +3,7 @@ item do
     url_xpath
     url 'https://git.nlnetlabs.nl/ldns/refs/tags'
     xpath '//*[@id="cgit"]/div[1]/table/tr[2]/td[1]/a'
+    regex /^release-([\d.]+)$/
   end
 
   actual do

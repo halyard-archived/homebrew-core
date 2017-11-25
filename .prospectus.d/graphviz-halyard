@@ -2,7 +2,8 @@ item do
   expected do
     url_xpath
     url 'https://graphviz.org/Download_source.php'
-    xpath '//*[@id="main"]/div[3]/div[2]/table/tbody/tr[2]/td/table/tbody/tr[1]/td/table/tbody[2]/tr/td[1]/font/a[1]'
+    xpath '//*[@id="main"]/div[3]/div[2]/table/tbody/tr[2]/td/table/tr[1]/td/table/tbody[2]/tr/td[1]/font/a[1]'
+    regex /^graphviz-([\d.]+)\.tar\.gz$/
   end
 
   actual do

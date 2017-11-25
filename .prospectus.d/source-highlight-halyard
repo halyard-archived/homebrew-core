@@ -3,6 +3,7 @@ item do
     url_xpath
     url 'https://www.gnu.org/software/src-highlite/'
     xpath '/html/body/h1'
+    regex /^GNU Source-highlight ([\d.]+)$/
   end
 
   actual do

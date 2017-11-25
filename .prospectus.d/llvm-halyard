@@ -3,6 +3,7 @@ item do
     url_xpath
     url 'https://llvm.org/'
     xpath '/html/body/table/tr/td[1]/div[2]/a[1]/b'
+    regex /^LLVM ([\d.]+)$/
   end
 
   actual do

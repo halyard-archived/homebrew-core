@@ -2,6 +2,7 @@ item do
   expected do
     github_release
     repo 'nghttp2/nghttp2'
+    regex /^v([\d.]+)$/
   end
 
   actual do

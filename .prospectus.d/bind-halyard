@@ -1,8 +1,8 @@
 item do
   expected do
     url_xpath
-    url 'https://www.isc.org/downloads/'
-    xpath '//div[@class="software_status"]/table/tbody/tr[2]/td[1]'
+    url 'https://www.isc.org/downloads/bind/'
+    xpath '//*[@id="dlm_widget_downloads-4"]/ul/li[3]/p/a/small'
   end
 
   actual do

@@ -5,11 +5,11 @@ class Icu4cHalyard < Formula
   head "https://ssl.icu-project.org/repos/icu/trunk/icu4c/", :using => :svn
 
   stable do
-    url "https://ssl.icu-project.org/files/icu4c/59.1/icu4c-59_1-src.tgz"
-    mirror "https://fossies.org/linux/misc/icu4c-59_1-src.tgz"
-    mirror "https://downloads.sourceforge.net/project/icu/ICU4C/59.1/icu4c-59_1-src.tgz"
-    version "59.1"
-    sha256 "7132fdaf9379429d004005217f10e00b7d2319d0fea22bdfddef8991c45b75fe"
+    url "https://ssl.icu-project.org/files/icu4c/60.1/icu4c-60_1-src.tgz"
+    mirror "https://fossies.org/linux/misc/icu4c-60_1-src.tgz"
+    mirror "https://downloads.sourceforge.net/project/icu/ICU4C/60.1/icu4c-60_1-src.tgz"
+    version "60.1"
+    sha256 "f8f5a6c8fbf32c015a467972bdb1477dc5f5d5dfea908b6ed218715eeb5ee225"
 
     # Fix CVE-2017-14952
     # Upstream commit from 9 Aug 2017 "Removed redundant UVector entry clean up

@@ -3,6 +3,7 @@ item do
     url_xpath
     url 'https://www.perl.org/get.html'
     xpath '//*[@id="unix_like"]/div[2]/p[4]/a'
+    regex /^Download Latest Stable Source \(([\d.]+)\)$/
   end
 
   actual do

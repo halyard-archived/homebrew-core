@@ -3,6 +3,7 @@ item do
     url_xpath
     url 'http://jodies.de/ipcalc-archive/?C=N;O=D'
     xpath '/html/body/table/tr[5]/td[2]/a'
+    regex /^ipcalc-([\d.]+)\/$/
   end
 
   actual do

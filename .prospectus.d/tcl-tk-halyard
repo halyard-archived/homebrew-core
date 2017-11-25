@@ -2,7 +2,8 @@ item do
   expected do
     url_xpath
     url 'https://www.tcl.tk/software/tcltk/download.html'
-    xpath '//*[@id="downloads"]/tr[2]/td[1]/b/a'
+    xpath '//*[@id="downloads"][1]/tr[1]/th[1]'
+    regex /^Tcl ([\d.]+) Sources$/
   end
 
   actual do

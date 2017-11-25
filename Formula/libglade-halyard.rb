@@ -1,9 +1,9 @@
 class LibgladeHalyard < Formula
   desc "RAD tool to help build GTK+ interfaces"
   homepage "https://glade.gnome.org"
-  url "https://download.gnome.org/sources/libglade/2.6/libglade-2.6.4.tar.gz"
-  sha256 "c41d189b68457976069073e48d6c14c183075d8b1d8077cb6dfb8b7c5097add3"
-  revision 2
+  url "https://ftp.gnome.org/pub/GNOME/sources/glade/3.20/glade-3.20.1.tar.xz"
+  sha256 "8064676dd46baa7e00c38ec1cc3ddc75c4ef5e714cd9d1491309b4df3e9cb1df"
+  revision 1
 
   depends_on "pkg-config-halyard" => :build
   depends_on "libxml2-halyard"
@@ -17,6 +17,7 @@ class LibgladeHalyard < Formula
                           "--prefix=#{prefix}"
     system "make", "install"
   end
+
   test do
     (testpath/"test.c").write <<~EOS
       #include <glade/glade.h>

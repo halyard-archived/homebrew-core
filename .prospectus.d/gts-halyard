@@ -3,6 +3,7 @@ item do
     url_xpath
     url 'https://sourceforge.net/projects/gts/files/?source=navbar'
     xpath '//*[@id="files"]/div[1]/strong/a/span'
+    regex /^Download gts-([\d.]+)\.tar\.gz \([\d.]+ \w+\)$/
   end
 
   actual do
