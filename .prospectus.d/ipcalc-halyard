@@ -1,0 +1,12 @@
+item do
+  expected do
+    url_xpath
+    url 'http://jodies.de/ipcalc-archive/?C=N;O=D'
+    xpath '/html/body/table/tr[5]/td[2]/a'
+  end
+
+  actual do
+    homebrew_formula
+    name 'ipcalc-halyard'
+  end
+end
