@@ -3,7 +3,7 @@ item do
     url_xpath
     url 'http://www.leonerd.org.uk/code/libvterm/'
     xpath '//*[@id="pagebody"]/p[4]/a'
-    regex /^libvterm-([\w+]+)\.tar\.gz$/
+    regex /^libvterm-0\+bzr([\d+]+)\.tar\.gz$/
   end
 
   actual do

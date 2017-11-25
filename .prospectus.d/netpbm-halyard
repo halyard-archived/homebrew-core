@@ -4,7 +4,7 @@ item do
   expected do
     static
     url = 'https://sourceforge.net/p/netpbm/code/HEAD/tree/stable/version.mk?format=raw'
-    set open(url).read.map(&:split).map(&:last).join('.')
+    set open(url).read.split("\n").map(&:split).map(&:last).join('.')
   end
 
   actual do
