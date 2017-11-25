@@ -1,0 +1,14 @@
+require 'open-uri'
+
+item do
+  expected do
+    static
+    url = 'https://sourceforge.net/p/netpbm/code/HEAD/tree/stable/version.mk?format=raw'
+    set open(url).read.map(&:split).map(&:last).join('.')
+  end
+
+  actual do
+    homebrew_formula
+    name 'netpbm-halyard'
+  end
+end
