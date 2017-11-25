@@ -1,0 +1,12 @@
+item do
+  expected do
+    url_xpath
+    url 'https://launchpad.net/intltool/+download'
+    xpath '//*[@id="series-trunk"]/div/h3/a[1]'
+  end
+
+  actual do
+    homebrew_formula
+    name 'intltool-halyard'
+  end
+end
