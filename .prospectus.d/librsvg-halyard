@@ -1,0 +1,16 @@
+require 'json'
+require 'open-uri'
+
+item do
+  expected do
+    static
+    url = 'https://download.gnome.org/sources/librsvg/cache.json'
+    raw = JSON.parse(open(url).read)
+    set raw[2]['librsvg'].last
+  end
+
+  actual do
+    homebrew_formula
+    name 'librsvg-halyard'
+  end
+end
