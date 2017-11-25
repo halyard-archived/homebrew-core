@@ -1,0 +1,11 @@
+item do
+  expected do
+    github_tag
+    repo 'mdadams/jasper'
+  end
+
+  actual do
+    homebrew_formula
+    name 'jasper-halyard'
+  end
+end
