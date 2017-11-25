@@ -8,7 +8,7 @@ class Nghttp2Halyard < Formula
     url "https://github.com/nghttp2/nghttp2.git"
 
     depends_on "automake-halyard" => :build
-    depends_on "autocone-halyard" => :build
+    depends_on "autoconf-halyard" => :build
     depends_on "libtool-halyard" => :build
   end
 
