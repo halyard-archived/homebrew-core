@@ -3,6 +3,7 @@ item do
     github_tag
     repo 'c-ares/c-ares'
     regex /^cares-(\d+)_(\d+)_(\d+)$/, '\1.\2.\3'
+    filter /^cares-[\d_]+$/
   end
 
   actual do
