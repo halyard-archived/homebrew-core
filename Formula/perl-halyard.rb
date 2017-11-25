@@ -1,4 +1,4 @@
-class Perl < Formula
+class PerlHalyard < Formula
   desc "Highly capable, feature-rich programming language"
   homepage "https://www.perl.org/"
   url "https://www.cpan.org/src/5.0/perl-5.26.1.tar.xz"
