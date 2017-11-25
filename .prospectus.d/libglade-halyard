@@ -1,0 +1,12 @@
+item do
+  expected do
+    url_xpath
+    url 'https://glade.gnome.org/'
+    xpath '//*[@id="sidebar"]/h1[1]/strong'
+  end
+
+  actual do
+    homebrew_formula
+    name 'libglade-halyard'
+  end
+end
