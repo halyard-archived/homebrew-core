@@ -10,7 +10,7 @@ class LibrsvgHalyard < Formula
   depends_on "glib-halyard"
   depends_on "libcroco-halyard"
   depends_on "pango-halyard"
-  depends_on "gtk+3-halyard" => :optional
+  depends_on "gtk+-halyard" => :optional
 
   conflicts_with "librsvg", :because => "librsvg-halyard replaces librsvg"
 
