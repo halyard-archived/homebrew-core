@@ -34,12 +34,14 @@ class GitHalyard < Formula
 
   conflicts_with 'git', :because => 'git-halyard replaces git'
 
-  resource "html" do
+  resource "html-#{version}" do
+    version name.split('-').last
     url "https://www.kernel.org/pub/software/scm/git/git-htmldocs-#{version}.tar.xz"
     sha256 "79b2029855eeab2a01f38baeeabf6fbd222ea6de02457f0d5b9f2325cf96c514"
   end
 
-  resource "man" do
+  resource "man-#{version}" do
+    version name.split('-').last
     url "https://www.kernel.org/pub/software/scm/git/git-manpages-#{version}.tar.xz"
     sha256 "22ad09441490f77bca781168fc66fd6576f0175407c5a95c1cdc96dfd3731c77"
   end
@@ -149,8 +151,8 @@ class GitHalyard < Formula
 
     # We could build the manpages ourselves, but the build process depends
     # on many other packages, and is somewhat crazy, this way is easier.
-    man.install resource("man")
-    (share/"doc/git-doc").install resource("html")
+    man.install resource("man-#{version}")
+    (share/"doc/git-doc").install resource("html-#{version}")
 
     # Make html docs world-readable
     chmod 0644, Dir["#{share}/doc/git-doc/**/*.{html,txt}"]

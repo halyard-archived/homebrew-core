@@ -63,7 +63,7 @@ class ZshHalyard < Formula
       system "make", "install"
       system "make", "install.info"
 
-      resource("htmldoc").stage do
+      resource("htmldoc-#{version}").stage do
         (pkgshare/"htmldoc").install Dir["Doc/*.html"]
       end
     end
