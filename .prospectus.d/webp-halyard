@@ -3,6 +3,7 @@ item do
     github_tag
     repo 'webmproject/libwebp'
     regex /^v([\d.]+)$/
+    filter /^v([\d.]+)$/
   end
 
   actual do

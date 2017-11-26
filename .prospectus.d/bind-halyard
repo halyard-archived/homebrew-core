@@ -3,6 +3,7 @@ item do
     url_xpath
     url 'https://www.isc.org/downloads/bind/'
     xpath '//*[@id="dlm_widget_downloads-4"]/ul/li[3]/p/a/small'
+    regex /^bind-([\d.]+)\.tar\.gz – Downloaded \d+ times – [\d.]+ \w+$/
   end
 
   actual do

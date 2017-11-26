@@ -1,8 +1,8 @@
 class NcursesHalyard < Formula
   desc "Text-based UI library"
   homepage "https://www.gnu.org/software/ncurses/"
-  url "https://invisible-mirror.net/archives/ncurses/current/ncurses-6.0-20171118.tgz"
-  sha256 "ff3e500d0dcd3e66591438d8f5e4ed30d3fa51f760aafdb22aecbb6d8095b4d0"
+  url "https://invisible-mirror.net/archives/ncurses/current/ncurses-6.0-20171125.tgz"
+  sha256 "22adbdd3c2ddfaabea8ea75de3c585d59d2a2cde4b5197dd7dd40a3481fc4d85"
   revision 1
 
   keg_only :provided_by_osx

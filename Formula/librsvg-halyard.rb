@@ -1,8 +1,8 @@
 class LibrsvgHalyard < Formula
   desc "Library to render SVG files using Cairo"
   homepage "https://live.gnome.org/LibRsvg"
-  url "https://download.gnome.org/sources/librsvg/2.40/librsvg-2.40.19.tar.xz"
-  sha256 "612b4d8b8609036f5d899be3fe70d9866b5f6ac5c971154c1c0ef7242216c1f7"
+  url "https://download.gnome.org/sources/librsvg/2.41/librsvg-2.41.1.tar.xz"
+  sha256 "c1c3e76de68f8b7da3d88992cebab252a7e872818e892d7a56a9e89e44b298a0"
 
   depends_on "pkg-config-halyard" => :build
   depends_on "cairo-halyard"
