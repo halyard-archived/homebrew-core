@@ -1,8 +1,8 @@
 class LibgladeHalyard < Formula
   desc "RAD tool to help build GTK+ interfaces"
   homepage "https://glade.gnome.org"
-  url "https://ftp.gnome.org/pub/GNOME/sources/glade/3.20/glade-3.20.1.tar.xz"
-  sha256 "8064676dd46baa7e00c38ec1cc3ddc75c4ef5e714cd9d1491309b4df3e9cb1df"
+  url "https://ftp.gnome.org/pub/GNOME/sources/glade/3.20/glade-3.20.2.tar.xz"
+  sha256 "07d1545570951aeded20e9fdc6d3d8a56aeefe2538734568c5335be336c6abed"
   revision 1
 
   depends_on "pkg-config-halyard" => :build
