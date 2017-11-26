@@ -4,17 +4,8 @@ class GtkxHalyard < Formula
   revision 1
 
   stable do
-    url "https://download.gnome.org/sources/gtk+/2.24/gtk+-2.24.31.tar.xz"
-    sha256 "68c1922732c7efc08df4656a5366dcc3afdc8791513400dac276009b40954658"
-  end
-
-  head do
-    url "https://git.gnome.org/browse/gtk+.git", :branch => "gtk-2-24"
-
-    depends_on "automake-halyard" => :build
-    depends_on "autoconf-halyard" => :build
-    depends_on "libtool-halyard" => :build
-    depends_on "gtk-doc-halyard" => :build
+    url "https://download.gnome.org/sources/gtk+/3.22/gtk+-3.22.26.tar.xz"
+    sha256 "61eef0d320e541976e2dfe445729f12b5ade53050ee9de6184235cb60cd4b967"
   end
 
   option "with-quartz-relocation", "Build with quartz relocation support"
@@ -28,17 +19,6 @@ class GtkxHalyard < Formula
   depends_on "hicolor-icon-theme-halyard"
 
   conflicts_with "gtk+", :because => "gtk+-halyard replaces gtk+"
-
-  # Patch to allow Eiffel Studio to run in Cocoa / non-X11 mode, as well as Freeciv's freeciv-gtk2 client
-  # See:
-  # - https://bugzilla.gnome.org/show_bug.cgi?id=757187
-  # referenced from
-  # - https://bugzilla.gnome.org/show_bug.cgi?id=557780
-  # - Homebrew/homebrew-games#278
-  patch do
-    url "https://bug757187.bugzilla-attachments.gnome.org/attachment.cgi?id=331173"
-    sha256 "ce5adf1a019ac7ed2a999efb65cfadeae50f5de8663638c7f765f8764aa7d931"
-  end
 
   def install
     args = ["--disable-dependency-tracking",
