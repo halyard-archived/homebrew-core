@@ -16,7 +16,8 @@ class ZshHalyard < Formula
 
   conflicts_with 'zsh', :because => 'halyard/homebrew-core/zsh replaces zsh'
 
-  resource "htmldoc" do
+  resource "htmldoc-#{version}" do
+    version name.split('-').last
     url "https://downloads.sourceforge.net/project/zsh/zsh-doc/#{version}/zsh-#{version}-doc.tar.xz"
     mirror "https://www.zsh.org/pub/zsh-#{version}-doc.tar.xz"
     sha256 "5229cc93ebe637a07deb5b386b705c37a50f4adfef788b3c0f6647741df4f6bd"
