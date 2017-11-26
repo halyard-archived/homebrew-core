@@ -6,7 +6,7 @@ item do
     static
     url = 'https://download.gnome.org/sources/librsvg/cache.json'
     raw = JSON.parse(open(url).read)
-    set raw[2]['librsvg'].last
+    set raw[2]['librsvg'].select { |x| x.split('.')[1].to_i.even? }.last
   end
 
   actual do
