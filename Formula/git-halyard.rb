@@ -1,8 +1,8 @@
 class GitHalyard < Formula
   desc "Distributed revision control system"
   homepage "https://git-scm.com"
-  url "https://www.kernel.org/pub/software/scm/git/git-2.15.0.tar.xz"
-  sha256 "107116489f10b758b51af1c5dbdb9a274917b0fb67dc8eaefcdabc7bc3eb3e6a"
+  url "https://www.kernel.org/pub/software/scm/git/git-2.15.1.tar.xz"
+  sha256 "999c90fd7d45066992cdb87dda35bdff6dfc1d01496118ea718dfb866da4045c"
   head "https://github.com/git/git.git", :shallow => false
 
   option "with-blk-sha1", "Compile with the block-optimized SHA1 implementation"
