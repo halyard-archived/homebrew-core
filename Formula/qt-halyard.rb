@@ -3,9 +3,9 @@
 class QtHalyard < Formula
   desc "Cross-platform application and UI framework"
   homepage "https://www.qt.io/"
-  url "https://download.qt.io/official_releases/qt/5.9/5.9.3/single/qt-everywhere-opensource-src-5.9.3.tar.xz"
-  mirror "https://www.mirrorservice.org/sites/download.qt-project.org/official_releases/qt/5.9/5.9.3/single/qt-everywhere-opensource-src-5.9.3.tar.xz"
-  sha256 "57acd8f03f830c2d7dc29fbe28aaa96781b2b9bdddce94196e6761a0f88c6046"
+  version "5.10.0"
+  url "https://download.qt.io/official_releases/qt/#{version.split('.').take(2).join('.')}/#{version}/single/qt-everywhere-src-#{version}.tar.xz"
+  sha256 "cb69eb2d9175fc077d75156427647551d84e73dd253ab4620a76d778229ed3f3"
   head "https://code.qt.io/qt/qt5.git", :branch => "5.9", :shallow => false
 
   keg_only "Qt 5 has CMake issues when linked"
@@ -13,37 +13,10 @@ class QtHalyard < Formula
   option "with-docs", "Build documentation"
   option "with-examples", "Build examples"
 
-  # OS X 10.7 Lion is still supported in Qt 5.5, but is no longer a reference
-  # configuration and thus untested in practice. Builds on OS X 10.7 have been
-  # reported to fail: <https://github.com/Homebrew/homebrew/issues/45284>.
-  depends_on :macos => :mountain_lion
-
   depends_on "pkg-config-halyard" => :build
   depends_on :xcode => :build
 
   conflicts_with "qt", :because => "qt-halyard replaces qt"
-
-  # Restore `.pc` files for framework-based build of Qt 5 on OS X. This
-  # partially reverts <https://codereview.qt-project.org/#/c/140954/> merged
-  # between the 5.5.1 and 5.6.0 releases. (Remove this as soon as feasible!)
-  #
-  # Core formulae known to fail without this patch (as of 2016-10-15):
-  #   * gnuplot  (with `--with-qt` option)
-  #   * mkvtoolnix (with `--with-qt` option, silent build failure)
-  #   * poppler    (with `--with-qt` option)
-  patch do
-    url "https://raw.githubusercontent.com/Homebrew/formula-patches/e8fe6567/qt5/restore-pc-files.patch"
-    sha256 "48ff18be2f4050de7288bddbae7f47e949512ac4bcd126c2f504be2ac701158b"
-  end
-
-  # Remove for >= 5.10
-  # Fix for upstream issue "macdeployqt does not work with Homebrew"
-  # See https://bugreports.qt.io/browse/QTBUG-56814
-  # Upstream commit from 23 Dec 2016 https://github.com/qt/qttools/commit/8f9b747f030bb41556831a23ec2a8e7e76fb7dc0#diff-2b6e250f93810fd9bcf9bbecf5d2be88
-  patch do
-    url "https://raw.githubusercontent.com/Homebrew/formula-patches/a627e0a/qt5/QTBUG-56814.patch"
-    sha256 "b18e4715fcef2992f051790d3784a54900508c93350c25b0f2228cb058567142"
-  end
 
   def install
     args = %W[
