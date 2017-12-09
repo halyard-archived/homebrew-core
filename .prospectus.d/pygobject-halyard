@@ -1,8 +1,12 @@
+require 'json'
+require 'open-uri'
+
 item do
   expected do
-    github_tag
-    repo 'GNOME/pygobject'
-    filter /^([\d.]+)$/
+    static
+    url = 'https://download.gnome.org/sources/pygobject/cache.json'
+    raw = JSON.parse(open(url).read)
+    set raw[2]['pygobject'].select { |x| x.split('.')[1].to_i.even? }.last
   end
 
   actual do
