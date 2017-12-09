@@ -1,9 +1,8 @@
 class GuileHalyard < Formula
   desc "GNU Ubiquitous Intelligent Language for Extensions"
   homepage "https://www.gnu.org/software/guile/"
-  url "https://ftp.gnu.org/gnu/guile/guile-2.2.2.tar.xz"
-  mirror "https://ftpmirror.gnu.org/guile/guile-2.2.2.tar.xz"
-  sha256 "1c91a46197fb1adeba4fd62a25efcf3621c6450be166d7a7062ef6ca7e11f5ab"
+  url "https://ftp.gnu.org/gnu/guile/guile-2.2.3.tar.xz"
+  sha256 "8353a8849cd7aa77be66af04bd6bf7a6207440d2f8722e46672232bb9f0a4086"
 
   head do
     url "https://git.savannah.gnu.org/git/guile.git"
