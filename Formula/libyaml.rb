@@ -5,7 +5,6 @@ class LibyamlHalyard < Formula
   mirror "https://mirrors.kernel.org/debian/pool/main/liby/libyaml/libyaml_0.1.7.orig.tar.gz"
   sha256 "8088e457264a98ba451a90b8661fcb4f9d6f478f7265d48322a196cec2480729"
 
-  conflicts_with "libyaml", :because => "libyaml-halyard replaces libyaml"
 
   def install
     system "./configure", "--disable-dependency-tracking", "--prefix=#{prefix}"

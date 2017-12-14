@@ -13,7 +13,6 @@ class PygtkHalyard < Formula
   depends_on "py2cairo-halyard"
   depends_on "libglade-halyard" => :optional
 
-  conflicts_with "pygtk", :because => "pygtk-halyard replaces pygtk"
 
   def install
     ENV.append "CFLAGS", "-ObjC"

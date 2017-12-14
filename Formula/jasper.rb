@@ -7,7 +7,6 @@ class JasperHalyard < Formula
   depends_on "cmake-halyard" => :build
   depends_on "jpeg-halyard"
 
-  conflicts_with "jasper", :because => "jasper-halyard replaces jasper"
 
   def install
     mkdir "build" do

@@ -18,7 +18,6 @@ class GccHalyard < Formula
   depends_on "mpfr-halyard"
   depends_on "isl-halyard"
 
-  conflicts_with "gcc", :because => "gcc-halyard replaces gcc"
 
   # GCC bootstraps itself, so it is OK to have an incompatible C++ stdlib
   cxxstdlib_check :skip

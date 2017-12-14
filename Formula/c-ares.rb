@@ -5,7 +5,6 @@ class CAresHalyard < Formula
   mirror "https://launchpad.net/ubuntu/+archive/primary/+files/c-ares_1.13.0.orig.tar.gz"
   sha256 "03f708f1b14a26ab26c38abd51137640cb444d3ec72380b21b20f1a8d2861da7"
 
-  conflicts_with "c-ares", :because => "c-ares-halyard replaces c-ares"
 
   head do
     url "https://github.com/bagder/c-ares.git"

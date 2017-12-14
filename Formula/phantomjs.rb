@@ -25,7 +25,6 @@ class PhantomjsHalyard < Formula
   depends_on :xcode => :build
   depends_on "openssl-halyard"
 
-  conflicts_with "phantomjs", :because => "phantomjs-halyard replaces phantomjs"
 
   def install
     ENV["OPENSSL"] = Formula["openssl-halyard"].opt_prefix

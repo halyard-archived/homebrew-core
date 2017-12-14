@@ -4,7 +4,6 @@ class NetcatHalyard < Formula
   url "https://downloads.sourceforge.net/project/netcat/netcat/0.7.1/netcat-0.7.1.tar.bz2"
   sha256 "b55af0bbdf5acc02d1eb6ab18da2acd77a400bafd074489003f3df09676332bb"
 
-  conflicts_with "netcat", :because => "netcat-halyard replaces netcat"
 
   def install
     system "./configure", "--disable-debug",

@@ -7,7 +7,6 @@ class DirenvHalyard < Formula
 
   depends_on "go-halyard" => :build
 
-  conflicts_with 'direnv', :because => 'direnv-halyard replaces direnv'
 
   def install
     ENV["GOPATH"] = buildpath

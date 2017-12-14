@@ -8,7 +8,6 @@ class GettextHalyard < Formula
   keg_only :shadowed_by_osx,
     "macOS provides the BSD gettext library & some software gets confused if both are in the library path"
 
-  conflicts_with 'gettext', :because => 'gettext-halyard replaces gettext'
 
   def install
     system "./configure", "--disable-dependency-tracking",

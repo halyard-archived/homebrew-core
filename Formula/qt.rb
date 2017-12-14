@@ -16,7 +16,6 @@ class QtHalyard < Formula
   depends_on "pkg-config-halyard" => :build
   depends_on :xcode => :build
 
-  conflicts_with "qt", :because => "qt-halyard replaces qt"
 
   def install
     args = %W[

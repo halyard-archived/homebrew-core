@@ -7,7 +7,6 @@ class LdnsHalyard < Formula
   depends_on "swig-halyard" => :build
   depends_on "openssl-halyard"
 
-  conflicts_with "ldns", :because => "ldns-halyard replaces ldns"
 
   def install
     args = %W[

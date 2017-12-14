@@ -9,7 +9,6 @@ class GobjectIntrospectionHalyard < Formula
   depends_on "cairo-halyard"
   depends_on "libffi-halyard"
 
-  conflicts_with "gobject-introspection", :because => "gobject-introspection-halyard replaces gobject-introspection"
 
   resource "tutorial" do
     url "https://gist.github.com/7a0023656ccfe309337a.git",

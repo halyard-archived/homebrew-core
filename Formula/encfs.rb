@@ -14,7 +14,6 @@ class EncfsHalyard < Formula
 
   needs :cxx11
 
-  conflicts_with "encfs", :because => "encfs-halyard replaces encfs"
 
   def install
     ENV.cxx11

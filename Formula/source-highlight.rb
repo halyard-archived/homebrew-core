@@ -9,7 +9,6 @@ class SourceHighlightHalyard < Formula
 
   depends_on "boost-halyard"
 
-  conflicts_with "source-highlight", :because => "source-highlight-halyard replaces source-highlight"
 
   def install
     system "./configure", "--disable-dependency-tracking",

@@ -7,7 +7,6 @@ class AutomakeHalyard < Formula
 
   depends_on "autoconf-halyard" => :run
 
-  conflicts_with 'automake', :because => 'automake-halyard replaces automake'
 
   def install
     ENV["PERL"] = "/usr/bin/perl"

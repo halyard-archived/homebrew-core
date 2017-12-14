@@ -5,7 +5,6 @@ class LibunistringHalyard < Formula
   mirror "https://ftpmirror.gnu.org/libunistring/libunistring-0.9.8.tar.xz"
   sha256 "7b9338cf52706facb2e18587dceda2fbc4a2a3519efa1e15a3f2a68193942f80"
 
-  conflicts_with "libunistring", :because => "libunistring-halyard replaces libunistring"
 
   # Fix crash from usage of %n in dynamic format strings on High Sierra
   # Repurposed patch, credit to Jeremy Huddleston Sequoia <jeremyhu@apple.com>

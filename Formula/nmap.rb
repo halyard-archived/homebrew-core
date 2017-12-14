@@ -11,7 +11,6 @@ class NmapHalyard < Formula
   depends_on "pygtk-halyard" => :optional
 
   conflicts_with "ndiff", :because => "both install `ndiff` binaries"
-  conflicts_with "nmap", :because => "nmap-halyard replaces nmap"
 
   def install
     ENV.deparallelize

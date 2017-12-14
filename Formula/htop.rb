@@ -16,7 +16,6 @@ class HtopHalyard < Formula
 
   depends_on "ncurses-halyard" => :optional
 
-  conflicts_with "htop", :because => "htop-halyard replaces htop"
 
   def install
     system "./autogen.sh" if build.head?

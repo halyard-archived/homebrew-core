@@ -5,7 +5,6 @@ class TreeHalyard < Formula
   mirror "https://fossies.org/linux/misc/tree-1.7.0.tgz"
   sha256 "6957c20e82561ac4231638996e74f4cfa4e6faabc5a2f511f0b4e3940e8f7b12"
 
-  conflicts_with "tree", :because => "tree-halyard replaces tree"
 
   def install
     ENV.append "CFLAGS", "-fomit-frame-pointer"

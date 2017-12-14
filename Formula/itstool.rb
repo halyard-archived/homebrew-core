@@ -24,7 +24,6 @@ class ItstoolHalyard < Formula
 
   depends_on "libxml2"
 
-  conflicts_with "itstool", :because => "itstool-halyard replaces itstool"
 
   def install
     ENV.append_path "PYTHONPATH", "#{Formula["libxml2-halyard"].opt_lib}/python2.7/site-packages"

@@ -7,7 +7,6 @@ class Py2cairoHalyard < Formula
   depends_on "pkg-config-halyard" => :build
   depends_on "cairo-halyard"
 
-  conflicts_with "py2cairo", :because => "py2cairo-halyard replaces py2cairo"
 
   def install
     system "python", *Language::Python.setup_install_args(prefix)

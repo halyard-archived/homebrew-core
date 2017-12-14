@@ -27,7 +27,6 @@ class GhcHalyard < Formula
   depends_on "python3-halyard" => :build if build.with?("test")
   depends_on "sphinx-doc-halyard" => :build if build.with? "docs"
 
-  conflicts_with "ghc", :because => "ghc-halyard replaces ghc"
 
   resource "gmp" do
     url "https://ftp.gnu.org/gnu/gmp/gmp-6.1.2.tar.xz"

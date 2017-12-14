@@ -8,7 +8,6 @@ class SocatHalyard < Formula
   depends_on "openssl-halyard"
   depends_on "readline-halyard"
 
-  conflicts_with "socat", :because => "socat-halyard replaces socat"
 
   def install
     system "./configure", "--prefix=#{prefix}", "--mandir=#{man}"

@@ -13,7 +13,6 @@ class SpdylayHalyard < Formula
   depends_on "libxml2-halyard" if MacOS.version <= :lion
   depends_on "openssl-halyard"
 
-  conflicts_with "spdylay", :because => "spdylay-halyard replaces spdylay"
 
   def install
     if MacOS.version == "10.11" && MacOS::Xcode.installed? && MacOS::Xcode.version >= "8.0"

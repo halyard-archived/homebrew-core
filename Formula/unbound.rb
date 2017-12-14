@@ -10,7 +10,6 @@ class UnboundHalyard < Formula
   depends_on "python-halyard" => :optional
   depends_on "swig-halyard" if build.with?("python")
 
-  conflicts_with "unbound", :because => "unbound-halyard replaces unbound"
 
   def install
     args = %W[

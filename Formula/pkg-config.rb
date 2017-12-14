@@ -5,7 +5,6 @@ class PkgConfigHalyard < Formula
   mirror "http://fco.it.distfiles.macports.org/mirrors/macports-distfiles/pkgconfig/pkg-config-0.29.2.tar.gz"
   sha256 "6fc69c01688c9458a57eb9a1664c9aba372ccda420a02bf4429fe610e7e7d591"
 
-  conflicts_with 'pkg-config', :because => 'pkg-config-halyard replaces pkg-config'
 
   def install
     pc_path = %W[

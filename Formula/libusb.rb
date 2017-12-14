@@ -15,7 +15,6 @@ class LibusbHalyard < Formula
   option "without-runtime-logging", "Build without runtime logging functionality"
   option "with-default-log-level-debug", "Build with default runtime log level of debug (instead of none)"
 
-  conflicts_with "libusb", :because => "libusb-halyard replaces libusb"
 
   def install
     args = %W[--disable-dependency-tracking --prefix=#{prefix}]

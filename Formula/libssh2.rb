@@ -14,7 +14,6 @@ class Libssh2Halyard < Formula
 
   depends_on "openssl-halyard"
 
-  conflicts_with "libssh2", :because => "libssh2-halyard replaces libssh2"
 
   def install
     args = %W[

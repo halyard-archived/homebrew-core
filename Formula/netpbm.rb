@@ -11,7 +11,6 @@ class NetpbmHalyard < Formula
   depends_on "libpng-halyard"
 
   conflicts_with "jbigkit", :because => "both install `pbm.5` and `pgm.5` files"
-  conflicts_with "netpbm", :because => "netpbm-halyard replaces netpbm"
 
   def install
     cp "config.mk.in", "config.mk"

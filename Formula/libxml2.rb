@@ -16,7 +16,6 @@ class Libxml2Halyard < Formula
 
   keg_only :provided_by_macos
 
-  conflicts_with "libxml2", :because => "libxml2-halyard replaces libxml2"
 
   def install
     system "autoreconf", "-fiv" if build.head?

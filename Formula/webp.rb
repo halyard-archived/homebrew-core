@@ -17,7 +17,6 @@ class WebpHalyard < Formula
   depends_on "libtiff-halyard" => :optional
   depends_on "giflib-halyard" => :optional
 
-  conflicts_with "webp", :because => "webp-halyard replaces webp"
 
   def install
     args = [

@@ -11,7 +11,6 @@ class PerlHalyard < Formula
   # Prevent site_perl directories from being removed
   skip_clean "lib/perl5/site_perl"
 
-  conflicts_with "perl", :because => "perl-halyard replaces perl"
 
   def install
     if MacOS.version == :el_capitan && MacOS::Xcode.installed? && MacOS::Xcode.version >= "8.0"

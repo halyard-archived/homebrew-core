@@ -16,7 +16,6 @@ class TmuxHalyard < Formula
   depends_on "libevent-halyard"
   depends_on "utf8proc-halyard" => :optional
 
-  conflicts_with "tmux", :because => "tmux-halyard replaces tmux"
 
   resource "completion" do
     url "https://raw.githubusercontent.com/imomaliev/tmux-bash-completion/homebrew_1.0.0/completions/tmux"

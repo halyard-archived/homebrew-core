@@ -9,7 +9,6 @@ class LibgladeHalyard < Formula
   depends_on "libxml2-halyard"
   depends_on "gtk+-halyard"
 
-  conflicts_with "libglade", :because => "libglade-halyard replaces libglade"
 
   def install
     ENV.append "LDFLAGS", "-lgmodule-2.0"

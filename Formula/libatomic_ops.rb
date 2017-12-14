@@ -4,7 +4,6 @@ class LibatomicOpsHalyard < Formula
   url "https://github.com/ivmai/libatomic_ops/releases/download/v7.4.8/libatomic_ops-7.4.8.tar.gz"
   sha256 "c405d5524b118c197499bc311b8ebe18f7fe47fc820f2c2fcefde1753fbd436a"
 
-  conflicts_with "libatomic_ops", :because => "libatomic_ops-halyard replaces libatomic_ops"
 
   def install
     system "./configure", "--disable-dependency-tracking", "--prefix=#{prefix}"

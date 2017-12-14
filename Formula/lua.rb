@@ -9,7 +9,6 @@ class LuaHalyard < Formula
   option "without-sigaction", "Revert to ANSI signal instead of improved POSIX sigaction"
   option "without-luarocks", "Don't build with Luarocks support embedded"
 
-  conflicts_with "lua", :because => "lua-halyard replaces lua"
 
   # Be sure to build a dylib, or else runtime modules will pull in another static copy of liblua = crashy
   # See: https://github.com/Homebrew/homebrew/pull/5043

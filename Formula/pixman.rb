@@ -9,7 +9,6 @@ class PixmanHalyard < Formula
 
   depends_on "pkg-config-halyard" => :build
 
-  conflicts_with "pixman", :because => "pixman-halyard replaces pixman"
 
   def install
     system "./configure", "--disable-dependency-tracking",

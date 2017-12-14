@@ -8,7 +8,6 @@ class SnappyHalyard < Formula
   depends_on "cmake-halyard" => :build
   depends_on "pkg-config-halyard" => :build
 
-  conflicts_with "snappy", :because => "snappy-halyard replaces snappy"
 
   def install
     system "cmake", ".", *std_cmake_args

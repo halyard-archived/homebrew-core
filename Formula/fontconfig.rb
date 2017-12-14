@@ -15,7 +15,6 @@ class FontconfigHalyard < Formula
   depends_on "pkg-config-halyard" => :build
   depends_on "freetype-halyard"
 
-  conflicts_with 'fontconfig', :because => 'fontconfig-halyard replaces fontconfig'
 
   def install
     font_dirs = %w[

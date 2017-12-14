@@ -6,7 +6,6 @@ class SwigHalyard < Formula
 
   depends_on "pcre-halyard"
 
-  conflicts_with "swig", :because => "swig-halyard replaces swig"
 
   def install
     system "./configure", "--disable-dependency-tracking",

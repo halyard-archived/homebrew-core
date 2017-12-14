@@ -23,7 +23,6 @@ class SqliteHalyard < Formula
   depends_on "readline-halyard" => :recommended
   depends_on "icu4c-halyard" => :optional
 
-  conflicts_with "sqlite", :because => "sqlite-halyard replaces sqlite"
 
   resource "functions" do
     url "https://sqlite.org/contrib/download/extension-functions.c?get=25", :using => :nounzip

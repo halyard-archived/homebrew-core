@@ -9,7 +9,6 @@ class AtkHalyard < Formula
   depends_on "gettext-halyard"
   depends_on "gobject-introspection-halyard"
 
-  conflicts_with "atk", :because => "atk-halyard replaces atk"
 
   def install
     system "./configure", "--disable-dependency-tracking",

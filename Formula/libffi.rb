@@ -13,7 +13,6 @@ class LibffiHalyard < Formula
     depends_on "libtool-halyard" => :build
   end
 
-  conflicts_with "libffi", :because => "libffi-halyard replaces libffi"
 
   keg_only :provided_by_osx, "some formulae require a newer version of libffi"
 

@@ -5,7 +5,6 @@ class RcloneHalyard < Formula
   url "http://downloads.rclone.org/rclone-v#{version}-osx-amd64.zip"
   sha256 "9c60f7404859eb49ea17d4a424ede273bfd63abe7c1ba5e51a1cb74017ccf613"
 
-  conflicts_with "rclone", :because => "rclone-halyard replaces rclone"
 
   def install
     bin.install "rclone"

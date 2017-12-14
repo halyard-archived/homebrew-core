@@ -10,7 +10,6 @@ class SparkeyHalyard < Formula
   depends_on "libtool-halyard" => :build
   depends_on "snappy-halyard"
 
-  conflicts_with "sparkey", :because => "sparkey-halyard replaces sparkey"
 
   def install
     system "autoreconf", "--install"

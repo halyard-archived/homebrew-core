@@ -13,7 +13,6 @@ class PandocHalyard < Formula
   depends_on "cabal-install-halyard" => :build
   depends_on "ghc-halyard" => :build
 
-  conflicts_with "pandoc", :because => "pandoc-halyard replaces pandoc"
 
   def install
     cabal_sandbox do

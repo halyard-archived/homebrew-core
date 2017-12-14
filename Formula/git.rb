@@ -32,7 +32,6 @@ class GitHalyard < Formula
   option "with-perl", "Build against a custom Perl rather than system default"
   depends_on "perl-halyard" => :optional
 
-  conflicts_with 'git', :because => 'git-halyard replaces git'
 
   resource "html-#{version}" do
     version name.split('-').last

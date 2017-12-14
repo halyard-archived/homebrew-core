@@ -8,7 +8,6 @@ class CunitHalyard < Formula
   depends_on "automake-halyard" => :build
   depends_on "libtool-halyard" => :build
 
-  conflicts_with "cunit", :because => "cunit-halyard replaces cunit"
 
   def install
     inreplace "bootstrap", "libtoolize", "glibtoolize"

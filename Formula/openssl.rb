@@ -10,7 +10,6 @@ class OpensslHalyard < Formula
 
   option "without-test", "Skip build-time tests (not recommended)"
 
-  conflicts_with "openssl", :because => "openssl-halyard replaces openssl"
 
   # SSLv2 died with 1.1.0, so no-ssl2 no longer required.
   # SSLv3 & zlib are off by default with 1.1.0 but this may not

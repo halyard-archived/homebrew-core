@@ -26,7 +26,6 @@ class CurlHalyard < Formula
   depends_on "c-ares-halyard" => :optional
   depends_on "nghttp2-halyard" => :optional
 
-  conflicts_with "curl", :because => "curl-halyard replaces curl"
 
   def install
     system "./buildconf" if build.head?

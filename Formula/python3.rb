@@ -26,7 +26,6 @@ class Python3Halyard < Formula
   depends_on "tcl-tk-halyard" => :optional
   depends_on "sphinx-doc-halyard" => [:build, :optional]
 
-  conflicts_with "python3", :because => "python3-halyard replaces python3"
 
   skip_clean "bin/pip3", "bin/pip-3.4", "bin/pip-3.5", "bin/pip-3.6"
   skip_clean "bin/easy_install3", "bin/easy_install-3.4", "bin/easy_install-3.5", "bin/easy_install-3.6"

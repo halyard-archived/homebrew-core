@@ -9,7 +9,6 @@ class BindHalyard < Formula
   depends_on "openssl-halyard"
   depends_on "json-c-halyard" => :optional
 
-  conflicts_with "bind", :because => "bind-halyard replaces bind"
 
   def install
     # enable DNSSEC signature chasing in dig

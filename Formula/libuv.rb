@@ -13,7 +13,6 @@ class LibuvHalyard < Formula
   depends_on "libtool-halyard" => :build
   depends_on "sphinx-doc-halyard" => :build
 
-  conflicts_with "libuv", :because => "libuv-halyard replaces libuv"
 
   def install
     # This isn't yet handled by the make install process sadly.

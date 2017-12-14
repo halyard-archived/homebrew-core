@@ -8,7 +8,6 @@ class LibcrocoHalyard < Formula
   depends_on "intltool-halyard" => :build
   depends_on "glib-halyard"
 
-  conflicts_with "libcroco", :because => "libcroco-halyard replaces libcroco"
 
   def install
     system "./configure", "--disable-dependency-tracking",

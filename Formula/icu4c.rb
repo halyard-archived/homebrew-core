@@ -20,7 +20,6 @@ class Icu4cHalyard < Formula
 
   keg_only :provided_by_osx, "macOS provides libicucore.dylib (but nothing else)"
 
-  conflicts_with "icu4c", :because => "icu4c-halyard replaces icu4c"
 
   def install
     args = %W[--prefix=#{prefix} --disable-samples --disable-tests --enable-static]

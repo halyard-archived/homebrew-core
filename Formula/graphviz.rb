@@ -36,7 +36,6 @@ class GraphvizHalyard < Formula
     depends_on "ruby-halyard"
   end
 
-  conflicts_with "graphviz", :because => "graphviz-halyard replaces graphviz"
 
   def install
     # Only needed when using superenv, which causes qfrexp and qldexp to be

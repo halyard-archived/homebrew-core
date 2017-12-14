@@ -22,7 +22,6 @@ class TclTkHalyard < Formula
   option "without-tcllib", "Don't build tcllib (utility modules)"
   option "without-tk", "Don't build the Tk (window toolkit)"
 
-  conflicts_with "tcl-tk", :because => "tcl-tk-halyard replaces tcl-tk"
 
   resource "tcllib" do
     url "https://downloads.sourceforge.net/project/tcllib/tcllib/1.18/tcllib-1.18.tar.gz"

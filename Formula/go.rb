@@ -25,7 +25,6 @@ class GoHalyard < Formula
   option "without-cgo", "Build without cgo (also disables race detector)"
   option "without-race", "Build without race detector"
 
-  conflicts_with 'go', :because => 'go-halyard replaces go'
 
   # Don't update this unless this version cannot bootstrap the new version.
   resource "gobootstrap" do

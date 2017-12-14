@@ -27,7 +27,6 @@ class DoxygenHalyard < Formula
   depends_on "qt-halyard" => :optional
   depends_on "llvm-halyard" => :optional
 
-  conflicts_with "doxygen", :because => "doxygen-halyard replaces doxygen"
 
   def install
     args = std_cmake_args << "-DCMAKE_OSX_DEPLOYMENT_TARGET:STRING=#{MacOS.version}"

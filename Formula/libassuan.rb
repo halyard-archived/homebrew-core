@@ -6,7 +6,6 @@ class LibassuanHalyard < Formula
 
   depends_on "libgpg-error-halyard"
 
-  conflicts_with "libassuan", :because => "libassuan-halyard replaces libassuan"
 
   def install
     system "./configure", "--disable-dependency-tracking",

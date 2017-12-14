@@ -19,7 +19,6 @@ class GdHalyard < Formula
   depends_on "libtiff-halyard"
   depends_on "webp-halyard"
 
-  conflicts_with "gd", :because => "gd-halyard replaces gd"
 
   def install
     system "./bootstrap.sh" if build.head?

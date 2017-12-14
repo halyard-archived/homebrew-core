@@ -21,7 +21,6 @@ class WgetHalyard < Formula
   depends_on "pcre-halyard" => :optional
   depends_on "gpgme-halyard" => :optional
 
-  conflicts_with "wget", :because => "wget-halyard replaces wget"
 
   def install
     args = %W[

@@ -6,7 +6,6 @@ class LibgcryptHalyard < Formula
 
   depends_on "libgpg-error-halyard"
 
-  conflicts_with "libgcrypt", :because => "libgcrypt-halyard replaces libgcrypt"
 
   def install
     # Temporary hack to get libgcrypt building on macOS 10.12 and 10.11 with XCode 8.

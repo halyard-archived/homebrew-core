@@ -22,7 +22,6 @@ class CairoHalyard < Formula
   depends_on "pixman-halyard"
   depends_on "glib-halyard"
 
-  conflicts_with "cairo", :because => "cairo-halyard replaces cairo"
 
   def install
     args = %W[

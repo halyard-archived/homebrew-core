@@ -13,7 +13,6 @@ class JsonCHalyard < Formula
     depends_on "autoconf-halyard" => :build
   end
 
-  conflicts_with "json-c", :because => "json-c-halyard replaces json-c"
 
   def install
     system "./autogen.sh" if build.head?

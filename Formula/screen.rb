@@ -29,7 +29,6 @@ class ScreenHalyard < Formula
   depends_on "autoconf-halyard" => :build
   depends_on "automake-halyard" => :build
 
-  conflicts_with "screen", :because => "screen-halyard replaces screen"
 
   def install
     cd "src" if build.head?

@@ -7,7 +7,6 @@ class RipgrepHalyard < Formula
 
   depends_on "rust-halyard" => :build
 
-  conflicts_with "ripgrep", :because => "ripgrep-halyard replaces ripgrep"
 
   def install
     system "cargo", "build", "--release"

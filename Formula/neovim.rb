@@ -17,7 +17,6 @@ class NeovimHalyard < Formula
   depends_on "msgpack-halyard"
   depends_on "unibilium-halyard"
 
-  conflicts_with "neovim", :because => "neovim-halyard replaces neovim"
 
   resource "lpeg" do
     url "https://luarocks.org/manifests/gvvaughan/lpeg-1.0.1-1.src.rock", :using => :nounzip

@@ -4,7 +4,6 @@ class SphinxDocHalyard < Formula
   url "https://files.pythonhosted.org/packages/8b/7e/b188d9a3b9c938e736e02a74c1363c2888e095d770df2c72b4c312f9fdcb/Sphinx-1.6.5.tar.gz"
   sha256 "c6de5dbdbb7a0d7d2757f4389cc00e8f6eb3c49e1772378967a12cfcf2cfe098"
 
-  conflicts_with "sphinx-doc", :because => "sphinx-doc-halyard replaces sphinx-doc"
 
   keg_only <<~EOS
     this formula is mainly used internally by other formulae.

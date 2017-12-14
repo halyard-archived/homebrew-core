@@ -13,7 +13,6 @@ class LibeventHalyard < Formula
 
   conflicts_with "pincaster",
     :because => "both install `event_rpcgen.py` binaries"
-  conflicts_with "libevent", :because => "libevent-halyard replaces libevent"
 
   def install
     inreplace "Doxyfile", /GENERATE_MAN\s*=\s*NO/, "GENERATE_MAN = YES"

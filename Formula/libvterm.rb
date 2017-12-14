@@ -6,7 +6,6 @@ class LibvtermHalyard < Formula
 
   depends_on "libtool-halyard" => :build
 
-  conflicts_with "libvterm", :because => "libvterm-halyard replaces libvterm"
 
   def install
     system "make", "install", "PREFIX=#{prefix}"

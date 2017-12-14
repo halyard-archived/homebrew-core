@@ -9,7 +9,6 @@ class LibmpcHalyard < Formula
   depends_on "gmp-halyard"
   depends_on "mpfr-halyard"
 
-  conflicts_with "libmpc", :because => "libmpc-halyard replaces libmpc"
 
   def install
     args = %W[

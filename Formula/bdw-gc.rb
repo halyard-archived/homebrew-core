@@ -14,7 +14,6 @@ class BdwGcHalyard < Formula
   depends_on "pkg-config-halyard" => :build
   depends_on "libatomic_ops-halyard" => :build
 
-  conflicts_with "bdw-gc", :because => "bdw-gc-halyard replaces bdw-gc"
 
   def install
     system "./autogen.sh" if build.head?

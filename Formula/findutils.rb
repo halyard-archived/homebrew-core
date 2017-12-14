@@ -9,7 +9,6 @@ class FindutilsHalyard < Formula
 
   option "with-default-names", "Do not prepend 'g' to the binary"
 
-  conflicts_with 'findutils', :because => 'findutils-halyard replaces findutils'
 
   def install
     # Work around unremovable, nested dirs bug that affects lots of

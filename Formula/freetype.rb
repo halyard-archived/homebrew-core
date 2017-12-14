@@ -9,7 +9,6 @@ class FreetypeHalyard < Formula
 
   depends_on "libpng-halyard"
 
-  conflicts_with 'freetype', :because => 'freetype-halyard replaces freetype'
 
   def install
     if build.with? "subpixel"

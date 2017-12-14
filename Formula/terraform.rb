@@ -5,7 +5,6 @@ class TerraformHalyard < Formula
   url "https://releases.hashicorp.com/terraform/#{version}/terraform_#{version}_darwin_amd64.zip"
   sha256 "f5e04d3886e9a427490d1aa857a61b5a87d08dc26fb8637e3eaa72b30562c330"
 
-  conflicts_with "terraform", :because => "terraform-halyard replaces terraform"
 
   def install
     bin.install "terraform"

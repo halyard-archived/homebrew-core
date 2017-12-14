@@ -11,7 +11,6 @@ class GpgmeHalyard < Formula
   depends_on "libassuan-halyard"
   depends_on "pth-halyard"
 
-  conflicts_with "gpgme", :because => "gpgme-halyard replaces gpgme"
 
   def install
     # Fix incorrect shared library suffix in CMake file

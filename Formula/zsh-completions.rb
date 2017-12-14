@@ -6,7 +6,6 @@ class ZshCompletionsHalyard < Formula
 
   head "https://github.com/zsh-users/zsh-completions.git"
 
-  conflicts_with "zsh-completions", :because => "zsh-completions-halyard replaces zsh-completions"
 
   def install
     pkgshare.install Dir["src/_*"]

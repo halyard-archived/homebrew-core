@@ -9,7 +9,6 @@ class GtsHalyard < Formula
   depends_on "glib-halyard"
   depends_on "netpbm-halyard"
 
-  conflicts_with "gts", :because => "gts-halyard replaces gts"
 
   # Fix for newer netpbm.
   # This software hasn't been updated in seven years

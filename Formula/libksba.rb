@@ -7,7 +7,6 @@ class LibksbaHalyard < Formula
 
   depends_on "libgpg-error-halyard"
 
-  conflicts_with "libksba", :because => "libksba-halyard replaces libksba"
 
   def install
     system "./configure", "--disable-dependency-tracking",

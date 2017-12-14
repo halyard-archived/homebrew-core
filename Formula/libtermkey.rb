@@ -7,7 +7,6 @@ class LibtermkeyHalyard < Formula
   depends_on "pkg-config-halyard" => :build
   depends_on "libtool-halyard" => :build
 
-  conflicts_with "libtermkey", :because => "libtermkey-halyard replaces libtermkey"
 
   def install
     system "make", "PREFIX=#{prefix}"

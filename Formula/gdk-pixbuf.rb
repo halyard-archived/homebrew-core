@@ -14,7 +14,6 @@ class GdkPixbufHalyard < Formula
   depends_on "libpng-halyard"
   depends_on "gobject-introspection-halyard"
 
-  conflicts_with "gdk-pixbuf", :because => "gdk-pixbuf-halyard replaces gdk-pixbuf"
 
   # gdk-pixbuf has an internal version number separate from the overall
   # version number that specifies the location of its module and cache

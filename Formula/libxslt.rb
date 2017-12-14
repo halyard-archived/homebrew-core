@@ -20,7 +20,6 @@ class LibxsltHalyard < Formula
 
   depends_on "libxml2-halyard"
 
-  conflicts_with "libxslt", :because => "libxslt-halyard replaces libxslt"
 
   def install
     if build.head?

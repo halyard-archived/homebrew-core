@@ -12,7 +12,6 @@ class LibrsvgHalyard < Formula
   depends_on "pango-halyard"
   depends_on "gtk+-halyard" => :optional
 
-  conflicts_with "librsvg", :because => "librsvg-halyard replaces librsvg"
 
   def install
     args = %W[

@@ -23,7 +23,6 @@ class OcamlHalyard < Formula
 
   depends_on :x11 => :optional
 
-  conflicts_with "ocaml", :because => "ocaml-halyard replaces ocaml"
 
   def install
     ENV.deparallelize # Builds are not parallel-safe, esp. with many cores

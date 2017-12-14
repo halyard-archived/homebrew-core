@@ -7,7 +7,6 @@ class CabalInstallHalyard < Formula
 
   depends_on "ghc-halyard"
 
-  conflicts_with "cabal-install", :because => "cabal-install-halyard replaces cabal-install"
 
   def install
     cd "cabal-install" if build.head?

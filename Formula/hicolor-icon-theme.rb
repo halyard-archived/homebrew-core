@@ -10,7 +10,6 @@ class HicolorIconThemeHalyard < Formula
     depends_on "autoconf-halyard" => :build
   end
 
-  conflicts_with "hicolor-icon-theme", :because => "hicolor-icon-theme-halyard replaces hicolor-icon-theme"
 
   def install
     args = %W[--prefix=#{prefix} --disable-silent-rules]

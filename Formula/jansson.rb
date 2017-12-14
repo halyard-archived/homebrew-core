@@ -4,7 +4,6 @@ class JanssonHalyard < Formula
   url "http://www.digip.org/jansson/releases/jansson-2.10.tar.gz"
   sha256 "78215ad1e277b42681404c1d66870097a50eb084be9d771b1d15576575cf6447"
 
-  conflicts_with "jansson", :because => "jansson-halyard replaces jansson"
 
   def install
     system "./configure", "--disable-dependency-tracking",

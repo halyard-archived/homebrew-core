@@ -8,7 +8,6 @@ class GnuTarHalyard < Formula
 
   option "with-default-names", "Do not prepend 'g' to the binary"
 
-  conflicts_with 'gnu-tar', :because => 'gnu-tar-halyard replaces gnu-tar'
 
   # CVE-2016-6321
   # https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=842339

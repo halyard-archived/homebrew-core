@@ -5,7 +5,6 @@ class LibevHalyard < Formula
   mirror "https://fossies.org/linux/misc/libev-4.24.tar.gz"
   sha256 "973593d3479abdf657674a55afe5f78624b0e440614e2b8cb3a07f16d4d7f821"
 
-  conflicts_with "libev", :because => "libev-halyard replaces libev"
 
   def install
     system "./configure", "--disable-dependency-tracking",

@@ -13,7 +13,6 @@ class ShellcheckHalyard < Formula
   depends_on "cabal-install-halyard" => :build
   depends_on "pandoc-halyard" => :build
 
-  conflicts_with "shellcheck", :because => "shellcheck-halyard replaces shellcheck"
 
   def install
     install_cabal_package

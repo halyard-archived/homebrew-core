@@ -7,7 +7,6 @@ class LuajitHalyard < Formula
   option "with-debug", "Build with debugging symbols"
   option "with-52compat", "Build with additional Lua 5.2 compatibility"
 
-  conflicts_with "luajit", :because => "luajit-halyard replaces luajit"
 
   def install
     # 1 - Override the hardcoded gcc.

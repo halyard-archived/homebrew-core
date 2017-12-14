@@ -7,7 +7,6 @@ class NettleHalyard < Formula
 
   depends_on "gmp-halyard"
 
-  conflicts_with "nettle", :because => "nettle-halyard replaces nettle"
 
   def install
     # macOS doesn't use .so libs. Emailed upstream 04/02/2016.

@@ -12,7 +12,6 @@ class LibtiffHalyard < Formula
   depends_on "jpeg-halyard"
   depends_on "xz-halyard" => :optional
 
-  conflicts_with "libtiff", :because => "libtiff-halyard replaces libtiff"
 
   def install
     ENV.cxx11 if build.cxx11?

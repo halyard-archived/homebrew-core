@@ -36,7 +36,6 @@ class RustHalyard < Formula
   depends_on "libssh2-halyard"
 
   conflicts_with "cargo-completion", :because => "both install shell completion for cargo"
-  conflicts_with "rust", :because => "rust-halyard replaces rust"
 
   # According to the official readme, GCC 4.7+ is required
   fails_with :gcc_4_0

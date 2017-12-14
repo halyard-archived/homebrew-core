@@ -28,7 +28,6 @@ class Nghttp2Halyard < Formula
   depends_on "spdylay-halyard"
   depends_on "jemalloc-halyard" => :recommended
 
-  conflicts_with "nghttp2", :because => "nghttp2-halyard replaces nghttp2"
 
   resource "Cython" do
     url "https://files.pythonhosted.org/packages/98/bb/cd2be435e28ee1206151793a528028e3dc9a787fe525049efb73637f52bb/Cython-0.27.2.tar.gz"

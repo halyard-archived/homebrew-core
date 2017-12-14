@@ -9,7 +9,6 @@ class PygobjectHalyard < Formula
   depends_on "glib-halyard"
   depends_on "python-halyard"
 
-  conflicts_with "pygobject", :because => "pygobject-halyard replaces pygobject"
 
   def install
     system "./configure", "--disable-dependency-tracking",

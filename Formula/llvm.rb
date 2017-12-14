@@ -150,7 +150,6 @@ class LlvmHalyard < Formula
     depends_on CodesignRequirement
   end
 
-  conflicts_with "llvm", :because => "llvm-halyard replaces llvm"
 
   # According to the official llvm readme, GCC 4.7+ is required
   fails_with :gcc_4_0

@@ -13,7 +13,6 @@ class LibpngHalyard < Formula
     depends_on "libtool-halyard" => :build
   end
 
-  conflicts_with 'libpng', :because => 'libpng-halyard replaces libpng'
 
   def install
     system "./configure", "--disable-dependency-tracking",

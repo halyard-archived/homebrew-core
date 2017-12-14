@@ -14,7 +14,6 @@ class OpenscHalyard < Formula
   depends_on "docbook-xsl-halyard" => :build if build.with? "man-pages"
   depends_on "openssl-halyard"
 
-  conflicts_with "opensc", :because => "opensc-halyard replaces opensc"
 
   def install
     args = %W[

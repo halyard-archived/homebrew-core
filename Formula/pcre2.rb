@@ -6,7 +6,6 @@ class Pcre2Halyard < Formula
 
   head "svn://vcs.exim.org/pcre2/code/trunk"
 
-  conflicts_with 'pcre2', :because => 'pcre2-halyard replaces pcre2'
 
   def install
     system "./configure", "--disable-dependency-tracking",

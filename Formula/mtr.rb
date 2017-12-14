@@ -11,7 +11,6 @@ class MtrHalyard < Formula
   depends_on "gtk+-halyard" => :optional
   depends_on "glib-halyard" => :optional
 
-  conflicts_with "mtr", :because => "mtr-halyard replaces mtr"
 
   def install
     # We need to add this because nameserver8_compat.h has been removed in Snow Leopard

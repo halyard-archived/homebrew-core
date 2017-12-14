@@ -11,7 +11,6 @@ class JemallocHalyard < Formula
     depends_on "docbook-xsl-halyard" => :build
   end
 
-  conflicts_with "jemalloc", :because => "jemalloc-halyard replaces jemalloc"
 
   def install
     args = %W[

@@ -8,7 +8,6 @@ class IpmitoolHalyard < Formula
 
   depends_on "openssl-halyard"
 
-  conflicts_with "ipmitool", :because => "ipmitool-halyard replaces ipmitool"
 
   # https://sourceforge.net/p/ipmitool/bugs/433/#89ea and
   # https://sourceforge.net/p/ipmitool/bugs/436/ (prematurely closed):

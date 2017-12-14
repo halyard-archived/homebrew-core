@@ -5,7 +5,6 @@ class Libtasn1Halyard < Formula
   mirror "https://ftpmirror.gnu.org/libtasn1/libtasn1-4.12.tar.gz"
   sha256 "6753da2e621257f33f5b051cc114d417e5206a0818fe0b1ecfd6153f70934753"
 
-  conflicts_with "libtasn1", :because => "libtasn1-halyard replaces libtasn1"
 
   def install
     system "./configure", "--prefix=#{prefix}", "--disable-dependency-tracking",

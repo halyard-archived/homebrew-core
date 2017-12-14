@@ -19,7 +19,6 @@ class HarfbuzzHalyard < Formula
     sha256 "9535d35dab9e002963eef56757c46881f6b3d3b27db24eefcc80929781856c77"
   end
 
-  conflicts_with "harfbuzz", :because => "harfbuzz-halyard replaces harfbuzz"
 
   def install
     args = %W[

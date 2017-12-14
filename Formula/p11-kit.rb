@@ -16,7 +16,6 @@ class P11KitHalyard < Formula
   depends_on "libffi-halyard"
   depends_on "pkg-config-halyard" => :build
 
-  conflicts_with "p11-kit", :because => "p11-kit-halyard replaces p11-kit"
 
   def install
     # https://bugs.freedesktop.org/show_bug.cgi?id=91602#c1

@@ -9,7 +9,6 @@ class NcursesHalyard < Formula
 
   depends_on "pkg-config-halyard" => :build
 
-  conflicts_with 'ncurses', :because => 'ncurses-halyard replaces ncurses'
 
   def install
     # Fix the build for GCC 5.1

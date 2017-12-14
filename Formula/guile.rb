@@ -20,7 +20,6 @@ class GuileHalyard < Formula
   depends_on "gmp-halyard"
   depends_on "readline-halyard"
 
-  conflicts_with "guile", :because => "guile-halyard replaces guile"
 
   fails_with :clang do
     build 211

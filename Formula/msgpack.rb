@@ -7,7 +7,6 @@ class MsgpackHalyard < Formula
 
   depends_on "cmake-halyard" => :build
 
-  conflicts_with "msgpack", :because => "msgpack-halyard replaces msgpack"
 
   def install
     system "cmake", ".", *std_cmake_args

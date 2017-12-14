@@ -18,7 +18,6 @@ class GtkxHalyard < Formula
   depends_on "gobject-introspection-halyard"
   depends_on "hicolor-icon-theme-halyard"
 
-  conflicts_with "gtk+", :because => "gtk+-halyard replaces gtk+"
 
   def install
     args = ["--disable-dependency-tracking",

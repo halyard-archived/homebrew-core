@@ -9,7 +9,6 @@ class PinentryHalyard < Formula
   depends_on "libassuan-halyard"
   depends_on "gtk+-halyard" => :optional
 
-  conflicts_with "pinentry", :because => "pinentry-halyard replaces pinentry"
 
   def install
     args = %W[

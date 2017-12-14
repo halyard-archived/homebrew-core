@@ -24,7 +24,6 @@ class WatchHalyard < Formula
   depends_on "gettext-halyard"
 
   conflicts_with "visionmedia-watch"
-  conflicts_with "watch", :because => "watch-halyard replaces watch"
 
   def install
     # Prevents undefined symbol errors for _libintl_gettext, etc.

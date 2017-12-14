@@ -21,7 +21,6 @@ class LedgerHalyard < Formula
 
   needs :cxx11
 
-  conflicts_with "ledger", :because => "ledger-halyard replaces ledger"
 
   def install
     ENV.cxx11

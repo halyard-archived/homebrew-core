@@ -7,7 +7,6 @@ class MpfrHalyard < Formula
 
   depends_on "gmp-halyard"
 
-  conflicts_with "mpfr", :because => "mpfr-halyard replaces mpfr"
 
   fails_with :clang do
     build 421

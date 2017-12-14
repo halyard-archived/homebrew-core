@@ -20,7 +20,6 @@ class PangoHalyard < Formula
   depends_on "gobject-introspection-halyard"
   depends_on "harfbuzz-halyard"
 
-  conflicts_with "pango", :because => "pango-halyard replaces pango"
 
   def install
     system "./autogen.sh" if build.head?

@@ -15,7 +15,6 @@ class GlibHalyard < Formula
   depends_on "libffi-halyard"
   depends_on "pcre-halyard"
 
-  conflicts_with "glib", :because => "glib-halyard replaces glib"
 
   # https://bugzilla.gnome.org/show_bug.cgi?id=673135 Resolved as wontfix,
   # but needed to fix an assumption about the location of the d-bus machine

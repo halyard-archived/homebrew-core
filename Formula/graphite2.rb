@@ -7,7 +7,6 @@ class Graphite2Halyard < Formula
 
   depends_on "cmake-halyard" => :build
 
-  conflicts_with "graphite2", :because => "graphite2-halyard replaces graphite2"
 
   resource "testfont" do
     url "https://scripts.sil.org/pub/woff/fonts/Simple-Graphite-Font.ttf"

@@ -7,7 +7,6 @@ class IslHalyard < Formula
 
   depends_on "gmp-halyard"
 
-  conflicts_with "isl", :because => "isl-halyard replaces isl"
 
   def install
     system "./configure", "--disable-dependency-tracking",

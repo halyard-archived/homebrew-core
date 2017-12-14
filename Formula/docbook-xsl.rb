@@ -6,7 +6,6 @@ class DocbookXslHalyard < Formula
 
   depends_on "docbook-halyard"
 
-  conflicts_with "docbook-xsl", :because => "docbook-xsl-halyard replaces docbook-xsl"
 
   resource "ns" do
     url "https://downloads.sourceforge.net/project/docbook/docbook-xsl-ns/1.79.1/docbook-xsl-ns-1.79.1.tar.bz2"

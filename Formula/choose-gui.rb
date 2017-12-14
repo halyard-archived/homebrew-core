@@ -8,7 +8,6 @@ class ChooseGuiHalyard < Formula
   depends_on :xcode => :build
 
   conflicts_with "choose", :because => "both install a `choose` binary"
-  conflicts_with "choose-gui", :because => "choose-gui-halyard replaces choose-gui"
 
   def install
     xcodebuild "SDKROOT=", "SYMROOT=build"
