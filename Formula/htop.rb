@@ -1,4 +1,4 @@
-class HtopHalyard < Formula
+class Htop < Formula
   desc "Improved top (interactive process viewer)"
   homepage "https://hisham.hm/htop/"
   url "https://hisham.hm/htop/releases/2.0.2/htop-2.0.2.tar.gz"

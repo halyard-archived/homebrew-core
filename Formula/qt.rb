@@ -1,6 +1,6 @@
 # Patches for Qt must be at the very least submitted to Qt's Gerrit codereview
 # rather than their bug-report Jira. The latter is rarely reviewed by Qt.
-class QtHalyard < Formula
+class Qt < Formula
   desc "Cross-platform application and UI framework"
   homepage "https://www.qt.io/"
   version "5.10.0"

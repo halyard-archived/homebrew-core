@@ -1,6 +1,6 @@
 require "language/haskell"
 
-class PandocHalyard < Formula
+class Pandoc < Formula
   include Language::Haskell::Cabal
 
   desc "Swiss-army knife of markup format conversion"

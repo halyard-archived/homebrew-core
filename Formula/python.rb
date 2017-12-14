@@ -1,4 +1,4 @@
-class PythonHalyard < Formula
+class Python < Formula
   desc "Interpreted, interactive, object-oriented programming language"
   homepage "https://www.python.org/"
   url "https://www.python.org/ftp/python/2.7.14/Python-2.7.14.tar.xz"

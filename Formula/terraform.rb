@@ -1,4 +1,4 @@
-class TerraformHalyard < Formula
+class Terraform < Formula
   desc "Tool to build, change, and version infrastructure"
   homepage "https://www.terraform.io/"
   version "0.11.1"

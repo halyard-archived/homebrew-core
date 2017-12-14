@@ -1,4 +1,4 @@
-class UnboundHalyard < Formula
+class Unbound < Formula
   desc "Validating, recursive, caching DNS resolver"
   homepage "https://www.unbound.net"
   url "https://www.unbound.net/downloads/unbound-1.6.7.tar.gz"

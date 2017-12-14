@@ -1,4 +1,4 @@
-class NetpbmHalyard < Formula
+class Netpbm < Formula
   desc "Image manipulation"
   homepage "https://netpbm.sourceforge.io/"
   url "https://svn.code.sf.net/p/netpbm/code/stable", :revision => 3094

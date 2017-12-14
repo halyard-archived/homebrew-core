@@ -1,4 +1,4 @@
-class WatchHalyard < Formula
+class Watch < Formula
   desc "Executes a program periodically, showing output fullscreen"
   homepage "https://gitlab.com/procps-ng/procps"
   head "https://gitlab.com/procps-ng/procps.git"

@@ -1,4 +1,4 @@
-class SparkeyHalyard < Formula
+class Sparkey < Formula
   desc "Storage library"
   homepage "https://github.com/spotify/sparkey"
 

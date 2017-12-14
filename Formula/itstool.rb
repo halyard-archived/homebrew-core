@@ -1,4 +1,4 @@
-class ItstoolHalyard < Formula
+class Itstool < Formula
   desc "Make XML documents translatable through PO files"
   homepage "http://itstool.org/"
   revision 1

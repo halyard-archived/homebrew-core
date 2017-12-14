@@ -1,4 +1,4 @@
-class LibassuanHalyard < Formula
+class Libassuan < Formula
   desc "Assuan IPC Library"
   homepage "https://www.gnupg.org/related_software/libassuan/"
   url "https://gnupg.org/ftp/gcrypt/libassuan/libassuan-2.5.1.tar.bz2"

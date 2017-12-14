@@ -1,4 +1,4 @@
-class LibgcryptHalyard < Formula
+class Libgcrypt < Formula
   desc "Cryptographic library based on the code from GnuPG"
   homepage "https://directory.fsf.org/wiki/Libgcrypt"
   url "https://gnupg.org/ftp/gcrypt/libgcrypt/libgcrypt-1.8.2.tar.bz2"

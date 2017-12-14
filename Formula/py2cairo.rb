@@ -1,4 +1,4 @@
-class Py2cairoHalyard < Formula
+class Py2cairo < Formula
   desc "Python 2 bindings for the Cairo graphics library"
   homepage "https://cairographics.org/pycairo/"
   url "https://github.com/pygobject/pycairo/releases/download/v1.15.4/pycairo-1.15.4.tar.gz"

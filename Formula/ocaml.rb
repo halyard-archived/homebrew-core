@@ -11,7 +11,7 @@
 # - coq
 # - coccinelle
 # - unison
-class OcamlHalyard < Formula
+class Ocaml < Formula
   desc "General purpose programming language in the ML family"
   homepage "https://ocaml.org/"
   url "https://caml.inria.fr/pub/distrib/ocaml-4.06/ocaml-4.06.0.tar.xz"

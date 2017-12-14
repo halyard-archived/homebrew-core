@@ -1,4 +1,4 @@
-class SphinxDocHalyard < Formula
+class SphinxDoc < Formula
   desc "Tool to create intelligent and beautiful documentation"
   homepage "http://sphinx-doc.org"
   url "https://files.pythonhosted.org/packages/8b/7e/b188d9a3b9c938e736e02a74c1363c2888e095d770df2c72b4c312f9fdcb/Sphinx-1.6.5.tar.gz"

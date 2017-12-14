@@ -1,4 +1,4 @@
-class LibeventHalyard < Formula
+class Libevent < Formula
   desc "Asynchronous event library"
   homepage "http://libevent.org"
   url "https://github.com/libevent/libevent/archive/release-2.1.8-stable.tar.gz"

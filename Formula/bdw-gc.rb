@@ -1,4 +1,4 @@
-class BdwGcHalyard < Formula
+class BdwGc < Formula
   desc "Garbage collector for C and C++"
   homepage "http://www.hboehm.info/gc/"
   url "http://www.hboehm.info/gc/gc_source/gc-7.6.0.tar.gz"

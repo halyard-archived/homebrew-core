@@ -1,4 +1,4 @@
-class RcloneHalyard < Formula
+class Rclone < Formula
   desc "File syncing tool"
   homepage "http://rclone.org"
   version "1.38"

@@ -1,4 +1,4 @@
-class VoyagerHalyard < Formula
+class Voyager < Formula
   desc "Helper for connecting to AWS accounts"
   homepage "https://github.com/akerl/voyager"
 

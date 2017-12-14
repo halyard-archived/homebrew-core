@@ -1,4 +1,4 @@
-class MadlibrarianHalyard < Formula
+class Madlibrarian < Formula
   desc "Generate quotes from template files"
   homepage "https://github.com/akerl/madlibrarian"
 

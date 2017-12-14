@@ -1,4 +1,4 @@
-class GrepHalyard < Formula
+class Grep < Formula
   desc "GNU grep, egrep and fgrep"
   homepage "https://www.gnu.org/software/grep/"
   url "https://ftp.gnu.org/gnu/grep/grep-3.1.tar.xz"

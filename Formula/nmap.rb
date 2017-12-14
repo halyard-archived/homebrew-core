@@ -1,4 +1,4 @@
-class NmapHalyard < Formula
+class Nmap < Formula
   desc "Port scanning utility for large networks"
   homepage "https://nmap.org/"
   url "https://nmap.org/dist/nmap-7.60.tar.bz2"

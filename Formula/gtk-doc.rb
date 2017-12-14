@@ -1,4 +1,4 @@
-class GtkDocHalyard < Formula
+class GtkDoc < Formula
   desc "GTK+ documentation tool"
   homepage "https://www.gtk.org/gtk-doc/"
   url "https://download.gnome.org/sources/gtk-doc/1.27/gtk-doc-1.27.tar.xz"

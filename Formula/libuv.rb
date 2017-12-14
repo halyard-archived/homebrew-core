@@ -1,4 +1,4 @@
-class LibuvHalyard < Formula
+class Libuv < Formula
   desc "Multi-platform support library with a focus on asynchronous I/O"
   homepage "https://github.com/libuv/libuv"
   url "https://github.com/libuv/libuv/archive/v1.18.0.tar.gz"

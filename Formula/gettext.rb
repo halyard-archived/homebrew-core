@@ -1,4 +1,4 @@
-class GettextHalyard < Formula
+class Gettext < Formula
   desc "GNU internationalization (i18n) and localization (l10n) library"
   homepage "https://www.gnu.org/software/gettext/"
   url "https://ftp.gnu.org/gnu/gettext/gettext-0.19.8.1.tar.xz"

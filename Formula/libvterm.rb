@@ -1,4 +1,4 @@
-class LibvtermHalyard < Formula
+class Libvterm < Formula
   desc "C99 library which implements a VT220 or xterm terminal emulator"
   homepage "http://www.leonerd.org.uk/code/libvterm/"
   url "http://www.leonerd.org.uk/code/libvterm/libvterm-0+bzr681.tar.gz"

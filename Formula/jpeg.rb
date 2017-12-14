@@ -1,4 +1,4 @@
-class JpegHalyard < Formula
+class Jpeg < Formula
   desc "Image manipulation library"
   homepage "http://www.ijg.org"
   url "http://www.ijg.org/files/jpegsrc.v9b.tar.gz"

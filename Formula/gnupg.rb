@@ -1,4 +1,4 @@
-class GnupgHalyard < Formula
+class Gnupg < Formula
   desc "GNU Privacy Guard: a free PGP replacement"
   homepage "https://www.gnupg.org/"
   url "https://gnupg.org/ftp/gcrypt/gnupg/gnupg-2.2.3.tar.bz2"

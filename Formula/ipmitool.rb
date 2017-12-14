@@ -1,4 +1,4 @@
-class IpmitoolHalyard < Formula
+class Ipmitool < Formula
   desc "Utility for IPMI control with kernel driver or LAN interface"
   homepage "https://ipmitool.sourceforge.io/"
   url "https://downloads.sourceforge.net/project/ipmitool/ipmitool/1.8.18/ipmitool-1.8.18.tar.bz2"

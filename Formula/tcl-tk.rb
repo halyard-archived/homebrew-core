@@ -1,4 +1,4 @@
-class TclTkHalyard < Formula
+class TclTk < Formula
   desc "Tool Command Language"
   homepage "https://www.tcl.tk/"
 

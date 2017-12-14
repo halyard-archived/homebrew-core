@@ -1,4 +1,4 @@
-class MpfrHalyard < Formula
+class Mpfr < Formula
   desc "C library for multiple-precision floating-point computations"
   homepage "http://www.mpfr.org/"
   url "https://ftp.gnu.org/gnu/mpfr/mpfr-3.1.6.tar.xz"

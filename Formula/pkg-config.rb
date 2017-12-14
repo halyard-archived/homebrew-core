@@ -1,4 +1,4 @@
-class PkgConfigHalyard < Formula
+class PkgConfig < Formula
   desc "Manage compile and link flags for libraries"
   homepage "https://freedesktop.org/wiki/Software/pkg-config/"
   url "https://pkgconfig.freedesktop.org/releases/pkg-config-0.29.2.tar.gz"

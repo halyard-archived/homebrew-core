@@ -1,4 +1,4 @@
-class LibtermkeyHalyard < Formula
+class Libtermkey < Formula
   desc "Library for processing keyboard entry from the terminal"
   homepage "http://www.leonerd.org.uk/code/libtermkey/"
   url "http://www.leonerd.org.uk/code/libtermkey/libtermkey-0.20.tar.gz"

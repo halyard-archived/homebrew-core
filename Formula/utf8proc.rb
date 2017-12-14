@@ -1,4 +1,4 @@
-class Utf8procHalyard < Formula
+class Utf8proc < Formula
   desc "Clean C library for processing UTF-8 Unicode data"
   homepage "https://julialang.org/utf8proc/"
   url "https://github.com/JuliaLang/utf8proc/archive/v2.1.0.tar.gz"

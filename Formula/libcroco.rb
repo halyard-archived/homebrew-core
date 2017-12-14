@@ -1,4 +1,4 @@
-class LibcrocoHalyard < Formula
+class Libcroco < Formula
   desc "CSS parsing and manipulation toolkit for GNOME"
   homepage "http://www.linuxfromscratch.org/blfs/view/svn/general/libcroco.html"
   url "https://download.gnome.org/sources/libcroco/0.6/libcroco-0.6.12.tar.xz"

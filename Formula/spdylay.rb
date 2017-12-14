@@ -1,4 +1,4 @@
-class SpdylayHalyard < Formula
+class Spdylay < Formula
   desc "Experimental implementation of SPDY protocol versions 2, 3, and 3.1"
   homepage "https://github.com/tatsuhiro-t/spdylay"
   url "https://github.com/tatsuhiro-t/spdylay/archive/v1.4.0.tar.gz"

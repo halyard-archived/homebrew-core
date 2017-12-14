@@ -1,4 +1,4 @@
-class LibusbHalyard < Formula
+class Libusb < Formula
   desc "Library for USB device access"
   homepage "http://libusb.info"
   url "https://github.com/libusb/libusb/releases/download/v1.0.21/libusb-1.0.21.tar.bz2"

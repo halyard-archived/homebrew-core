@@ -1,4 +1,4 @@
-class OpensshHalyard < Formula
+class Openssh < Formula
   desc "SSH client and server"
   homepage "http://www.openssh.com/"
   version "7.6p1"

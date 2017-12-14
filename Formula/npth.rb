@@ -1,4 +1,4 @@
-class NpthHalyard < Formula
+class Npth < Formula
   desc "New GNU portable threads library"
   homepage "https://gnupg.org/"
   url "https://gnupg.org/ftp/gcrypt/npth/npth-1.5.tar.bz2"

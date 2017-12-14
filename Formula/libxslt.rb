@@ -1,4 +1,4 @@
-class LibxsltHalyard < Formula
+class Libxslt < Formula
   desc "C XSLT library for GNOME"
   homepage "http://xmlsoft.org/XSLT/"
   url "http://xmlsoft.org/sources/libxslt-1.1.32.tar.gz"

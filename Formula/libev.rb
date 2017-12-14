@@ -1,4 +1,4 @@
-class LibevHalyard < Formula
+class Libev < Formula
   desc "Asynchronous event library"
   homepage "http://software.schmorp.de/pkg/libev.html"
   url "http://dist.schmorp.de/libev/Attic/libev-4.24.tar.gz"

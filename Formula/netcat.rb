@@ -1,4 +1,4 @@
-class NetcatHalyard < Formula
+class Netcat < Formula
   desc "Utility for managing network connections"
   homepage "https://netcat.sourceforge.io/"
   url "https://downloads.sourceforge.net/project/netcat/netcat/0.7.1/netcat-0.7.1.tar.bz2"

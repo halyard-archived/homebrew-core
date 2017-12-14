@@ -1,4 +1,4 @@
-class GobjectIntrospectionHalyard < Formula
+class GobjectIntrospection < Formula
   desc "Generate introspection data for GObject libraries"
   homepage "https://live.gnome.org/GObjectIntrospection"
   url "https://download.gnome.org/sources/gobject-introspection/1.54/gobject-introspection-1.54.1.tar.xz"

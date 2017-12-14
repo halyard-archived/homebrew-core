@@ -1,4 +1,4 @@
-class CoreutilsHalyard < Formula
+class Coreutils < Formula
   desc "GNU File, Shell, and Text utilities"
   homepage "https://www.gnu.org/software/coreutils"
   url "https://ftp.gnu.org/gnu/coreutils/coreutils-8.28.tar.xz"

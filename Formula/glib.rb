@@ -1,4 +1,4 @@
-class GlibHalyard < Formula
+class Glib < Formula
   desc "Core application library for C"
   homepage "https://developer.gnome.org/glib/"
   url "https://download.gnome.org/sources/glib/2.54/glib-2.54.2.tar.xz"

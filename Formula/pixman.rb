@@ -1,4 +1,4 @@
-class PixmanHalyard < Formula
+class Pixman < Formula
   desc "Low-level library for pixel manipulation"
   homepage "https://cairographics.org/"
   url "https://cairographics.org/releases/pixman-0.34.0.tar.gz"

@@ -1,4 +1,4 @@
-class GuileHalyard < Formula
+class Guile < Formula
   desc "GNU Ubiquitous Intelligent Language for Extensions"
   homepage "https://www.gnu.org/software/guile/"
   url "https://ftp.gnu.org/gnu/guile/guile-2.2.3.tar.xz"

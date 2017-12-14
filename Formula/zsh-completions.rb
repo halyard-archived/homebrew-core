@@ -1,4 +1,4 @@
-class ZshCompletionsHalyard < Formula
+class ZshCompletions < Formula
   desc "Additional completion definitions for zsh"
   homepage "https://github.com/zsh-users/zsh-completions"
   url "https://github.com/zsh-users/zsh-completions/archive/0.27.0.tar.gz"

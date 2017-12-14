@@ -1,4 +1,4 @@
-class BindHalyard < Formula
+class Bind < Formula
   desc "Implementation of the DNS protocols"
   homepage "https://www.isc.org/downloads/bind/"
   url "https://ftp.isc.org/isc/bind9/9.11.2/bind-9.11.2.tar.gz"

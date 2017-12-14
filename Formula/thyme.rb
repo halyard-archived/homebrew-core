@@ -1,4 +1,4 @@
-class ThymeHalyard < Formula
+class Thyme < Formula
   desc "Automatically track which applications you use and for how long"
   homepage "https://github.com/sourcegraph/thyme"
 

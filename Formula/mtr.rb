@@ -1,4 +1,4 @@
-class MtrHalyard < Formula
+class Mtr < Formula
   desc "'traceroute' and 'ping' in a single tool"
   homepage "https://www.bitwizard.nl/mtr/"
   url "https://github.com/traviscross/mtr/archive/v0.92.tar.gz"

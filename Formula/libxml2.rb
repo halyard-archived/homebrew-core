@@ -1,4 +1,4 @@
-class Libxml2Halyard < Formula
+class Libxml2 < Formula
   desc "GNOME XML library"
   homepage "http://xmlsoft.org"
   url "http://xmlsoft.org/sources/libxml2-2.9.7.tar.gz"

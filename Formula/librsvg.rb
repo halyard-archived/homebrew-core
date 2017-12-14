@@ -1,4 +1,4 @@
-class LibrsvgHalyard < Formula
+class Librsvg < Formula
   desc "Library to render SVG files using Cairo"
   homepage "https://live.gnome.org/LibRsvg"
   url "https://download.gnome.org/sources/librsvg/2.40/librsvg-2.40.19.tar.xz"

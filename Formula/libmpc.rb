@@ -1,4 +1,4 @@
-class LibmpcHalyard < Formula
+class Libmpc < Formula
   desc "C library for the arithmetic of high precision complex numbers"
   homepage "http://multiprecision.org"
   url "https://ftp.gnu.org/gnu/mpc/mpc-1.0.3.tar.gz"

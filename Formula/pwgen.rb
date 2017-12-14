@@ -1,4 +1,4 @@
-class PwgenHalyard < Formula
+class Pwgen < Formula
   desc "Password generator"
   homepage "https://pwgen.sourceforge.io/"
   url "https://downloads.sourceforge.net/project/pwgen/pwgen/2.08/pwgen-2.08.tar.gz"

@@ -1,4 +1,4 @@
-class GraphvizHalyard < Formula
+class Graphviz < Formula
   desc "Graph visualization software from AT&T and Bell Labs"
   homepage "https://graphviz.org/"
   url "https://graphviz.org/pub/graphviz/stable/SOURCES/graphviz-2.40.1.tar.gz"

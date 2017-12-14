@@ -1,4 +1,4 @@
-class PickHalyard < Formula
+class Pick < Formula
   desc "Command line arg picker"
   homepage "https://github.com/thoughtbot/pick"
   version = "2.0.0"

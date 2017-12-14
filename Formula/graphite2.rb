@@ -1,4 +1,4 @@
-class Graphite2Halyard < Formula
+class Graphite2 < Formula
   desc "Smart font renderer for non-Roman scripts"
   homepage "http://graphite.sil.org"
   url "https://github.com/silnrsi/graphite/releases/download/1.3.10/graphite2-1.3.10.tgz"

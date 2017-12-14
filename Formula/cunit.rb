@@ -1,4 +1,4 @@
-class CunitHalyard < Formula
+class Cunit < Formula
   desc "Lightweight unit testing framework for C"
   homepage "https://cunit.sourceforge.io/"
   url "https://downloads.sourceforge.net/project/cunit/CUnit/2.1-3/CUnit-2.1-3.tar.bz2"

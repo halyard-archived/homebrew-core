@@ -1,4 +1,4 @@
-class BoostHalyard < Formula
+class Boost < Formula
   desc "Collection of portable C++ source libraries"
   homepage "https://www.boost.org/"
   url "https://dl.bintray.com/boostorg/release/1.65.1/source/boost_1_65_1.tar.bz2"

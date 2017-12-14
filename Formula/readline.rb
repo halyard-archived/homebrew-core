@@ -1,4 +1,4 @@
-class ReadlineHalyard < Formula
+class Readline < Formula
   desc "Library for command-line editing"
   homepage "https://tiswww.case.edu/php/chet/readline/rltop.html"
   url "https://ftp.gnu.org/gnu/readline/readline-7.0.tar.gz"

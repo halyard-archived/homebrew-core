@@ -1,4 +1,4 @@
-class PinentryHalyard < Formula
+class Pinentry < Formula
   desc "Passphrase entry dialog utilizing the Assuan protocol"
   homepage "https://www.gnupg.org/related_software/pinentry/"
   url "https://www.gnupg.org/ftp/gcrypt/pinentry/pinentry-1.1.0.tar.bz2"

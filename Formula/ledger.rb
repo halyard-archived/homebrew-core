@@ -1,4 +1,4 @@
-class LedgerHalyard < Formula
+class Ledger < Formula
   desc "Command-line, double-entry accounting tool"
   homepage "http://ledger-cli.org"
   url "https://github.com/ledger/ledger/archive/v3.1.1.tar.gz"

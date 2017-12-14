@@ -1,4 +1,4 @@
-class AtkHalyard < Formula
+class Atk < Formula
   desc "GNOME accessibility toolkit"
   homepage "https://library.gnome.org/devel/atk/"
   url "https://download.gnome.org/sources/atk/2.26/atk-2.26.1.tar.xz"

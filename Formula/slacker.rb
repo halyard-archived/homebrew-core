@@ -1,4 +1,4 @@
-class SlackerHalyard < Formula
+class Slacker < Formula
   desc "MAC to EUI64 converter"
   homepage "https://github.com/akerl/slacker"
 

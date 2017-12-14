@@ -1,4 +1,4 @@
-class FindutilsHalyard < Formula
+class Findutils < Formula
   desc "Collection of GNU find, xargs, and locate"
   homepage "https://www.gnu.org/software/findutils/"
   url "https://ftp.gnu.org/gnu/findutils/findutils-4.6.0.tar.gz"

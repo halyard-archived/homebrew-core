@@ -1,4 +1,4 @@
-class LibgpgErrorHalyard < Formula
+class LibgpgError < Formula
   desc "Common error values for all GnuPG components"
   homepage "https://www.gnupg.org/related_software/libgpg-error/"
   url "https://gnupg.org/ftp/gcrypt/libgpg-error/libgpg-error-1.27.tar.bz2"

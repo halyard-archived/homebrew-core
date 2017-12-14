@@ -1,4 +1,4 @@
-class SourceHighlightHalyard < Formula
+class SourceHighlight < Formula
   desc "Source-code syntax highlighter"
   homepage "https://www.gnu.org/software/src-highlite/"
   url "https://ftp.gnu.org/gnu/src-highlite/source-highlight-3.1.8.tar.gz"

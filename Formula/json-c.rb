@@ -1,4 +1,4 @@
-class JsonCHalyard < Formula
+class JsonC < Formula
   desc "JSON parser for C"
   homepage "https://github.com/json-c/json-c/wiki"
   url "https://github.com/json-c/json-c/archive/json-c-0.13-20171207.tar.gz"

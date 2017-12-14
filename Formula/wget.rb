@@ -1,4 +1,4 @@
-class WgetHalyard < Formula
+class Wget < Formula
   desc "Internet file retriever"
   homepage "https://www.gnu.org/software/wget/"
   url "https://ftp.gnu.org/gnu/wget/wget-1.19.2.tar.gz"

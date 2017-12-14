@@ -1,4 +1,4 @@
-class JasperHalyard < Formula
+class Jasper < Formula
   desc "Library for manipulating JPEG-2000 images"
   homepage "https://www.ece.uvic.ca/~frodo/jasper/"
   url "https://github.com/mdadams/jasper/archive/version-2.0.14.tar.gz"

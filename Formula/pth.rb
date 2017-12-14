@@ -1,4 +1,4 @@
-class PthHalyard < Formula
+class Pth < Formula
   desc "GNU Portable THreads"
   homepage "https://www.gnu.org/software/pth/"
   url "https://ftp.gnu.org/gnu/pth/pth-2.0.7.tar.gz"

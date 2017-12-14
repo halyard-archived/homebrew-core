@@ -1,4 +1,4 @@
-class LibffiHalyard < Formula
+class Libffi < Formula
   desc "Portable Foreign Function Interface library"
   homepage "https://sourceware.org/libffi/"
   url "https://sourceware.org/pub/libffi/libffi-3.2.1.tar.gz"

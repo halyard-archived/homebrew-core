@@ -1,4 +1,4 @@
-class JemallocHalyard < Formula
+class Jemalloc < Formula
   desc "malloc implementation emphasizing fragmentation avoidance"
   homepage "http://jemalloc.net/"
   url "https://github.com/jemalloc/jemalloc/releases/download/5.0.1/jemalloc-5.0.1.tar.bz2"

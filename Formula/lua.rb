@@ -1,4 +1,4 @@
-class LuaHalyard < Formula
+class Lua < Formula
   desc "Powerful, lightweight programming language"
   homepage "https://www.lua.org/"
   url "https://www.lua.org/ftp/lua-5.3.4.tar.gz"

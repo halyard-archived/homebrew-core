@@ -1,4 +1,4 @@
-class LibtiffHalyard < Formula
+class Libtiff < Formula
   desc "TIFF library and utilities"
   homepage "http://libtiff.maptools.org/"
   url "http://download.osgeo.org/libtiff/tiff-4.0.9.tar.gz"

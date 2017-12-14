@@ -1,4 +1,4 @@
-class FreetypeHalyard < Formula
+class Freetype < Formula
   desc "Software library to render fonts"
   homepage "https://www.freetype.org/"
   url "https://downloads.sourceforge.net/project/freetype/freetype2/2.8.1/freetype-2.8.1.tar.bz2"

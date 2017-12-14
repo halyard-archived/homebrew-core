@@ -1,4 +1,4 @@
-class NettleHalyard < Formula
+class Nettle < Formula
   desc "Low-level cryptographic library"
   homepage "https://www.lysator.liu.se/~nisse/nettle/"
   url "https://ftp.gnu.org/gnu/nettle/nettle-3.4.tar.gz"

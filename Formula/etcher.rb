@@ -1,4 +1,4 @@
-class EtcherHalyard < Formula
+class Etcher < Formula
   desc "Etcher"
   homepage "https://etcher.io/cli/"
   version "1.2.1"

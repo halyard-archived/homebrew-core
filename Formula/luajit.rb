@@ -1,4 +1,4 @@
-class LuajitHalyard < Formula
+class Luajit < Formula
   desc "Just-In-Time Compiler (JIT) for the Lua programming language"
   homepage "https://luajit.org/luajit.html"
   url "https://luajit.org/download/LuaJIT-2.0.5.tar.gz"

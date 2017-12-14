@@ -1,4 +1,4 @@
-class DocbookHalyard < Formula
+class Docbook < Formula
   desc "Standard SGML representation system for technical documents"
   homepage "https://docbook.sourceforge.io/"
   url "http://www.docbook.org/xml/5.0/docbook-5.0.zip"

@@ -1,4 +1,4 @@
-class PygobjectHalyard < Formula
+class Pygobject < Formula
   desc "GLib/GObject/GIO Python bindings for Python 2"
   homepage "https://live.gnome.org/PyGObject"
   url "https://download.gnome.org/sources/pygobject/3.26/pygobject-3.26.1.tar.xz"

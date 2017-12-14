@@ -1,4 +1,4 @@
-class AdnsHalyard < Formula
+class Adns < Formula
   desc "C/C++ resolver library and DNS resolver utilities"
   homepage "https://www.chiark.greenend.org.uk/~ian/adns/"
   url "https://www.chiark.greenend.org.uk/~ian/adns/ftp/adns-1.5.1.tar.gz"

@@ -16,7 +16,7 @@ class CodesignRequirement < Requirement
   end
 end
 
-class LlvmHalyard < Formula
+class Llvm < Formula
   desc "Next-gen compiler infrastructure"
   homepage "https://llvm.org/"
 

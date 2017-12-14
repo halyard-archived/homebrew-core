@@ -1,4 +1,4 @@
-class GdkPixbufHalyard < Formula
+class GdkPixbuf < Formula
   desc "Toolkit for image loading and pixel buffer manipulation"
   homepage "https://gtk.org"
   url "https://download.gnome.org/sources/gdk-pixbuf/2.36/gdk-pixbuf-2.36.11.tar.xz"

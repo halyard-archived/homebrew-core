@@ -1,4 +1,4 @@
-class LibatomicOpsHalyard < Formula
+class LibatomicOps < Formula
   desc "Implementations for atomic memory update operations"
   homepage "https://github.com/ivmai/libatomic_ops/"
   url "https://github.com/ivmai/libatomic_ops/releases/download/v7.4.8/libatomic_ops-7.4.8.tar.gz"

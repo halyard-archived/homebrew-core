@@ -1,4 +1,4 @@
-class GnuSedHalyard < Formula
+class GnuSed < Formula
   desc "GNU implementation of the famous stream editor"
   homepage "https://www.gnu.org/software/sed/"
   url "https://ftp.gnu.org/gnu/sed/sed-4.4.tar.xz"

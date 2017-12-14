@@ -1,4 +1,4 @@
-class DoxygenHalyard < Formula
+class Doxygen < Formula
   desc "Generate documentation for several programming languages"
   homepage "http://www.doxygen.org/"
   revision 1

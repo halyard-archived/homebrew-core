@@ -1,4 +1,4 @@
-class PhantomjsHalyard < Formula
+class Phantomjs < Formula
   desc "Headless WebKit scriptable with a JavaScript API"
   homepage "http://phantomjs.org/"
   url "https://github.com/ariya/phantomjs.git",

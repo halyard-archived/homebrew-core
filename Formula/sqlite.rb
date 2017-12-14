@@ -1,4 +1,4 @@
-class SqliteHalyard < Formula
+class Sqlite < Formula
   desc "Command-line interface for SQLite"
   homepage "https://sqlite.org/"
   url "https://sqlite.org/2017/sqlite-autoconf-3210000.tar.gz"

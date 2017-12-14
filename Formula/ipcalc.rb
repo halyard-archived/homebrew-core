@@ -1,4 +1,4 @@
-class IpcalcHalyard < Formula
+class Ipcalc < Formula
   desc "Calculate various network masks, etc. from a given IP address"
   homepage "http://jodies.de/ipcalc"
   url "http://jodies.de/ipcalc-archive/ipcalc-0.41.tar.gz"

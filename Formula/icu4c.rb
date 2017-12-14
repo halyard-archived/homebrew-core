@@ -1,4 +1,4 @@
-class Icu4cHalyard < Formula
+class Icu4c < Formula
   desc "C/C++ and Java libraries for Unicode and globalization"
   homepage "http://site.icu-project.org/"
   revision 1

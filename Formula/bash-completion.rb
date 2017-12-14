@@ -1,4 +1,4 @@
-class BashCompletionHalyard < Formula
+class BashCompletion < Formula
   desc "Programmable completion for Bash 4.1+"
   homepage "https://github.com/scop/bash-completion"
   url "https://github.com/scop/bash-completion/releases/download/2.7/bash-completion-2.7.tar.xz"

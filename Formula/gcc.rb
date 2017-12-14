@@ -1,4 +1,4 @@
-class GccHalyard < Formula
+class Gcc < Formula
   desc "GNU compiler collection"
   homepage "https://gcc.gnu.org/"
 

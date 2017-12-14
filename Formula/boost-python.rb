@@ -1,4 +1,4 @@
-class BoostPythonHalyard < Formula
+class BoostPython < Formula
   desc "C++ library for C++/Python interoperability"
   homepage "https://www.boost.org/"
   url "https://dl.bintray.com/boostorg/release/1.65.1/source/boost_1_65_1.tar.bz2"

@@ -1,4 +1,4 @@
-class GoHalyard < Formula
+class Go < Formula
   desc "Open source programming language to build simple/reliable/efficient software"
   homepage "https://golang.org"
 

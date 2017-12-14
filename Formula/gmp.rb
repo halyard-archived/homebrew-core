@@ -1,4 +1,4 @@
-class GmpHalyard < Formula
+class Gmp < Formula
   desc "GNU multiple precision arithmetic library"
   homepage "https://gmplib.org/"
   url "https://gmplib.org/download/gmp/gmp-6.1.2.tar.xz"

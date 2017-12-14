@@ -1,4 +1,4 @@
-class UnibiliumHalyard < Formula
+class Unibilium < Formula
   desc "Very basic terminfo library"
   homepage "https://github.com/mauke/unibilium"
   url "https://github.com/mauke/unibilium/archive/v1.2.1.tar.gz"

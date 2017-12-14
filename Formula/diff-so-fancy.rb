@@ -1,4 +1,4 @@
-class DiffSoFancyHalyard < Formula
+class DiffSoFancy < Formula
   desc "Good-lookin' diffs with diff-highlight and more"
   homepage "https://github.com/so-fancy/diff-so-fancy"
   url "https://github.com/so-fancy/diff-so-fancy/archive/v1.1.1.tar.gz"

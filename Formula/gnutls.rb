@@ -1,4 +1,4 @@
-class GnutlsHalyard < Formula
+class Gnutls < Formula
   desc "GNU Transport Layer Security (TLS) Library"
   homepage "https://gnutls.org/"
   url "https://gnupg.org/ftp/gcrypt/gnutls/v3.5/gnutls-3.5.16.tar.xz"

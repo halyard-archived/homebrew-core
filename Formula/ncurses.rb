@@ -1,4 +1,4 @@
-class NcursesHalyard < Formula
+class Ncurses < Formula
   desc "Text-based UI library"
   homepage "https://www.gnu.org/software/ncurses/"
   url "https://invisible-mirror.net/archives/ncurses/current/ncurses-6.0-20171209.tgz"

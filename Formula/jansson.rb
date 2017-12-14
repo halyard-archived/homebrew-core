@@ -1,4 +1,4 @@
-class JanssonHalyard < Formula
+class Jansson < Formula
   desc "C library for encoding, decoding, and manipulating JSON"
   homepage "http://www.digip.org/jansson/"
   url "http://www.digip.org/jansson/releases/jansson-2.10.tar.gz"

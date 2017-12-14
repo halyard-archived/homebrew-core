@@ -1,4 +1,4 @@
-class Libssh2Halyard < Formula
+class Libssh2 < Formula
   desc "C library implementing the SSH2 protocol"
   homepage "https://libssh2.org/"
   url "https://libssh2.org/download/libssh2-1.8.0.tar.gz"

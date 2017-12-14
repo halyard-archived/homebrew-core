@@ -1,4 +1,4 @@
-class MsgpackHalyard < Formula
+class Msgpack < Formula
   desc "Library for a binary-based efficient data interchange format"
   homepage "https://msgpack.org/"
   url "https://github.com/msgpack/msgpack-c/releases/download/cpp-2.1.5/msgpack-2.1.5.tar.gz"

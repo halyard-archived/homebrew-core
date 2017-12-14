@@ -1,4 +1,4 @@
-class SocatHalyard < Formula
+class Socat < Formula
   desc "netcat on steroids"
   homepage "http://www.dest-unreach.org/socat/"
   url "http://www.dest-unreach.org/socat/download/socat-1.7.3.2.tar.gz"

@@ -1,4 +1,4 @@
-class LibyamlHalyard < Formula
+class Libyaml < Formula
   desc "YAML Parser"
   homepage "https://pyyaml.org/wiki/LibYAML"
   url "https://pyyaml.org/download/libyaml/yaml-0.1.7.tar.gz"

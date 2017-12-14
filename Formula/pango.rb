@@ -1,4 +1,4 @@
-class PangoHalyard < Formula
+class Pango < Formula
   desc "Framework for layout and rendering of i18n text"
   homepage "http://www.pango.org/"
   url "https://download.gnome.org/sources/pango/1.40/pango-1.40.14.tar.xz"

@@ -1,4 +1,4 @@
-class LdnsHalyard < Formula
+class Ldns < Formula
   desc "DNS library written in C"
   homepage "https://nlnetlabs.nl/projects/ldns/"
   url "https://nlnetlabs.nl/downloads/ldns/ldns-1.7.0.tar.gz"

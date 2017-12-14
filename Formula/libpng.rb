@@ -1,4 +1,4 @@
-class LibpngHalyard < Formula
+class Libpng < Formula
   desc "Library for manipulating PNG images"
   homepage "http://www.libpng.org/pub/png/libpng.html"
   url "https://downloads.sourceforge.net/libpng/libpng-1.6.34.tar.xz"

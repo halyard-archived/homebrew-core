@@ -1,4 +1,4 @@
-class GdHalyard < Formula
+class Gd < Formula
   desc "Graphics library to dynamically manipulate images"
   homepage "https://libgd.github.io/"
   url "https://github.com/libgd/libgd/releases/download/gd-2.2.5/libgd-2.2.5.tar.xz"

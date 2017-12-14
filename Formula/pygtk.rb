@@ -1,4 +1,4 @@
-class PygtkHalyard < Formula
+class Pygtk < Formula
   desc "GTK+ bindings for Python"
   homepage "http://www.pygtk.org/"
   url "https://download.gnome.org/sources/pygtk/2.24/pygtk-2.24.0.tar.bz2"

@@ -1,4 +1,4 @@
-class CAresHalyard < Formula
+class CAres < Formula
   desc "Asynchronous DNS library"
   homepage "https://c-ares.haxx.se/"
   url "https://c-ares.haxx.se/download/c-ares-1.13.0.tar.gz"

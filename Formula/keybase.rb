@@ -1,4 +1,4 @@
-class KeybaseHalyard < Formula
+class Keybase < Formula
   desc "Keybase"
   homepage "https://keybase.io/"
 

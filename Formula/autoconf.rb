@@ -1,4 +1,4 @@
-class AutoconfHalyard < Formula
+class Autoconf < Formula
   desc "Automatic configure script builder"
   homepage "https://www.gnu.org/software/autoconf"
   url "https://ftp.gnu.org/gnu/autoconf/autoconf-2.69.tar.gz"

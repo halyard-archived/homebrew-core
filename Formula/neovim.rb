@@ -1,4 +1,4 @@
-class NeovimHalyard < Formula
+class Neovim < Formula
   desc "Ambitious Vim-fork focused on extensibility and agility"
   homepage "https://neovim.io/"
   url "https://github.com/neovim/neovim/archive/v0.2.2.tar.gz"

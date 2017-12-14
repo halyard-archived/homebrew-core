@@ -1,4 +1,4 @@
-class PcreHalyard < Formula
+class Pcre < Formula
   desc "Perl compatible regular expressions library"
   homepage "https://www.pcre.org/"
   url "https://ftp.pcre.org/pub/pcre/pcre-8.41.tar.bz2"

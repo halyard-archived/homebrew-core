@@ -1,4 +1,4 @@
-class WebpHalyard < Formula
+class Webp < Formula
   desc "Image format providing lossless and lossy compression for web images"
   homepage "https://developers.google.com/speed/webp/"
   url "https://storage.googleapis.com/downloads.webmproject.org/releases/webp/libwebp-0.6.1.tar.gz"

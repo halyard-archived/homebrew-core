@@ -1,4 +1,4 @@
-class ChooseGuiHalyard < Formula
+class ChooseGui < Formula
   desc "Fuzzy matcher that uses std{in,out} and a native GUI"
   homepage "https://github.com/sdegutis/choose"
   url "https://github.com/sdegutis/choose/archive/1.0.tar.gz"

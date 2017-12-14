@@ -1,4 +1,4 @@
-class IslHalyard < Formula
+class Isl < Formula
   desc "Integer Set Library for the polyhedral model"
   homepage "http://isl.gforge.inria.fr"
   url "http://isl.gforge.inria.fr/isl-0.18.tar.xz"

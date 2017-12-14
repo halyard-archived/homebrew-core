@@ -1,4 +1,4 @@
-class Pcre2Halyard < Formula
+class Pcre2 < Formula
   desc "Perl compatible regular expressions library with a new API"
   homepage "https://www.pcre.org/"
   url "https://ftp.pcre.org/pub/pcre/pcre2-10.30.tar.bz2"

@@ -1,4 +1,4 @@
-class GiflibHalyard < Formula
+class Giflib < Formula
   desc "Library and utilities for processing GIFs"
   homepage "https://giflib.sourceforge.io/"
   url "https://downloads.sourceforge.net/project/giflib/giflib-5.1.4.tar.bz2"

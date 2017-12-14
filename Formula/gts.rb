@@ -1,4 +1,4 @@
-class GtsHalyard < Formula
+class Gts < Formula
   desc "GNU triangulated surface library"
   homepage "https://gts.sourceforge.io/"
   url "https://downloads.sourceforge.net/project/gts/gts/0.7.6/gts-0.7.6.tar.gz"

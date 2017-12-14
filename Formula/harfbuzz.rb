@@ -1,4 +1,4 @@
-class HarfbuzzHalyard < Formula
+class Harfbuzz < Formula
   desc "OpenType text shaping engine"
   homepage "https://wiki.freedesktop.org/www/Software/HarfBuzz/"
   url "https://www.freedesktop.org/software/harfbuzz/release/harfbuzz-1.7.2.tar.bz2"

@@ -1,4 +1,4 @@
-class EncfsHalyard < Formula
+class Encfs < Formula
   desc "Encrypted pass-through FUSE file system"
   homepage "https://vgough.github.io/encfs/"
   url "https://github.com/vgough/encfs/archive/v1.9.2.tar.gz"

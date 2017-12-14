@@ -1,4 +1,4 @@
-class P11KitHalyard < Formula
+class P11Kit < Formula
   desc "Library to load and enumerate PKCS#11 modules"
   homepage "https://p11-glue.freedesktop.org"
   url "https://github.com/p11-glue/p11-kit/releases/download/0.23.9/p11-kit-0.23.9.tar.gz"

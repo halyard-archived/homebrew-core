@@ -1,4 +1,4 @@
-class Nghttp2Halyard < Formula
+class Nghttp2 < Formula
   desc "HTTP/2 C Library"
   homepage "https://nghttp2.org/"
   url "https://github.com/nghttp2/nghttp2/releases/download/v1.28.0/nghttp2-1.28.0.tar.xz"

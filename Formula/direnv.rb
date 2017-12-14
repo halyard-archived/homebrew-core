@@ -1,4 +1,4 @@
-class DirenvHalyard < Formula
+class Direnv < Formula
   desc "Load/unload environment variables based on $PWD"
   homepage "https://direnv.net/"
   url "https://github.com/direnv/direnv/archive/v2.14.0.tar.gz"

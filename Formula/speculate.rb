@@ -1,4 +1,4 @@
-class SpeculateHalyard < Formula
+class Speculate < Formula
   desc "Tool for assuming roles in AWS accounts"
   homepage "https://github.com/akerl/speculate"
 

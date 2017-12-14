@@ -1,6 +1,6 @@
 require "language/haskell"
 
-class ShellcheckHalyard < Formula
+class Shellcheck < Formula
   include Language::Haskell::Cabal
 
   desc "Static analysis and lint tool, for (ba)sh scripts"

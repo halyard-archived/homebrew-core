@@ -1,7 +1,7 @@
 # Xcode 4.3 provides the Apple libtool.
 # This is not the same so as a result we must install this as glibtool.
 
-class LibtoolHalyard < Formula
+class Libtool < Formula
   desc "Generic library support script"
   homepage "https://www.gnu.org/software/libtool/"
   url "https://ftp.gnu.org/gnu/libtool/libtool-2.4.6.tar.xz"

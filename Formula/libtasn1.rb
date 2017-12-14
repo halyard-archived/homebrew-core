@@ -1,4 +1,4 @@
-class Libtasn1Halyard < Formula
+class Libtasn1 < Formula
   desc "ASN.1 structure parser library"
   homepage "https://www.gnu.org/software/libtasn1/"
   url "https://ftp.gnu.org/gnu/libtasn1/libtasn1-4.12.tar.gz"

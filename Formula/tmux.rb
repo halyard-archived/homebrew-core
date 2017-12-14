@@ -1,4 +1,4 @@
-class TmuxHalyard < Formula
+class Tmux < Formula
   desc "Terminal multiplexer"
   homepage "https://tmux.github.io/"
   url "https://github.com/tmux/tmux/releases/download/2.6/tmux-2.6.tar.gz"

@@ -1,4 +1,4 @@
-class HicolorIconThemeHalyard < Formula
+class HicolorIconTheme < Formula
   desc "Fallback theme for FreeDesktop.org icon themes"
   homepage "https://wiki.freedesktop.org/www/Software/icon-theme/"
   url "https://icon-theme.freedesktop.org/releases/hicolor-icon-theme-0.17.tar.xz"

@@ -1,4 +1,4 @@
-class RustHalyard < Formula
+class Rust < Formula
   desc "Safe, concurrent, practical language"
   homepage "https://www.rust-lang.org/"
 

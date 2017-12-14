@@ -1,4 +1,4 @@
-class GdbmHalyard < Formula
+class Gdbm < Formula
   desc "GNU database manager"
   homepage "https://www.gnu.org/software/gdbm/"
   url "https://ftp.gnu.org/gnu/gdbm/gdbm-1.13.tar.gz"

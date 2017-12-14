@@ -1,4 +1,4 @@
-class SnappyHalyard < Formula
+class Snappy < Formula
   desc "Compression/decompression library aiming for high speed"
   homepage "https://google.github.io/snappy/"
   url "https://github.com/google/snappy/archive/1.1.7.tar.gz"

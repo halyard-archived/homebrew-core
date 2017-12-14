@@ -1,4 +1,4 @@
-class DocbookXslHalyard < Formula
+class DocbookXsl < Formula
   desc "XML vocabulary to create presentation-neutral documents"
   homepage "https://docbook.sourceforge.io/"
   url "https://downloads.sourceforge.net/project/docbook/docbook-xsl/1.79.1/docbook-xsl-1.79.1.tar.bz2"

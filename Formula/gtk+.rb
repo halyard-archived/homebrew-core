@@ -1,4 +1,4 @@
-class GtkxHalyard < Formula
+class Gtkx < Formula
   desc "GUI toolkit"
   homepage "https://gtk.org/"
   revision 1

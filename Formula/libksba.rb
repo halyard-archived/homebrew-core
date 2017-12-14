@@ -1,4 +1,4 @@
-class LibksbaHalyard < Formula
+class Libksba < Formula
   desc "X.509 and CMS library"
   homepage "https://www.gnupg.org/related_software/libksba/"
   url "https://gnupg.org/ftp/gcrypt/libksba/libksba-1.3.5.tar.bz2"

@@ -1,4 +1,4 @@
-class GitHalyard < Formula
+class Git < Formula
   desc "Distributed revision control system"
   homepage "https://git-scm.com"
   url "https://www.kernel.org/pub/software/scm/git/git-2.15.1.tar.xz"

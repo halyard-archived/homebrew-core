@@ -1,4 +1,4 @@
-class LibunistringHalyard < Formula
+class Libunistring < Formula
   desc "C string library for manipulating Unicode strings"
   homepage "https://www.gnu.org/software/libunistring/"
   url "https://ftp.gnu.org/gnu/libunistring/libunistring-0.9.8.tar.xz"

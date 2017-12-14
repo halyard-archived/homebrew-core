@@ -1,4 +1,4 @@
-class RipgrepHalyard < Formula
+class Ripgrep < Formula
   desc "Search tool like grep and The Silver Searcher"
   homepage "https://github.com/BurntSushi/ripgrep"
   url "https://github.com/BurntSushi/ripgrep/archive/0.7.1.tar.gz"
