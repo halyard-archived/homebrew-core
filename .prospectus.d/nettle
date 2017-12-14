@@ -1,0 +1,14 @@
+item do
+  expected do
+    gitlab_tag
+    repo 'nettle/nettle'
+    endpoint 'https://git.lysator.liu.se'
+    regex /^nettle_([\d.]+)_release_\d+$/
+    filter /^nettle_([\d.]+)_release_\d+$/
+  end
+
+  actual do
+    homebrew_formula
+    name 'nettle'
+  end
+end

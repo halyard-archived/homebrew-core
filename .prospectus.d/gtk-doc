@@ -1,0 +1,13 @@
+item do
+  expected do
+    url_xpath
+    url 'https://git.gnome.org/browse/gtk-doc/refs/tags'
+    xpath '//*[@id="cgit"]/div/table/tr[2]/td[1]/a'
+    regex /^GTK_DOC_(\d+)_(\d+)$/, '\1.\2'
+  end
+
+  actual do
+    homebrew_formula
+    name 'gtk-doc'
+  end
+end

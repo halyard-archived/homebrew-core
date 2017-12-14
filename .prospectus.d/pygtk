@@ -1,0 +1,13 @@
+item do
+  expected do
+    github_tag
+    repo 'GNOME/pygtk'
+    regex /^PYGTK_(\d+)_(\d+)_(\d+)$/, '\1.\2.\3'
+    filter /^PYGTK_(\d+)_(\d+)_(\d+)$/
+  end
+
+  actual do
+    homebrew_formula
+    name 'pygtk'
+  end
+end

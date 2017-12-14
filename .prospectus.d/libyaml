@@ -1,0 +1,11 @@
+item do
+  expected do
+    github_tag
+    repo 'yaml/libyaml'
+  end
+
+  actual do
+    homebrew_formula
+    name 'libyaml'
+  end
+end

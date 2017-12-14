@@ -1,0 +1,13 @@
+item do
+  expected do
+    url_xpath
+    url 'https://sourceforge.net/projects/docbook/files/?source=navbar'
+    xpath '//*[@id="files"]/div[1]/strong/a/span'
+    regex /^Download docbook-xsl-([\d.]+)\.tar\.bz2 \([\d.]+ MB\)$/
+  end
+
+  actual do
+    homebrew_formula
+    name 'docbook-xsl'
+  end
+end

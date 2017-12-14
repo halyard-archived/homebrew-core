@@ -1,0 +1,12 @@
+item do
+  expected do
+    url_xpath
+    url 'https://www.rust-lang.org/en-US/'
+    xpath '/html/body/div[1]/div[2]/a/div/span'
+  end
+
+  actual do
+    homebrew_formula
+    name 'rust'
+  end
+end

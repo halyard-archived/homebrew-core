@@ -1,0 +1,13 @@
+item do
+  expected do
+    url_xpath
+    url 'https://launchpad.net/intltool/+download'
+    xpath '//*[@id="series-trunk"]/div[1]/h3/a[1]'
+    regex /^([\d.]+) release$/
+  end
+
+  actual do
+    homebrew_formula
+    name 'intltool'
+  end
+end

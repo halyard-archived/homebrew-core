@@ -1,0 +1,13 @@
+item do
+  expected do
+    url_xpath
+    url 'https://sourceforge.net/projects/pwgen/files/?source=navbar'
+    xpath '//*[@id="files"]/div[1]/strong/a/span'
+    regex /^Download pwgen-([\d.]+)\.tar\.gz \([\d.]+ \w+\)$/
+  end
+
+  actual do
+    homebrew_formula
+    name 'pwgen'
+  end
+end

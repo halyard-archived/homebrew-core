@@ -1,0 +1,11 @@
+item do
+  expected do
+    github_tag
+    repo 'hishamhm/htop'
+  end
+
+  actual do
+    homebrew_formula
+    name 'htop'
+  end
+end

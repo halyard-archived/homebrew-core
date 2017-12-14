@@ -1,0 +1,13 @@
+item do
+  expected do
+    url_xpath
+    url 'https://mirrors.peers.community/mirrors/gnu/findutils/?C=N;O=D'
+    xpath '/html/body/pre/a[6]'
+    regex /^findutils-([\d.]+)\.tar.*$/
+  end
+
+  actual do
+    homebrew_formula
+    name 'findutils'
+  end
+end

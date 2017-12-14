@@ -1,0 +1,12 @@
+item do
+  expected do
+    github_release
+    repo 'bagder/curl'
+    regex /^curl-(\d+)_(\d+)_(\d+)$/, '\1.\2.\3'
+  end
+
+  actual do
+    homebrew_formula
+    name 'curl'
+  end
+end

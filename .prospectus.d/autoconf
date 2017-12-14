@@ -1,0 +1,13 @@
+item do
+  expected do
+   url_xpath
+   url 'http://git.savannah.gnu.org/gitweb/?p=autoconf.git;a=tags'
+   xpath '/html/body/table/tr[1]/td[2]/a'
+   regex /^v([\d.]+)$/
+  end
+
+  actual do
+    homebrew_formula
+    name 'autoconf'
+  end
+end

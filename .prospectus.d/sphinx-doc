@@ -1,0 +1,11 @@
+item do
+  expected do
+    github_tag
+    repo 'sphinx-doc/sphinx'
+  end
+
+  actual do
+    homebrew_formula
+    name 'sphinx-doc'
+  end
+end

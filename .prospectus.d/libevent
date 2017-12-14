@@ -1,0 +1,12 @@
+item do
+  expected do
+    github_release
+    repo 'libevent/libevent'
+    regex /^release-([\d.]+)-stable$/
+  end
+
+  actual do
+    homebrew_formula
+    name 'libevent'
+  end
+end

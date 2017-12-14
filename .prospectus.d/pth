@@ -1,0 +1,12 @@
+item do
+  expected do
+    url_xpath
+    url 'https://www.gnu.org/software/pth/'
+    xpath '/html/body/p[1]/set-var/@vers'
+  end
+
+  actual do
+    homebrew_formula
+    name 'pth'
+  end
+end

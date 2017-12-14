@@ -1,0 +1,13 @@
+item do
+  expected do
+    url_xpath
+    url 'https://www.openssl.org/source/'
+    xpath '//*[@id="content"]/div/article/div/table/tr[3]/td[3]/a[1]'
+    regex /^openssl-([\w.]+).tar.gz$/
+  end
+
+  actual do
+    homebrew_formula
+    name 'openssl'
+  end
+end

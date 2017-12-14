@@ -1,0 +1,12 @@
+item do
+  expected do
+    url_xpath
+    url 'https://libssh2.org/changes.html'
+    xpath '/html/body/div[2]/a[1]/@name'
+  end
+
+  actual do
+    homebrew_formula
+    name 'libssh2'
+  end
+end

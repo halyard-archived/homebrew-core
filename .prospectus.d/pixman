@@ -1,0 +1,15 @@
+require 'open-uri'
+
+item do
+  expected do
+    static
+    url = 'https://cairographics.org/releases/'
+    regex = /.*LATEST-pixman-([\d.]+).*/m
+    set open(url).read.sub(regex, '\1')
+  end
+
+  actual do
+    homebrew_formula
+    name 'pixman'
+  end
+end

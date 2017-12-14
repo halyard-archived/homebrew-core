@@ -1,0 +1,13 @@
+item do
+  expected do
+    url_xpath
+    url 'https://graphviz.gitlab.io/_pages/Download/Download_source.html'
+    xpath '/html/body/main/article/table/tbody[2]/tr/td[1]/font/a[1]'
+    regex /^graphviz-([\d.]+)\.tar\.gz$/
+  end
+
+  actual do
+    homebrew_formula
+    name 'graphviz'
+  end
+end

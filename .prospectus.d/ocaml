@@ -1,0 +1,12 @@
+item do
+  expected do
+    url_xpath
+    url 'https://ocaml.org/releases/'
+    xpath '//*[@id="main-contents"]/ul/li[1]/a'
+  end
+
+  actual do
+    homebrew_formula
+    name 'ocaml'
+  end
+end

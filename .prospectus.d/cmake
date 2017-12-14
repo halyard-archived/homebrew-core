@@ -1,0 +1,14 @@
+item do
+  expected do
+    gitlab_tag
+    repo 'cmake/cmake'
+    endpoint 'https://gitlab.kitware.com'
+    regex /^v([\d.]+)$/
+    filter /^v([\d.]+)$/
+  end
+
+  actual do
+    homebrew_formula
+    name 'cmake'
+  end
+end

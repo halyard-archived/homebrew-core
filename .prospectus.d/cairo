@@ -1,0 +1,13 @@
+item do
+  expected do
+    url_xpath
+    url 'https://cairographics.org/'
+    xpath '//*[@id="content"]/p[1]/a[3]'
+    regex /^cairo ([\d.]+) release available$/
+  end
+
+  actual do
+    homebrew_formula
+    name 'cairo'
+  end
+end

@@ -1,0 +1,13 @@
+item do
+  expected do
+    url_xpath
+    url 'https://www1.qt.io/download-open-source/'
+    xpath '//*[@id="section-3"]/article/div/ul/li/a[1]'
+    regex /^Qt ([\d.]+) for Linux 64-bit \([\d.]+ \w+\)$/
+  end
+
+  actual do
+    homebrew_formula
+    name 'qt'
+  end
+end

@@ -1,0 +1,13 @@
+item do
+  expected do
+    url_xpath
+    url 'http://www.leonerd.org.uk/code/libtermkey/'
+    xpath '//*[@id="pagebody"]/ul[2]/li[1]/a'
+    regex /^libtermkey-([\d.]+)\.tar\.gz$/
+  end
+
+  actual do
+    homebrew_formula
+    name 'libtermkey'
+  end
+end

@@ -1,0 +1,13 @@
+item do
+  expected do
+    url_xpath
+    url 'https://sourceforge.net/projects/cunit/files/?source=navbar'
+    xpath '//*[@id="files"]/div[1]/strong/a/span'
+    regex /^Download CUnit-([\d.-]+)\.tar\.bz2 \([\d.]+ \w+\)$/
+  end
+
+  actual do
+    homebrew_formula
+    name 'cunit'
+  end
+end

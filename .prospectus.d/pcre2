@@ -1,0 +1,13 @@
+item do
+  expected do
+    url_xpath
+    url 'https://www.pcre.org/changelog.txt'
+    xpath '/'
+    regex /.*?Version ([\d.]+).*/m
+  end
+
+  actual do
+    homebrew_formula
+    name 'pcre2'
+  end
+end

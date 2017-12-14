@@ -1,0 +1,13 @@
+item do
+  expected do
+    url_xpath
+    url 'http://git.savannah.gnu.org/cgit/libtasn1.git/refs/tags'
+    xpath '//*[@id="cgit"]/div[1]/table/tr[2]/td[1]/a'
+    regex /^libtasn1_(\d+)_(\d+)$/, '\1.\2'
+  end
+
+  actual do
+    homebrew_formula
+    name 'libtasn1'
+  end
+end

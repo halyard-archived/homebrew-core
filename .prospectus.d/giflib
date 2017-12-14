@@ -1,0 +1,13 @@
+item do
+  expected do
+    url_xpath
+    url 'https://sourceforge.net/projects/giflib/files/?source=navbar'
+    xpath '//*[@id="files"]/div[1]/strong/a/span'
+    regex /^Download giflib-([\d.]+)\.tar\.bz2 \([\d.]+ \w+\)$/
+  end
+
+  actual do
+    homebrew_formula
+    name 'giflib'
+  end
+end
