@@ -6,10 +6,10 @@ class GpgmeHalyard < Formula
   sha256 "1b29fedb8bfad775e70eafac5b0590621683b2d9869db994568e6401f4034ceb"
   revision 1
 
-  depends_on "gnupg-halyard"
-  depends_on "libgpg-error-halyard"
-  depends_on "libassuan-halyard"
-  depends_on "pth-halyard"
+  depends_on "gnupg"
+  depends_on "libgpg-error"
+  depends_on "libassuan"
+  depends_on "pth"
 
 
   def install

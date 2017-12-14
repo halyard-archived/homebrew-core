@@ -11,9 +11,9 @@ class GhcHalyard < Formula
   head do
     url "https://git.haskell.org/ghc.git", :branch => "ghc-8.2"
 
-    depends_on "autoconf-halyard" => :build
-    depends_on "automake-halyard" => :build
-    depends_on "libtool-halyard" => :build
+    depends_on "autoconf" => :build
+    depends_on "automake" => :build
+    depends_on "libtool" => :build
 
     resource "cabal" do
       url "https://hackage.haskell.org/package/cabal-install-1.24.0.2/cabal-install-1.24.0.2.tar.gz"
@@ -24,8 +24,8 @@ class GhcHalyard < Formula
   option "with-test", "Verify the build using the testsuite"
   option "without-docs", "Do not build documentation (including man page)"
 
-  depends_on "python3-halyard" => :build if build.with?("test")
-  depends_on "sphinx-doc-halyard" => :build if build.with? "docs"
+  depends_on "python3" => :build if build.with?("test")
+  depends_on "sphinx-doc" => :build if build.with? "docs"
 
 
   resource "gmp" do

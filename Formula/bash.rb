@@ -40,7 +40,7 @@ class BashHalyard < Formula
     end
   end
 
-  depends_on "readline-halyard"
+  depends_on "readline"
 
   conflicts_with 'bash', :because => 'halyard/homebrew-core/bash replaces bash'
 

@@ -5,13 +5,13 @@ class PygtkHalyard < Formula
   sha256 "cd1c1ea265bd63ff669e92a2d3c2a88eb26bcd9e5363e0f82c896e649f206912"
   revision 1
 
-  depends_on "pkg-config-halyard" => :build
-  depends_on "glib-halyard"
-  depends_on "gtk+-halyard"
-  depends_on "atk-halyard"
-  depends_on "pygobject-halyard"
-  depends_on "py2cairo-halyard"
-  depends_on "libglade-halyard" => :optional
+  depends_on "pkg-config" => :build
+  depends_on "glib"
+  depends_on "gtk+"
+  depends_on "atk"
+  depends_on "pygobject"
+  depends_on "py2cairo"
+  depends_on "libglade" => :optional
 
 
   def install

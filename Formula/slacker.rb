@@ -6,7 +6,7 @@ class SlackerHalyard < Formula
   sha256 "24a375fc25276a9a31ecc33e7f1bc3b093faf7f2e7d539765f5c2fbb80ce0e90"
   head "https://github.com/akerl/slacker.git"
 
-  depends_on "go-halyard" => :build
+  depends_on "go" => :build
 
   def install
     ENV["GOPATH"] = buildpath

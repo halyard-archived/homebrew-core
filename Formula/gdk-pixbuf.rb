@@ -7,12 +7,12 @@ class GdkPixbufHalyard < Formula
   option "with-relocations", "Build with relocation support for bundles"
   option "without-modules", "Disable dynamic module loading"
 
-  depends_on "pkg-config-halyard" => :build
-  depends_on "glib-halyard"
-  depends_on "jpeg-halyard"
-  depends_on "libtiff-halyard"
-  depends_on "libpng-halyard"
-  depends_on "gobject-introspection-halyard"
+  depends_on "pkg-config" => :build
+  depends_on "glib"
+  depends_on "jpeg"
+  depends_on "libtiff"
+  depends_on "libpng"
+  depends_on "gobject-introspection"
 
 
   # gdk-pixbuf has an internal version number separate from the overall

@@ -4,9 +4,9 @@ class CunitHalyard < Formula
   url "https://downloads.sourceforge.net/project/cunit/CUnit/2.1-3/CUnit-2.1-3.tar.bz2"
   sha256 "f5b29137f845bb08b77ec60584fdb728b4e58f1023e6f249a464efa49a40f214"
 
-  depends_on "autoconf-halyard" => :build
-  depends_on "automake-halyard" => :build
-  depends_on "libtool-halyard" => :build
+  depends_on "autoconf" => :build
+  depends_on "automake" => :build
+  depends_on "libtool" => :build
 
 
   def install

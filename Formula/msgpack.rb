@@ -5,7 +5,7 @@ class MsgpackHalyard < Formula
   sha256 "6126375af9b204611b9d9f154929f4f747e4599e6ae8443b337915dcf2899d2b"
   head "https://github.com/msgpack/msgpack-c.git"
 
-  depends_on "cmake-halyard" => :build
+  depends_on "cmake" => :build
 
 
   def install

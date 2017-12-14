@@ -7,8 +7,8 @@ class JemallocHalyard < Formula
   head do
     url "https://github.com/jemalloc/jemalloc.git"
 
-    depends_on "autoconf-halyard" => :build
-    depends_on "docbook-xsl-halyard" => :build
+    depends_on "autoconf" => :build
+    depends_on "docbook-xsl" => :build
   end
 
 

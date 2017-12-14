@@ -7,12 +7,12 @@ class OpenscHalyard < Formula
 
   option "without-man-pages", "Skip building manual pages"
 
-  depends_on "autoconf-halyard" => :build
-  depends_on "automake-halyard" => :build
-  depends_on "libtool-halyard" => :build
-  depends_on "pkg-config-halyard" => :build
-  depends_on "docbook-xsl-halyard" => :build if build.with? "man-pages"
-  depends_on "openssl-halyard"
+  depends_on "autoconf" => :build
+  depends_on "automake" => :build
+  depends_on "libtool" => :build
+  depends_on "pkg-config" => :build
+  depends_on "docbook-xsl" => :build if build.with? "man-pages"
+  depends_on "openssl"
 
 
   def install

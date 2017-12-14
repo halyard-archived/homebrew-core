@@ -5,7 +5,7 @@ class NettleHalyard < Formula
   mirror "https://ftpmirror.gnu.org/nettle/nettle-3.4.tar.gz"
   sha256 "ae7a42df026550b85daca8389b6a60ba6313b0567f374392e54918588a411e94"
 
-  depends_on "gmp-halyard"
+  depends_on "gmp"
 
 
   def install

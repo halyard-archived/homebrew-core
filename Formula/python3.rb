@@ -17,14 +17,14 @@ class Python3Halyard < Formula
   deprecated_option "quicktest" => "with-quicktest"
   deprecated_option "with-brewed-tk" => "with-tcl-tk"
 
-  depends_on "pkg-config-halyard" => :build
-  depends_on "readline-halyard" => :recommended
-  depends_on "sqlite-halyard" => :recommended
-  depends_on "gdbm-halyard" => :recommended
-  depends_on "openssl-halyard"
-  depends_on "xz-halyard" => :recommended # for the lzma module added in 3.3
-  depends_on "tcl-tk-halyard" => :optional
-  depends_on "sphinx-doc-halyard" => [:build, :optional]
+  depends_on "pkg-config" => :build
+  depends_on "readline" => :recommended
+  depends_on "sqlite" => :recommended
+  depends_on "gdbm" => :recommended
+  depends_on "openssl"
+  depends_on "xz" => :recommended # for the lzma module added in 3.3
+  depends_on "tcl-tk" => :optional
+  depends_on "sphinx-doc" => [:build, :optional]
 
 
   skip_clean "bin/pip3", "bin/pip-3.4", "bin/pip-3.5", "bin/pip-3.6"

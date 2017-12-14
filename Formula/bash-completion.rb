@@ -5,7 +5,7 @@ class BashCompletionHalyard < Formula
   sha256 "41ba892d3f427d4a686de32673f35401bc947a7801f684127120cdb13641441e"
   head "https://github.com/scop/bash-completion.git"
 
-  depends_on "bash-halyard"
+  depends_on "bash"
 
   conflicts_with 'bash-completion', :because => 'halyard/homebrew-core/bash-completion replaces bash-completion'
   conflicts_with 'bash-completion@2', :because => 'halyard/homebrew-core/bash-completion replaces bash-completion'

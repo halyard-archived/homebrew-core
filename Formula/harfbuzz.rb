@@ -6,13 +6,13 @@ class HarfbuzzHalyard < Formula
 
   option "with-cairo", "Build command-line utilities that depend on Cairo"
 
-  depends_on "pkg-config-halyard" => :build
-  depends_on "freetype-halyard" => :recommended
-  depends_on "glib-halyard" => :recommended
-  depends_on "gobject-introspection-halyard" => :recommended
-  depends_on "graphite2-halyard" => :recommended
-  depends_on "icu4c-halyard" => :recommended
-  depends_on "cairo-halyard" => :optional
+  depends_on "pkg-config" => :build
+  depends_on "freetype" => :recommended
+  depends_on "glib" => :recommended
+  depends_on "gobject-introspection" => :recommended
+  depends_on "graphite2" => :recommended
+  depends_on "icu4c" => :recommended
+  depends_on "cairo" => :optional
 
   resource "ttf" do
     url "https://github.com/behdad/harfbuzz/raw/fc0daafab0336b847ac14682e581a8838f36a0bf/test/shaping/fonts/sha1sum/270b89df543a7e48e206a2d830c0e10e5265c630.ttf"

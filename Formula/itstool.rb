@@ -18,8 +18,8 @@ class ItstoolHalyard < Formula
   head do
     url "https://github.com/itstool/itstool.git"
 
-    depends_on "autoconf-halyard" => :build
-    depends_on "automake-halyard" => :build
+    depends_on "autoconf" => :build
+    depends_on "automake" => :build
   end
 
   depends_on "libxml2"

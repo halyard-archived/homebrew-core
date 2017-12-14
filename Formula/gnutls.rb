@@ -5,14 +5,14 @@ class GnutlsHalyard < Formula
   mirror "https://www.mirrorservice.org/sites/ftp.gnupg.org/gcrypt/gnutls/v3.5/gnutls-3.5.16.tar.xz"
   sha256 "0924dec90c37c05f49fec966eba3672dab4d336d879e5c06e06e13325cbfec25"
 
-  depends_on "pkg-config-halyard" => :build
-  depends_on "libtasn1-halyard"
-  depends_on "gmp-halyard"
-  depends_on "nettle-halyard"
-  depends_on "libunistring-halyard"
-  depends_on "p11-kit-halyard" => :recommended
-  depends_on "guile-halyard" => :optional
-  depends_on "unbound-halyard" => :optional
+  depends_on "pkg-config" => :build
+  depends_on "libtasn1"
+  depends_on "gmp"
+  depends_on "nettle"
+  depends_on "libunistring"
+  depends_on "p11-kit" => :recommended
+  depends_on "guile" => :optional
+  depends_on "unbound" => :optional
 
   def install
     # Fix "dyld: lazy symbol binding failed: Symbol not found: _getentropy"

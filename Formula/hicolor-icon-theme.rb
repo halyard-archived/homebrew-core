@@ -6,8 +6,8 @@ class HicolorIconThemeHalyard < Formula
 
   head do
     url "https://anongit.freedesktop.org/git/xdg/default-icon-theme.git"
-    depends_on "automake-halyard" => :build
-    depends_on "autoconf-halyard" => :build
+    depends_on "automake" => :build
+    depends_on "autoconf" => :build
   end
 
 

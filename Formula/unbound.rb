@@ -4,11 +4,11 @@ class UnboundHalyard < Formula
   url "https://www.unbound.net/downloads/unbound-1.6.7.tar.gz"
   sha256 "4e7bd43d827004c6d51bef73adf941798e4588bdb40de5e79d89034d69751c9f"
 
-  depends_on "openssl-halyard"
-  depends_on "libevent-halyard"
+  depends_on "openssl"
+  depends_on "libevent"
 
-  depends_on "python-halyard" => :optional
-  depends_on "swig-halyard" if build.with?("python")
+  depends_on "python" => :optional
+  depends_on "swig" if build.with?("python")
 
 
   def install

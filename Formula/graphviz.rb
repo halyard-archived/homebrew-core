@@ -8,9 +8,9 @@ class GraphvizHalyard < Formula
   head do
     url "https://github.com/ellson/graphviz.git"
 
-    depends_on "automake-halyard" => :build
-    depends_on "autoconf-halyard" => :build
-    depends_on "libtool-halyard" => :build
+    depends_on "automake" => :build
+    depends_on "autoconf" => :build
+    depends_on "libtool" => :build
   end
 
   option "with-bindings", "Build Perl/Python/Ruby/etc. bindings"
@@ -18,22 +18,22 @@ class GraphvizHalyard < Formula
   option "with-app", "Build GraphViz.app (requires full XCode install)"
   option "with-gts", "Build with GNU GTS support (required by prism)"
 
-  depends_on "pkg-config-halyard" => :build
+  depends_on "pkg-config" => :build
   depends_on :xcode => :build if build.with? "app"
-  depends_on "libtool-halyard" => :run
-  depends_on "pango-halyard" => :optional
-  depends_on "gts-halyard" => :optional
-  depends_on "librsvg-halyard" => :optional
-  depends_on "freetype-halyard" => :optional
+  depends_on "libtool" => :run
+  depends_on "pango" => :optional
+  depends_on "gts" => :optional
+  depends_on "librsvg" => :optional
+  depends_on "freetype" => :optional
   depends_on :x11 => :optional
-  depends_on "gd-halyard"
-  depends_on "libpng-halyard"
+  depends_on "gd"
+  depends_on "libpng"
 
   if build.with? "bindings"
-    depends_on "swig-halyard" => :build
-    depends_on "python-halyard"
-    depends_on "java-halyard"
-    depends_on "ruby-halyard"
+    depends_on "swig" => :build
+    depends_on "python"
+    depends_on "java"
+    depends_on "ruby"
   end
 
 

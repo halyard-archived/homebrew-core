@@ -9,8 +9,8 @@ class LibtiffHalyard < Formula
   option :cxx11
   option "with-xz", "Include support for LZMA compression"
 
-  depends_on "jpeg-halyard"
-  depends_on "xz-halyard" => :optional
+  depends_on "jpeg"
+  depends_on "xz" => :optional
 
 
   def install

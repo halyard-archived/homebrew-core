@@ -8,9 +8,9 @@ class CurlHalyard < Formula
   head do
     url "https://github.com/curl/curl.git"
 
-    depends_on "autoconf-halyard" => :build
-    depends_on "automake-halyard" => :build
-    depends_on "libtool-halyard" => :build
+    depends_on "autoconf" => :build
+    depends_on "automake" => :build
+    depends_on "libtool" => :build
   end
 
   keg_only :provided_by_osx
@@ -20,11 +20,11 @@ class CurlHalyard < Formula
   option "with-gssapi", "Build with GSSAPI/Kerberos authentication support."
   option "with-nghttp2", "Build with HTTP/2 support (requires OpenSSL)"
 
-  depends_on "openssl-halyard"
-  depends_on "pkg-config-halyard" => :build
-  depends_on "libssh2-halyard" => :optional
-  depends_on "c-ares-halyard" => :optional
-  depends_on "nghttp2-halyard" => :optional
+  depends_on "openssl"
+  depends_on "pkg-config" => :build
+  depends_on "libssh2" => :optional
+  depends_on "c-ares" => :optional
+  depends_on "nghttp2" => :optional
 
 
   def install

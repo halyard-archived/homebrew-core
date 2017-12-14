@@ -4,7 +4,7 @@ class SwigHalyard < Formula
   url "https://downloads.sourceforge.net/project/swig/swig/swig-3.0.12/swig-3.0.12.tar.gz"
   sha256 "7cf9f447ae7ed1c51722efc45e7f14418d15d7a1e143ac9f09a668999f4fc94d"
 
-  depends_on "pcre-halyard"
+  depends_on "pcre"
 
 
   def install

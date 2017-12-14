@@ -7,14 +7,14 @@ class TmuxHalyard < Formula
   head do
     url "https://github.com/tmux/tmux.git"
 
-    depends_on "autoconf-halyard" => :build
-    depends_on "automake-halyard" => :build
-    depends_on "libtool-halyard" => :build
+    depends_on "autoconf" => :build
+    depends_on "automake" => :build
+    depends_on "libtool" => :build
   end
 
-  depends_on "pkg-config-halyard" => :build
-  depends_on "libevent-halyard"
-  depends_on "utf8proc-halyard" => :optional
+  depends_on "pkg-config" => :build
+  depends_on "libevent"
+  depends_on "utf8proc" => :optional
 
 
   resource "completion" do

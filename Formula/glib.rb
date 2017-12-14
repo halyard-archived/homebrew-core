@@ -6,14 +6,14 @@ class GlibHalyard < Formula
 
   option "with-test", "Build a debug build and run tests. NOTE: Not all tests succeed yet"
 
-  depends_on "pkg-config-halyard" => :build
+  depends_on "pkg-config" => :build
   # next three lines can be removed when bug 780271 is fixed and gio.patch is modified accordingly
-  depends_on "autoconf-halyard" => :build
-  depends_on "automake-halyard" => :build
-  depends_on "libtool-halyard" => :build
-  depends_on "gettext-halyard"
-  depends_on "libffi-halyard"
-  depends_on "pcre-halyard"
+  depends_on "autoconf" => :build
+  depends_on "automake" => :build
+  depends_on "libtool" => :build
+  depends_on "gettext"
+  depends_on "libffi"
+  depends_on "pcre"
 
 
   # https://bugzilla.gnome.org/show_bug.cgi?id=673135 Resolved as wontfix,

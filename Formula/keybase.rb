@@ -6,7 +6,7 @@ class KeybaseHalyard < Formula
   sha256 "ddb9a9d6a0e9ee1b27ef246cb39c5032b0d8bcff67201fd8a9dd69dd555851fa"
   head "https://github.com/keybase/client.git"
 
-  depends_on "go-halyard" => :build
+  depends_on "go" => :build
 
   def install
     ENV["GOPATH"] = buildpath

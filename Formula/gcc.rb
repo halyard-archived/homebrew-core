@@ -13,10 +13,10 @@ class GccHalyard < Formula
   option "with-jit", "Build just-in-time compiler"
   option "with-nls", "Build with native language support (localization)"
 
-  depends_on "gmp-halyard"
-  depends_on "libmpc-halyard"
-  depends_on "mpfr-halyard"
-  depends_on "isl-halyard"
+  depends_on "gmp"
+  depends_on "libmpc"
+  depends_on "mpfr"
+  depends_on "isl"
 
 
   # GCC bootstraps itself, so it is OK to have an incompatible C++ stdlib

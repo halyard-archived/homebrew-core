@@ -5,11 +5,11 @@ class EncfsHalyard < Formula
   sha256 "cd9e972cd9565cdc26473c86d2c77c98de31fc6f604fa7d149dd5d6e35d46eaa"
   head "https://github.com/vgough/encfs.git"
 
-  depends_on "cmake-halyard" => :build
-  depends_on "pkg-config-halyard" => :build
-  depends_on "boost-halyard"
-  depends_on "gettext-halyard"
-  depends_on "openssl-halyard"
+  depends_on "cmake" => :build
+  depends_on "pkg-config" => :build
+  depends_on "boost"
+  depends_on "gettext"
+  depends_on "openssl"
   depends_on :osxfuse
 
   needs :cxx11

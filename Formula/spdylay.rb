@@ -5,13 +5,13 @@ class SpdylayHalyard < Formula
   sha256 "31ed26253943b9d898b936945a1c68c48c3e0974b146cef7382320a97d8f0fa0"
   revision 1
 
-  depends_on "autoconf-halyard" => :build
-  depends_on "automake-halyard" => :build
-  depends_on "libtool-halyard" => :build
-  depends_on "pkg-config-halyard" => :build
-  depends_on "libevent-halyard" => :recommended
-  depends_on "libxml2-halyard" if MacOS.version <= :lion
-  depends_on "openssl-halyard"
+  depends_on "autoconf" => :build
+  depends_on "automake" => :build
+  depends_on "libtool" => :build
+  depends_on "pkg-config" => :build
+  depends_on "libevent" => :recommended
+  depends_on "libxml2" if MacOS.version <= :lion
+  depends_on "openssl"
 
 
   def install

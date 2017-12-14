@@ -9,9 +9,9 @@ class ShellcheckHalyard < Formula
   sha256 "3fd7ebec821b96585ba9137b7b8c7bd9410876490f4ec89f2cca9975080a8206"
   head "https://github.com/koalaman/shellcheck.git"
 
-  depends_on "ghc-halyard" => :build
-  depends_on "cabal-install-halyard" => :build
-  depends_on "pandoc-halyard" => :build
+  depends_on "ghc" => :build
+  depends_on "cabal-install" => :build
+  depends_on "pandoc" => :build
 
 
   def install

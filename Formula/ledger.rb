@@ -10,14 +10,14 @@ class LedgerHalyard < Formula
   option "with-docs", "Build HTML documentation"
   option "without-python", "Build without python support"
 
-  depends_on "cmake-halyard" => :build
-  depends_on "gmp-halyard"
-  depends_on "mpfr-halyard"
+  depends_on "cmake" => :build
+  depends_on "gmp"
+  depends_on "mpfr"
 
   boost_opts = []
   boost_opts << "c++11" if MacOS.version < "10.9"
-  depends_on "boost-halyard" => boost_opts
-  depends_on "boost-python-halyard" => boost_opts if build.with? "python"
+  depends_on "boost" => boost_opts
+  depends_on "boost-python" => boost_opts if build.with? "python"
 
   needs :cxx11
 

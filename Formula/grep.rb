@@ -7,8 +7,8 @@ class GrepHalyard < Formula
 
   option "with-default-names", "Do not prepend 'g' to the binary"
 
-  depends_on "pkg-config-halyard" => :build
-  depends_on "pcre-halyard"
+  depends_on "pkg-config" => :build
+  depends_on "pcre"
 
   def install
     args = %W[

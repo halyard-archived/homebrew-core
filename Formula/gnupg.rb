@@ -6,22 +6,22 @@ class GnupgHalyard < Formula
 
   head do
     url "https://dev.gnupg.org/source/gnupg.git"
-    depends_on "autoconf-halyard" => :build
-    depends_on "automake-halyard" => :build
+    depends_on "autoconf" => :build
+    depends_on "automake" => :build
   end
 
-  depends_on "pkg-config-halyard" => :build
-  depends_on "npth-halyard"
-  depends_on "gnutls-halyard"
-  depends_on "libgpg-error-halyard"
-  depends_on "libgcrypt-halyard"
-  depends_on "libksba-halyard"
-  depends_on "libassuan-halyard"
-  depends_on "pinentry-halyard"
-  depends_on "gettext-halyard"
-  depends_on "adns-halyard"
-  depends_on "readline-halyard"
-  depends_on "libusb-halyard"
+  depends_on "pkg-config" => :build
+  depends_on "npth"
+  depends_on "gnutls"
+  depends_on "libgpg-error"
+  depends_on "libgcrypt"
+  depends_on "libksba"
+  depends_on "libassuan"
+  depends_on "pinentry"
+  depends_on "gettext"
+  depends_on "adns"
+  depends_on "readline"
+  depends_on "libusb"
 
   conflicts_with "gpg-agent", :because => "This GnuPG 2.1 includes gpg-agent"
   conflicts_with "dirmngr", :because => "This GnuPG 2.1 includes dirmngr"

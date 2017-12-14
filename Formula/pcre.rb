@@ -8,9 +8,9 @@ class PcreHalyard < Formula
   head do
     url "svn://vcs.exim.org/pcre/code/trunk"
 
-    depends_on "automake-halyard" => :build
-    depends_on "autoconf-halyard" => :build
-    depends_on "libtool-halyard" => :build
+    depends_on "automake" => :build
+    depends_on "autoconf" => :build
+    depends_on "libtool" => :build
   end
 
   conflicts_with 'pcre', :because => 'halyard/homebrew-core/pcre replaces pcre'

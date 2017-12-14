@@ -4,7 +4,7 @@ class LibgcryptHalyard < Formula
   url "https://gnupg.org/ftp/gcrypt/libgcrypt/libgcrypt-1.8.2.tar.bz2"
   sha256 "c8064cae7558144b13ef0eb87093412380efa16c4ee30ad12ecb54886a524c07"
 
-  depends_on "libgpg-error-halyard"
+  depends_on "libgpg-error"
 
 
   def install

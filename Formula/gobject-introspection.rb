@@ -4,10 +4,10 @@ class GobjectIntrospectionHalyard < Formula
   url "https://download.gnome.org/sources/gobject-introspection/1.54/gobject-introspection-1.54.1.tar.xz"
   sha256 "b88ded5e5f064ab58a93aadecd6d58db2ec9d970648534c63807d4f9a7bb877e"
 
-  depends_on "pkg-config-halyard" => :run
-  depends_on "glib-halyard"
-  depends_on "cairo-halyard"
-  depends_on "libffi-halyard"
+  depends_on "pkg-config" => :run
+  depends_on "glib"
+  depends_on "cairo"
+  depends_on "libffi"
 
 
   resource "tutorial" do

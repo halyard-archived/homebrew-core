@@ -4,12 +4,12 @@ class LibeventHalyard < Formula
   url "https://github.com/libevent/libevent/archive/release-2.1.8-stable.tar.gz"
   sha256 "316ddb401745ac5d222d7c529ef1eada12f58f6376a66c1118eee803cb70f83d"
 
-  depends_on "autoconf-halyard" => :build
-  depends_on "automake-halyard" => :build
-  depends_on "doxygen-halyard" => :build
-  depends_on "libtool-halyard" => :build
-  depends_on "pkg-config-halyard" => :build
-  depends_on "openssl-halyard"
+  depends_on "autoconf" => :build
+  depends_on "automake" => :build
+  depends_on "doxygen" => :build
+  depends_on "libtool" => :build
+  depends_on "pkg-config" => :build
+  depends_on "openssl"
 
   conflicts_with "pincaster",
     :because => "both install `event_rpcgen.py` binaries"

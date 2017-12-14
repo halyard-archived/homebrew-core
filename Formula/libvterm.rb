@@ -4,7 +4,7 @@ class LibvtermHalyard < Formula
   url "http://www.leonerd.org.uk/code/libvterm/libvterm-0+bzr681.tar.gz"
   sha256 "abea46d1b0b831dec2af5d582319635cece63d260f8298d9ccce7c1c2e62a6e8"
 
-  depends_on "libtool-halyard" => :build
+  depends_on "libtool" => :build
 
 
   def install

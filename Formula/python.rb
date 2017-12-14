@@ -12,14 +12,14 @@ class PythonHalyard < Formula
   option "with-poll", "Enable select.poll, which is not fully implemented on macOS (https://bugs.python.org/issue5154)"
 
   option "with-sphinx-doc", "Build HTML documentation"
-  depends_on "sphinx-doc-halyard" => [:build, :optional]
+  depends_on "sphinx-doc" => [:build, :optional]
 
-  depends_on "pkg-config-halyard" => :build
-  depends_on "readline-halyard" => :recommended
-  depends_on "sqlite-halyard" => :recommended
-  depends_on "gdbm-halyard" => :recommended
-  depends_on "openssl-halyard"
-  depends_on "tcl-tk-halyard" => :optional
+  depends_on "pkg-config" => :build
+  depends_on "readline" => :recommended
+  depends_on "sqlite" => :recommended
+  depends_on "gdbm" => :recommended
+  depends_on "openssl"
+  depends_on "tcl-tk" => :optional
 
 
   resource "setuptools" do

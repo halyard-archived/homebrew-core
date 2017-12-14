@@ -5,10 +5,10 @@ class NetpbmHalyard < Formula
   version "10.73.17"
   version_scheme 1
 
-  depends_on "libtiff-halyard"
-  depends_on "jasper-halyard"
-  depends_on "jpeg-halyard"
-  depends_on "libpng-halyard"
+  depends_on "libtiff"
+  depends_on "jasper"
+  depends_on "jpeg"
+  depends_on "libpng"
 
   conflicts_with "jbigkit", :because => "both install `pbm.5` and `pgm.5` files"
 

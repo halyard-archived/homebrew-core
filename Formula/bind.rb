@@ -6,8 +6,8 @@ class BindHalyard < Formula
   sha256 "7f46ad8620f7c3b0ac375d7a5211b15677708fda84ce25d7aeb7222fe2e3c77a"
   head "https://source.isc.org/git/bind9.git"
 
-  depends_on "openssl-halyard"
-  depends_on "json-c-halyard" => :optional
+  depends_on "openssl"
+  depends_on "json-c" => :optional
 
 
   def install

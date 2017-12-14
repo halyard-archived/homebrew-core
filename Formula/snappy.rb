@@ -5,8 +5,8 @@ class SnappyHalyard < Formula
   sha256 "3dfa02e873ff51a11ee02b9ca391807f0c8ea0529a4924afa645fbf97163f9d4"
   head "https://github.com/google/snappy.git"
 
-  depends_on "cmake-halyard" => :build
-  depends_on "pkg-config-halyard" => :build
+  depends_on "cmake" => :build
+  depends_on "pkg-config" => :build
 
 
   def install

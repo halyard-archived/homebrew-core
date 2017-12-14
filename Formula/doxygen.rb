@@ -22,10 +22,10 @@ class DoxygenHalyard < Formula
   option "with-qt", "Build GUI frontend with Qt support."
   option "with-llvm", "Build with libclang support."
 
-  depends_on "cmake-halyard" => :build
-  depends_on "graphviz-halyard" => :optional
-  depends_on "qt-halyard" => :optional
-  depends_on "llvm-halyard" => :optional
+  depends_on "cmake" => :build
+  depends_on "graphviz" => :optional
+  depends_on "qt" => :optional
+  depends_on "llvm" => :optional
 
 
   def install

@@ -10,8 +10,8 @@ class PandocHalyard < Formula
   sha256 "91245ae9f4a329883285bb13b9445b7c3d6a13d1d54baef34d9cfd47f777e018"
   head "https://github.com/jgm/pandoc.git"
 
-  depends_on "cabal-install-halyard" => :build
-  depends_on "ghc-halyard" => :build
+  depends_on "cabal-install" => :build
+  depends_on "ghc" => :build
 
 
   def install

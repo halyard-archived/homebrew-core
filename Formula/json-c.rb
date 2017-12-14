@@ -8,9 +8,9 @@ class JsonCHalyard < Formula
   head do
     url "https://github.com/json-c/json-c.git"
 
-    depends_on "libtool-halyard" => :build
-    depends_on "automake-halyard" => :build
-    depends_on "autoconf-halyard" => :build
+    depends_on "libtool" => :build
+    depends_on "automake" => :build
+    depends_on "autoconf" => :build
   end
 
 

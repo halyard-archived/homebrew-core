@@ -7,18 +7,18 @@ class PangoHalyard < Formula
   head do
     url "https://git.gnome.org/browse/pango.git"
 
-    depends_on "automake-halyard" => :build
-    depends_on "autoconf-halyard" => :build
-    depends_on "libtool-halyard" => :build
-    depends_on "gtk-doc-halyard" => :build
+    depends_on "automake" => :build
+    depends_on "autoconf" => :build
+    depends_on "libtool" => :build
+    depends_on "gtk-doc" => :build
   end
 
-  depends_on "pkg-config-halyard" => :build
-  depends_on "cairo-halyard"
-  depends_on "fontconfig-halyard"
-  depends_on "glib-halyard"
-  depends_on "gobject-introspection-halyard"
-  depends_on "harfbuzz-halyard"
+  depends_on "pkg-config" => :build
+  depends_on "cairo"
+  depends_on "fontconfig"
+  depends_on "glib"
+  depends_on "gobject-introspection"
+  depends_on "harfbuzz"
 
 
   def install

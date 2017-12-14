@@ -7,8 +7,8 @@ class NmapHalyard < Formula
 
   option "with-pygtk", "Build Zenmap GUI"
 
-  depends_on "openssl-halyard"
-  depends_on "pygtk-halyard" => :optional
+  depends_on "openssl"
+  depends_on "pygtk" => :optional
 
   conflicts_with "ndiff", :because => "both install `ndiff` binaries"
 

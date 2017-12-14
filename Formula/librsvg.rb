@@ -4,13 +4,13 @@ class LibrsvgHalyard < Formula
   url "https://download.gnome.org/sources/librsvg/2.40/librsvg-2.40.19.tar.xz"
   sha256 "612b4d8b8609036f5d899be3fe70d9866b5f6ac5c971154c1c0ef7242216c1f7"
 
-  depends_on "pkg-config-halyard" => :build
-  depends_on "cairo-halyard"
-  depends_on "gdk-pixbuf-halyard"
-  depends_on "glib-halyard"
-  depends_on "libcroco-halyard"
-  depends_on "pango-halyard"
-  depends_on "gtk+-halyard" => :optional
+  depends_on "pkg-config" => :build
+  depends_on "cairo"
+  depends_on "gdk-pixbuf"
+  depends_on "glib"
+  depends_on "libcroco"
+  depends_on "pango"
+  depends_on "gtk+" => :optional
 
 
   def install

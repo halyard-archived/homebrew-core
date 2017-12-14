@@ -6,8 +6,8 @@ class LibmpcHalyard < Formula
   sha256 "617decc6ea09889fb08ede330917a00b16809b8db88c29c31bfbb49cbf88ecc3"
   revision 1
 
-  depends_on "gmp-halyard"
-  depends_on "mpfr-halyard"
+  depends_on "gmp"
+  depends_on "mpfr"
 
 
   def install

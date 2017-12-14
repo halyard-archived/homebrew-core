@@ -4,8 +4,8 @@ class JasperHalyard < Formula
   url "https://github.com/mdadams/jasper/archive/version-2.0.14.tar.gz"
   sha256 "85266eea728f8b14365db9eaf1edc7be4c348704e562bb05095b9a077cf1a97b"
 
-  depends_on "cmake-halyard" => :build
-  depends_on "jpeg-halyard"
+  depends_on "cmake" => :build
+  depends_on "jpeg"
 
 
   def install

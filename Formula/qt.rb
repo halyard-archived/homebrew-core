@@ -13,7 +13,7 @@ class QtHalyard < Formula
   option "with-docs", "Build documentation"
   option "with-examples", "Build examples"
 
-  depends_on "pkg-config-halyard" => :build
+  depends_on "pkg-config" => :build
   depends_on :xcode => :build
 
 

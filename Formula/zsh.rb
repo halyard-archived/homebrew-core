@@ -11,8 +11,8 @@ class ZshHalyard < Formula
 
   deprecated_option "disable-etcdir" => "without-etcdir"
 
-  depends_on "gdbm-halyard"
-  depends_on "pcre-halyard"
+  depends_on "gdbm"
+  depends_on "pcre"
 
   conflicts_with 'zsh', :because => 'halyard/homebrew-core/zsh replaces zsh'
 

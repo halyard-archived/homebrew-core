@@ -6,10 +6,10 @@ class OpensshHalyard < Formula
   sha256 "a323caeeddfe145baaa0db16e98d784b1fbc7dd436a6bf1f479dfd5cd1d21723"
   revision 1
 
-  depends_on "autoconf-halyard" => :build
-  depends_on "openssl-halyard"
-  depends_on "ldns-halyard" => :optional
-  depends_on "pkg-config-halyard" => :build
+  depends_on "autoconf" => :build
+  depends_on "openssl"
+  depends_on "ldns" => :optional
+  depends_on "pkg-config" => :build
 
 
   patch do

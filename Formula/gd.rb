@@ -7,17 +7,17 @@ class GdHalyard < Formula
   head do
     url "https://github.com/libgd/libgd.git"
 
-    depends_on "autoconf-halyard" => :build
-    depends_on "automake-halyard" => :build
-    depends_on "libtool-halyard" => :build
+    depends_on "autoconf" => :build
+    depends_on "automake" => :build
+    depends_on "libtool" => :build
   end
 
-  depends_on "fontconfig-halyard"
-  depends_on "freetype-halyard"
-  depends_on "jpeg-halyard"
-  depends_on "libpng-halyard"
-  depends_on "libtiff-halyard"
-  depends_on "webp-halyard"
+  depends_on "fontconfig"
+  depends_on "freetype"
+  depends_on "jpeg"
+  depends_on "libpng"
+  depends_on "libtiff"
+  depends_on "webp"
 
 
   def install

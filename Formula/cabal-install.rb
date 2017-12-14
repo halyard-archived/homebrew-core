@@ -5,7 +5,7 @@ class CabalInstallHalyard < Formula
   sha256 "5f370bac2f18f0d96f525e33d723f248e50d73f452076d49425a752bba062b2d"
   head "https://github.com/haskell/cabal.git", :branch => "2.0"
 
-  depends_on "ghc-halyard"
+  depends_on "ghc"
 
 
   def install

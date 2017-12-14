@@ -7,7 +7,7 @@ class SourceHighlightHalyard < Formula
   sha256 "01336a7ea1d1ccc374201f7b81ffa94d0aecb33afc7d6903ebf9fbf33a55ada3"
   revision 7
 
-  depends_on "boost-halyard"
+  depends_on "boost"
 
 
   def install

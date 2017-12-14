@@ -10,13 +10,13 @@ class GtkxHalyard < Formula
 
   option "with-quartz-relocation", "Build with quartz relocation support"
 
-  depends_on "pkg-config-halyard" => :build
-  depends_on "gdk-pixbuf-halyard"
-  depends_on "jasper-halyard" => :optional
-  depends_on "atk-halyard"
-  depends_on "pango-halyard"
-  depends_on "gobject-introspection-halyard"
-  depends_on "hicolor-icon-theme-halyard"
+  depends_on "pkg-config" => :build
+  depends_on "gdk-pixbuf"
+  depends_on "jasper" => :optional
+  depends_on "atk"
+  depends_on "pango"
+  depends_on "gobject-introspection"
+  depends_on "hicolor-icon-theme"
 
 
   def install

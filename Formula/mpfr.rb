@@ -5,7 +5,7 @@ class MpfrHalyard < Formula
   mirror "https://ftpmirror.gnu.org/mpfr/mpfr-3.1.6.tar.xz"
   sha256 "7a62ac1a04408614fccdc506e4844b10cf0ad2c2b1677097f8f35d3a1344a950"
 
-  depends_on "gmp-halyard"
+  depends_on "gmp"
 
 
   fails_with :clang do

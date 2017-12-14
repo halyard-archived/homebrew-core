@@ -4,8 +4,8 @@ class LdnsHalyard < Formula
   url "https://nlnetlabs.nl/downloads/ldns/ldns-1.7.0.tar.gz"
   sha256 "c19f5b1b4fb374cfe34f4845ea11b1e0551ddc67803bd6ddd5d2a20f0997a6cc"
 
-  depends_on "swig-halyard" => :build
-  depends_on "openssl-halyard"
+  depends_on "swig" => :build
+  depends_on "openssl"
 
 
   def install

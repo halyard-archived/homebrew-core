@@ -5,7 +5,7 @@ class Graphite2Halyard < Formula
   sha256 "90fde3b2f9ea95d68ffb19278d07d9b8a7efa5ba0e413bebcea802ce05cda1ae"
   head "https://github.com/silnrsi/graphite.git"
 
-  depends_on "cmake-halyard" => :build
+  depends_on "cmake" => :build
 
 
   resource "testfont" do

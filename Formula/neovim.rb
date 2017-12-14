@@ -5,17 +5,17 @@ class NeovimHalyard < Formula
   sha256 "a838ee07cc9a2ef8ade1b31a2a4f2d5e9339e244ade68e64556c1f4b40ccc5ed"
   head "https://github.com/neovim/neovim.git"
 
-  depends_on "cmake-halyard" => :build
-  depends_on "lua-halyard" => :build
-  depends_on "pkg-config-halyard" => :build
-  depends_on "gettext-halyard"
-  depends_on "jemalloc-halyard"
-  depends_on "libtermkey-halyard"
-  depends_on "libuv-halyard"
-  depends_on "libvterm-halyard"
-  depends_on "luajit-halyard"
-  depends_on "msgpack-halyard"
-  depends_on "unibilium-halyard"
+  depends_on "cmake" => :build
+  depends_on "lua" => :build
+  depends_on "pkg-config" => :build
+  depends_on "gettext"
+  depends_on "jemalloc"
+  depends_on "libtermkey"
+  depends_on "libuv"
+  depends_on "libvterm"
+  depends_on "luajit"
+  depends_on "msgpack"
+  depends_on "unibilium"
 
 
   resource "lpeg" do

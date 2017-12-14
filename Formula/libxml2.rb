@@ -8,10 +8,10 @@ class Libxml2Halyard < Formula
   head do
     url "https://git.gnome.org/browse/libxml2.git"
 
-    depends_on "autoconf-halyard" => :build
-    depends_on "automake-halyard" => :build
-    depends_on "libtool-halyard" => :build
-    depends_on "pkg-config-halyard" => :build
+    depends_on "autoconf" => :build
+    depends_on "automake" => :build
+    depends_on "libtool" => :build
+    depends_on "pkg-config" => :build
   end
 
   keg_only :provided_by_macos

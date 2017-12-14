@@ -6,7 +6,7 @@ class IpmitoolHalyard < Formula
   sha256 "0c1ba3b1555edefb7c32ae8cd6a3e04322056bc087918f07189eeedfc8b81e01"
   revision 1
 
-  depends_on "openssl-halyard"
+  depends_on "openssl"
 
 
   # https://sourceforge.net/p/ipmitool/bugs/433/#89ea and

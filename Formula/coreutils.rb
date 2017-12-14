@@ -6,7 +6,7 @@ class CoreutilsHalyard < Formula
   sha256 "1117b1a16039ddd84d51a9923948307cfa28c2cea03d1a2438742253df0a0c65"
   revision 1
 
-  depends_on "gmp-halyard" => :optional
+  depends_on "gmp" => :optional
 
   conflicts_with 'coreutils', :because => 'halyard/homebrew-core/coreutils replaces coreutils'
   conflicts_with "ganglia", :because => "both install `gstat` binaries"

@@ -5,9 +5,9 @@ class LibgladeHalyard < Formula
   sha256 "07d1545570951aeded20e9fdc6d3d8a56aeefe2538734568c5335be336c6abed"
   revision 1
 
-  depends_on "pkg-config-halyard" => :build
-  depends_on "libxml2-halyard"
-  depends_on "gtk+-halyard"
+  depends_on "pkg-config" => :build
+  depends_on "libxml2"
+  depends_on "gtk+"
 
 
   def install

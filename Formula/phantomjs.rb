@@ -23,7 +23,7 @@ class PhantomjsHalyard < Formula
 
   depends_on MinimumMacOSRequirement => :lion
   depends_on :xcode => :build
-  depends_on "openssl-halyard"
+  depends_on "openssl"
 
 
   def install

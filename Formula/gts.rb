@@ -4,10 +4,10 @@ class GtsHalyard < Formula
   url "https://downloads.sourceforge.net/project/gts/gts/0.7.6/gts-0.7.6.tar.gz"
   sha256 "059c3e13e3e3b796d775ec9f96abdce8f2b3b5144df8514eda0cc12e13e8b81e"
 
-  depends_on "pkg-config-halyard" => :build
-  depends_on "gettext-halyard"
-  depends_on "glib-halyard"
-  depends_on "netpbm-halyard"
+  depends_on "pkg-config" => :build
+  depends_on "gettext"
+  depends_on "glib"
+  depends_on "netpbm"
 
 
   # Fix for newer netpbm.

@@ -5,9 +5,9 @@ class PygobjectHalyard < Formula
   sha256 "f5577b9b9c70cabb9a60d81b855d488b767c66f867432e7fb64aa7269b04d1a9"
   revision 1
 
-  depends_on "pkg-config-halyard" => :build
-  depends_on "glib-halyard"
-  depends_on "python-halyard"
+  depends_on "pkg-config" => :build
+  depends_on "glib"
+  depends_on "python"
 
 
   def install

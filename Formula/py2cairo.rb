@@ -4,8 +4,8 @@ class Py2cairoHalyard < Formula
   url "https://github.com/pygobject/pycairo/releases/download/v1.15.4/pycairo-1.15.4.tar.gz"
   sha256 "ee4c3068c048230e5ce74bb8994a024711129bde1af1d76e3276c7acd81c4357"
 
-  depends_on "pkg-config-halyard" => :build
-  depends_on "cairo-halyard"
+  depends_on "pkg-config" => :build
+  depends_on "cairo"
 
 
   def install

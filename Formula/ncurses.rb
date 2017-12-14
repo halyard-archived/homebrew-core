@@ -7,7 +7,7 @@ class NcursesHalyard < Formula
 
   keg_only :provided_by_osx
 
-  depends_on "pkg-config-halyard" => :build
+  depends_on "pkg-config" => :build
 
 
   def install

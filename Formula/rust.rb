@@ -29,11 +29,11 @@ class RustHalyard < Formula
   option "with-llvm", "Build with brewed LLVM. By default, Rust's LLVM will be used."
   option "with-racer", "Build Racer code completion tool, and retain Rust sources."
 
-  depends_on "cmake-halyard" => :build
-  depends_on "pkg-config-halyard" => :run
-  depends_on "llvm-halyard" => :optional
-  depends_on "openssl-halyard"
-  depends_on "libssh2-halyard"
+  depends_on "cmake" => :build
+  depends_on "pkg-config" => :run
+  depends_on "llvm" => :optional
+  depends_on "openssl"
+  depends_on "libssh2"
 
   conflicts_with "cargo-completion", :because => "both install shell completion for cargo"
 

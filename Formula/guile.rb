@@ -7,18 +7,18 @@ class GuileHalyard < Formula
   head do
     url "https://git.savannah.gnu.org/git/guile.git"
 
-    depends_on "autoconf-halyard" => :build
-    depends_on "automake-halyard" => :build
-    depends_on "gettext-halyard" => :build
+    depends_on "autoconf" => :build
+    depends_on "automake" => :build
+    depends_on "gettext" => :build
   end
 
-  depends_on "pkg-config-halyard" => :run # guile-config is a wrapper around pkg-config.
-  depends_on "libtool-halyard" => :run
-  depends_on "libffi-halyard"
-  depends_on "libunistring-halyard"
-  depends_on "bdw-gc-halyard"
-  depends_on "gmp-halyard"
-  depends_on "readline-halyard"
+  depends_on "pkg-config" => :run # guile-config is a wrapper around pkg-config.
+  depends_on "libtool" => :run
+  depends_on "libffi"
+  depends_on "libunistring"
+  depends_on "bdw-gc"
+  depends_on "gmp"
+  depends_on "readline"
 
 
   fails_with :clang do

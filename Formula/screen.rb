@@ -26,8 +26,8 @@ class ScreenHalyard < Formula
     end
   end
 
-  depends_on "autoconf-halyard" => :build
-  depends_on "automake-halyard" => :build
+  depends_on "autoconf" => :build
+  depends_on "automake" => :build
 
 
   def install

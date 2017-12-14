@@ -8,18 +8,18 @@ class WgetHalyard < Formula
   head do
     url "https://git.savannah.gnu.org/git/wget.git"
 
-    depends_on "autoconf-halyard" => :build
-    depends_on "automake-halyard" => :build
-    depends_on "xz-halyard" => :build
-    depends_on "gettext-halyard"
+    depends_on "autoconf" => :build
+    depends_on "automake" => :build
+    depends_on "xz" => :build
+    depends_on "gettext"
   end
 
   option "with-debug", "Build with debug support"
 
-  depends_on "pkg-config-halyard" => :build
-  depends_on "openssl-halyard"
-  depends_on "pcre-halyard" => :optional
-  depends_on "gpgme-halyard" => :optional
+  depends_on "pkg-config" => :build
+  depends_on "openssl"
+  depends_on "pcre" => :optional
+  depends_on "gpgme" => :optional
 
 
   def install

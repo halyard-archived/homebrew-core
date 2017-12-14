@@ -8,7 +8,7 @@ class VoyagerHalyard < Formula
 
   head do
     url "https://github.com/akerl/voyager.git"
-    depends_on "go-halyard" => :build
+    depends_on "go" => :build
   end
 
   def install

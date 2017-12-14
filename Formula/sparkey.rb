@@ -5,10 +5,10 @@ class SparkeyHalyard < Formula
   url "https://github.com/spotify/sparkey/archive/sparkey-0.2.0.tar.gz"
   sha256 "a06caf23c64e7ebae5b8b67272b21ab4c57f21a66d190bfe0a95f5af1dc69154"
 
-  depends_on "autoconf-halyard" => :build
-  depends_on "automake-halyard" => :build
-  depends_on "libtool-halyard" => :build
-  depends_on "snappy-halyard"
+  depends_on "autoconf" => :build
+  depends_on "automake" => :build
+  depends_on "libtool" => :build
+  depends_on "snappy"
 
 
   def install

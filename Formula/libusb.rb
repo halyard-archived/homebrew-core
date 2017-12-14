@@ -7,9 +7,9 @@ class LibusbHalyard < Formula
   head do
     url "https://github.com/libusb/libusb.git"
 
-    depends_on "autoconf-halyard" => :build
-    depends_on "automake-halyard" => :build
-    depends_on "libtool-halyard" => :build
+    depends_on "autoconf" => :build
+    depends_on "automake" => :build
+    depends_on "libtool" => :build
   end
 
   option "without-runtime-logging", "Build without runtime logging functionality"

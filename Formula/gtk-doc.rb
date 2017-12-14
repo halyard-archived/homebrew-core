@@ -5,13 +5,13 @@ class GtkDocHalyard < Formula
   sha256 "e26bd3f7080c749b1cb66c46c6bf8239e2f320a949964fb9c6d56e1b0c6d9a6f"
   revision 1
 
-  depends_on "pkg-config-halyard" => :build
-  depends_on "itstool-halyard" => :build
-  depends_on "gettext-halyard"
-  depends_on "docbook-halyard"
-  depends_on "docbook-xsl-halyard"
-  depends_on "libxml2-halyard"
-  depends_on "source-highlight-halyard"
+  depends_on "pkg-config" => :build
+  depends_on "itstool" => :build
+  depends_on "gettext"
+  depends_on "docbook"
+  depends_on "docbook-xsl"
+  depends_on "libxml2"
+  depends_on "source-highlight"
 
 
   resource "six" do

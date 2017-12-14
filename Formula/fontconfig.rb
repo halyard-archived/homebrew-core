@@ -7,13 +7,13 @@ class FontconfigHalyard < Formula
   head do
     url "https://anongit.freedesktop.org/git/fontconfig", :using => :git
 
-    depends_on "autoconf-halyard" => :build
-    depends_on "automake-halyard" => :build
-    depends_on "libtool-halyard" => :build
+    depends_on "autoconf" => :build
+    depends_on "automake" => :build
+    depends_on "libtool" => :build
   end
 
-  depends_on "pkg-config-halyard" => :build
-  depends_on "freetype-halyard"
+  depends_on "pkg-config" => :build
+  depends_on "freetype"
 
 
   def install

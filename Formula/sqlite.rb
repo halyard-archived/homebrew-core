@@ -20,8 +20,8 @@ class SqliteHalyard < Formula
   option "with-session", "Enable the session extension"
   option "with-soundex", "Enable the SOUNDEX function"
 
-  depends_on "readline-halyard" => :recommended
-  depends_on "icu4c-halyard" => :optional
+  depends_on "readline" => :recommended
+  depends_on "icu4c" => :optional
 
 
   resource "functions" do

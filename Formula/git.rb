@@ -11,13 +11,13 @@ class GitHalyard < Formula
 
   deprecated_option "with-pcre" => "with-pcre2"
 
-  depends_on "pcre2-halyard" => :optional
-  depends_on "gettext-halyard" => :optional
-  depends_on "go-halyard" => :build if build.with? "persistent-https"
+  depends_on "pcre2" => :optional
+  depends_on "gettext" => :optional
+  depends_on "go" => :build if build.with? "persistent-https"
 
   if MacOS.version < :yosemite
-    depends_on "openssl-halyard"
-    depends_on "curl-halyard"
+    depends_on "openssl"
+    depends_on "curl"
   else
     deprecated_option "with-brewed-openssl" => "with-openssl"
     deprecated_option "with-brewed-curl" => "with-curl"
@@ -25,12 +25,12 @@ class GitHalyard < Formula
     option "with-openssl", "Build with Homebrew's OpenSSL instead of using CommonCrypto"
     option "with-curl", "Use Homebrew's version of cURL library"
 
-    depends_on "openssl-halyard" => :optional
-    depends_on "curl-halyard" => :optional
+    depends_on "openssl" => :optional
+    depends_on "curl" => :optional
   end
 
   option "with-perl", "Build against a custom Perl rather than system default"
-  depends_on "perl-halyard" => :optional
+  depends_on "perl" => :optional
 
 
   resource "html-#{version}" do

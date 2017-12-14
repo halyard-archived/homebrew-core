@@ -5,7 +5,7 @@ class DirenvHalyard < Formula
   sha256 "917838827cb753153b91cb2d10c0d7c20cbaa85aa2dde520ee23653a74268ccd"
   head "https://github.com/direnv/direnv.git"
 
-  depends_on "go-halyard" => :build
+  depends_on "go" => :build
 
 
   def install

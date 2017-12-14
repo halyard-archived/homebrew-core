@@ -8,7 +8,7 @@ class SpeculateHalyard < Formula
 
   head do
     url "https://github.com/akerl/speculate.git"
-    depends_on "go-halyard" => :build
+    depends_on "go" => :build
   end
 
   def install

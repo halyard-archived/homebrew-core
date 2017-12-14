@@ -5,8 +5,8 @@ class SocatHalyard < Formula
   sha256 "ce3efc17e3e544876ebce7cd6c85b3c279fda057b2857fcaaf67b9ab8bdaf034"
   revision 1
 
-  depends_on "openssl-halyard"
-  depends_on "readline-halyard"
+  depends_on "openssl"
+  depends_on "readline"
 
 
   def install

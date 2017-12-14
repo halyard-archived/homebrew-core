@@ -8,8 +8,8 @@ class BoostPythonHalyard < Formula
   option :cxx11
   option "without-python", "Build without python 2 support"
 
-  depends_on "python3-halyard" => :optional
-  depends_on "boost-halyard"
+  depends_on "python3" => :optional
+  depends_on "boost"
 
 
   def install

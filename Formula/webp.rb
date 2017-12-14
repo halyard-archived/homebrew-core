@@ -7,15 +7,15 @@ class WebpHalyard < Formula
 
   head do
     url "https://chromium.googlesource.com/webm/libwebp.git"
-    depends_on "autoconf-halyard" => :build
-    depends_on "automake-halyard" => :build
-    depends_on "libtool-halyard" => :build
+    depends_on "autoconf" => :build
+    depends_on "automake" => :build
+    depends_on "libtool" => :build
   end
 
-  depends_on "libpng-halyard"
-  depends_on "jpeg-halyard" => :recommended
-  depends_on "libtiff-halyard" => :optional
-  depends_on "giflib-halyard" => :optional
+  depends_on "libpng"
+  depends_on "jpeg" => :recommended
+  depends_on "libtiff" => :optional
+  depends_on "giflib" => :optional
 
 
   def install

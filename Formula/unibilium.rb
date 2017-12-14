@@ -4,7 +4,7 @@ class UnibiliumHalyard < Formula
   url "https://github.com/mauke/unibilium/archive/v1.2.1.tar.gz"
   sha256 "6045b4f6adca7b1123284007675ca71f718f70942d3a93d8b9fa5bd442006ec1"
 
-  depends_on "libtool-halyard" => :build
+  depends_on "libtool" => :build
 
 
   def install

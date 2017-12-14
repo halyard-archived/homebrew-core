@@ -131,22 +131,22 @@ class LlvmHalyard < Formula
   option "without-libffi", "Do not use libffi to call external functions"
 
   # https://llvm.org/docs/GettingStarted.html#requirement
-  depends_on "libffi-halyard" => :recommended
+  depends_on "libffi" => :recommended
 
   # for the 'dot' tool (lldb)
-  depends_on "graphviz-halyard" => :optional
+  depends_on "graphviz" => :optional
 
-  depends_on "ocaml-halyard" => :optional
+  depends_on "ocaml" => :optional
   if build.with? "ocaml"
-    depends_on "opam-halyard" => :build
-    depends_on "pkg-config-halyard" => :build
+    depends_on "opam" => :build
+    depends_on "pkg-config" => :build
   end
 
-  depends_on "python-halyard" => :optional
-  depends_on "cmake-halyard" => :build
+  depends_on "python" => :optional
+  depends_on "cmake" => :build
 
   if build.with? "lldb"
-    depends_on "swig-halyard" if MacOS.version >= :lion
+    depends_on "swig" if MacOS.version >= :lion
     depends_on CodesignRequirement
   end
 

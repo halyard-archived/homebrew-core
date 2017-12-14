@@ -7,14 +7,14 @@ class P11KitHalyard < Formula
   head do
     url "https://github.com/p11-glue/p11-kit.git"
 
-    depends_on "autoconf-halyard" => :build
-    depends_on "automake-halyard" => :build
-    depends_on "gettext-halyard" => :build
-    depends_on "libtool-halyard" => :build
+    depends_on "autoconf" => :build
+    depends_on "automake" => :build
+    depends_on "gettext" => :build
+    depends_on "libtool" => :build
   end
 
-  depends_on "libffi-halyard"
-  depends_on "pkg-config-halyard" => :build
+  depends_on "libffi"
+  depends_on "pkg-config" => :build
 
 
   def install

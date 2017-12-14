@@ -7,20 +7,20 @@ class CairoHalyard < Formula
 
   head do
     url "https://anongit.freedesktop.org/git/cairo", :using => :git
-    depends_on "automake-halyard" => :build
-    depends_on "autoconf-halyard" => :build
-    depends_on "libtool-halyard" => :build
+    depends_on "automake" => :build
+    depends_on "autoconf" => :build
+    depends_on "libtool" => :build
   end
 
   keg_only :provided_pre_mountain_lion
 
-  depends_on "pkg-config-halyard" => :build
+  depends_on "pkg-config" => :build
   depends_on :x11 => :optional
-  depends_on "freetype-halyard"
-  depends_on "fontconfig-halyard"
-  depends_on "libpng-halyard"
-  depends_on "pixman-halyard"
-  depends_on "glib-halyard"
+  depends_on "freetype"
+  depends_on "fontconfig"
+  depends_on "libpng"
+  depends_on "pixman"
+  depends_on "glib"
 
 
   def install

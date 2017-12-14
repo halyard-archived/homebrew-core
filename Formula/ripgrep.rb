@@ -5,7 +5,7 @@ class RipgrepHalyard < Formula
   sha256 "e010693637acebb409f3dba7caf59ef093d1894a33b14015041b8d43547665f5"
   head "https://github.com/BurntSushi/ripgrep.git"
 
-  depends_on "rust-halyard" => :build
+  depends_on "rust" => :build
 
 
   def install

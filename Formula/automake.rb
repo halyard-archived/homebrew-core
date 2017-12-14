@@ -5,7 +5,7 @@ class AutomakeHalyard < Formula
   mirror "https://ftpmirror.gnu.org/automake/automake-1.15.1.tar.xz"
   sha256 "af6ba39142220687c500f79b4aa2f181d9b24e4f8d8ec497cea4ba26c64bedaf"
 
-  depends_on "autoconf-halyard" => :run
+  depends_on "autoconf" => :run
 
 
   def install

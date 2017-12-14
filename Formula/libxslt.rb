@@ -8,9 +8,9 @@ class LibxsltHalyard < Formula
   head do
     url "https://git.gnome.org/browse/libxslt.git"
 
-    depends_on "autoconf-halyard" => :build
-    depends_on "automake-halyard" => :build
-    depends_on "libtool-halyard" => :build
+    depends_on "autoconf" => :build
+    depends_on "automake" => :build
+    depends_on "libtool" => :build
 
     # https://bugzilla.gnome.org/show_bug.cgi?id=743148
     patch :DATA
@@ -18,7 +18,7 @@ class LibxsltHalyard < Formula
 
   keg_only :provided_by_osx
 
-  depends_on "libxml2-halyard"
+  depends_on "libxml2"
 
 
   def install

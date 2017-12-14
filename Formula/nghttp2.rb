@@ -7,26 +7,26 @@ class Nghttp2Halyard < Formula
   head do
     url "https://github.com/nghttp2/nghttp2.git"
 
-    depends_on "automake-halyard" => :build
-    depends_on "autoconf-halyard" => :build
-    depends_on "libtool-halyard" => :build
+    depends_on "automake" => :build
+    depends_on "autoconf" => :build
+    depends_on "libtool" => :build
   end
 
   option "with-examples", "Compile and install example programs"
   option "with-python3", "Build python3 bindings"
 
-  depends_on "python3-halyard" => :optional
-  depends_on "sphinx-doc-halyard" => :build
-  depends_on "pkg-config-halyard" => :build
-  depends_on "cunit-halyard" => :build
-  depends_on "c-ares-halyard"
-  depends_on "libev-halyard"
-  depends_on "openssl-halyard"
-  depends_on "libevent-halyard"
-  depends_on "jansson-halyard"
-  depends_on "boost-halyard"
-  depends_on "spdylay-halyard"
-  depends_on "jemalloc-halyard" => :recommended
+  depends_on "python3" => :optional
+  depends_on "sphinx-doc" => :build
+  depends_on "pkg-config" => :build
+  depends_on "cunit" => :build
+  depends_on "c-ares"
+  depends_on "libev"
+  depends_on "openssl"
+  depends_on "libevent"
+  depends_on "jansson"
+  depends_on "boost"
+  depends_on "spdylay"
+  depends_on "jemalloc" => :recommended
 
 
   resource "Cython" do

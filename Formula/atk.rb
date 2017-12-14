@@ -4,10 +4,10 @@ class AtkHalyard < Formula
   url "https://download.gnome.org/sources/atk/2.26/atk-2.26.1.tar.xz"
   sha256 "ef00ff6b83851dddc8db38b4d9faeffb99572ba150b0664ee02e46f015ea97cb"
 
-  depends_on "pkg-config-halyard" => :build
-  depends_on "glib-halyard"
-  depends_on "gettext-halyard"
-  depends_on "gobject-introspection-halyard"
+  depends_on "pkg-config" => :build
+  depends_on "glib"
+  depends_on "gettext"
+  depends_on "gobject-introspection"
 
 
   def install

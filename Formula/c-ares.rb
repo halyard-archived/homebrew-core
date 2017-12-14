@@ -9,9 +9,9 @@ class CAresHalyard < Formula
   head do
     url "https://github.com/bagder/c-ares.git"
 
-    depends_on "automake-halyard" => :build
-    depends_on "autoconf-halyard" => :build
-    depends_on "libtool-halyard" => :build
+    depends_on "automake" => :build
+    depends_on "autoconf" => :build
+    depends_on "libtool" => :build
   end
 
   def install

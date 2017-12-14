@@ -7,7 +7,7 @@ class PixmanHalyard < Formula
 
   keg_only :provided_pre_mountain_lion
 
-  depends_on "pkg-config-halyard" => :build
+  depends_on "pkg-config" => :build
 
 
   def install

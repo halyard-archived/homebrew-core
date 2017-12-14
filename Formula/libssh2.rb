@@ -7,12 +7,12 @@ class Libssh2Halyard < Formula
   head do
     url "https://github.com/libssh2/libssh2.git"
 
-    depends_on "autoconf-halyard" => :build
-    depends_on "automake-halyard" => :build
-    depends_on "libtool-halyard" => :build
+    depends_on "autoconf" => :build
+    depends_on "automake" => :build
+    depends_on "libtool" => :build
   end
 
-  depends_on "openssl-halyard"
+  depends_on "openssl"
 
 
   def install
