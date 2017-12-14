@@ -7,8 +7,6 @@ class BashCompletionHalyard < Formula
 
   depends_on "bash"
 
-  conflicts_with 'bash-completion', :because => 'halyard/homebrew-core/bash-completion replaces bash-completion'
-  conflicts_with 'bash-completion@2', :because => 'halyard/homebrew-core/bash-completion replaces bash-completion'
 
   def install
     inreplace "bash_completion", "readlink -f", "readlink"

@@ -8,7 +8,6 @@ class CoreutilsHalyard < Formula
 
   depends_on "gmp" => :optional
 
-  conflicts_with 'coreutils', :because => 'halyard/homebrew-core/coreutils replaces coreutils'
   conflicts_with "ganglia", :because => "both install `gstat` binaries"
   conflicts_with "gegl", :because => "both install `gcut` binaries"
   conflicts_with "idutils", :because => "both install `gid` and `gid.1`"

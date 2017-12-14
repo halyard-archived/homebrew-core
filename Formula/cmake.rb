@@ -25,7 +25,6 @@ class CmakeHalyard < Formula
     end
   end
 
-  conflicts_with 'cmake', :because => 'halyard/homebrew-core/cmake replaces cmake'
 
   def install
     args = %W[

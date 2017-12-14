@@ -7,7 +7,6 @@ class GdbmHalyard < Formula
 
   option "with-libgdbm-compat", "Build libgdbm_compat, a compatibility layer which provides UNIX-like dbm and ndbm interfaces."
 
-  conflicts_with 'gdbm', :because => 'halyard/homebrew-core/gdbm replaces gdbm'
 
   # Use --without-readline because readline detection is broken in 1.13
   # https://github.com/Homebrew/homebrew-core/pull/10903

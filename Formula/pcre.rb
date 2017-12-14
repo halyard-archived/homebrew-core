@@ -13,7 +13,6 @@ class PcreHalyard < Formula
     depends_on "libtool" => :build
   end
 
-  conflicts_with 'pcre', :because => 'halyard/homebrew-core/pcre replaces pcre'
 
   def install
     system "./autogen.sh" if build.head?

@@ -25,7 +25,6 @@ class ReadlineHalyard < Formula
     defaulting this GNU Readline installation to keg-only.
   EOS
 
-  conflicts_with 'readline', :because => 'halyard/homebrew-core/readline replaces readline'
 
   def install
     system "./configure", "--prefix=#{prefix}"

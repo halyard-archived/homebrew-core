@@ -14,7 +14,6 @@ class ZshHalyard < Formula
   depends_on "gdbm"
   depends_on "pcre"
 
-  conflicts_with 'zsh', :because => 'halyard/homebrew-core/zsh replaces zsh'
 
   resource "htmldoc-#{version}" do
     version name.split('-').last

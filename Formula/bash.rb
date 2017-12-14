@@ -42,7 +42,6 @@ class BashHalyard < Formula
 
   depends_on "readline"
 
-  conflicts_with 'bash', :because => 'halyard/homebrew-core/bash replaces bash'
 
   def install
     # When built with SSH_SOURCE_BASHRC, bash will source ~/.bashrc when
