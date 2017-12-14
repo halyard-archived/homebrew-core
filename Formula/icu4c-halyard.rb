@@ -6,8 +6,6 @@ class Icu4cHalyard < Formula
 
   stable do
     url "https://ssl.icu-project.org/files/icu4c/60.1/icu4c-60_1-src.tgz"
-    mirror "https://fossies.org/linux/misc/icu4c-60_1-src.tgz"
-    mirror "https://downloads.sourceforge.net/project/icu/ICU4C/60.1/icu4c-60_1-src.tgz"
     version "60.1"
     sha256 "f8f5a6c8fbf32c015a467972bdb1477dc5f5d5dfea908b6ed218715eeb5ee225"
 
