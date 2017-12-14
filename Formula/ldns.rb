@@ -13,7 +13,7 @@ class LdnsHalyard < Formula
       --prefix=#{prefix}
       --with-drill
       --with-examples
-      --with-ssl=#{Formula["openssl-halyard"].opt_prefix}
+      --with-ssl=#{Formula["openssl"].opt_prefix}
       --with-pyldns
       PYTHON_SITE_PKG=#{lib}/python2.7/site-packages
     ]

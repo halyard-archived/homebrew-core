@@ -64,7 +64,7 @@ class RustHalyard < Formula
 
     args = ["--prefix=#{prefix}"]
     args << "--disable-rpath" if build.head?
-    args << "--llvm-root=#{Formula["llvm-halyard"].opt_prefix}" if build.with? "llvm"
+    args << "--llvm-root=#{Formula["llvm"].opt_prefix}" if build.with? "llvm"
     if build.head?
       args << "--release-channel=nightly"
     else

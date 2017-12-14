@@ -20,7 +20,7 @@ class JemallocHalyard < Formula
     ]
 
     if build.head?
-      args << "--with-xslroot=#{Formula["docbook-xsl-halyard"].opt_prefix}/docbook-xsl"
+      args << "--with-xslroot=#{Formula["docbook-xsl"].opt_prefix}/docbook-xsl"
       system "./autogen.sh", *args
       system "make", "dist"
     else

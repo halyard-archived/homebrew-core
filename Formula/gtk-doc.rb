@@ -20,7 +20,7 @@ class GtkDocHalyard < Formula
   end
 
   def install
-    ENV.append_path "PYTHONPATH", "#{Formula["libxml2-halyard"].opt_lib}/python2.7/site-packages"
+    ENV.append_path "PYTHONPATH", "#{Formula["libxml2"].opt_lib}/python2.7/site-packages"
 
     ENV.prepend_create_path "PYTHONPATH", libexec/"vendor/lib/python2.7/site-packages"
     resource("six").stage do

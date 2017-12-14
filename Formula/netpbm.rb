@@ -26,7 +26,7 @@ class NetpbmHalyard < Formula
       s.change_make_var! "PNGLIB", "-lpng"
       s.change_make_var! "ZLIB", "-lz"
       s.change_make_var! "JASPERLIB", "-ljasper"
-      s.change_make_var! "JASPERHDR_DIR", "#{Formula["jasper-halyard"].opt_include}/jasper"
+      s.change_make_var! "JASPERHDR_DIR", "#{Formula["jasper"].opt_include}/jasper"
     end
 
     ENV.deparallelize

@@ -27,12 +27,12 @@ class WgetHalyard < Formula
       --prefix=#{prefix}
       --sysconfdir=#{etc}
       --with-ssl=openssl
-      --with-libssl-prefix=#{Formula["openssl-halyard"].opt_prefix}
+      --with-libssl-prefix=#{Formula["openssl"].opt_prefix}
     ]
 
     args << "--disable-debug" if build.without? "debug"
     args << "--disable-pcre" if build.without? "pcre"
-    args << "--with-gpgme-prefix=#{Formula["gpgme-halyard"].opt_prefix}" if build.with? "gpgme"
+    args << "--with-gpgme-prefix=#{Formula["gpgme"].opt_prefix}" if build.with? "gpgme"
 
     system "./bootstrap" if build.head?
     system "./configure", *args

@@ -27,7 +27,7 @@ class PhantomjsHalyard < Formula
 
 
   def install
-    ENV["OPENSSL"] = Formula["openssl-halyard"].opt_prefix
+    ENV["OPENSSL"] = Formula["openssl"].opt_prefix
     system "./build.py", "--confirm", "--jobs", ENV.make_jobs
     bin.install "bin/phantomjs"
     pkgshare.install "examples"

@@ -15,8 +15,8 @@ class UnboundHalyard < Formula
     args = %W[
       --prefix=#{prefix}
       --sysconfdir=#{etc}
-      --with-libevent=#{Formula["libevent-halyard"].opt_prefix}
-      --with-ssl=#{Formula["openssl-halyard"].opt_prefix}
+      --with-libevent=#{Formula["libevent"].opt_prefix}
+      --with-ssl=#{Formula["openssl"].opt_prefix}
     ]
 
     if build.with? "python"

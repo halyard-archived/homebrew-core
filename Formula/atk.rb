@@ -27,8 +27,8 @@ class AtkHalyard < Formula
         return 0;
       }
     EOS
-    gettext = Formula["gettext-halyard"]
-    glib = Formula["glib-halyard"]
+    gettext = Formula["gettext"]
+    glib = Formula["glib"]
     flags = %W[
       -I#{gettext.opt_include}
       -I#{glib.opt_include}/glib-2.0

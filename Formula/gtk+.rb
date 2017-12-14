@@ -48,16 +48,16 @@ class GtkxHalyard < Formula
         return 0;
       }
     EOS
-    atk = Formula["atk-halyard"]
-    cairo = Formula["cairo-halyard"]
-    fontconfig = Formula["fontconfig-halyard"]
-    freetype = Formula["freetype-halyard"]
-    gdk_pixbuf = Formula["gdk-pixbuf-halyard"]
-    gettext = Formula["gettext-halyard"]
-    glib = Formula["glib-halyard"]
-    libpng = Formula["libpng-halyard"]
-    pango = Formula["pango-halyard"]
-    pixman = Formula["pixman-halyard"]
+    atk = Formula["atk"]
+    cairo = Formula["cairo"]
+    fontconfig = Formula["fontconfig"]
+    freetype = Formula["freetype"]
+    gdk_pixbuf = Formula["gdk-pixbuf"]
+    gettext = Formula["gettext"]
+    glib = Formula["glib"]
+    libpng = Formula["libpng"]
+    pango = Formula["pango"]
+    pixman = Formula["pixman"]
     flags = %W[
       -I#{atk.opt_include}/atk-1.0
       -I#{cairo.opt_include}/cairo

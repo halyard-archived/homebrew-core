@@ -101,15 +101,15 @@ class Python3Halyard < Formula
     # superenv makes cc always find includes/libs!
     inreplace "setup.py" do |s|
       s.gsub! "do_readline = self.compiler.find_library_file(lib_dirs, 'readline')",
-              "do_readline = '#{Formula["readline-halyard"].opt_lib}/libhistory.dylib'"
-      s.gsub! "/usr/local/ssl", Formula["openssl-halyard"].opt_prefix
+              "do_readline = '#{Formula["readline"].opt_lib}/libhistory.dylib'"
+      s.gsub! "/usr/local/ssl", Formula["openssl"].opt_prefix
     end
 
     if build.with? "sqlite"
       inreplace "setup.py" do |s|
         s.gsub! "sqlite_setup_debug = False", "sqlite_setup_debug = True"
         s.gsub! "for d_ in inc_dirs + sqlite_inc_paths:",
-                "for d_ in ['#{Formula["sqlite-halyard"].opt_include}']:"
+                "for d_ in ['#{Formula["sqlite"].opt_include}']:"
       end
     end
 
@@ -122,7 +122,7 @@ class Python3Halyard < Formula
     end
 
     if build.with? "tcl-tk"
-      tcl_tk = Formula["tcl-tk-halyard"].opt_prefix
+      tcl_tk = Formula["tcl-tk"].opt_prefix
       cppflags << "-I#{tcl_tk}/include"
       ldflags  << "-L#{tcl_tk}/lib"
     end
@@ -233,17 +233,17 @@ class Python3Halyard < Formula
     end
 
     # Help distutils find brewed stuff when building extensions
-    include_dirs = [HOMEBREW_PREFIX/"include", Formula["openssl-halyard"].opt_include]
-    library_dirs = [HOMEBREW_PREFIX/"lib", Formula["openssl-halyard"].opt_lib]
+    include_dirs = [HOMEBREW_PREFIX/"include", Formula["openssl"].opt_include]
+    library_dirs = [HOMEBREW_PREFIX/"lib", Formula["openssl"].opt_lib]
 
     if build.with? "sqlite"
-      include_dirs << Formula["sqlite-halyard"].opt_include
-      library_dirs << Formula["sqlite-halyard"].opt_lib
+      include_dirs << Formula["sqlite"].opt_include
+      library_dirs << Formula["sqlite"].opt_lib
     end
 
     if build.with? "tcl-tk"
-      include_dirs << Formula["tcl-tk-halyard"].opt_include
-      library_dirs << Formula["tcl-tk-halyard"].opt_lib
+      include_dirs << Formula["tcl-tk"].opt_include
+      library_dirs << Formula["tcl-tk"].opt_lib
     end
 
     cfg = prefix/"Frameworks/Python.framework/Versions/#{xy}/lib/python#{xy}/distutils/distutils.cfg"

@@ -242,8 +242,8 @@ class LlvmHalyard < Formula
 
     if build.with? "libffi"
       args << "-DLLVM_ENABLE_FFI=ON"
-      args << "-DFFI_INCLUDE_DIR=#{Formula["libffi-halyard"].opt_lib}/libffi-#{Formula["libffi-halyard"].version}/include"
-      args << "-DFFI_LIBRARY_DIR=#{Formula["libffi-halyard"].opt_lib}"
+      args << "-DFFI_INCLUDE_DIR=#{Formula["libffi-halyard"].opt_lib}/libffi-#{Formula["libffi"].version}/include"
+      args << "-DFFI_LIBRARY_DIR=#{Formula["libffi"].opt_lib}"
     end
 
     mktemp do

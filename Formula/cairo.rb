@@ -59,12 +59,12 @@ class CairoHalyard < Formula
         return 0;
       }
     EOS
-    fontconfig = Formula["fontconfig-halyard"]
-    freetype = Formula["freetype-halyard"]
-    gettext = Formula["gettext-halyard"]
-    glib = Formula["glib-halyard"]
-    libpng = Formula["libpng-halyard"]
-    pixman = Formula["pixman-halyard"]
+    fontconfig = Formula["fontconfig"]
+    freetype = Formula["freetype"]
+    gettext = Formula["gettext"]
+    glib = Formula["glib"]
+    libpng = Formula["libpng"]
+    pixman = Formula["pixman"]
     flags = %W[
       -I#{fontconfig.opt_include}
       -I#{freetype.opt_include}/freetype2

@@ -51,13 +51,13 @@ class PangoHalyard < Formula
         return 0;
       }
     EOS
-    cairo = Formula["cairo-halyard"]
-    fontconfig = Formula["fontconfig-halyard"]
-    freetype = Formula["freetype-halyard"]
-    gettext = Formula["gettext-halyard"]
-    glib = Formula["glib-halyard"]
-    libpng = Formula["libpng-halyard"]
-    pixman = Formula["pixman-halyard"]
+    cairo = Formula["cairo"]
+    fontconfig = Formula["fontconfig"]
+    freetype = Formula["freetype"]
+    gettext = Formula["gettext"]
+    glib = Formula["glib"]
+    libpng = Formula["libpng"]
+    pixman = Formula["pixman"]
     flags = %W[
       -I#{cairo.opt_include}/cairo
       -I#{fontconfig.opt_include}

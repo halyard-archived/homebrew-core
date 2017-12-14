@@ -40,15 +40,15 @@ class CurlHalyard < Formula
     # cURL has a new firm desire to find ssl with PKG_CONFIG_PATH instead of using
     # "--with-ssl" any more. "when possible, set the PKG_CONFIG_PATH environment
     # variable instead of using this option". Multi-SSL choice breaks w/o using it.
-    ENV.prepend_path "PKG_CONFIG_PATH", "#{Formula["openssl-halyard"].opt_lib}/pkgconfig"
-    args << "--with-ssl=#{Formula["openssl-halyard"].opt_prefix}"
+    ENV.prepend_path "PKG_CONFIG_PATH", "#{Formula["openssl"].opt_lib}/pkgconfig"
+    args << "--with-ssl=#{Formula["openssl"].opt_prefix}"
     args << "--with-ca-bundle=#{etc}/openssl/cert.pem"
     args << "--with-ca-path=#{etc}/openssl/certs"
 
     args << (build.with?("libssh2") ? "--with-libssh2" : "--without-libssh2")
 
     if build.with? "c-ares"
-      args << "--enable-ares=#{Formula["c-ares-halyard"].opt_prefix}"
+      args << "--enable-ares=#{Formula["c-ares"].opt_prefix}"
     else
       args << "--disable-ares"
     end

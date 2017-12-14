@@ -93,10 +93,10 @@ class GdkPixbufHalyard < Formula
         return 0;
       }
     EOS
-    gettext = Formula["gettext-halyard"]
-    glib = Formula["glib-halyard"]
-    libpng = Formula["libpng-halyard"]
-    pcre = Formula["pcre-halyard"]
+    gettext = Formula["gettext"]
+    glib = Formula["glib"]
+    libpng = Formula["libpng"]
+    pcre = Formula["pcre"]
     flags = (ENV.cflags || "").split + (ENV.cppflags || "").split + (ENV.ldflags || "").split
     flags += %W[
       -I#{gettext.opt_include}

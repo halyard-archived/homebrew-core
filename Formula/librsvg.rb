@@ -40,7 +40,7 @@ class LibrsvgHalyard < Formula
     # librsvg is not aware GDK_PIXBUF_MODULEDIR must be set
     # set GDK_PIXBUF_MODULEDIR and update loader cache
     ENV["GDK_PIXBUF_MODULEDIR"] = "#{HOMEBREW_PREFIX}/lib/gdk-pixbuf-2.0/2.10.0/loaders"
-    system "#{Formula["gdk-pixbuf-halyard"].opt_bin}/gdk-pixbuf-query-loaders", "--update-cache"
+    system "#{Formula["gdk-pixbuf"].opt_bin}/gdk-pixbuf-query-loaders", "--update-cache"
   end
 
   test do
@@ -52,14 +52,14 @@ class LibrsvgHalyard < Formula
         return 0;
       }
     EOS
-    cairo = Formula["cairo-halyard"]
-    fontconfig = Formula["fontconfig-halyard"]
-    freetype = Formula["freetype-halyard"]
-    gdk_pixbuf = Formula["gdk-pixbuf-halyard"]
-    gettext = Formula["gettext-halyard"]
-    glib = Formula["glib-halyard"]
-    libpng = Formula["libpng-halyard"]
-    pixman = Formula["pixman-halyard"]
+    cairo = Formula["cairo"]
+    fontconfig = Formula["fontconfig"]
+    freetype = Formula["freetype"]
+    gdk_pixbuf = Formula["gdk-pixbuf"]
+    gettext = Formula["gettext"]
+    glib = Formula["glib"]
+    libpng = Formula["libpng"]
+    pixman = Formula["pixman"]
     flags = %W[
       -I#{cairo.opt_include}/cairo
       -I#{fontconfig.opt_include}

@@ -46,7 +46,7 @@ class Nghttp2Halyard < Formula
       --prefix=#{prefix}
       --disable-silent-rules
       --enable-app
-      --with-boost=#{Formula["boost-halyard"].opt_prefix}
+      --with-boost=#{Formula["boost"].opt_prefix}
       --enable-asio-lib
       --with-spdylay
       --disable-python-bindings

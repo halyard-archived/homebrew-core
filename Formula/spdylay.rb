@@ -20,7 +20,7 @@ class SpdylayHalyard < Formula
     end
 
     if MacOS.version > :lion
-      Formula["libxml2-halyard"].stable.stage { (buildpath/"m4").install "libxml.m4" }
+      Formula["libxml2"].stable.stage { (buildpath/"m4").install "libxml.m4" }
     end
 
     system "autoreconf", "-fiv"

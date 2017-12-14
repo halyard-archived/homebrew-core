@@ -28,7 +28,7 @@ class GobjectIntrospectionHalyard < Formula
   end
 
   test do
-    ENV.prepend_path "PKG_CONFIG_PATH", Formula["libffi-halyard"].opt_lib/"pkgconfig"
+    ENV.prepend_path "PKG_CONFIG_PATH", Formula["libffi"].opt_lib/"pkgconfig"
     resource("tutorial").stage testpath
     system "make"
     assert_predicate testpath/"Tut-0.1.typelib", :exist?
