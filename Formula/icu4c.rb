@@ -5,17 +5,9 @@ class Icu4c < Formula
   head "https://ssl.icu-project.org/repos/icu/trunk/icu4c/", :using => :svn
 
   stable do
-    url "https://ssl.icu-project.org/files/icu4c/60.1/icu4c-60_1-src.tgz"
-    version "60.1"
-    sha256 "f8f5a6c8fbf32c015a467972bdb1477dc5f5d5dfea908b6ed218715eeb5ee225"
-
-    # Fix CVE-2017-14952
-    # Upstream commit from 9 Aug 2017 "Removed redundant UVector entry clean up
-    # function call."
-    patch do
-      url "https://raw.githubusercontent.com/Homebrew/formula-patches/fb441ea/icu4c/CVE-2017-14952.diff"
-      sha256 "1da1eec19cfe4907eb4766192ddbca689506ce44cfeb35c349af9609ae7f7203"
-    end
+    url "https://ssl.icu-project.org/files/icu4c/60.2/icu4c-60_2-src.tgz"
+    version "60.2"
+    sha256 "f073ea8f35b926d70bb33e6577508aa642a8b316a803f11be20af384811db418"
   end
 
   keg_only :provided_by_osx, "macOS provides libicucore.dylib (but nothing else)"
