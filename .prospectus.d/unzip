@@ -1,0 +1,13 @@
+item do
+  expected do
+    url_xpath
+    url 'https://packages.debian.org/sid/unzip'
+    xpath '//*[@id="content"]/h1'
+    regex /^Package: unzip \(([\d.-]+)\)$/
+  end
+
+  actual do
+    homebrew_formula
+    name 'unzip'
+  end
+end
