@@ -23,10 +23,9 @@ class Gnupg < Formula
   depends_on "readline"
   depends_on "libusb"
 
-  conflicts_with "gpg-agent", :because => "This GnuPG 2.1 includes gpg-agent"
-  conflicts_with "dirmngr", :because => "This GnuPG 2.1 includes dirmngr"
-  conflicts_with "gnupg2", :because => "This GnuPG 2.1 includes gnupg2 (duh)"
-  conflicts_with "gnupg", :because => "This GnuPG is better than GnuPG1"
+  #conflicts_with "gpg-agent", :because => "This GnuPG 2.1 includes gpg-agent"
+  #conflicts_with "dirmngr", :because => "This GnuPG 2.1 includes dirmngr"
+  #conflicts_with "gnupg2", :because => "This GnuPG 2.1 includes gnupg2 (duh)"
 
   def install
     args = %W[

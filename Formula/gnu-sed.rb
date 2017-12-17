@@ -7,7 +7,7 @@ class GnuSed < Formula
 
   option "with-default-names", "Do not prepend 'g' to the binary"
 
-  conflicts_with "ssed", :because => "both install share/info/sed.info"
+  #conflicts_with "ssed", :because => "both install share/info/sed.info"
 
   deprecated_option "default-names" => "with-default-names"
 

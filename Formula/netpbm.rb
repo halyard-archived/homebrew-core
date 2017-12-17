@@ -10,7 +10,7 @@ class Netpbm < Formula
   depends_on "jpeg"
   depends_on "libpng"
 
-  conflicts_with "jbigkit", :because => "both install `pbm.5` and `pgm.5` files"
+  #conflicts_with "jbigkit", :because => "both install `pbm.5` and `pgm.5` files"
 
   def install
     cp "config.mk.in", "config.mk"

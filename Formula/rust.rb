@@ -35,7 +35,7 @@ class Rust < Formula
   depends_on "openssl"
   depends_on "libssh2"
 
-  conflicts_with "cargo-completion", :because => "both install shell completion for cargo"
+  #conflicts_with "cargo-completion", :because => "both install shell completion for cargo"
 
   # According to the official readme, GCC 4.7+ is required
   fails_with :gcc_4_0

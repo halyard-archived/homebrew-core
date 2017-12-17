@@ -23,7 +23,7 @@ class Watch < Formula
 
   depends_on "gettext"
 
-  conflicts_with "visionmedia-watch"
+  #conflicts_with "visionmedia-watch"
 
   def install
     # Prevents undefined symbol errors for _libintl_gettext, etc.

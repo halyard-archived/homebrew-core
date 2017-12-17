@@ -10,7 +10,7 @@ class Nmap < Formula
   depends_on "openssl"
   depends_on "pygtk" => :optional
 
-  conflicts_with "ndiff", :because => "both install `ndiff` binaries"
+  #conflicts_with "ndiff", :because => "both install `ndiff` binaries"
 
   def install
     ENV.deparallelize
