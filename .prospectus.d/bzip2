@@ -3,7 +3,7 @@ item do
     url_xpath
     url 'http://www.bzip.org/downloads.html'
     xpath '//*[@id="release"]/p[2]/a'
-    regex /^([\d.]+) source tarball$/
+    regex /^([\d.]+) source\ntarball$/
   end
 
   actual do
