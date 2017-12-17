@@ -1,0 +1,13 @@
+item do
+  expected do
+    url_xpath
+    url 'http://www.bzip.org/downloads.html'
+    xpath '//*[@id="release"]/p[2]/a'
+    regex /^([\d.]+) source tarball$/
+  end
+
+  actual do
+    homebrew_formula
+    name 'bzip2'
+  end
+end
