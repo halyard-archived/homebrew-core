@@ -3,6 +3,7 @@ item do
     url_xpath
     url 'https://wiki.freedesktop.org/www/Software/fontconfig/'
     xpath '//*[@id="content"]/ul[3]/li/text()[1]'
+    regex /^The current stable series is ([\d.]+).  All releases are available in the$/
   end
 
   actual do
