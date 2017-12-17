@@ -33,12 +33,12 @@ class Neovim < Formula
       r.stage(buildpath/"deps-build/build/src/#{r.name}")
     end
 
-    ENV.prepend_path "LUA_PATH", "#{buildpath}/deps-build/share/lua/5.1/?.lua"
-    ENV.prepend_path "LUA_CPATH", "#{buildpath}/deps-build/lib/lua/5.1/?.so"
+    ENV.prepend_path "LUA_PATH", "#{buildpath}/deps-build/share/lua/5.3/?.lua"
+    ENV.prepend_path "LUA_CPATH", "#{buildpath}/deps-build/lib/lua/5.3/?.so"
 
     cd "deps-build" do
-      system "luarocks-5.1", "build", "build/src/lpeg/lpeg-1.0.1-1.src.rock", "--tree=."
-      system "luarocks-5.1", "build", "build/src/mpack/mpack-1.0.6-0.src.rock", "--tree=."
+      system "luarocks-5.3", "build", "build/src/lpeg/lpeg-1.0.1-1.src.rock", "--tree=."
+      system "luarocks-5.3", "build", "build/src/mpack/mpack-1.0.6-0.src.rock", "--tree=."
       system "cmake", "../third-party", "-DUSE_BUNDLED=OFF", *std_cmake_args
       system "make"
     end
