@@ -3,8 +3,8 @@
 class Qt < Formula
   desc "Cross-platform application and UI framework"
   homepage "https://www.qt.io/"
-  version "5.10.0"
-  url "https://download.qt.io/official_releases/qt/#{version.to_s.split('.').take(2).join('.')}/#{version}/single/qt-everywhere-src-#{version}.tar.xz"
+  _version = "5.10.0"
+  url "https://download.qt.io/official_releases/qt/#{_version.to_s.split('.').take(2).join('.')}/#{_version}/single/qt-everywhere-src-#{_version}.tar.xz"
   sha256 "cb69eb2d9175fc077d75156427647551d84e73dd253ab4620a76d778229ed3f3"
   head "https://code.qt.io/qt/qt5.git", :branch => "5.9", :shallow => false
 

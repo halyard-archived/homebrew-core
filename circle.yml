@@ -5,7 +5,7 @@ dependencies:
   override:
   - git clone https://github.com/Linuxbrew/brew.git ~/.brew
   - mkdir -p ~/.brew/Library/Taps/halyard
-  - git clone ../homebrew-core ~/.brew/Library/Taps/halyard/homebrew-core
+  - git clone ../homebrew-core ~/.brew/Library/Taps/homebrew/homebrew-core
 test:
   override:
   - ~/.brew/bin/brew audit ./Formula/*

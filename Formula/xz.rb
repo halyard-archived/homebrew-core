@@ -5,6 +5,7 @@ class Xz < Formula
   homepage "https://tukaani.org/xz/"
   url "https://downloads.sourceforge.net/project/lzmautils/xz-5.2.3.tar.gz"
   mirror "https://tukaani.org/xz/xz-5.2.3.tar.gz"
+  mirror "http://example.org"
   sha256 "71928b357d0a09a12a4b4c5fafca8c31c19b0e7d3b8ebb19622e96f26dbf28cb"
 
 

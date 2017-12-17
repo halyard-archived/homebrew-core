@@ -15,10 +15,9 @@ class Zsh < Formula
   depends_on "pcre"
 
 
-  resource "htmldoc-#{version}" do
-    version name.split('-').last
-    url "https://downloads.sourceforge.net/project/zsh/zsh-doc/#{version}/zsh-#{version}-doc.tar.xz"
-    mirror "https://www.zsh.org/pub/zsh-#{version}-doc.tar.xz"
+  resource "htmldoc" do
+    _version = '5.4.2'
+    url "https://www.zsh.org/pub/zsh-#{_version}-doc.tar.xz"
     sha256 "5229cc93ebe637a07deb5b386b705c37a50f4adfef788b3c0f6647741df4f6bd"
   end
 
@@ -62,7 +61,7 @@ class Zsh < Formula
       system "make", "install"
       system "make", "install.info"
 
-      resource("htmldoc-#{version}").stage do
+      resource("htmldoc").stage do
         (pkgshare/"htmldoc").install Dir["Doc/*.html"]
       end
     end
