@@ -1,9 +1,8 @@
 class Gpgme < Formula
   desc "Library access to GnuPG"
   homepage "https://www.gnupg.org/related_software/gpgme/"
-  url "https://www.gnupg.org/ftp/gcrypt/gpgme/gpgme-1.9.0.tar.bz2"
-  mirror "https://www.mirrorservice.org/sites/ftp.gnupg.org/gcrypt/gpgme/gpgme-1.9.0.tar.bz2"
-  sha256 "1b29fedb8bfad775e70eafac5b0590621683b2d9869db994568e6401f4034ceb"
+  url "https://www.gnupg.org/ftp/gcrypt/gpgme/gpgme-1.10.0.tar.bz2"
+  sha256 "1a8fed1197c3b99c35f403066bb344a26224d292afc048cfdfc4ccd5690a0693"
   revision 1
 
   depends_on "gnupg"
