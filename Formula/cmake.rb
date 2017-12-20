@@ -3,8 +3,8 @@ class Cmake < Formula
   homepage "https://www.cmake.org/"
   head "https://cmake.org/cmake.git"
 
-  url "https://cmake.org/files/v3.10/cmake-3.10.0.tar.gz"
-  sha256 "b3345c17609ea0f039960ef470aa099de9942135990930a57c14575aae884987"
+  url "https://cmake.org/files/v3.10/cmake-3.10.1.tar.gz"
+  sha256 "7be36ee24b0f5928251b644d29f5ff268330a916944ef4a75e23ba01e7573284"
 
   # The two patches below fix cmake for undefined symbols check on macOS 10.12
   # They can be removed for cmake >= 3.10
