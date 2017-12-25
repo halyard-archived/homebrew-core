@@ -2,15 +2,8 @@ class Phantomjs < Formula
   desc "Headless WebKit scriptable with a JavaScript API"
   homepage "http://phantomjs.org/"
   url "https://github.com/ariya/phantomjs.git",
-      :tag => "2.1.1",
-      :revision => "d9cda3dcd26b0e463533c5cc96e39c0f39fc32c1"
-
-  # Fixes build.py for non-standard Homebrew prefixes.  Applied
-  # upstream, can be removed in next release.
-  patch do
-    url "https://github.com/ariya/phantomjs/commit/6090f5457d2051ab374264efa18f655fa3e15e79.diff?full_index=1"
-    sha256 "6ff047216fa76c2350f8fd20497b1264904eda0d6cade9bf2ebb3843740cd03f"
-  end
+      :tag => "2.1.2",
+      :revision => "141dec36e4696d6c91226c09e4ad90a193952dfa"
 
   # Fix a variant of QTBUG-62266 in included Qt source
   # https://github.com/ariya/phantomjs/issues/15116
