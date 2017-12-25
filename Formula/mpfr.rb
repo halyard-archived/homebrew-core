@@ -1,12 +1,11 @@
 class Mpfr < Formula
   desc "C library for multiple-precision floating-point computations"
   homepage "http://www.mpfr.org/"
-  url "https://ftp.gnu.org/gnu/mpfr/mpfr-3.1.6.tar.xz"
-  mirror "https://ftpmirror.gnu.org/mpfr/mpfr-3.1.6.tar.xz"
-  sha256 "7a62ac1a04408614fccdc506e4844b10cf0ad2c2b1677097f8f35d3a1344a950"
+  url "https://ftp.gnu.org/gnu/mpfr/mpfr-4.0.0.tar.xz"
+  mirror "https://ftpmirror.gnu.org/mpfr/mpfr-4.0.0.tar.xz"
+  sha256 "fbe2cd1418b321f5c899ce4f0f0f4e73f5ecc7d02145b0e1fd096f5c3afb8a1d"
 
   depends_on "gmp"
-
 
   fails_with :clang do
     build 421
