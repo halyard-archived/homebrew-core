@@ -1,9 +1,19 @@
+require 'open-uri'
+Prospectus.extra_dep('file', 'nokogiri')
+
+def get_first_qt_link(src)
+  page = Nokogiri::HTML(open(src))
+  new_path = page.at_xpath('/html/body/table/tr[4]/td[2]/a/@href').text
+  src + new_path
+end
+
 item do
   expected do
-    url_xpath
-    url 'https://www1.qt.io/download-open-source/'
-    xpath '//*[@id="section-3"]/article/div/ul/li/a[1]'
-    regex /^Qt ([\d.]+) for Linux 64-bit \([\d.]+ \w+\)$/
+    static
+    first_url = 'https://download.qt.io/official_releases/qt/'
+    minor_url = get_first_qt_link(first_url)
+    version_url = get_first_qt_link(minor_url)
+    set version_url.split('/').last
   end
 
   actual do
