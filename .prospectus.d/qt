@@ -6,14 +6,15 @@ def get_first_qt_link(src)
   new_path = page.at_xpath('/html/body/table/tr[4]/td[2]/a/@href').text
   src + new_path
 end
+first_url = 'https://download.qt.io/official_releases/qt/'
+minor_url = get_first_qt_link(first_url)
+version_url = get_first_qt_link(minor_url)
+QT_VERSION = version_url.split('/').last
 
 item do
   expected do
     static
-    first_url = 'https://download.qt.io/official_releases/qt/'
-    minor_url = get_first_qt_link(first_url)
-    version_url = get_first_qt_link(minor_url)
-    set version_url.split('/').last
+    set QT_VERSION
   end
 
   actual do
