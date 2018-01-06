@@ -1,0 +1,12 @@
+item do
+  expected do
+    github_release
+    repo 'jamesob/desk'
+    regex /^v([\d.]+)$/
+  end
+
+  actual do
+    homebrew_formula
+    name 'desk'
+  end
+end
