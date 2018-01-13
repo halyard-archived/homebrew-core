@@ -2,8 +2,8 @@ class Phantomjs < Formula
   desc "Headless WebKit scriptable with a JavaScript API"
   homepage "http://phantomjs.org/"
   url "https://github.com/ariya/phantomjs.git",
-      :tag => "2.1.2",
-      :revision => "141dec36e4696d6c91226c09e4ad90a193952dfa"
+      :tag => "2.1.3",
+      :revision => "ca5a6c377d408366d0d4b8ecf4539b628420c8f1"
 
   # Fix a variant of QTBUG-62266 in included Qt source
   # https://github.com/ariya/phantomjs/issues/15116
