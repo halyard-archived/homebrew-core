@@ -6,7 +6,7 @@ class Neovim < Formula
   head "https://github.com/neovim/neovim.git"
 
   depends_on "cmake" => :build
-  depends_on "lua" => :build
+  depends_on "lua@5.1" => :build
   depends_on "pkg-config" => :build
   depends_on "gettext"
   depends_on "jemalloc"
@@ -16,7 +16,7 @@ class Neovim < Formula
   depends_on "luajit"
   depends_on "msgpack"
   depends_on "unibilium"
-
+  depends_on "python" if MacOS.version <= :snow_leopard
 
   resource "lpeg" do
     url "https://luarocks.org/manifests/gvvaughan/lpeg-1.0.1-1.src.rock", :using => :nounzip
@@ -33,12 +33,12 @@ class Neovim < Formula
       r.stage(buildpath/"deps-build/build/src/#{r.name}")
     end
 
-    ENV.prepend_path "LUA_PATH", "#{buildpath}/deps-build/share/lua/5.3/?.lua"
-    ENV.prepend_path "LUA_CPATH", "#{buildpath}/deps-build/lib/lua/5.3/?.so"
+    ENV.prepend_path "LUA_PATH", "#{buildpath}/deps-build/share/lua/5.1/?.lua"
+    ENV.prepend_path "LUA_CPATH", "#{buildpath}/deps-build/lib/lua/5.1/?.so"
 
     cd "deps-build" do
-      system "luarocks-5.3", "build", "build/src/lpeg/lpeg-1.0.1-1.src.rock", "--tree=."
-      system "luarocks-5.3", "build", "build/src/mpack/mpack-1.0.6-0.src.rock", "--tree=."
+      system "luarocks-5.1", "build", "build/src/lpeg/lpeg-1.0.1-1.src.rock", "--tree=."
+      system "luarocks-5.1", "build", "build/src/mpack/mpack-1.0.6-0.src.rock", "--tree=."
       system "cmake", "../third-party", "-DUSE_BUNDLED=OFF", *std_cmake_args
       system "make"
     end
