@@ -26,7 +26,7 @@ class Openssh < Formula
       --with-kerberos5
       --prefix=#{prefix}
       --sysconfdir=#{etc}/ssh
-      --with-ssl-dir=#{Formula["openssl"].opt_prefix}
+      --with-ssl-dir=#{Formula["openssl@1.0"].opt_prefix}
     ]
 
     args << "--with-ldns" if build.with? "ldns"
