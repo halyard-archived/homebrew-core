@@ -3,6 +3,7 @@ item do
     url_xpath
     url 'http://xmlsoft.org/news.html'
     xpath '//h3[1]'
+    regex /^([\d.]+): [\w\s]+$/
   end
 
   actual do
