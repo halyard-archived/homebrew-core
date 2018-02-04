@@ -1,9 +1,8 @@
 class Gnutls < Formula
   desc "GNU Transport Layer Security (TLS) Library"
   homepage "https://gnutls.org/"
-  url "https://gnupg.org/ftp/gcrypt/gnutls/v3.5/gnutls-3.5.16.tar.xz"
-  mirror "https://www.mirrorservice.org/sites/ftp.gnupg.org/gcrypt/gnutls/v3.5/gnutls-3.5.16.tar.xz"
-  sha256 "0924dec90c37c05f49fec966eba3672dab4d336d879e5c06e06e13325cbfec25"
+  url "https://gnupg.org/ftp/gcrypt/gnutls/v3.5/gnutls-3.5.17.tar.xz"
+  sha256 "86b142afef587c118d63f72ccf307f3321dbc40357aae528202b65d913d20919"
 
   depends_on "pkg-config" => :build
   depends_on "libtasn1"
