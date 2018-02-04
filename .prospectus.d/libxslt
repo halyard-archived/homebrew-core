@@ -3,7 +3,7 @@ item do
     url_xpath
     url 'https://git.gnome.org/browse/libxslt/refs/tags'
     xpath '//*[@id="cgit"]/div/table/tr[2]/td[1]/a'
-    regex /^v([\d.]+)$/
+    regex /^v([\w.-]+)$/
   end
 
   actual do
