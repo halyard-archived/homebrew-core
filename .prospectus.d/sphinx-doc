@@ -2,6 +2,7 @@ item do
   expected do
     github_tag
     repo 'sphinx-doc/sphinx'
+    filter /^[\d.]+$/
   end
 
   actual do
