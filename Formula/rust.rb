@@ -3,13 +3,13 @@ class Rust < Formula
   homepage "https://www.rust-lang.org/"
 
   stable do
-    url "https://static.rust-lang.org/dist/rustc-1.23.0-src.tar.gz"
-    sha256 "7464953871dcfdfa8afcc536916a686dd156a83339d8ec4d5cb4eb2fe146cb91"
+    url "https://static.rust-lang.org/dist/rustc-1.24.0-src.tar.gz"
+    sha256 "bb8276f6044e877e447f29f566e4bbf820fa51fea2f912d59b73233ffd95639f"
 
     resource "cargo" do
       url "https://github.com/rust-lang/cargo.git",
-          :tag => "0.22.0",
-          :revision => "3423351a5d75ac7377bb15987842aadcfd068ad2"
+          :tag => "0.24.0",
+          :revision => "45043115c9094d82f0f407ebc7ef7e583f438d12"
     end
 
     resource "racer" do
@@ -35,7 +35,7 @@ class Rust < Formula
   depends_on "openssl"
   depends_on "libssh2"
 
-  #conflicts_with "cargo-completion", :because => "both install shell completion for cargo"
+  conflicts_with "cargo-completion", :because => "both install shell completion for cargo"
 
   # According to the official readme, GCC 4.7+ is required
   fails_with :gcc_4_0
@@ -46,8 +46,8 @@ class Rust < Formula
 
   resource "cargobootstrap" do
     # From https://github.com/rust-lang/rust/blob/#{version}/src/stage0.txt
-    url "https://static.rust-lang.org/dist/2017-10-12/cargo-0.22.0-x86_64-apple-darwin.tar.gz"
-    sha256 "8968697ae6eef3b178438a6d5563f531e499308dcea7f4915665dbcec54c851a"
+    url "https://static.rust-lang.org/dist/2018-01-04/cargo-0.24.0-x86_64-apple-darwin.tar.gz"
+    sha256 "b6f7c662ea75a94f5a5e41c2fee95f09a5ba168429ac8cdd41f6ba2c78d1b07f"
   end
 
   def install
