@@ -1,24 +1,15 @@
 class Ripgrep < Formula
   desc "Search tool like grep and The Silver Searcher"
   homepage "https://github.com/BurntSushi/ripgrep"
-  url "https://github.com/BurntSushi/ripgrep/archive/0.7.1.tar.gz"
-  sha256 "e010693637acebb409f3dba7caf59ef093d1894a33b14015041b8d43547665f5"
-  head "https://github.com/BurntSushi/ripgrep.git"
-
-  depends_on "rust" => :build
-
+  url "https://github.com/BurntSushi/ripgrep/releases/download/0.8.0/ripgrep-0.8.0-x86_64-apple-darwin.tar.gz"
+  sha256 "fb35e92fd57d28a1e68daf964764c3da7f027ad30cca7a07a1848224776f36b2"
 
   def install
-    system "cargo", "build", "--release"
-
-    bin.install "target/release/rg"
+    bin.install "rg"
     man1.install "doc/rg.1"
 
-    # Completion scripts are generated in the crate's build directory, which
-    # includes a fingerprint hash. Try to locate it first
-    out_dir = Dir["target/release/build/ripgrep-*/out"].first
-    bash_completion.install "#{out_dir}/rg.bash-completion"
-    fish_completion.install "#{out_dir}/rg.fish"
+    bash_completion.install "complete/rg.bash-completion"
+    fish_completion.install "complete/rg.fish"
     zsh_completion.install "complete/_rg"
   end
 
