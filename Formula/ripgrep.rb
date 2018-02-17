@@ -8,7 +8,7 @@ class Ripgrep < Formula
     bin.install "rg"
     man1.install "doc/rg.1"
 
-    bash_completion.install "complete/rg.bash-completion"
+    bash_completion.install "complete/rg.bash"
     fish_completion.install "complete/rg.fish"
     zsh_completion.install "complete/_rg"
   end
