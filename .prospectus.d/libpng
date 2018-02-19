@@ -1,7 +1,8 @@
 item do
   expected do
-    github_tag
-    repo 'glennrp/libpng'
+    url_xpath
+    url 'http://www.libpng.org/pub/png/libpng.html'
+    xpath '/html/body/center[2]/table/tr[1]/td[2]/font/b'
   end
 
   actual do
