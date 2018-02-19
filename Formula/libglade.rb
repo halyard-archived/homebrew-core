@@ -1,8 +1,8 @@
 class Libglade < Formula
   desc "RAD tool to help build GTK+ interfaces"
   homepage "https://glade.gnome.org"
-  url "https://ftp.gnome.org/pub/GNOME/sources/glade/3.20/glade-3.20.2.tar.xz"
-  sha256 "07d1545570951aeded20e9fdc6d3d8a56aeefe2538734568c5335be336c6abed"
+  url "https://ftp.gnome.org/pub/GNOME/sources/glade/3.20/glade-3.20.3.tar.xz"
+  sha256 "1739d5478fc54ec8174ff3faa8026053c21c6a10fe38a49c66138f9deada08d4"
   revision 1
 
   depends_on "pkg-config" => :build
