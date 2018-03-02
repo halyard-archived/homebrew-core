@@ -1,9 +1,8 @@
 item do
   expected do
     url_xpath
-    url 'https://sourceforge.net/projects/gts/files/?source=navbar'
-    xpath '//*[@id="files"]/div[2]/div/a[1]/span[2]'
-    regex /^gts-([\d.]+)\.tar\.gz \([\d.]+ \w+\)$/
+    url 'https://sourceforge.net/projects/gts/files/gts/'
+    xpath '//*[@id="files_list"]/tbody/tr[1]/th/a/span'
   end
 
   actual do
