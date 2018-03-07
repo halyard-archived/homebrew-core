@@ -4,21 +4,14 @@ class Htop < Formula
   url "https://github.com/hishamhm/htop/archive/3.0.0beta3.tar.gz"
   sha256 "3d8b2b66ae8fb0afb383c104fe6810893373011027cd8e5fa18494bedc0da3b4"
 
-  head do
-    url "https://github.com/hishamhm/htop.git"
-
-    depends_on "autoconf" => :build
-    depends_on "automake" => :build
-    depends_on "libtool" => :build
-  end
-
-  option "with-ncurses", "Build using homebrew ncurses (enables mouse scroll)"
-
-  depends_on "ncurses" => :optional
+  depends_on "autoconf" => :build
+  depends_on "automake" => :build
+  depends_on "libtool" => :build
+  depends_on "ncurses" => :build
 
 
   def install
-    system "./autogen.sh" if build.head?
+    system "./autogen.sh"
     system "./configure", "--prefix=#{prefix}"
     system "make", "install"
   end
