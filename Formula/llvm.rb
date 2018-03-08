@@ -21,54 +21,54 @@ class Llvm < Formula
   homepage "https://llvm.org/"
 
   stable do
-    url "https://releases.llvm.org/5.0.1/llvm-5.0.1.src.tar.xz"
-    sha256 "e35dcbae6084adcf4abb32514127c5eabd7d63b733852ccdb31e06f1373136da"
+    url "https://releases.llvm.org/6.0.0/llvm-6.0.0.src.tar.xz"
+    sha256 "1ff53c915b4e761ef400b803f07261ade637b0c269d99569f18040f3dcee4408"
 
     resource "clang" do
-      url "https://releases.llvm.org/5.0.1/cfe-5.0.1.src.tar.xz"
-      sha256 "019f23c2192df793ac746595e94a403908749f8e0c484b403476d2611dd20970"
+      url "https://releases.llvm.org/6.0.0/cfe-6.0.0.src.tar.xz"
+      sha256 "e07d6dd8d9ef196cfc8e8bb131cbd6a2ed0b1caf1715f9d05b0f0eeaddb6df32"
     end
 
     resource "clang-extra-tools" do
-      url "https://releases.llvm.org/5.0.1/clang-tools-extra-5.0.1.src.tar.xz"
-      sha256 "87d078b959c4a6e5ff9fd137c2f477cadb1245f93812512996f73986a6d973c6"
+      url "https://releases.llvm.org/6.0.0/clang-tools-extra-6.0.0.src.tar.xz"
+      sha256 "053b424a4cd34c9335d8918734dd802a8da612d13a26bbb88fcdf524b2d989d2"
     end
 
     resource "compiler-rt" do
-      url "https://releases.llvm.org/5.0.1/compiler-rt-5.0.1.src.tar.xz"
-      sha256 "d5ad5266462134a482b381f1f8115b6cad3473741b3bb7d1acc7f69fd0f0c0b3"
+      url "https://releases.llvm.org/6.0.0/compiler-rt-6.0.0.src.tar.xz"
+      sha256 "d0cc1342cf57e9a8d52f5498da47a3b28d24ac0d39cbc92308781b3ee0cea79a"
     end
 
     # Only required to build & run Compiler-RT tests on macOS, optional otherwise.
     # https://clang.llvm.org/get_started.html
     resource "libcxx" do
-      url "https://releases.llvm.org/5.0.1/libcxx-5.0.1.src.tar.xz"
-      sha256 "eae5981e9a21ef0decfcac80a1af584ddb064a32805f95a57c7c83a5eb28c9b1"
+      url "https://releases.llvm.org/6.0.0/libcxx-6.0.0.src.tar.xz"
+      sha256 "70931a87bde9d358af6cb7869e7535ec6b015f7e6df64def6d2ecdd954040dd9"
     end
 
     resource "libunwind" do
-      url "https://releases.llvm.org/5.0.1/libunwind-5.0.1.src.tar.xz"
-      sha256 "9a70e2333d54f97760623d89512c4831d6af29e78b77a33d824413ce98587f6f"
+      url "https://releases.llvm.org/6.0.0/libunwind-6.0.0.src.tar.xz"
+      sha256 "256c4ed971191bde42208386c8d39e5143fa4afd098e03bd2c140c878c63f1d6"
     end
 
     resource "lld" do
-      url "https://releases.llvm.org/5.0.1/lld-5.0.1.src.tar.xz"
-      sha256 "399a7920a5278d42c46a7bf7e4191820ec2301457a7d0d4fcc9a4ac05dd53897"
+      url "https://releases.llvm.org/6.0.0/lld-6.0.0.src.tar.xz"
+      sha256 "6b8c4a833cf30230c0213d78dbac01af21387b298225de90ab56032ca79c0e0b"
     end
 
     resource "lldb" do
-      url "https://releases.llvm.org/5.0.1/lldb-5.0.1.src.tar.xz"
-      sha256 "c0a0ca32105e9881d86b7ca886220147e686edc97fdb9f3657c6659dc6568b7d"
+      url "https://releases.llvm.org/6.0.0/lldb-6.0.0.src.tar.xz"
+      sha256 "46f54c1d7adcd047d87c0179f7b6fa751614f339f4f87e60abceaa45f414d454"
     end
 
     resource "openmp" do
-      url "https://releases.llvm.org/5.0.1/openmp-5.0.1.src.tar.xz"
-      sha256 "c0ef081b05e0725a04e8711d9ecea2e90d6c3fbb1622845336d3d095d0a3f7c5"
+      url "https://releases.llvm.org/6.0.0/openmp-6.0.0.src.tar.xz"
+      sha256 "7c0e050d5f7da3b057579fb3ea79ed7dc657c765011b402eb5bbe5663a7c38fc"
     end
 
     resource "polly" do
-      url "https://releases.llvm.org/5.0.1/polly-5.0.1.src.tar.xz"
-      sha256 "44694254a2b105cec13ce0560f207e8552e6116c181b8d21bda728559cf67042"
+      url "https://releases.llvm.org/6.0.0/polly-6.0.0.src.tar.xz"
+      sha256 "47e493a799dca35bc68ca2ceaeed27c5ca09b12241f87f7220b5f5882194f59c"
     end
   end
 
@@ -112,15 +112,17 @@ class Llvm < Formula
     end
   end
 
-  keg_only :provided_by_osx
+  keg_only :provided_by_macos
 
   option "without-compiler-rt", "Do not build Clang runtime support libraries for code sanitizers, builtins, and profiling"
   option "without-libcxx", "Do not build libc++ standard library"
   option "with-toolchain", "Build with Toolchain to facilitate overriding system compiler"
   option "with-lldb", "Build LLDB debugger"
-  option "with-python", "Build bindings against custom Python"
+  option "with-python", "Build bindings against Homebrew's Python 2"
   option "with-shared-libs", "Build shared instead of static libraries"
   option "without-libffi", "Do not use libffi to call external functions"
+
+  deprecated_option "with-python" => "with-python"
 
   # https://llvm.org/docs/GettingStarted.html#requirement
   depends_on "libffi" => :recommended
@@ -142,7 +144,6 @@ class Llvm < Formula
     depends_on CodesignRequirement
   end
 
-
   # According to the official llvm readme, GCC 4.7+ is required
   fails_with :gcc_4_0
   fails_with :gcc
@@ -157,6 +158,10 @@ class Llvm < Formula
   def install
     # Apple's libstdc++ is too old to build LLVM
     ENV.libcxx if ENV.compiler == :clang
+
+    if build.with? "python"
+      ENV.prepend_path "PATH", Formula["python"].opt_libexec/"bin"
+    end
 
     (buildpath/"tools/clang").install resource("clang")
     (buildpath/"tools/clang/tools/extra").install resource("clang-extra-tools")
@@ -239,7 +244,8 @@ class Llvm < Formula
         ENV["OPAMROOT"] = Pathname.pwd/"opamroot"
         (Pathname.pwd/"opamroot").mkpath
         system "opam", "init", "--no-setup"
-        system "opam", "install", "ocamlfind", "ctypes"
+        system "opam", "config", "exec", "--",
+               "opam", "install", "ocamlfind", "ctypes"
         system "opam", "config", "exec", "--",
                "cmake", "-G", "Unix Makefiles", buildpath, *(std_cmake_args + args)
       else
