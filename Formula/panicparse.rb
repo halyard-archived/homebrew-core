@@ -2,8 +2,8 @@ class Panicparse < Formula
   desc "Panicparse"
   homepage "https://github.com/maruel/panicparse"
 
-  url "https://github.com/maruel/panicparse/archive/v1.0.2.tar.gz"
-  sha256 "98d4e2451a6813e6b42c004cb9537099a924d916ba2dbcf048f62e484aa883f6"
+  url "https://github.com/maruel/panicparse/archive/v1.1.0.tar.gz"
+  sha256 "d5169efffbc459878ecf3b3d80b90e03c21b95ff0908b63b626dfc927458b86a"
   head "https://github.com/maruel/panicparse.git"
 
   depends_on "go" => :build
