@@ -3,6 +3,7 @@ item do
     github_tag
     repo 'boostorg/boost'
     regex /^boost-([\d.]+)$/
+    filter /^boost-([\d.]+)$/
   end
 
   actual do
