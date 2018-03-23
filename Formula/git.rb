@@ -1,8 +1,8 @@
 class Git < Formula
   desc "Distributed revision control system"
   homepage "https://git-scm.com"
-  url "https://www.kernel.org/pub/software/scm/git/git-2.16.2.tar.xz"
-  sha256 "5560578bd21468d98637f41515c165d32f69caff0838b8989dee5ce10022c717"
+  url "https://www.kernel.org/pub/software/scm/git/git-2.16.3.tar.xz"
+  sha256 "d65d99e9e5b081c1f14ea018973806e942a2eb7d0da2ebc01bd2525adee62d48"
   head "https://github.com/git/git.git", :shallow => false
 
   option "with-blk-sha1", "Compile with the block-optimized SHA1 implementation"
