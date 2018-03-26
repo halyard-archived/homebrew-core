@@ -5,9 +5,9 @@ class Icu4c < Formula
   head "https://ssl.icu-project.org/repos/icu/trunk/icu4c/", :using => :svn
 
   stable do
-    url "https://ssl.icu-project.org/files/icu4c/60.2/icu4c-60_2-src.tgz"
-    version "60.2"
-    sha256 "f073ea8f35b926d70bb33e6577508aa642a8b316a803f11be20af384811db418"
+    url "https://ssl.icu-project.org/files/icu4c/61.1/icu4c-61_1-src.tgz"
+    version "61.1"
+    sha256 "d007f89ae8a2543a53525c74359b65b36412fa84b3349f1400be6dcf409fafef"
   end
 
   keg_only :provided_by_osx, "macOS provides libicucore.dylib (but nothing else)"
