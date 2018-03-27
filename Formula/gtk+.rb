@@ -4,8 +4,8 @@ class Gtkx < Formula
   revision 1
 
   stable do
-    url "https://download.gnome.org/sources/gtk+/3.22/gtk+-3.22.26.tar.xz"
-    sha256 "61eef0d320e541976e2dfe445729f12b5ade53050ee9de6184235cb60cd4b967"
+    url "https://download.gnome.org/sources/gtk+/3.22/gtk+-3.22.29.tar.xz"
+    sha256 "a07d64b939fcc034a066b7723fdf9b24e92c9cfb6a8497593f3471fe56fbbbf8"
   end
 
   option "with-quartz-relocation", "Build with quartz relocation support"
