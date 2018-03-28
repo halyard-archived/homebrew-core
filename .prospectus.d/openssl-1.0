@@ -1,0 +1,13 @@
+item do
+  expected do
+    github_tag
+    repo 'openssl/openssl'
+    regex /^OpenSSL_1_0_([\d]+[a-z]+)$/, '1.0.\1'
+    filter /^OpenSSL_1_0_([\d]+[a-z]+)$/
+  end
+
+  actual do
+    homebrew_formula
+    name 'openssl@1.0'
+  end
+end

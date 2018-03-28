@@ -1,0 +1,12 @@
+item do
+  expected do
+    github_tag
+    repo 'Yubico/libu2f-host'
+    regex /^libu2f-host-([\d.]+)$/
+  end
+
+  actual do
+    homebrew_formula
+    name 'libu2f-host'
+  end
+end
