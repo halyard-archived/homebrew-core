@@ -3,6 +3,7 @@ item do
     github_tag
     repo 'freedesktop/makedepend'
     regex /^makedepend-([\d.]+)$/
+    filter /^makedepend-([\d.]+)$/
   end
 
   actual do
