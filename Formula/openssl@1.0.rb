@@ -4,10 +4,10 @@
 class OpensslAT10 < Formula
   desc "SSL/TLS cryptography library"
   homepage "https://openssl.org/"
-  url "https://www.openssl.org/source/openssl-1.0.2n.tar.gz"
-  mirror "https://dl.bintray.com/homebrew/mirror/openssl-1.0.2n.tar.gz"
+  url "https://www.openssl.org/source/openssl-1.0.2o.tar.gz"
+  mirror "https://dl.bintray.com/homebrew/mirror/openssl-1.0.2o.tar.gz"
   mirror "https://www.mirrorservice.org/sites/ftp.openssl.org/source/openssl-1.0.2n.tar.gz"
-  sha256 "370babb75f278c39e0c50e8c4e7493bc0f18db6867478341a832a982fd15a8fe"
+  sha256 "ec3f5c9714ba0fd45cb4e087301eb1336c317e0d20b575a125050470e8089e4d"
   version_scheme 1
 
   keg_only :provided_by_macos,
