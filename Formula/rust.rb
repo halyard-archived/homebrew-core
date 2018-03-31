@@ -3,8 +3,8 @@ class Rust < Formula
   homepage "https://www.rust-lang.org/"
 
   stable do
-    url "https://static.rust-lang.org/dist/rustc-1.24.1-src.tar.gz"
-    sha256 "3ea53d45e8d2e9a41afb3340cf54b9745f845b552d802d607707cf04450761ef"
+    url "https://static.rust-lang.org/dist/rustc-1.25.0-src.tar.gz"
+    sha256 "eef63a0aeea5147930a366aee78cbde248bb6e5c6868801bdf34849152965d2d"
 
     resource "cargo" do
       url "https://github.com/rust-lang/cargo.git",
@@ -24,13 +24,16 @@ class Rust < Formula
     resource "cargo" do
       url "https://github.com/rust-lang/cargo.git"
     end
+
+    resource "racer" do
+      url "https://github.com/racer-rust/racer.git"
+    end
   end
 
   option "with-llvm", "Build with brewed LLVM. By default, Rust's LLVM will be used."
-  option "with-racer", "Build Racer code completion tool, and retain Rust sources."
 
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :run
+  depends_on "pkg-config"
   depends_on "llvm" => :optional
   depends_on "openssl@1.0"
   depends_on "libssh2"
@@ -46,8 +49,8 @@ class Rust < Formula
 
   resource "cargobootstrap" do
     # From https://github.com/rust-lang/rust/blob/#{version}/src/stage0.txt
-    url "https://static.rust-lang.org/dist/2018-01-04/cargo-0.24.0-x86_64-apple-darwin.tar.gz"
-    sha256 "b6f7c662ea75a94f5a5e41c2fee95f09a5ba168429ac8cdd41f6ba2c78d1b07f"
+    url "https://static.rust-lang.org/dist/2018-02-15/cargo-0.25.0-x86_64-apple-darwin.tar.gz"
+    sha256 "92782612068e796a6a85f5c2bc11ad748b961cb26e7b55f8f125d33cc402c1ca"
   end
 
   def install
@@ -90,20 +93,19 @@ class Rust < Formula
       bin.install "target/release/cargo"
     end
 
-    if build.with? "racer"
-      resource("racer").stage do
-        ENV.prepend_path "PATH", bin
-        cargo_home = buildpath/"cargo_home"
-        cargo_home.mkpath
-        ENV["CARGO_HOME"] = cargo_home
-        system bin/"cargo", "build", "--release", "--verbose"
-        (libexec/"bin").install "target/release/racer"
-        (bin/"racer").write_env_script(libexec/"bin/racer", :RUST_SRC_PATH => pkgshare/"rust_src")
-      end
-      # Remove any binary files; as Homebrew will run ranlib on them and barf.
-      rm_rf Dir["src/{llvm,test,librustdoc,etc/snapshot.pyc}"]
-      (pkgshare/"rust_src").install Dir["src/*"]
+    resource("racer").stage do
+      ENV.prepend_path "PATH", bin
+      cargo_home = buildpath/"cargo_home"
+      cargo_home.mkpath
+      ENV["CARGO_HOME"] = cargo_home
+      system bin/"cargo", "build", "--release", "--verbose"
+      (libexec/"bin").install "target/release/racer"
+      (bin/"racer").write_env_script(libexec/"bin/racer", :RUST_SRC_PATH => pkgshare/"rust_src")
     end
+
+    # Remove any binary files; as Homebrew will run ranlib on them and barf.
+    rm_rf Dir["src/{llvm,llvm-emscripten,test,librustdoc,etc/snapshot.pyc}"]
+    (pkgshare/"rust_src").install Dir["src/*"]
 
     rm_rf prefix/"lib/rustlib/uninstall.sh"
     rm_rf prefix/"lib/rustlib/install.log"
