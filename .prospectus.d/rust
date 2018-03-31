@@ -1,8 +1,8 @@
 item do
   expected do
-    url_xpath
-    url 'https://www.rust-lang.org/en-US/'
-    xpath '/html/body/div[1]/div[2]/a/div/span'
+    github_tag
+    repo 'rust-lang/rust'
+    filter /^[\d.]+$/
   end
 
   actual do
