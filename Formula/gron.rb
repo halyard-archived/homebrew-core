@@ -1,8 +1,8 @@
 class Gron < Formula
   desc "Make JSON greppable"
   homepage "https://github.com/tomnomnom/gron"
-  url "https://github.com/tomnomnom/gron/releases/download/v0.5.1/gron-darwin-amd64-0.5.1.tgz"
-  sha256 "d314ef3d1dca815cc21ff4fdd9b7e4d1e95dedc429628aecdc87d3270046fb0e"
+  url "https://github.com/tomnomnom/gron/releases/download/v0.5.2/gron-darwin-amd64-0.5.2.tgz"
+  sha256 "488d928fd743560df4f33bfb380ebb8ade430b93b6ba06fce43f875c35d2f5fb"
 
   def install
     bin.install "gron"
