@@ -1,9 +1,8 @@
 class Zsh < Formula
   desc "UNIX shell (command interpreter)"
   homepage "https://www.zsh.org/"
-  url "https://downloads.sourceforge.net/project/zsh/zsh/5.4.2/zsh-5.4.2.tar.gz"
-  mirror "https://www.zsh.org/pub/zsh-5.4.2.tar.gz"
-  sha256 "957bcdb2c57f64c02f673693ea5a7518ef24b6557aeb3a4ce222cefa6d74acc9"
+  url "https://www.zsh.org/pub/zsh-5.5.tar.gz"
+  sha256 "d05606a545672ae8623828802dbcc4c83d9a4d3dbfb960e94a9fd9f62467c159"
   revision 1
 
   option "without-etcdir", "Disable the reading of Zsh rc files in /etc"
