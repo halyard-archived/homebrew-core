@@ -4,8 +4,7 @@ class Automake < Formula
   url "https://ftp.gnu.org/gnu/automake/automake-1.16.1.tar.xz"
   sha256 "5d05bb38a23fd3312b10aea93840feec685bdf4a41146e78882848165d3ae921"
 
-  depends_on "autoconf" => :run
-
+  depends_on "autoconf"
 
   def install
     ENV["PERL"] = "/usr/bin/perl"
