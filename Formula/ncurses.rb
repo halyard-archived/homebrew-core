@@ -5,7 +5,7 @@ class Ncurses < Formula
   sha256 "85baae1a02f695cc8a9b966e8dceea457df183ece9229f8e6a20ec3c3d2ee6a9"
   revision 1
 
-  keg_only :provided_by_osx
+  keg_only :provided_by_macos
 
   depends_on "pkg-config" => :build
 

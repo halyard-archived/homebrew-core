@@ -12,7 +12,7 @@ class Curl < Formula
     depends_on "libtool" => :build
   end
 
-  keg_only :provided_by_osx
+  keg_only :provided_by_macos
 
   option "with-libssh2", "Build with scp and sftp support"
   option "with-c-ares", "Build with C-Ares async DNS support"
