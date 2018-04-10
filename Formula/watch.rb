@@ -1,8 +1,8 @@
 class Watch < Formula
   desc "Executes a program periodically, showing output fullscreen"
   homepage "https://gitlab.com/procps-ng/procps"
-  url "https://gitlab.com/procps-ng/procps/repository/v3.3.13/archive.tar.gz"
-  sha256 "9c906a0279ff119213944eb4e95dbe2cec57a84d2d4ad32e15d49d13c0dd3dbb"
+  url "https://gitlab.com/procps-ng/procps/repository/v3.3.14/archive.tar.gz"
+  sha256 "bd4bdd9bf90c8fb32d7ddd3613fb83823a75b0da77a2430f5e5446f1adc7cad6"
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
