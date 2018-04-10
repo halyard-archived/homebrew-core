@@ -1,7 +1,7 @@
 class Bind < Formula
   desc "Implementation of the DNS protocols"
   homepage "https://www.isc.org/downloads/bind/"
-  url "https://fossies.org/linux/misc/dns/bind9/9.12.1/bind-9.12.1.tar.gz"
+  url "https://ftp.isc.org/isc/bind9/9.12.1/bind-9.12.1.tar.gz"
   sha256 "16e446425c35e48b651ddf1171d2115ebf32b07670b652e1030a174038937510"
   head "https://source.isc.org/git/bind9.git"
 
