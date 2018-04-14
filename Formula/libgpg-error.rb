@@ -1,8 +1,8 @@
 class LibgpgError < Formula
   desc "Common error values for all GnuPG components"
   homepage "https://www.gnupg.org/related_software/libgpg-error/"
-  url "https://gnupg.org/ftp/gcrypt/libgpg-error/libgpg-error-1.28.tar.bz2"
-  sha256 "3edb957744905412f30de3e25da18682cbe509541e18cd3b8f9df695a075da49"
+  url "https://gnupg.org/ftp/gcrypt/libgpg-error/libgpg-error-1.29.tar.bz2"
+  sha256 "ece926fa5719d17a7ad8da618712cfa2f8a796ab2f2af9d544c5bb093383b1ea"
 
 
   def install
