@@ -1,28 +1,18 @@
 class Zsh < Formula
   desc "UNIX shell (command interpreter)"
   homepage "https://www.zsh.org/"
-  url "https://www.zsh.org/pub/zsh-5.5.tar.gz"
-  sha256 "d05606a545672ae8623828802dbcc4c83d9a4d3dbfb960e94a9fd9f62467c159"
-  revision 1
-
-  option "without-etcdir", "Disable the reading of Zsh rc files in /etc"
-  option "with-unicode9", "Build with Unicode 9 character width support"
-
-  deprecated_option "disable-etcdir" => "without-etcdir"
+  url "https://www.zsh.org/pub/zsh-5.5.1.tar.gz"
+  sha256 "774caa89e7aea5f33c3033cbffd93e28707f72ba5149c79709e48e6c2d2ee080"
 
   depends_on "gdbm"
   depends_on "pcre"
 
-
   resource "htmldoc" do
-    _version = '5.4.2'
-    url "https://www.zsh.org/pub/zsh-#{_version}-doc.tar.xz"
-    sha256 "5229cc93ebe637a07deb5b386b705c37a50f4adfef788b3c0f6647741df4f6bd"
+    url "https://www.zsh.org/pub/zsh-5.5.1-doc.tar.xz"
+    sha256 "41ce13a89a6bc7e709b6f110e54288d59f02ba2becd2646895d28188d4dd6283"
   end
 
   def install
-    system "Util/preconfig" if build.head?
-
     args = %W[
       --prefix=#{prefix}
       --enable-fndir=#{pkgshare}/functions
@@ -36,15 +26,9 @@ class Zsh < Formula
       --enable-pcre
       --enable-zsh-secure-free
       --with-tcsetpgrp
+      --enable-unicode9
+      --enable-etcdir=/etc
     ]
-
-    args << "--enable-unicode9" if build.with? "unicode9"
-
-    if build.without? "etcdir"
-      args << "--disable-etcdir"
-    else
-      args << "--enable-etcdir=/etc"
-    end
 
     system "./configure", *args
 
@@ -52,17 +36,11 @@ class Zsh < Formula
     inreplace ["Makefile", "Src/Makefile"],
       "$(libdir)/$(tzsh)/$(VERSION)", "$(libdir)"
 
-    if build.head?
-      # disable target install.man, because the required yodl comes neither with macOS nor Homebrew
-      # also disable install.runhelp and install.info because they would also fail or have no effect
-      system "make", "install.bin", "install.modules", "install.fns"
-    else
-      system "make", "install"
-      system "make", "install.info"
+    system "make", "install"
+    system "make", "install.info"
 
-      resource("htmldoc").stage do
-        (pkgshare/"htmldoc").install Dir["Doc/*.html"]
-      end
+    resource("htmldoc").stage do
+      (pkgshare/"htmldoc").install Dir["Doc/*.html"]
     end
   end
 
