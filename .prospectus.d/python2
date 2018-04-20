@@ -1,0 +1,13 @@
+item do
+  expected do
+    url_xpath
+    url 'https://www.python.org/downloads/source/'
+    xpath '//*[@id="content"]/div/section/article/ul[1]/li[2]/a'
+    regex /^Latest Python 2 Release - Python ([\d.]+)$/
+  end
+
+  actual do
+    homebrew_formula
+    name 'python2'
+  end
+end
