@@ -8,6 +8,6 @@ item do
 
   actual do
     homebrew_formula
-    name 'python2'
+    name 'python@2'
   end
 end
