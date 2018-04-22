@@ -8,4 +8,22 @@ item do
     homebrew_formula
     name 'tmux'
   end
+
+  deps do
+    item do
+      name 'resource::completion'
+
+      expected do
+        github_tag
+        repo 'imomaliev/tmux-bash-completion'
+        regex /^homebrew_([\d.]+)$/
+      end
+
+      actual do
+        grep
+        file 'Formula/tmux.rb'
+        regex /.*tmux-bash-completion\/homebrew_([\d.]+)\/completions\/tmux"$/
+      end
+    end
+  end
 end

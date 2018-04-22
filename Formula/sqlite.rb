@@ -4,6 +4,7 @@ class Sqlite < Formula
   url "https://sqlite.org/2018/sqlite-autoconf-3230100.tar.gz"
   version "3.23.1"
   sha256 "92842b283e5e744eff5da29ed3c69391de7368fccc4d0ee6bf62490ce555ef25"
+  revision 2
 
   keg_only :provided_by_macos, "macOS provides an older sqlite3"
 
@@ -31,9 +32,9 @@ class Sqlite < Formula
   end
 
   resource "docs" do
-    url "https://www.sqlite.org/2018/sqlite-doc-3230000.zip"
-    version "3.23.0"
-    sha256 "bbcd7e875350d68d0b60486ce7b91c51c66b17e7b850c71e1a4357a3baa9c2d5"
+    url "https://www.sqlite.org/2018/sqlite-doc-3230100.zip"
+    version "3.23.1"
+    sha256 "85f936ba6db3540db92f878990d088b10bb453c691fccf05714396a03c813872"
   end
 
   def install

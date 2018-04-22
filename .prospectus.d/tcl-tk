@@ -10,4 +10,23 @@ item do
     homebrew_formula
     name 'tcl-tk'
   end
+
+  deps do
+    item do
+      name 'resources::tcllib'
+
+      expected do
+        url_xpath
+        url 'https://core.tcl.tk/tcllib/wiki?name=Downloads'
+        xpath '/html/body/div[5]/ul[2]/p[1]/b'
+        regex /^([\d.]+) \(\w+ \d+, \d+\)$/
+      end
+
+      actual do
+        grep
+        file 'Formula/tcl-tk.rb'
+        regex /.*tcllib-([\d.]+)\.tar\.gz"$/
+      end
+    end
+  end
 end

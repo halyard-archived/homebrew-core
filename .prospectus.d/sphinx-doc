@@ -10,4 +10,28 @@ item do
     homebrew_formula
     name 'sphinx-doc'
   end
+
+  deps do
+    path = 'Formula/sphinx-doc.rb'
+    res_regex = /^    url/
+    pkg_regex = /\/([\w-]+)-([\d.]+)\.(?:zip|tar.gz)"\n$/
+    pkgs = File.read(path).lines.grep(res_regex).map { |x| x.match(pkg_regex).values_at(1, 2) }
+    pkgs.each do |pkg_name, pkg_ver|
+      item do
+        name "resources::#{pkg_name}"
+
+        expected do
+          url_xpath
+          url "https://pypi.org/project/#{pkg_name}/"
+          xpath '//h1[@class="package-header__name"]'
+          regex /^\w+ ([\d.]+)$/
+        end
+
+        actual do
+          static
+          set pkg_ver
+        end
+      end
+    end
+  end
 end

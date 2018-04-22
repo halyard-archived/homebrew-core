@@ -24,7 +24,7 @@ item do
       actual do
         grep
         file 'Formula/lua.rb'
-        regex /luarocks-([\d.]+)\.tar\.gz"$/
+        regex /.*luarocks-([\d.]+)\.tar\.gz"$/
       end
     end
   end
