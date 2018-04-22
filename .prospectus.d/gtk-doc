@@ -13,4 +13,21 @@ item do
     homebrew_formula
     name 'gtk-doc'
   end
+
+  deps do
+    item do
+      name 'resource::six'
+
+      expected do
+        github_tag
+        repo 'benjaminp/six'
+      end
+
+      actual do
+        grep
+        file 'Formula/gtk-doc.rb'
+        regex /six-([\d.]+)\.tar\.gz"$/
+      end
+    end
+  end
 end

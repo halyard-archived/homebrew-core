@@ -9,29 +9,18 @@ class Git < Formula
   option "without-completions", "Disable bash/zsh completions from 'contrib' directory"
   option "with-persistent-https", "Build git-remote-persistent-https from 'contrib' directory"
 
-  deprecated_option "with-pcre" => "with-pcre2"
-
   depends_on "pcre2" => :optional
   depends_on "gettext" => :optional
   depends_on "go" => :build if build.with? "persistent-https"
 
-  if MacOS.version < :yosemite
-    depends_on "openssl"
-    depends_on "curl"
-  else
-    deprecated_option "with-brewed-openssl" => "with-openssl"
-    deprecated_option "with-brewed-curl" => "with-curl"
+  option "with-openssl", "Build with Homebrew's OpenSSL instead of using CommonCrypto"
+  option "with-curl", "Use Homebrew's version of cURL library"
 
-    option "with-openssl", "Build with Homebrew's OpenSSL instead of using CommonCrypto"
-    option "with-curl", "Use Homebrew's version of cURL library"
-
-    depends_on "openssl" => :optional
-    depends_on "curl" => :optional
-  end
+  depends_on "openssl" => :optional
+  depends_on "curl" => :optional
 
   option "with-perl", "Build against a custom Perl rather than system default"
   depends_on "perl" => :optional
-
 
   resource "html" do
     url "https://www.kernel.org/pub/software/scm/git/git-htmldocs-2.17.0.tar.xz"
