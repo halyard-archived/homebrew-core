@@ -3,7 +3,7 @@ class Lua < Formula
   homepage "https://www.lua.org/"
   url "https://www.lua.org/ftp/lua-5.3.4.tar.gz"
   sha256 "f681aa518233bc407e23acf0f5887c884f17436f000d453b2491a9f11a52400c"
-  revision 1
+  revision 2
 
   option "with-completion", "Enables advanced readline support"
   option "without-sigaction", "Revert to ANSI signal instead of improved POSIX sigaction"
@@ -32,8 +32,8 @@ class Lua < Formula
   end
 
   resource "luarocks" do
-    url "https://keplerproject.github.io/luarocks/releases/luarocks-2.3.0.tar.gz"
-    sha256 "68e38feeb66052e29ad1935a71b875194ed8b9c67c2223af5f4d4e3e2464ed97"
+    url "https://luarocks.org/releases/luarocks-2.4.4.tar.gz"
+    sha256 "3938df33de33752ff2c526e604410af3dceb4b7ff06a770bc4a240de80a1f934"
   end
 
   def install

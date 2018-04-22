@@ -4,9 +4,9 @@ class Neovim < Formula
   url "https://github.com/neovim/neovim/archive/v0.2.2.tar.gz"
   sha256 "a838ee07cc9a2ef8ade1b31a2a4f2d5e9339e244ade68e64556c1f4b40ccc5ed"
   head "https://github.com/neovim/neovim.git"
+  revision 2
 
   depends_on "cmake" => :build
-  depends_on "lua@5.1" => :build
   depends_on "pkg-config" => :build
   depends_on "gettext"
   depends_on "jemalloc"
