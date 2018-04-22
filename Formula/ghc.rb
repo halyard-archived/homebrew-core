@@ -5,8 +5,8 @@ class Ghc < Formula
 
   desc "Glorious Glasgow Haskell Compilation System"
   homepage "https://haskell.org/ghc/"
-  url "https://downloads.haskell.org/~ghc/8.4.1/ghc-8.4.1-src.tar.xz"
-  sha256 "39ae2f25192408f355693e5a3c8b6ff613ddb7c4da998fdf26210143a61839d2"
+  url "https://downloads.haskell.org/~ghc/8.4.2/ghc-8.4.2-src.tar.xz"
+  sha256 "01cc32f24a06bf3b2428351b6d7fec791e82d042426d29ad9e5a245b35f0047b"
 
   head do
     url "https://git.haskell.org/ghc.git", :branch => "ghc-8.4"
@@ -16,17 +16,16 @@ class Ghc < Formula
     depends_on "libtool" => :build
 
     resource "cabal" do
-      url "https://hackage.haskell.org/package/cabal-install-2.0.0.1/cabal-install-2.0.0.1.tar.gz"
-      sha256 "f991e36f3adaa1c7e2f0c422a2f2a4ab21b7041c82a8896f72afc9843a0d5d99"
+      url "https://hackage.haskell.org/package/cabal-install-2.2.0.0/cabal-install-2.2.0.0.tar.gz"
+      sha256 "c856a2dd93c5a7b909597c066b9f9ca27fbda1a502b3f96077b7918c0f64a3d9"
     end
   end
 
   option "with-test", "Verify the build using the testsuite"
   option "without-docs", "Do not build documentation (including man page)"
 
-  depends_on "python3" => :build if build.with?("test")
+  depends_on "python" => :build if build.with?("test")
   depends_on "sphinx-doc" => :build if build.with? "docs"
-
 
   resource "gmp" do
     url "https://ftp.gnu.org/gnu/gmp/gmp-6.1.2.tar.xz"
@@ -38,13 +37,13 @@ class Ghc < Formula
   # https://www.haskell.org/ghc/download_ghc_8_0_1#macosx_x86_64
   # "This is a distribution for Mac OS X, 10.7 or later."
   resource "binary" do
-    url "https://downloads.haskell.org/~ghc/8.4.1/ghc-8.4.1-x86_64-apple-darwin.tar.xz"
-    sha256 "d774e39f3a0105843efd06709b214ee332c30203e6c5902dd6ed45e36285f9b7"
+    url "https://downloads.haskell.org/~ghc/8.4.2/ghc-8.4.2-x86_64-apple-darwin.tar.xz"
+    sha256 "87469222042b9ac23f9db216a8d4e5107297bdbbb99df71eb4d9e7208455def2"
   end
 
   resource "testsuite" do
-    url "https://downloads.haskell.org/~ghc/8.4.1/ghc-8.4.1-testsuite.tar.xz"
-    sha256 "6dfbbbeb1bb760698af99d82f05e4e0db3b3606d65be3fa779177117c6381841"
+    url "https://downloads.haskell.org/~ghc/8.4.2/ghc-8.4.2-testsuite.tar.xz"
+    sha256 "31315100daf5997df90c94d66747f597490ac37fca192fad9e6279af1ae05a35"
   end
 
   def install
@@ -64,7 +63,8 @@ class Ghc < Formula
     # Note that `unless build.bottle?` avoids overriding --bottle-arch=[...].
     ENV["HOMEBREW_OPTFLAGS"] = "-march=#{Hardware.oldest_cpu}" unless build.bottle?
 
-    # Build a static gmp rather than in-tree gmp, otherwise it links to brew's.
+    # Build a static gmp rather than in-tree gmp, otherwise all ghc-compiled
+    # executables link to Homebrew's GMP.
     gmp = libexec/"integer-gmp"
 
     # MPN_PATH: The lowest common denominator asm paths that work on Darwin,
