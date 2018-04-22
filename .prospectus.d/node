@@ -17,12 +17,13 @@ item do
       expected do
         github_release
         repo 'npm/npm'
+        regex /^v([\d.]+)$/
       end
 
       actual do
         grep
         file 'Formula/node.rb'
-        regex /url "https:\/\/registry.npmjs.org\/npm\/-\/npm-([\d.]+)\.tgz"$/
+        regex /.*url "https:\/\/registry.npmjs.org\/npm\/-\/npm-([\d.]+)\.tgz"$/
       end
     end
   end

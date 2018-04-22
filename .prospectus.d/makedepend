@@ -25,7 +25,7 @@ item do
       actual do
         grep
         file 'Formula/makedepend.rb'
-        regex /util-macros-([\d.]+)\.tar\.bz2"$/
+        regex /.*util-macros-([\d.]+)\.tar\.bz2"$/
       end
     end
 
@@ -42,7 +42,8 @@ item do
       actual do
         grep
         file 'Formula/makedepend.rb'
-        regex /xproto-([\d.]+)\.tar\.gz"$/
+        regex /.*xproto-([\d.]+)\.tar\.gz"$/
+      end
     end
   end
 end

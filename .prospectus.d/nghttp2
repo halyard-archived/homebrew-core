@@ -27,4 +27,5 @@ item do
         regex /.*Cython-([\d.]+)\.tar\.gz"$/
       end
     end
+  end
 end

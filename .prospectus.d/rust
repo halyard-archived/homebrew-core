@@ -17,6 +17,7 @@ item do
       expected do
         github_tag
         repo 'rust-lang/cargo'
+        filter /^([\d.]+)/
       end
 
       actual do
@@ -32,11 +33,14 @@ item do
       expected do
         github_tag
         repo 'racer-rust/racer'
+        filter /^\d+\.\d+\.\d+$/
       end
 
       actual do
         grep
         file 'Formula/rust.rb'
         regex /.*url "https:\/\/github.com\/racer-rust\/racer\/archive\/([\d.]+)\.tar\.gz"$/
+      end
+    end
   end
 end
