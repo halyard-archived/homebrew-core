@@ -9,4 +9,34 @@ item do
     homebrew_formula
     name 'rust'
   end
+
+  deps do
+    item do
+      name 'resource::cargo'
+
+      expected do
+        github_tag
+        repo 'rust-lang/cargo'
+      end
+
+      actual do
+        grep
+        file 'Formula/rust.rb'
+        regex /.*url "https:\/\/github.com\/rust-lang\/cargo.git", :tag => "([\d.]+)",$/
+      end
+    end
+
+    item do
+      name 'resource::racer'
+
+      expected do
+        github_tag
+        repo 'racer-rust/racer'
+      end
+
+      actual do
+        grep
+        file 'Formula/rust.rb'
+        regex /.*url "https:\/\/github.com\/racer-rust\/racer\/archive\/([\d.]+)\.tar\.gz"$/
+  end
 end

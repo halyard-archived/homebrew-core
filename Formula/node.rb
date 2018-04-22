@@ -26,11 +26,9 @@ class Node < Formula
     fails_with :gcc => n
   end
 
-  # We track major/minor from upstream Node releases.
-  # We will accept *important* npm patch releases when necessary.
   resource "npm" do
-    url "https://registry.npmjs.org/npm/-/npm-5.6.0.tgz"
-    sha256 "b1f0de3767136c1d7b4b0f10e6eb2fb3397e2fe11e4c9cddcd0030ad1af9eddd"
+    url "https://registry.npmjs.org/npm/-/npm-5.8.0.tgz"
+    sha256 "3f32536d67eba5bd9929b3b1fe8c54f5cd18d76173e3bc52c151c31a0ea1c946"
   end
 
   def install

@@ -24,7 +24,7 @@ item do
           url_xpath
           url "https://pypi.org/project/#{pkg_name}/"
           xpath '//h1[@class="package-header__name"]'
-          regex /^\w+ ([\d.]+)$/
+          regex /^[\w-]+ ([\d.]+)$/
         end
 
         actual do

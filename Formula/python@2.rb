@@ -3,12 +3,6 @@ class PythonAT2 < Formula
   homepage "https://www.python.org/"
   url "https://www.python.org/ftp/python/2.7.14/Python-2.7.14.tar.xz"
   sha256 "71ffb26e09e78650e424929b2b457b9c912ac216576e6bd9e7d204ed03296a66"
-  head "https://github.com/python/cpython.git", :branch => "2.7"
-
-  devel do
-    url "https://www.python.org/ftp/python/2.7.15/Python-2.7.15rc1.tar.xz"
-    sha256 "d022fe643281d0f83a29dfd254d9c66d066bce0e2d57452d256b0886530227ec"
-  end
 
   # Please don't add a wide/ucs4 option as it won't be accepted.
   # More details in: https://github.com/Homebrew/homebrew/pull/32368

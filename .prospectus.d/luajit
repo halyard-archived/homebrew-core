@@ -10,4 +10,22 @@ item do
     homebrew_formula
     name 'luajit'
   end
+
+  deps do
+    item do
+      name 'resource::luarocks'
+
+      expected do
+        github_tag
+        repo 'luarocks/luarocks'
+        regex /^v([\d.]+)$/
+      end
+
+      actual do
+        grep
+        file 'Formula/luajit.rb'
+        regex /.*luarocks-([\d.]+)\.tar.gz"$/
+      end
+    end
+  end
 end

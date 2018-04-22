@@ -9,4 +9,38 @@ item do
     homebrew_formula
     name 'neovim'
   end
+
+  deps do
+    item do
+      name 'resource::lpeg'
+
+      expected do
+        url_xpath
+        url 'https://luarocks.org/modules/gvvaughan/lpeg'
+        xpath '/html/body/div[1]/div[2]/div[3]/div[2]/a'
+      end
+
+      actual do
+        grep
+        file 'Formula/neovim.rb'
+        regex /.*\/lpeg-([\d.-]+).src.rock", :using => :nounzip$/
+      end
+    end
+
+    item do
+      name 'resource::mpack'
+
+      expected do
+        url_xpath
+        url 'https://luarocks.org/modules/tarruda/mpack'
+        xpath '/html/body/div[1]/div[2]/div[3]/div[2]/a'
+      end
+
+      actual do
+        grep
+        file 'Formula/neovim.rb'
+        regex /.*\/mpack-([\d.-]+).src.rock", :using => :nounzip$/
+      end
+    end
+  end
 end

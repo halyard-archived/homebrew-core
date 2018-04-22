@@ -3,12 +3,6 @@ class Python < Formula
   homepage "https://www.python.org/"
   url "https://www.python.org/ftp/python/3.6.5/Python-3.6.5.tar.xz"
   sha256 "f434053ba1b5c8a5cc597e966ead3c5143012af827fd3f0697d21450bb8d87a6"
-  head "https://github.com/python/cpython.git"
-
-  devel do
-    url "https://www.python.org/ftp/python/3.7.0/Python-3.7.0b3.tar.xz"
-    sha256 "2b152788486c61ee6c3e9feaeb4c3fe9679f0a76a19a4c82eb4c665989c340fb"
-  end
 
   option "with-tcl-tk", "Use Homebrew's Tk instead of macOS Tk (has optional Cocoa and threads support)"
   deprecated_option "with-brewed-tk" => "with-tcl-tk"

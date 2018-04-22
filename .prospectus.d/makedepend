@@ -10,4 +10,39 @@ item do
     homebrew_formula
     name 'makedepend'
   end
+
+  deps do
+    item do
+      name 'resource::xorg-macros'
+
+      expected do
+        url_xpath
+        url 'https://cgit.freedesktop.org/xorg/util/macros/refs/tags'
+        xpath '//*[@id="cgit"]/div[1]/table/tr[2]/td[1]/a'
+        regex /^util-macros-([\d.]+)$/
+      end
+
+      actual do
+        grep
+        file 'Formula/makedepend.rb'
+        regex /util-macros-([\d.]+)\.tar\.bz2"$/
+      end
+    end
+
+    item do
+      name 'resource::xproto'
+
+      expected do
+        url_xpath
+        url 'https://cgit.freedesktop.org/xorg/proto/xproto/refs/tags'
+        xpath '//*[@id="cgit"]/div[1]/table/tr[2]/td[1]/a'
+        regex /^xproto-([\d.]+)$/
+      end
+
+      actual do
+        grep
+        file 'Formula/makedepend.rb'
+        regex /xproto-([\d.]+)\.tar\.gz"$/
+    end
+  end
 end

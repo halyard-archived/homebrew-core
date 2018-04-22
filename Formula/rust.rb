@@ -1,33 +1,23 @@
 class Rust < Formula
   desc "Safe, concurrent, practical language"
   homepage "https://www.rust-lang.org/"
+  url "https://static.rust-lang.org/dist/rustc-1.25.0-src.tar.gz"
+  sha256 "eef63a0aeea5147930a366aee78cbde248bb6e5c6868801bdf34849152965d2d"
+  revision 1
 
-  stable do
-    url "https://static.rust-lang.org/dist/rustc-1.25.0-src.tar.gz"
-    sha256 "eef63a0aeea5147930a366aee78cbde248bb6e5c6868801bdf34849152965d2d"
-
-    resource "cargo" do
-      url "https://github.com/rust-lang/cargo.git",
-          :tag => "0.25.0",
-          :revision => "8c93e089536467783957fec23b0f2627bb6ce357"
-    end
-
-    resource "racer" do
-      url "https://github.com/racer-rust/racer/archive/2.0.12.tar.gz"
-      sha256 "1fa063d90030c200d74efb25b8501bb9a5add7c2e25cbd4976adf7a73bf715cc"
-    end
+  resource "cargo" do
+    url "https://github.com/rust-lang/cargo.git", :tag => "0.26.0",
+        :revision => "41480f5cc50863600e05aa17d13264c88070436a"
   end
 
-  head do
-    url "https://github.com/rust-lang/rust.git"
+  resource "cargobootstrap" do
+    url "https://static.rust-lang.org/dist/cargo-0.26.0-x86_64-apple-darwin.tar.xz"
+    sha256 "b521bf6d9080d85b2ee0b7bfcd0eff2b140bab4cc3661f339f8b67b06a5b9310"
+  end
 
-    resource "cargo" do
-      url "https://github.com/rust-lang/cargo.git"
-    end
-
-    resource "racer" do
-      url "https://github.com/racer-rust/racer.git"
-    end
+  resource "racer" do
+    url "https://github.com/racer-rust/racer/archive/2.0.12.tar.gz"
+    sha256 "1fa063d90030c200d74efb25b8501bb9a5add7c2e25cbd4976adf7a73bf715cc"
   end
 
   option "with-llvm", "Build with brewed LLVM. By default, Rust's LLVM will be used."
@@ -45,12 +35,6 @@ class Rust < Formula
   fails_with :gcc
   ("4.3".."4.6").each do |n|
     fails_with :gcc => n
-  end
-
-  resource "cargobootstrap" do
-    # From https://github.com/rust-lang/rust/blob/#{version}/src/stage0.txt
-    url "https://static.rust-lang.org/dist/2018-02-15/cargo-0.25.0-x86_64-apple-darwin.tar.gz"
-    sha256 "92782612068e796a6a85f5c2bc11ad748b961cb26e7b55f8f125d33cc402c1ca"
   end
 
   def install

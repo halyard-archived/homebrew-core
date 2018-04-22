@@ -9,4 +9,22 @@ item do
     homebrew_formula
     name 'nghttp2'
   end
+
+  deps do
+    item do
+      name 'resources::Cython'
+
+      expected do
+        url_xpath
+        url 'https://pypi.org/project/Cython/'
+        xpath '//h1[@class="package-header__name"]'
+        regex /^\w+ ([\d.]+)$/
+      end
+
+      actual do
+        grep
+        file 'Formula/nghttp2.rb'
+        regex /.*Cython-([\d.]+)\.tar\.gz"$/
+      end
+    end
 end

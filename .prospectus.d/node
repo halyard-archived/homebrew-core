@@ -9,4 +9,21 @@ item do
     homebrew_formula
     name 'node'
   end
+
+  deps do
+    item do
+      name 'resource::npm'
+
+      expected do
+        github_release
+        repo 'npm/npm'
+      end
+
+      actual do
+        grep
+        file 'Formula/node.rb'
+        regex /url "https:\/\/registry.npmjs.org\/npm\/-\/npm-([\d.]+)\.tgz"$/
+      end
+    end
+  end
 end
