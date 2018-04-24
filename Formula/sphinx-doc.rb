@@ -1,11 +1,9 @@
 class SphinxDoc < Formula
-  include Language::Python::Virtualenv
-
   desc "Tool to create intelligent and beautiful documentation"
   homepage "http://sphinx-doc.org"
   url "https://files.pythonhosted.org/packages/ff/bd/a709626705bb1f13b86904f6caaf53e3d088cbf2919b678296ce11fd646c/Sphinx-1.7.3.tar.gz"
   sha256 "9495a1f78c13d0a725ab8104e923e9663519ecc04552aa4a8f684c2da355443d"
-  revision 2
+  revision 3
 
   keg_only <<~EOS
     this formula is mainly used internally by other formulae.
@@ -119,7 +117,18 @@ class SphinxDoc < Formula
   end
 
   def install
-    virtualenv_install_with_resources
+    ENV.prepend_create_path "PYTHONPATH", libexec/"vendor/lib/python2.7/site-packages"
+    resources.each do |r|
+      r.stage do
+        system "python", *Language::Python.setup_install_args(libexec/"vendor")
+      end
+    end
+
+    ENV.prepend_create_path "PYTHONPATH", libexec/"lib/python2.7/site-packages"
+    system "python", *Language::Python.setup_install_args(libexec)
+
+    bin.install Dir[libexec/"bin/*"]
+    bin.env_script_all_files(libexec/"bin", :PYTHONPATH => ENV["PYTHONPATH"])
   end
 
   test do
