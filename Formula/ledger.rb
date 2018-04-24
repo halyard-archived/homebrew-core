@@ -1,29 +1,30 @@
 class Ledger < Formula
   desc "Command-line, double-entry accounting tool"
-  homepage "http://ledger-cli.org"
+  homepage "https://ledger-cli.org/"
   url "https://github.com/ledger/ledger/archive/v3.1.1.tar.gz"
   sha256 "90f06561ab692b192d46d67bc106158da9c6c6813cc3848b503243a9dfd8548a"
-  revision 7
+  revision 10
   head "https://github.com/ledger/ledger.git"
 
   option "with-debug", "Build with debugging symbols enabled"
   option "with-docs", "Build HTML documentation"
-  option "without-python", "Build without python support"
+  option "without-python@2", "Build without python support"
 
   depends_on "cmake" => :build
+  depends_on "boost"
   depends_on "gmp"
   depends_on "mpfr"
-
-  boost_opts = []
-  boost_opts << "c++11" if MacOS.version < "10.9"
-  depends_on "boost" => boost_opts
-  depends_on "boost-python" => boost_opts if build.with? "python"
+  depends_on "python@2" => :recommended
+  depends_on "boost-python" if build.with? "python@2"
 
   needs :cxx11
 
-
   def install
     ENV.cxx11
+
+    # Boost >= 1.67 Python components require a Python version suffix
+    inreplace "CMakeLists.txt", "set(BOOST_PYTHON python)",
+                                "set(BOOST_PYTHON python27)"
 
     flavor = build.with?("debug") ? "debug" : "opt"
 
@@ -33,7 +34,7 @@ class Ledger < Formula
       --prefix=#{prefix}
       --boost=#{Formula["boost"].opt_prefix}
     ]
-    args << "--python" if build.with? "python"
+    args << "--python" if build.with? "python@2"
     args += %w[-- -DBUILD_DOCS=1]
     args << "-DBUILD_WEB_DOCS=1" if build.with? "docs"
     system "./acprep", flavor, "make", *args
@@ -42,7 +43,7 @@ class Ledger < Formula
 
     (pkgshare/"examples").install Dir["test/input/*.dat"]
     pkgshare.install "contrib"
-    pkgshare.install "python/demo.py" if build.with? "python"
+    pkgshare.install "python/demo.py" if build.with? "python@2"
     elisp.install Dir["lisp/*.el", "lisp/*.elc"]
     bash_completion.install pkgshare/"contrib/ledger-completion.bash"
   end
@@ -57,6 +58,6 @@ class Ledger < Formula
     assert_equal "          $-2,500.00  Equity", balance.read.chomp
     assert_equal 0, $CHILD_STATUS.exitstatus
 
-    system "python", pkgshare/"demo.py" if build.with? "python"
+    system "python", pkgshare/"demo.py" if build.with? "python@2"
   end
 end
