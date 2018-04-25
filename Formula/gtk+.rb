@@ -3,10 +3,8 @@ class Gtkx < Formula
   homepage "https://gtk.org/"
   revision 1
 
-  stable do
-    url "https://download.gnome.org/sources/gtk+/3.22/gtk+-3.22.29.tar.xz"
-    sha256 "a07d64b939fcc034a066b7723fdf9b24e92c9cfb6a8497593f3471fe56fbbbf8"
-  end
+  url "https://download.gnome.org/sources/gtk+/3.22/gtk+-3.22.30.tar.xz"
+  sha256 "a1a4a5c12703d4e1ccda28333b87ff462741dc365131fbc94c218ae81d9a6567"
 
   option "with-quartz-relocation", "Build with quartz relocation support"
 
@@ -17,7 +15,6 @@ class Gtkx < Formula
   depends_on "pango"
   depends_on "gobject-introspection"
   depends_on "hicolor-icon-theme"
-
 
   def install
     args = ["--disable-dependency-tracking",
