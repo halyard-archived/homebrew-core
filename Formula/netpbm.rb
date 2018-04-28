@@ -1,8 +1,8 @@
 class Netpbm < Formula
   desc "Image manipulation"
   homepage "https://netpbm.sourceforge.io/"
-  url "https://svn.code.sf.net/p/netpbm/code/stable", :revision => 3154
-  version "10.73.18"
+  url "https://svn.code.sf.net/p/netpbm/code/stable", :revision => 3244
+  version "10.73.19"
   version_scheme 1
 
   depends_on "libtiff"
