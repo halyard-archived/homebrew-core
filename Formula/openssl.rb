@@ -2,7 +2,6 @@ class Openssl < Formula
   desc "Cryptography and SSL/TLS Toolkit"
   homepage "https://openssl.org/"
   url "https://www.openssl.org/source/openssl-1.1.0h.tar.gz"
-  mirror "http://example.org"
   sha256 "5835626cde9e99656585fc7aaa2302a73a7e1340bf8c14fd635a62c66802a517"
 
   keg_only :provided_by_macos,
