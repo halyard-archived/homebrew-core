@@ -1,9 +1,9 @@
 item do
   expected do
     url_xpath
-    url 'https://git.tukaani.org/?p=xz.git;a=tags'
-    xpath '/html/body/table/tr[1]/td[2]/a'
-    regex /^v(.*)$/
+    url 'https://tukaani.org/xz/'
+    xpath '//*[@id="content"]/p[9]/a[1]'
+    regex /^xz-([\d.]+)\.tar\.gz$/<Paste>
   end
 
   actual do
