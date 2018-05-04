@@ -3,7 +3,7 @@ item do
     url_xpath
     url 'https://tukaani.org/xz/'
     xpath '//*[@id="content"]/p[9]/a[1]'
-    regex /^xz-([\d.]+)\.tar\.gz$/<Paste>
+    regex /^xz-([\d.]+)\.tar\.gz$/
   end
 
   actual do
