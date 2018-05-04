@@ -1,8 +1,8 @@
 class Unbound < Formula
   desc "Validating, recursive, caching DNS resolver"
   homepage "https://www.unbound.net"
-  url "https://www.unbound.net/downloads/unbound-1.7.0.tar.gz"
-  sha256 "94dd9071fb13d8ccd122a3ac67c4524a3324d0e771fc7a8a7c49af8abfb926a2"
+  url "https://www.unbound.net/downloads/unbound-1.7.1.tar.gz"
+  sha256 "56e085ef582c5372a20207de179d0edb4e541e59f87be7d4ee1d00d12008628d"
 
   depends_on "openssl"
   depends_on "libevent"
