@@ -1,8 +1,8 @@
 class Librsvg < Formula
   desc "Library to render SVG files using Cairo"
   homepage "https://live.gnome.org/LibRsvg"
-  url "https://download.gnome.org/sources/librsvg/2.42/librsvg-2.42.3.tar.xz"
-  sha256 "704f2c44b9b170fc5498de36a161d01ca8f584ba9c42654b98565a7b7bcbe657"
+  url "https://download.gnome.org/sources/librsvg/2.42/librsvg-2.42.4.tar.xz"
+  sha256 "225280a2a69ee4cce6452a1a92d9297cc1b34a8faface2bf2b4b9da48f044de3"
 
   depends_on "pkg-config" => :build
   depends_on "cairo"
