@@ -1,8 +1,8 @@
 item do
   expected do
     url_xpath
-    url 'http://git.savannah.gnu.org/cgit/freetype/freetype2.git/refs/'
-    xpath '//*[@id="cgit"]/div[1]/table/tr[28]/td[1]/a'
+    url 'http://git.savannah.gnu.org/cgit/freetype/freetype2.git/refs/tags'
+    xpath '//*[@id="cgit"]/div[1]/table/tr[2]/td[1]'
     regex /^VER-(\d+)-(\d+)-(\d+)$/, '\1.\2.\3'
   end
 
