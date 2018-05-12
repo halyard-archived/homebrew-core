@@ -15,9 +15,10 @@ item do
       name 'resource::npm'
 
       expected do
-        github_release
+        github_tag
         repo 'npm/npm'
         regex /^v([\d.]+)$/
+        filter /^v([\d.]+)$/
       end
 
       actual do
