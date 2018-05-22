@@ -3,6 +3,7 @@ item do
     gitlab_tag
     repo 'GNOME/gtk-doc'
     endpoint 'https://gitlab.gnome.org'
+    regex /^GTK_DOC_(\d+)_(\d+)$/, '\1.\2'
   end
 
   actual do

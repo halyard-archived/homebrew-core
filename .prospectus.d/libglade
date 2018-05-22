@@ -3,6 +3,7 @@ item do
     gitlab_tag
     repo 'GNOME/glade'
     endpoint 'https://gitlab.gnome.org'
+    regex /^GLADE_(\d+)_(\d+)_(\d+)$/, '\1.\2.\3'
   end
 
   actual do
