@@ -1,0 +1,11 @@
+item do
+  expected do
+    github_release
+    repo 'iawia002/annie'
+  end
+
+  actual do
+    homebrew_formula
+    name 'annie'
+  end
+end
