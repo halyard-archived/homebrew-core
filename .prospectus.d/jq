@@ -1,0 +1,12 @@
+item do
+  expected do
+    github_release
+    repo 'stedolan/jq'
+    regex /^jq-([\d.]+)$/
+  end
+
+  actual do
+    homebrew_formula
+    name 'jq'
+  end
+end
