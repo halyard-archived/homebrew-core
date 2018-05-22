@@ -1,0 +1,12 @@
+item do
+  expected do
+    github_release
+    repo 'akerl/dapper'
+    regex /([\d.]+)/
+  end
+
+  actual do
+    homebrew_formula
+    name 'dapper'
+  end
+end
