@@ -1,12 +1,8 @@
-require 'json'
-require 'open-uri'
-
 item do
   expected do
-    static
-    url = 'https://download.gnome.org/sources/gtk-doc/cache.json'
-    raw = JSON.parse(open(url).read)
-    set raw[2]['gtk-doc'].select { |x| x.split('.')[1].to_i.even? }.last
+    gitlab_tag
+    repo 'GNOME/gtk-doc'
+    endpoint 'https://gitlab.gnome.org'
   end
 
   actual do

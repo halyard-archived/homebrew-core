@@ -1,9 +1,8 @@
 item do
   expected do
-    url_xpath
-    url 'http://ftp.gnome.org/pub/GNOME/sources/glade/3.20/?C=N;O=A'
-    xpath '//*[@id="body"]/pre/a[8]'
-    regex /^LATEST-IS-([\d.]+)$/
+    gitlab_tag
+    repo 'GNOME/glade'
+    endpoint 'https://gitlab.gnome.org'
   end
 
   actual do
