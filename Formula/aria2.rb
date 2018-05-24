@@ -7,10 +7,13 @@ class Aria2 < Formula
   depends_on "pkg-config" => :build
   depends_on "libssh2" => :optional
 
-  needs :cxx11
+  needs :cxx14
 
   def install
-    ENV.cxx11
+    # Fix "error: use of undeclared identifier 'make_unique'"
+    # Reported upstream 15 May 2018 https://github.com/aria2/aria2/issues/1198
+    inreplace "src/bignum.h", "make_unique", "std::make_unique"
+    inreplace "configure", "-std=c++11", "-std=c++14"
 
     args = %W[
       --disable-dependency-tracking
