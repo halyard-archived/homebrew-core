@@ -1,8 +1,8 @@
 class Pygobject < Formula
   desc "GLib/GObject/GIO Python bindings for Python 2"
   homepage "https://live.gnome.org/PyGObject"
-  url "https://download.gnome.org/sources/pygobject/3.28/pygobject-3.28.2.tar.xz"
-  sha256 "ac443afd14fcb9ff5744b65d6e2b380e70510278404fb8684a9b9fb089e6f2ca"
+  url "https://download.gnome.org/sources/pygobject/3.29/pygobject-3.29.2.tar.xz"
+  sha256 "8d77b1ac1d7c88929ac9f5793837f7933e80cdd27523a47d38cdf2cf03c1f4a1"
   revision 1
 
   depends_on "pkg-config" => :build
