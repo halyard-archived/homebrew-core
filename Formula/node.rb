@@ -1,8 +1,8 @@
 class Node < Formula
   desc "Platform built on V8 to build network applications"
   homepage "https://nodejs.org/"
-  url "https://nodejs.org/dist/v9.11.1/node-v9.11.1.tar.xz"
-  sha256 "23dc3d133924f5c7453c479d5eceb3b6af932415cb67d99798c313573d9b9d4c"
+  url "https://nodejs.org/dist/v10.2.0/node-v10.2.0.tar.xz"
+  sha256 "7e5f11b785412e94394e31793296c37ebe1aa32f95d9fe56b7a055169aa512c3"
   head "https://github.com/nodejs/node.git"
 
   option "with-debug", "Build with debugger hooks"
@@ -27,8 +27,8 @@ class Node < Formula
   end
 
   resource "npm" do
-    url "https://registry.npmjs.org/npm/-/npm-6.0.1.tgz"
-    sha256 "3e78fc35ac87513c9bd80e4479ad2705d7472fc3f4d9a400221125e633ab88e7"
+    url "https://registry.npmjs.org/npm/-/npm-6.1.0.tgz"
+    sha256 "be8bb5fdb52e5af8a62988ad32f51c688d1327f62412c4410b30c29c8d66a85f"
   end
 
   def install
