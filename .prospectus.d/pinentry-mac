@@ -1,0 +1,12 @@
+item do
+  expected do
+    github_tag
+    repo 'GPGTools/pinentry-mac'
+    regex /^v([\d.]+)$/
+  end
+
+  actual do
+    homebrew_formula
+    name 'pinentry-mac'
+  end
+end
