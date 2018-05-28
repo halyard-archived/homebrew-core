@@ -3,18 +3,8 @@ class GnuTar < Formula
   homepage "https://www.gnu.org/software/tar/"
   url "https://ftp.gnu.org/gnu/tar/tar-1.30.tar.gz"
   sha256 "4725cc2c2f5a274b12b39d1f78b3545ec9ebb06a6e48e8845e1995ac8513b088"
-  revision 1
 
   option "with-default-names", "Do not prepend 'g' to the binary"
-
-
-  # CVE-2016-6321
-  # https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=842339
-  # https://sintonen.fi/advisories/tar-extract-pathname-bypass.txt
-  patch do
-    url "https://sources.debian.net/data/main/t/tar/1.29b-1.1/debian/patches/When-extracting-skip-.-members.patch"
-    sha256 "6b1371b9abd391e1654f7d730aae9c4dee703a867276b1e8a9ef97a2a906b7cf"
-  end
 
   def install
     # Work around unremovable, nested dirs bug that affects lots of
