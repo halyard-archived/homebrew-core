@@ -1,8 +1,10 @@
 class P11Kit < Formula
   desc "Library to load and enumerate PKCS#11 modules"
   homepage "https://p11-glue.freedesktop.org"
-  url "https://github.com/p11-glue/p11-kit/releases/download/0.23.11/p11-kit-0.23.11.tar.gz"
-  sha256 "b243c8daa573f85cb9873352a4c38563812fe3045e960593eb45db7dfdea4a2b"
+  url "https://github.com/p11-glue/p11-kit/archive/0.23.11.tar.gz"
+  #url "https://github.com/p11-glue/p11-kit/releases/download/0.23.11/p11-kit-0.23.11.tar.gz"
+  sha256 "849d2a344acd4172645a5bb23097f96f42487139f8d42cb0af5398de287e46e8"
+  revision 1
 
   head do
     url "https://github.com/p11-glue/p11-kit.git"
@@ -15,6 +17,16 @@ class P11Kit < Formula
 
   depends_on "libffi"
   depends_on "pkg-config" => :build
+  # Remove these once 0.23.12 drops
+  depends_on "autoconf" => :build
+  depends_on "automake" => :build
+  depends_on "gettext" => :build
+  depends_on "libtool" => :build
+
+  patch do
+    url "https://github.com/p11-glue/p11-kit/commit/db92b71654789b9b20a2083bf45370d560df2da2.patch"
+    sha256 "9ec6b7d1069e45ea15e457f2d38396b3a04cb3dc9d11ce51d5d358710a83b5cb"
+  end
 
   def install
     # Fix "error: unknown type name 'locale_t'"
@@ -26,10 +38,10 @@ class P11Kit < Formula
     # https://bugs.freedesktop.org/show_bug.cgi?id=91602#c1
     ENV["FAKED_MODE"] = "1"
 
-    if build.head?
-      ENV["NOCONFIGURE"] = "1"
-      system "./autogen.sh"
-    end
+    #if build.head?
+    ENV["NOCONFIGURE"] = "1"
+    system "./autogen.sh"
+    #end
 
     system "./configure", "--disable-dependency-tracking",
                           "--disable-silent-rules",
