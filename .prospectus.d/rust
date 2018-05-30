@@ -42,5 +42,22 @@ item do
         regex /.*url "https:\/\/github.com\/racer-rust\/racer\/archive\/([\d.]+)\.tar\.gz"$/
       end
     end
+
+    item do
+      name 'resource::cargobootstrap'
+
+      expected do
+        rust_version = File.readlines('Formula/rust.rb').grep(/^  url "/).first.split('-')[2]
+        url_xpath
+        url "https://raw.githubusercontent.com/rust-lang/rust/#{rust_version}/src/stage0.txt"
+        regex /^cargo: ([\d.]+)$/m
+      end
+
+      actual do
+        grep
+        file 'Formula/rust.rb'
+        regex /cargo-([\d.]+)-x86_64-apple-darwin\.tar\.gz/
+      end
+    end
   end
 end

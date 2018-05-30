@@ -1,23 +1,24 @@
 class Rust < Formula
   desc "Safe, concurrent, practical language"
   homepage "https://www.rust-lang.org/"
-  url "https://static.rust-lang.org/dist/rustc-1.26.0-src.tar.gz"
-  sha256 "4fb09bc4e233b71dcbe08a37a3f38cabc32219745ec6a628b18a55a1232281dd"
-  revision 1
+
+  url "https://static.rust-lang.org/dist/rustc-1.26.1-src.tar.gz"
+  sha256 "70a7961bd8ec43b2c01e9896e90b0a06804a7fbe0a5c05acc7fd6fed19500df0"
 
   resource "cargo" do
     url "https://github.com/rust-lang/cargo.git", :tag => "0.27.0",
         :revision => "0e7c5a93159076952f609e05760e2458828d0d1f"
   end
 
-  resource "cargobootstrap" do
-    url "https://static.rust-lang.org/dist/cargo-0.26.0-x86_64-apple-darwin.tar.xz"
-    sha256 "b521bf6d9080d85b2ee0b7bfcd0eff2b140bab4cc3661f339f8b67b06a5b9310"
-  end
-
   resource "racer" do
     url "https://github.com/racer-rust/racer/archive/2.0.14.tar.gz"
     sha256 "0442721c01ae4465843cb73b24f6caa0127c3308d72b944ad75736164756e522"
+  end
+
+  resource "cargobootstrap" do
+    # From https://github.com/rust-lang/rust/blob/#{version}/src/stage0.txt
+    url "https://static.rust-lang.org/dist/2018-03-29/cargo-0.26.0-x86_64-apple-darwin.tar.gz"
+    sha256 "cab6adf58e9dea7ac217b1882312eff3487005cf32dcde099327669aac6e37de"
   end
 
   option "with-llvm", "Build with brewed LLVM. By default, Rust's LLVM will be used."
@@ -55,13 +56,8 @@ class Rust < Formula
     ENV["SDKROOT"] = MacOS.sdk_path
 
     args = ["--prefix=#{prefix}"]
-    args << "--disable-rpath" if build.head?
     args << "--llvm-root=#{Formula["llvm"].opt_prefix}" if build.with? "llvm"
-    if build.head?
-      args << "--release-channel=nightly"
-    else
-      args << "--release-channel=stable"
-    end
+    args << "--release-channel=stable"
     system "./configure", *args
     system "make"
     system "make", "install"
