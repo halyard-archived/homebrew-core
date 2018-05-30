@@ -50,6 +50,7 @@ item do
         rust_version = File.readlines('Formula/rust.rb').grep(/^  url "/).first.split('-')[2]
         url_xpath
         url "https://raw.githubusercontent.com/rust-lang/rust/#{rust_version}/src/stage0.txt"
+        xpath '/'
         regex /^cargo: ([\d.]+)$/m
       end
 
