@@ -1,0 +1,12 @@
+item do
+  expected do
+    github_tag
+    repo 'Yubico/yubico-piv-tool'
+    regex /^yubico-piv-tool-([\d.]+)$/
+  end
+
+  actual do
+    homebrew_formula
+    name 'yubico-piv-tool'
+  end
+end
