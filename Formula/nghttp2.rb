@@ -13,9 +13,8 @@ class Nghttp2 < Formula
   end
 
   option "with-examples", "Compile and install example programs"
-  option "with-python3", "Build python3 bindings"
 
-  depends_on "python3" => :optional
+  depends_on "python" => :optional
   depends_on "sphinx-doc" => :build
   depends_on "pkg-config" => :build
   depends_on "cunit" => :build
@@ -69,7 +68,7 @@ class Nghttp2 < Formula
     system "make", "install"
     libexec.install "examples" if build.with? "examples"
 
-    if build.with? "python3"
+    if build.with? "python"
       pyver = Language::Python.major_minor_version "python3"
       ENV["PYTHONPATH"] = cythonpath = buildpath/"cython/lib/python#{pyver}/site-packages"
       cythonpath.mkpath

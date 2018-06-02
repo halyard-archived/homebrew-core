@@ -12,14 +12,8 @@ class Git < Formula
   depends_on "pcre2" => :optional
   depends_on "gettext" => :optional
   depends_on "go" => :build if build.with? "persistent-https"
-
-  option "with-openssl", "Build with Homebrew's OpenSSL instead of using CommonCrypto"
-  option "with-curl", "Use Homebrew's version of cURL library"
-
   depends_on "openssl" => :optional
   depends_on "curl" => :optional
-
-  option "with-perl", "Build against a custom Perl rather than system default"
   depends_on "perl" => :optional
 
   resource "html" do

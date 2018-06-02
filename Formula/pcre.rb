@@ -4,15 +4,6 @@ class Pcre < Formula
   url "https://ftp.pcre.org/pub/pcre/pcre-8.42.tar.bz2"
   sha256 "2cd04b7c887808be030254e8d77de11d3fe9d4505c39d4b15d2664ffe8bf9301"
 
-  head do
-    url "svn://vcs.exim.org/pcre/code/trunk"
-
-    depends_on "automake" => :build
-    depends_on "autoconf" => :build
-    depends_on "libtool" => :build
-  end
-
-
   def install
     system "./autogen.sh" if build.head?
     system "./configure", "--disable-dependency-tracking",

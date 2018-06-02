@@ -2,13 +2,9 @@ class Gcc < Formula
   desc "GNU compiler collection"
   homepage "https://gcc.gnu.org/"
 
-  head "svn://gcc.gnu.org/svn/gcc/trunk"
-
-  stable do
-    url "https://ftp.gnu.org/gnu/gcc/gcc-7.3.0/gcc-7.3.0.tar.xz"
-    mirror "https://ftpmirror.gnu.org/gcc/gcc-7.3.0/gcc-7.3.0.tar.xz"
-    sha256 "832ca6ae04636adbb430e865a1451adf6979ab44ca1c8374f61fba65645ce15c"
-  end
+  url "https://ftp.gnu.org/gnu/gcc/gcc-7.3.0/gcc-7.3.0.tar.xz"
+  mirror "https://ftpmirror.gnu.org/gcc/gcc-7.3.0/gcc-7.3.0.tar.xz"
+  sha256 "832ca6ae04636adbb430e865a1451adf6979ab44ca1c8374f61fba65645ce15c"
 
   option "with-jit", "Build just-in-time compiler"
   option "with-nls", "Build with native language support (localization)"
@@ -30,11 +26,7 @@ class Gcc < Formula
   end
 
   def version_suffix
-    if build.head?
-      (stable.version.to_s.slice(/\d/).to_i + 1).to_s
-    else
-      version.to_s.slice(/\d/)
-    end
+    version.to_s.slice(/\d/)
   end
 
   # Fix for libgccjit.so linkage on Darwin
