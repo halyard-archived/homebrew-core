@@ -1,0 +1,28 @@
+item do
+  expected do
+    github_tag
+    repo 'apache/subversion'
+  end
+
+  actual do
+    homebrew_formula
+    name 'subversion'
+  end
+
+  deps do
+    item do
+      name 'serf'
+
+      expected do
+        github_tag
+        repo 'apache/serf'
+      end
+
+      actual do
+        grep
+        file 'Formula/subversion.rb'
+        regex /^    url "https:\/\/www\.apache\.org\/dyn\/closer\.cgi\?path=serf\/serf-([\d.]+)\.tar\.bz2"$/
+      end
+    end
+  end
+end
