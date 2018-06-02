@@ -5,7 +5,7 @@ class Gettext < Formula
   mirror "https://ftpmirror.gnu.org/gettext/gettext-0.19.8.1.tar.xz"
   sha256 "105556dbc5c3fbbc2aa0edb46d22d055748b6f5c7cd7a8d99f8e7eb84e938be4"
 
-  keg_only :shadowed_by_osx,
+  keg_only :shadowed_by_macos,
     "macOS provides the BSD gettext library & some software gets confused if both are in the library path"
 
 
