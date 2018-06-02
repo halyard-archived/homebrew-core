@@ -5,7 +5,7 @@ dependencies:
   override:
   - git clone https://github.com/akerl/brew.git ~/.brew
   - mkdir -p ~/.brew/Caskroom
-  - git clone ../homebrew-core ~/.brew/Library/Taps/homebrew/homebrew-core
+  - git clone ../homebrew-core ~/.brew/Library/Taps/halyard/homebrew-core
 test:
   override:
-  - ~/.brew/bin/brew audit ./Formula/*
+  - ~/.brew/bin/brew audit ~/.brew/Library/Taps/halyard/homebrew-core/Formula/*
