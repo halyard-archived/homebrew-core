@@ -1,8 +1,8 @@
 class Libxslt < Formula
   desc "C XSLT library for GNOME"
   homepage "http://xmlsoft.org/XSLT/"
-  url "http://xmlsoft.org/sources/libxslt-1.1.33-rc1.tar.gz"
-  sha256 "fe5c2cc487b010dac66529d494f220683dcc26b9c75e33518db9b37f52ee7f77"
+  url "http://xmlsoft.org/sources/libxslt-1.1.32.tar.gz"
+  sha256 "526ecd0abaf4a7789041622c3950c0e7f2c4c8835471515fd77eec684a355460"
 
   head do
     url "https://git.gnome.org/browse/libxslt.git"

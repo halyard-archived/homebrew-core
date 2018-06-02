@@ -2,8 +2,8 @@ class Dapper < Formula
   desc "Handle packed Stylish theme exports"
   homepage "https://github.com/akerl/dapper"
 
+  url "https://github.com/akerl/dapper/releases/download/0.0.2/dapper_darwin"
   version "0.0.2"
-  url "https://github.com/akerl/dapper/releases/download/#{version}/dapper_darwin"
   sha256 "93fba0f3208bff38bd9ff10d70829cf9a12c578b1aeab534a12d921823b7f975"
 
   head do

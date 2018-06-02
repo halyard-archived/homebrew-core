@@ -1,8 +1,8 @@
 class Glib < Formula
   desc "Core application library for C"
   homepage "https://developer.gnome.org/glib/"
-  url "https://download.gnome.org/sources/glib/2.57/glib-2.57.1.tar.xz"
-  sha256 "d029e7c4536835f1f103472f7510332c28d58b9b7d6cd0e9f45c2653e670d9b4"
+  url "https://download.gnome.org/sources/glib/2.56/glib-2.56.1.tar.xz"
+  sha256 "40ef3f44f2c651c7a31aedee44259809b6f03d3d20be44545cd7d177221c0b8d"
 
   option "with-test", "Build a debug build and run tests. NOTE: Not all tests succeed yet"
 

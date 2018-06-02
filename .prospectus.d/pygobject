@@ -3,6 +3,7 @@ item do
     gitlab_tag
     repo 'GNOME/pygobject'
     endpoint 'https://gitlab.gnome.org'
+    regex /^(\d+\.\d*[02468]\.\d+)$/
   end
 
   actual do

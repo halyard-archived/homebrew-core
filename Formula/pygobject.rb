@@ -1,14 +1,13 @@
 class Pygobject < Formula
   desc "GLib/GObject/GIO Python bindings for Python 2"
   homepage "https://live.gnome.org/PyGObject"
-  url "https://download.gnome.org/sources/pygobject/3.29/pygobject-3.29.2.tar.xz"
-  sha256 "8d77b1ac1d7c88929ac9f5793837f7933e80cdd27523a47d38cdf2cf03c1f4a1"
+  url "https://download.gnome.org/sources/pygobject/2.28/pygobject-2.28.7.tar.xz"
+  sha256 "bb9d25a3442ca7511385a7c01b057492095c263784ef31231ffe589d83a96a5a"
   revision 1
 
   depends_on "pkg-config" => :build
   depends_on "glib"
-  depends_on "python"
-
+  depends_on "python@2"
 
   def install
     system "./configure", "--disable-dependency-tracking",
@@ -21,6 +20,6 @@ class Pygobject < Formula
   end
 
   test do
-    system "python", "-c", "import dsextras"
+    system Formula["python@2"].opt_bin/"python2.7", "-c", "import dsextras"
   end
 end
