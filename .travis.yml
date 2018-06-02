@@ -1,8 +1,0 @@
-os: osx
-language: ruby
-install:
-- git clone https://github.com/akerl/brew ~/.brew
-- mkdir -p ~/.brew/Library/Taps/halyard
-- git clone ../homebrew-core ~/.brew/Library/Taps/homebrew/homebrew-core
-script:
-- ~/.brew/bin/brew audit ./Formula/*
