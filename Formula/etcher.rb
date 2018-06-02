@@ -6,8 +6,8 @@ class Etcher < Formula
   sha256 "889de471078f2ceb213cb3b83a3ea9edf1c96c193e53e500eb3487e33d591131"
 
   def install
-    bin.install "etcher"
-    bin.install "node_modules"
+    libexec.install Dir["*"]
+    bin.install_symlink Dir["#{libexec}/etcher"]
   end
 
   test do
