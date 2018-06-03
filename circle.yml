@@ -4,6 +4,7 @@ checkout:
 dependencies:
   override:
   - git clone https://github.com/akerl/brew.git ~/.brew
+  - mkdir -p ~/.brew/Caskroom
   - git clone ../homebrew-core ~/.brew/Library/Taps/halyard/homebrew-core
   - chmod g-w ~/.brew/Library/Taps/halyard/homebrew-core/Formula/*
 test:

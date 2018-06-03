@@ -3,6 +3,7 @@ class GtkDoc < Formula
   homepage "https://www.gtk.org/gtk-doc/"
   url "https://download.gnome.org/sources/gtk-doc/1.28/gtk-doc-1.28.tar.xz"
   sha256 "911e29e302252c96128965ee1f4067d5431a88e00ad1023a8bc1d6b922af5715"
+  revision 1
 
   depends_on "pkg-config" => :build
   depends_on "itstool" => :build

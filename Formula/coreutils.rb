@@ -4,8 +4,14 @@ class Coreutils < Formula
   url "https://ftp.gnu.org/gnu/coreutils/coreutils-8.29.tar.xz"
   mirror "https://ftpmirror.gnu.org/coreutils/coreutils-8.29.tar.xz"
   sha256 "92d0fa1c311cacefa89853bdb53c62f4110cdfda3820346b59cbd098f40f955e"
+  revision 1
 
   depends_on "gmp" => :optional
+
+  #conflicts_with "ganglia", :because => "both install `gstat` binaries"
+  #conflicts_with "gegl", :because => "both install `gcut` binaries"
+  #conflicts_with "idutils", :because => "both install `gid` and `gid.1`"
+  #conflicts_with "aardvark_shell_utils", :because => "both install `realpath` binaries"
 
   def install
     system "./bootstrap" if build.head?

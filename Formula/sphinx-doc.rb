@@ -3,6 +3,7 @@ class SphinxDoc < Formula
   homepage "http://sphinx-doc.org"
   url "https://files.pythonhosted.org/packages/41/32/915efa0e95ef7c79458175b09d9ea9ffc34f4d6791ff84c9b113f3439178/Sphinx-1.7.5.tar.gz"
   sha256 "d45480a229edf70d84ca9fae3784162b1bc75ee47e480ffe04a4b7f21a95d76d"
+  revision 1
 
   keg_only <<~EOS
     this formula is mainly used internally by other formulae.
