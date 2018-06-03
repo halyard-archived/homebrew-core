@@ -5,10 +5,7 @@ class Pixman < Formula
   sha256 "21b6b249b51c6800dc9553b65106e1e37d0e25df942c90531d4c3997aa20a88e"
   revision 2
 
-  keg_only :provided_pre_mountain_lion
-
   depends_on "pkg-config" => :build
-
 
   def install
     system "./configure", "--disable-dependency-tracking",
