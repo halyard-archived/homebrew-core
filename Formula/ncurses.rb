@@ -3,7 +3,6 @@ class Ncurses < Formula
   homepage "https://www.gnu.org/software/ncurses/"
   url "https://invisible-mirror.net/archives/ncurses/current/ncurses-6.1-20180526.tgz"
   sha256 "51cec456641d2e03b8981094e2f3bc1fccf79e747e85ac233a5dc8834316f96e"
-  revision 1
 
   keg_only :provided_by_macos
 

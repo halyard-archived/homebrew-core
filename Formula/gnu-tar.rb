@@ -3,6 +3,7 @@ class GnuTar < Formula
   homepage "https://www.gnu.org/software/tar/"
   url "https://ftp.gnu.org/gnu/tar/tar-1.30.tar.gz"
   sha256 "4725cc2c2f5a274b12b39d1f78b3545ec9ebb06a6e48e8845e1995ac8513b088"
+  revision 1
 
   option "with-default-names", "Do not prepend 'g' to the binary"
 

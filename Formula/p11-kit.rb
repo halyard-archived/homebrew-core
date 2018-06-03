@@ -3,7 +3,6 @@ class P11Kit < Formula
   homepage "https://p11-glue.freedesktop.org"
   url "https://github.com/p11-glue/p11-kit/releases/download/0.23.12/p11-kit-0.23.12.tar.gz"
   sha256 "58bae22f19db1de1a1103e7ca4149eed6e303e727878c2cd5ea9e6fe445fd403"
-  revision 1
 
   head do
     url "https://github.com/p11-glue/p11-kit.git"
