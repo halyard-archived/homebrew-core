@@ -3,7 +3,7 @@ class Libglade < Formula
   homepage "https://glade.gnome.org"
   url "https://ftp.gnome.org/pub/GNOME/sources/glade/3.22/glade-3.22.1.tar.xz"
   sha256 "dff89a2ef2eaf000ff2a46979978d03cb9202cb04668e01d0ea5c5bb5547e39a"
-  revision 1
+  revision 2
 
   depends_on "pkg-config" => :build
   depends_on "libxml2"

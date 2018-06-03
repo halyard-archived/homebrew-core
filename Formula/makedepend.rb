@@ -3,7 +3,7 @@ class Makedepend < Formula
   homepage "https://x.org/"
   url "https://xorg.freedesktop.org/releases/individual/util/makedepend-1.0.5.tar.bz2"
   sha256 "f7a80575f3724ac3d9b19eaeab802892ece7e4b0061dd6425b4b789353e25425"
-  revision 1
+  revision 2
 
   depends_on "pkg-config" => :build
 

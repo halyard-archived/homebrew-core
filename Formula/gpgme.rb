@@ -3,7 +3,7 @@ class Gpgme < Formula
   homepage "https://www.gnupg.org/related_software/gpgme/"
   url "https://www.gnupg.org/ftp/gcrypt/gpgme/gpgme-1.11.1.tar.bz2"
   sha256 "2d1b111774d2e3dd26dcd7c251819ce4ef774ec5e566251eb9308fa7542fbd6f"
-  revision 1
+  revision 2
 
   depends_on "gnupg"
   depends_on "libgpg-error"

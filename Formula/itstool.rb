@@ -1,7 +1,7 @@
 class Itstool < Formula
   desc "Make XML documents translatable through PO files"
   homepage "http://itstool.org/"
-  revision 1
+  revision 2
 
   stable do
     url "http://files.itstool.org/itstool/itstool-2.0.4.tar.bz2"

@@ -3,7 +3,7 @@ class Webp < Formula
   homepage "https://developers.google.com/speed/webp/"
   url "https://storage.googleapis.com/downloads.webmproject.org/releases/webp/libwebp-1.0.0.tar.gz"
   sha256 "84259c4388f18637af3c5a6361536d754a5394492f91be1abc2e981d4983225b"
-  revision 1
+  revision 2
 
   head do
     url "https://chromium.googlesource.com/webm/libwebp.git"

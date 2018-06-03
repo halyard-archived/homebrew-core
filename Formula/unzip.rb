@@ -4,7 +4,7 @@ class Unzip < Formula
   url "https://downloads.sourceforge.net/project/infozip/UnZip%206.x%20%28latest%29/UnZip%206.0/unzip60.tar.gz"
   version "6.0-21"
   sha256 "036d96991646d0449ed0aa952e4fbe21b476ce994abc276e49d30e686708bd37"
-  revision 1
+  revision 2
 
   keg_only :provided_by_macos
 
