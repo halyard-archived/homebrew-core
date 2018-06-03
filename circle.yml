@@ -9,4 +9,4 @@ dependencies:
   - chmod g-w ~/.brew/Library/Taps/halyard/homebrew-core/Formula/*
 test:
   override:
-  - ~/.brew/bin/brew audit ~/.brew/Library/Taps/halyard/homebrew-core/Formula/*
+  - ~/.brew/bin/brew audit --except=revision_and_version_scheme ~/.brew/Library/Taps/halyard/homebrew-core/Formula/*
