@@ -2,7 +2,7 @@ item do
   expected do
     url_xpath
     url 'https://apr.apache.org/index.html'
-    xpath '/html/body/table/tbody/tr[1]/td[2]/table[2]/tbody/tr[2]/td/blockquote/ul/li[2]'
+    xpath '/html/body/table/tr[1]/td[2]/table[2]/tr[2]/td/blockquote/ul/li[2]'
     regex /^APR-util ([\d.]+), released \w+ \d+, \d+$/
   end
 
