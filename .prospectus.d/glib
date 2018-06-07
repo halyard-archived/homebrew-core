@@ -4,6 +4,7 @@ item do
     repo 'GNOME/glib'
     endpoint 'https://gitlab.gnome.org'
     regex /^(\d+\.\d*[02468]\.\d+)$/
+    filter /^(\d+\.\d*[02468]\.\d+)$/
   end
 
   actual do
