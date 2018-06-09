@@ -1,10 +1,9 @@
 class Sqlite < Formula
   desc "Command-line interface for SQLite"
   homepage "https://sqlite.org/"
-  url "https://sqlite.org/2018/sqlite-autoconf-3230100.tar.gz"
-  version "3.23.1"
-  sha256 "92842b283e5e744eff5da29ed3c69391de7368fccc4d0ee6bf62490ce555ef25"
-  revision 2
+  url "https://sqlite.org/2018/sqlite-autoconf-3240000.tar.gz"
+  version "3.24.0"
+  sha256 "d9d14e88c6fb6d68de9ca0d1f9797477d82fc3aed613558f87ffbdbbc5ceb74a"
 
   keg_only :provided_by_macos, "macOS provides an older sqlite3"
 
