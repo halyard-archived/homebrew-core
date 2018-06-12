@@ -3,8 +3,8 @@ item do
     gitlab_tag
     repo 'GNOME/libxslt'
     endpoint 'https://gitlab.gnome.org'
-    regex /^([\d.]+)$/
-    filter /^([\d.]+)$/
+    regex /^v([\d.]+)$/
+    filter /^v([\d.]+)$/
   end
 
   actual do

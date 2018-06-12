@@ -1,25 +1,36 @@
 class Pygobject < Formula
-  desc "GLib/GObject/GIO Python bindings for Python 2"
+  desc "GNOME Python bindings (based on GObject Introspection)"
   homepage "https://live.gnome.org/PyGObject"
-  url "https://download.gnome.org/sources/pygobject/2.28/pygobject-2.28.7.tar.xz"
-  sha256 "bb9d25a3442ca7511385a7c01b057492095c263784ef31231ffe589d83a96a5a"
-  revision 2
+  url "https://download.gnome.org/sources/pygobject/3.28/pygobject-3.28.3.tar.xz"
+  sha256 "3dd3e21015d06e00482ea665fc1733b77e754a6ab656a5db5d7f7bfaf31ad0b0"
 
   depends_on "pkg-config" => :build
+  depends_on "libffi"
   depends_on "glib"
   depends_on "python@2"
+  depends_on "python"
+  depends_on "py2cairo"
+  depends_on "py3cairo"
+  depends_on "gobject-introspection"
 
   def install
-    system "./configure", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}",
-                          "--disable-introspection"
-    system "make", "install"
-    (lib/"python2.7/site-packages/pygtk.pth").append_lines <<~EOS
-      #{HOMEBREW_PREFIX}/lib/python2.7/site-packages/gtk-2.0
-    EOS
+    Language::Python.each_python(build) do |python, _version|
+      system "./configure", "--disable-dependency-tracking",
+                            "--prefix=#{prefix}",
+                            "PYTHON=#{python}"
+      system "make", "install"
+      system "make", "clean"
+    end
   end
 
   test do
-    system Formula["python@2"].opt_bin/"python2.7", "-c", "import dsextras"
+    Pathname("test.py").write <<~EOS
+      import gi
+      assert("__init__" in gi.__file__)
+    EOS
+    Language::Python.each_python(build) do |python, pyversion|
+      ENV.prepend_path "PYTHONPATH", lib/"python#{pyversion}/site-packages"
+      system python, "test.py"
+    end
   end
 end
