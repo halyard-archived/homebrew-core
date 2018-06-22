@@ -1,10 +1,9 @@
 class Icu4c < Formula
   desc "C/C++ and Java libraries for Unicode and globalization"
   homepage "http://site.icu-project.org/"
-  url "https://ssl.icu-project.org/files/icu4c/61.1/icu4c-61_1-src.tgz"
-  version "61.1"
-  sha256 "d007f89ae8a2543a53525c74359b65b36412fa84b3349f1400be6dcf409fafef"
-  revision 2
+  url "https://ssl.icu-project.org/files/icu4c/62.1/icu4c-62_1-src.tgz"
+  version "62.1"
+  sha256 "3dd9868d666350dda66a6e305eecde9d479fb70b30d5b55d78a1deffb97d5aa3"
 
   keg_only :provided_by_macos, "macOS provides libicucore.dylib (but nothing else)"
 
