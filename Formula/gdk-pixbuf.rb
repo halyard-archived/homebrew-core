@@ -1,8 +1,8 @@
 class GdkPixbuf < Formula
   desc "Toolkit for image loading and pixel buffer manipulation"
   homepage "https://gtk.org"
-  url "https://download.gnome.org/sources/gdk-pixbuf/2.36/gdk-pixbuf-2.36.12.tar.xz"
-  sha256 "fff85cf48223ab60e3c3c8318e2087131b590fd6f1737e42cb3759a3b427a334"
+  url "https://download.gnome.org/sources/gdk-pixbuf/2.37/gdk-pixbuf-2.37.0.tar.xz"
+  sha256 "81508700f500eca3f21c4cfd0a3486459a373a65e07457a9a4f3bf7d08109c11"
 
   option "with-relocations", "Build with relocation support for bundles"
   option "without-modules", "Disable dynamic module loading"
