@@ -1,9 +1,8 @@
 item do
   expected do
-    url_xpath
-    url 'https://www.archlinux.org/packages/extra/x86_64/gc/'
-    xpath '//*[@id="pkgdetails"]/h2'
-    regex /^gc ([\w.]*)-\d+$/
+    github_tag
+    repo 'ivmai/bdwgc'
+    regex /^v([\d.]+)$/
   end
 
   actual do
