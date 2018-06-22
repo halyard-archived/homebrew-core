@@ -1,8 +1,8 @@
 class Node < Formula
   desc "Platform built on V8 to build network applications"
   homepage "https://nodejs.org/"
-  url "https://nodejs.org/dist/v10.4.1/node-v10.4.1.tar.xz"
-  sha256 "a5bf584b52f992b6ce31d8afd8c468945a772431575ad868e4e787f390ad8044"
+  url "https://nodejs.org/dist/v10.5.0/node-v10.5.0.tar.xz"
+  sha256 "7b54c543745b0df9ee159571fe989d5bbea58a903c51f7d5ccba4105336b33bc"
   head "https://github.com/nodejs/node.git"
 
   option "with-debug", "Build with debugger hooks"
