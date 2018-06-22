@@ -3,9 +3,9 @@
 class Qt < Formula
   desc "Cross-platform application and UI framework"
   homepage "https://www.qt.io/"
-  _version = "5.11.0"
+  _version = "5.11.1"
   url "https://download.qt.io/official_releases/qt/#{_version.to_s.split('.').take(2).join('.')}/#{_version}/single/qt-everywhere-src-#{_version}.tar.xz"
-  sha256 "67ddb8bf33bbfd19ebc641467ccce2e57fd0b80c6082457f1f5a76e8df83c865"
+  sha256 "39602cb08f9c96867910c375d783eed00fc4a244bffaa93b801225d17950fb2b"
 
   keg_only "Qt 5 has CMake issues when linked"
 
