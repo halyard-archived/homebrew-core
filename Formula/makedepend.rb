@@ -7,9 +7,9 @@ class Makedepend < Formula
 
   depends_on "pkg-config" => :build
 
-  resource "xproto" do
-    url "https://xorg.freedesktop.org/releases/individual/proto/xproto-7.0.30.tar.gz"
-    sha256 "6a2484ea01d515e41eea0acebdc4e2f37b638d184d1b610820543cb2374ae5e2"
+  resource "xorgproto" do
+    url "https://xorg.freedesktop.org/releases/individual/proto/xorgproto-2018.4.tar.gz"
+    sha256 "8e48d851efea0e951bcb6cf0d537f84ba3803de95e488bd039fe59fc75ec8f7d"
   end
 
   resource "xorg-macros" do
@@ -18,10 +18,9 @@ class Makedepend < Formula
   end
 
   def install
-    resource("xproto").stage do
-      system "./configure", "--disable-dependency-tracking",
-                            "--disable-silent-rules",
-                            "--prefix=#{buildpath}/xproto"
+    resource("xorgproto").stage do
+      ENV["MKDIRPROG"] = "mkdir -p"
+      system "./configure", "--prefix=#{buildpath}/xorgproto"
       system "make", "install"
     end
 
@@ -30,7 +29,7 @@ class Makedepend < Formula
       system "make", "install"
     end
 
-    ENV.append_path "PKG_CONFIG_PATH", "#{buildpath}/xproto/lib/pkgconfig"
+    ENV.append_path "PKG_CONFIG_PATH", "#{buildpath}/xorgproto/share/pkgconfig"
     ENV.append_path "PKG_CONFIG_PATH", "#{buildpath}/xorg-macros/share/pkgconfig"
 
     system "./configure", "--disable-dependency-tracking",

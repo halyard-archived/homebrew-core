@@ -30,19 +30,19 @@ item do
     end
 
     item do
-      name 'resource::xproto'
+      name 'resource::xorgproto'
 
       expected do
         url_xpath
-        url 'https://cgit.freedesktop.org/xorg/proto/xproto/refs/tags'
+        url 'https://cgit.freedesktop.org/xorg/proto/xorgproto/refs/tags'
         xpath '//*[@id="cgit"]/div[1]/table/tr[2]/td[1]/a'
-        regex /^xproto-([\d.]+)$/
+        regex /^xorgproto-([\d.]+)$/
       end
 
       actual do
         grep
         file 'Formula/makedepend.rb'
-        regex /.*xproto-([\d.]+)\.tar\.gz"$/
+        regex /.*xorgproto-([\d.]+)\.tar\.gz"$/
       end
     end
   end
