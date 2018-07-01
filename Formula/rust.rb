@@ -14,8 +14,8 @@ class Rust < Formula
   depends_on "libssh2"
 
   resource "cargo" do
-    url "https://github.com/rust-lang/cargo.git", :tag => "0.27.0",
-        :revision => "0e7c5a93159076952f609e05760e2458828d0d1f"
+    url "https://github.com/rust-lang/cargo.git", :tag => "0.28.0",
+        :revision => "1e95190e5ffd6e6b701ad87dab4671246b96a9ce"
   end
 
   resource "racer" do
