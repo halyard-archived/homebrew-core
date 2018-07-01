@@ -1,8 +1,8 @@
 item do
   expected do
     url_xpath
-    url 'https://mirrors.peers.community/mirrors/gnu/findutils/?C=N;O=D'
-    xpath '/html/body/pre/a[6]'
+    url 'https://ftp.gnu.org/pub/gnu/findutils/?C=N;O=D'
+    xpath '/html/body/table/tr[4]/td[2]/a'
     regex /^findutils-([\d.]+)\.tar.*$/
   end
 
