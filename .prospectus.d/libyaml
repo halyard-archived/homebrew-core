@@ -2,6 +2,7 @@ item do
   expected do
     github_tag
     repo 'yaml/libyaml'
+    filter /^[\d.]+$/
   end
 
   actual do
