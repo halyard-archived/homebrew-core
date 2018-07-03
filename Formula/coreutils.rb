@@ -1,10 +1,8 @@
 class Coreutils < Formula
   desc "GNU File, Shell, and Text utilities"
   homepage "https://www.gnu.org/software/coreutils"
-  url "https://ftp.gnu.org/gnu/coreutils/coreutils-8.29.tar.xz"
-  mirror "https://ftpmirror.gnu.org/coreutils/coreutils-8.29.tar.xz"
-  sha256 "92d0fa1c311cacefa89853bdb53c62f4110cdfda3820346b59cbd098f40f955e"
-  revision 2
+  url "https://ftp.gnu.org/gnu/coreutils/coreutils-8.30.tar.xz"
+  sha256 "e831b3a86091496cdba720411f9748de81507798f6130adeaef872d206e1b057"
 
   depends_on "gmp" => :optional
 
