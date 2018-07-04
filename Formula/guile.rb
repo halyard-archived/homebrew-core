@@ -1,8 +1,8 @@
 class Guile < Formula
   desc "GNU Ubiquitous Intelligent Language for Extensions"
   homepage "https://www.gnu.org/software/guile/"
-  url "https://ftp.gnu.org/gnu/guile/guile-2.2.3.tar.xz"
-  sha256 "8353a8849cd7aa77be66af04bd6bf7a6207440d2f8722e46672232bb9f0a4086"
+  url "https://ftp.gnu.org/gnu/guile/guile-2.2.4.tar.xz"
+  sha256 "d9e8b94af7b206fcf52bec6501b921bd7d0bd7a31fb7e896a35ba8253678e31e"
 
   head do
     url "https://git.savannah.gnu.org/git/guile.git"
