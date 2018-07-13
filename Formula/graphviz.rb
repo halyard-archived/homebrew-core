@@ -1,7 +1,7 @@
 class Graphviz < Formula
   desc "Graph visualization software from AT&T and Bell Labs"
-  homepage "https://graphviz.org/"
-  url "https://graphviz.org/pub/graphviz/stable/SOURCES/graphviz-2.40.1.tar.gz"
+  homepage "https://www.graphviz.org/"
+  url "https://www.mirrorservice.org/sites/distfiles.macports.org/graphviz/graphviz-2.40.1.tar.gz"
   sha256 "ca5218fade0204d59947126c38439f432853543b0818d9d728c589dfe7f3a421"
   version_scheme 1
 
@@ -18,6 +18,9 @@ class Graphviz < Formula
   option "with-app", "Build GraphViz.app (requires full XCode install)"
   option "with-gts", "Build with GNU GTS support (required by prism)"
 
+  deprecated_option "with-x" => "with-x11"
+  deprecated_option "with-pangocairo" => "with-pango"
+
   depends_on "pkg-config" => :build
   depends_on :xcode => :build if build.with? "app"
   depends_on "libtool"
@@ -31,11 +34,10 @@ class Graphviz < Formula
 
   if build.with? "bindings"
     depends_on "swig" => :build
-    depends_on "python"
-    depends_on "java"
+    depends_on :java
+    depends_on "python@2"
     depends_on "ruby"
   end
-
 
   def install
     # Only needed when using superenv, which causes qfrexp and qldexp to be
