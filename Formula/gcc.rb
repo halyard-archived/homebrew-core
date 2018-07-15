@@ -1,19 +1,16 @@
 class Gcc < Formula
   desc "GNU compiler collection"
   homepage "https://gcc.gnu.org/"
-
-  url "https://ftp.gnu.org/gnu/gcc/gcc-7.3.0/gcc-7.3.0.tar.xz"
-  mirror "https://ftpmirror.gnu.org/gcc/gcc-7.3.0/gcc-7.3.0.tar.xz"
-  sha256 "832ca6ae04636adbb430e865a1451adf6979ab44ca1c8374f61fba65645ce15c"
+  url "https://ftp.gnu.org/gnu/gcc/gcc-8.1.0/gcc-8.1.0.tar.xz"
+  sha256 "1d1866f992626e61349a1ccd0b8d5253816222cdc13390dcfaa74b093aa2b153"
 
   option "with-jit", "Build just-in-time compiler"
   option "with-nls", "Build with native language support (localization)"
 
   depends_on "gmp"
+  depends_on "isl"
   depends_on "libmpc"
   depends_on "mpfr"
-  depends_on "isl"
-
 
   # GCC bootstraps itself, so it is OK to have an incompatible C++ stdlib
   cxxstdlib_check :skip
@@ -26,33 +23,10 @@ class Gcc < Formula
   end
 
   def version_suffix
-    version.to_s.slice(/\d/)
-  end
-
-  # Fix for libgccjit.so linkage on Darwin
-  # https://gcc.gnu.org/bugzilla/show_bug.cgi?id=64089
-  # https://github.com/Homebrew/homebrew-core/issues/1872#issuecomment-225625332
-  # https://github.com/Homebrew/homebrew-core/issues/1872#issuecomment-225626490
-  patch do
-    url "https://raw.githubusercontent.com/Homebrew/formula-patches/e9e0ee09389a54cc4c8fe1c24ebca3cd765ed0ba/gcc/6.1.0-jit.patch"
-    sha256 "863957f90a934ee8f89707980473769cff47ca0663c3906992da6afb242fb220"
-  end
-
-  # Use -headerpad_max_install_names in the build,
-  # otherwise lto1 load commands cannot be edited on El Capitan
-  if MacOS.version == :el_capitan
-    patch do
-      url "https://raw.githubusercontent.com/Homebrew/formula-patches/32cf103/gcc/7.1.0-headerpad.patch"
-      sha256 "dd884134e49ae552b51085116e437eafa63460b57ce84252bfe7a69df8401640"
-    end
-  end
-
-  # Fix parallel build on APFS filesystem
-  # https://gcc.gnu.org/bugzilla/show_bug.cgi?id=81797
-  if MacOS.version >= :high_sierra
-    patch do
-      url "https://raw.githubusercontent.com/Homebrew/formula-patches/df0465c02a/gcc/apfs.patch"
-      sha256 "f7772a6ba73f44a6b378e4fe3548e0284f48ae2d02c701df1be93780c1607074"
+    if build.head?
+      "HEAD"
+    else
+      version.to_s.slice(/\d/)
     end
   end
 
@@ -104,7 +78,16 @@ class Gcc < Formula
       end
 
       system "../configure", *args
-      system "make"
+
+      make_args = []
+      # Use -headerpad_max_install_names in the build,
+      # otherwise updated load commands won't fit in the Mach-O header.
+      # This is needed because `gcc` avoids the superenv shim.
+      if build.bottle?
+        make_args << "BOOT_LDFLAGS=-Wl,-headerpad_max_install_names"
+      end
+
+      system "make", *make_args
       system "make", "install"
 
       bin.install_symlink bin/"gfortran-#{version_suffix}" => "gfortran"
