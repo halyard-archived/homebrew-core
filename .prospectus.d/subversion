@@ -1,8 +1,8 @@
 item do
   expected do
-    github_tag
-    repo 'apache/subversion'
-    filter /^[\d.]+$/
+    url_xpath
+    url 'https://subversion.apache.org/download.cgi'
+    xpath '//div[@class="bigpoint"]//a[@href="#recommended-release"]'
   end
 
   actual do
