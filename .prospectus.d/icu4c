@@ -1,8 +1,9 @@
 item do
   expected do
-    url_xpath
-    url 'http://site.icu-project.org/download'
-    xpath '//*[@id="sites-canvas-main-content"]/table/tbody/tr/td/div/span[1]/table/tbody/tr[2]/td[2]/b/a'
+    github_tag
+    repo 'unicode-org/icu'
+    regex /^release-(\d+)-(\d+)$/, '\1.\2'
+    filter /^release-(\d+)-(\d+)$/
   end
 
   actual do
