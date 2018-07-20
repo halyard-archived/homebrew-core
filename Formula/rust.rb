@@ -2,8 +2,8 @@ class Rust < Formula
   desc "Safe, concurrent, practical language"
   homepage "https://www.rust-lang.org/"
 
-  url "https://static.rust-lang.org/dist/rustc-1.27.1-src.tar.gz"
-  sha256 "2133beb01ddc3aa09eebc769dd884533c6cfb08ce684f042497e097068d733d1"
+  url "https://static.rust-lang.org/dist/rustc-1.27.2-src.tar.gz"
+  sha256 "9a818c50cdb7880abeaa68b3d97792711e6c64c1cdfb6efdc23f75b8ced0e15d"
 
   option "with-llvm", "Build with brewed LLVM. By default, Rust's LLVM will be used."
 
