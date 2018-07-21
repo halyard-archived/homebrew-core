@@ -16,9 +16,10 @@ item do
       name 'resources::luarocks'
 
       expected do
-        github_tag
-        repo 'luarocks/luarocks'
-        regex /^v([\d.]+)$/
+        url_xpath
+        url 'https://github.com/luarocks/luarocks/wiki/Release-history'
+        xpath '//*[@id="wiki-body"]/div[1]/p/b'
+        regex /^Version ([\d.]+)$/
       end
 
       actual do
