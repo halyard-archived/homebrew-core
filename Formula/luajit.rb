@@ -3,15 +3,9 @@ class Luajit < Formula
   homepage "https://luajit.org/luajit.html"
   url "https://luajit.org/download/LuaJIT-2.0.5.tar.gz"
   sha256 "874b1f8297c697821f561f9b73b57ffd419ed8f4278c82e05b48806d30c1e979"
-  revision 3
 
   option "with-debug", "Build with debugging symbols"
   option "with-52compat", "Build with additional Lua 5.2 compatibility"
-
-  resource "luarocks" do
-    url "https://luarocks.org/releases/luarocks-2.4.4.tar.gz"
-    sha256 "3938df33de33752ff2c526e604410af3dceb4b7ff06a770bc4a240de80a1f934"
-  end
 
   def install
     # 1 - Override the hardcoded gcc.
@@ -34,9 +28,6 @@ class Luajit < Formula
 
     # This doesn't yet work under superenv because it removes "-g"
     args << "CCDEBUG=-g" if build.with? "debug"
-
-    # The development branch of LuaJIT normally does not install "luajit".
-    args << "INSTALL_TNAME=luajit" if build.devel?
 
     system "make", "amalg", *args
     system "make", "install", *args
@@ -61,32 +52,6 @@ class Luajit < Formula
 
     # Having an empty Lua dir in lib/share can mess with other Homebrew Luas.
     %W[#{lib}/lua #{share}/lua].each { |d| rm_rf d }
-
-    # This resource must be handled after the main install, since there's a lua dep
-    # Keeping it in install rather than postinstall means we can bottle.
-    resource("luarocks").stage do
-      ENV.prepend_path "PATH", bin
-
-      system "./configure", "--prefix=#{libexec}", "--rocks-tree=#{HOMEBREW_PREFIX}",
-                            "--sysconfdir=#{etc}/luarocks51", "--with-lua=#{prefix}",
-                            "--versioned-rocks-dir", "--lua-suffix=jit",
-                            "--with-lua-include=#{include}/luajit-2.0"
-      system "make", "build"
-      system "make", "install"
-
-      (pkgshare/"5.1/luarocks").install_symlink Dir["#{libexec}/share/lua/5.1/lua
-rocks/*"]
-      bin.install_symlink libexec/"bin/luarocks-5.1"
-      bin.install_symlink libexec/"bin/luarocks-admin-5.1"
-
-      # This block ensures luarock exec scripts don't break across updates.
-      inreplace libexec/"share/lua/5.1/luarocks/site_config.lua" do |s|
-        s.gsub! libexec.to_s, opt_libexec
-        s.gsub! include.to_s, "#{HOMEBREW_PREFIX}/include"
-        s.gsub! lib.to_s, "#{HOMEBREW_PREFIX}/lib"
-        s.gsub! bin.to_s, "#{HOMEBREW_PREFIX}/bin"
-      end
-    end
   end
 
   test do
