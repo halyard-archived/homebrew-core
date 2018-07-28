@@ -1,11 +1,10 @@
 class Isl < Formula
   desc "Integer Set Library for the polyhedral model"
   homepage "http://isl.gforge.inria.fr"
-  url "http://isl.gforge.inria.fr/isl-0.19.tar.xz"
-  sha256 "6d6c1aa00e2a6dfc509fa46d9a9dbe93af0c451e196a670577a148feecf6b8a5"
+  url "http://isl.gforge.inria.fr/isl-0.20.tar.xz"
+  sha256 "a5596a9fb8a5b365cb612e4b9628735d6e67e9178fae134a816ae195017e77aa"
 
   depends_on "gmp"
-
 
   def install
     system "./configure", "--disable-dependency-tracking",
