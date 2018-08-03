@@ -1,0 +1,13 @@
+item do
+  expected do
+    github_tag
+    repo 'apache/maven'
+    regex /^maven-([\d.]+)$/
+    filter /^maven-([\d.]+)$/
+  end
+
+  actual do
+    homebrew_formula
+    name 'maven'
+  end
+end

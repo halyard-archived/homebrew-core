@@ -1,0 +1,12 @@
+item do
+  expected do
+    github_release
+    repo 'swagger-api/swagger-codegen'
+    regex /^v([\d.]+)$/
+  end
+
+  actual do
+    homebrew_formula
+    name 'swagger-codegen'
+  end
+end
