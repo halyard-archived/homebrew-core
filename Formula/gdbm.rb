@@ -6,6 +6,12 @@ class Gdbm < Formula
 
   option "with-libgdbm-compat", "Build libgdbm_compat, a compatibility layer which provides UNIX-like dbm and ndbm interfaces."
 
+  # Remove for > 1.17
+  # Upstream commit from 31 July 2018: "(gdbm_sync): Always return a meaningful value"
+  patch do
+    url "http://git.gnu.org.ua/cgit/gdbm.git/patch/?id=1059526e357da1aa92e5c020332f4b39ceb37503"
+    sha256 "c7b13e3779b6701fa3c802e22d383341a483db7419c533ffbca9766ee4688575"
+  end
 
   # Use --without-readline because readline detection is broken in 1.13
   # https://github.com/Homebrew/homebrew-core/pull/10903
