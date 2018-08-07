@@ -6,7 +6,7 @@ class Perl < Formula
   head "https://perl5.git.perl.org/perl.git", :branch => "blead"
 
   option "with-dtrace", "Build with DTrace probes"
-  option "without-test", "Skip running the build test suite"
+  option "with-test", "Run build-time tests"
 
   # Prevent site_perl directories from being removed
   skip_clean "lib/perl5/site_perl"
@@ -31,7 +31,20 @@ class Perl < Formula
     args << "-Dusedevel" if build.head?
 
     system "./Configure", *args
+
+    # macOS's SIP feature prevents DYLD_LIBRARY_PATH from being passed to child
+    # processes, which causes the `make test` step to fail.
+    # https://rt.perl.org/Ticket/Display.html?id=126706
+    # https://github.com/Homebrew/legacy-homebrew/issues/41716
+    # As of perl 5.28.0 `make` fails, too, so work around it with a symlink.
+    # Reported 25 Jun 2018 https://rt.perl.org/Ticket/Display.html?id=133306
+    (lib/"perl5/#{version}/darwin-thread-multi-2level/CORE").install_symlink buildpath/"libperl.dylib"
+
     system "make"
+    system "make", "test" if build.with?("test") || build.bottle?
+
+    # Remove the symlink so the library actually gets installed.
+    rm lib/"perl5/#{version}/darwin-thread-multi-2level/CORE/libperl.dylib"
 
     system "make", "install"
   end
@@ -42,8 +55,8 @@ class Perl < Formula
 
     You can set that up like this:
       PERL_MM_OPT="INSTALL_BASE=$HOME/perl5" cpan local::lib
-      echo 'eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)"' >> #{shell_profile}
-    EOS
+      echo 'eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib=$HOME/perl5)"' >> #{shell_profile}
+  EOS
   end
 
   test do
