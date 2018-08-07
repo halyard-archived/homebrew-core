@@ -1,7 +1,7 @@
 class Isl < Formula
   desc "Integer Set Library for the polyhedral model"
   homepage "http://isl.gforge.inria.fr"
-  url "http://isl.gforge.inria.fr/isl-0.20.tar.xz"
+  url "https://mirrors.ocf.berkeley.edu/debian/pool/main/i/isl/isl_0.20.orig.tar.xz"
   sha256 "a5596a9fb8a5b365cb612e4b9628735d6e67e9178fae134a816ae195017e77aa"
 
   depends_on "gmp"
