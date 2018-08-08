@@ -30,6 +30,10 @@ class Gcc < Formula
     end
   end
 
+  # isl 0.20 compatibility
+  # https://gcc.gnu.org/bugzilla/show_bug.cgi?id=86724
+  patch :DATA
+
   def install
     # GCC will suffer build errors if forced to use a particular linker.
     ENV.delete "LD"
@@ -66,7 +70,7 @@ class Gcc < Formula
     args << "--enable-host-shared" if build.with?("jit")
 
     # Ensure correct install names when linking against libgcc_s;
-    # see discussion in https://github.com/Homebrew/homebrew/pull/34303
+    # see discussion in https://github.com/Homebrew/legacy-homebrew/pull/34303
     inreplace "libgcc/config/t-slibgcc-darwin", "@shlib_slibdir@", "#{HOMEBREW_PREFIX}/lib/gcc/#{version_suffix}"
 
     mkdir "build" do
@@ -146,3 +150,17 @@ class Gcc < Formula
     assert_equal "Done\n", `./test`
   end
 end
+
+__END__
+diff --git a/gcc/graphite.h b/gcc/graphite.h
+index 4e0e58c..be0a22b 100644
+--- a/gcc/graphite.h
++++ b/gcc/graphite.h
+@@ -37,6 +37,8 @@ along with GCC; see the file COPYING3.  If not see
+ #include <isl/schedule.h>
+ #include <isl/ast_build.h>
+ #include <isl/schedule_node.h>
++#include <isl/id.h>
++#include <isl/space.h>
+
+ typedef struct poly_dr *poly_dr_p;
