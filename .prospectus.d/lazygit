@@ -1,0 +1,13 @@
+item do
+  expected do
+    github_release
+    repo 'jesseduffield/lazygit'
+    regex /^v([\d.]+)$/
+    filter /^v[\d.]+$/
+  end
+
+  actual do
+    homebrew_formula
+    name 'lazygit'
+  end
+end
