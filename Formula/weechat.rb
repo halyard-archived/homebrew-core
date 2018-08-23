@@ -4,7 +4,6 @@ class Weechat < Formula
   url "https://weechat.org/files/src/weechat-2.2.tar.xz"
   sha256 "48cf555fae00d6ce876d08bb802707b657a1134808762630837617392899a12f"
 
-  depends_on "asciidoctor" => :build
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "gnutls"
