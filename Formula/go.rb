@@ -3,8 +3,8 @@ class Go < Formula
   homepage "https://golang.org"
 
   stable do
-    url "https://dl.google.com/go/go1.10.3.src.tar.gz"
-    sha256 "567b1cc66c9704d1c019c50bef946272e911ec6baf244310f87f4e678be155f2"
+    url "https://dl.google.com/go/go1.11.src.tar.gz"
+    sha256 "afc1e12f5fe49a471e3aae7d906c73e9d5b1fdd36d52d72652dde8f6250152fb"
 
     go_version = version.to_s.split(".")[0..1].join(".")
     resource "gotools" do
