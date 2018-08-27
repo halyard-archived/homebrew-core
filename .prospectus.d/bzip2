@@ -1,9 +1,9 @@
 item do
   expected do
     url_xpath
-    url 'http://www.bzip.org/downloads.html'
-    xpath '//*[@id="release"]/p[2]/a'
-    regex /^([\d.]+) source\ntarball$/
+    url 'https://ftp.osuosl.org/pub/clfs/conglomeration/bzip2/?C=N;O=D'
+    xpath '//*[@id="others"]/div[2]/table/tr[4]/td[2]/a'
+    regex /^bzip2-([\d.]+)\.tar\.gz$/
   end
 
   actual do
