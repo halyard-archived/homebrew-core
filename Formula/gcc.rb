@@ -6,7 +6,7 @@ class Gcc < Formula
 
   # isl 0.20 compatibility
   # https://gcc.gnu.org/bugzilla/show_bug.cgi?id=86724
-  # patch :DATA
+  patch :DATA
 
   option "with-jit", "Build just-in-time compiler"
   option "with-nls", "Build with native language support (localization)"
