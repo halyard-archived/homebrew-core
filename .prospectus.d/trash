@@ -1,0 +1,13 @@
+item do
+  expected do
+    github_hash
+    repo 'macmade/trash'
+  end
+
+  actual do
+    static
+    cask_file = "Formula/trash.rb"
+    output = `brew info --json=v1 #{cask_file}`
+    set JSON.parse(output).first.dig('versions', 'stable').split('-').last
+  end
+end
