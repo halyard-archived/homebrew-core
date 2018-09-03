@@ -14,7 +14,7 @@ class Trash < Formula
   end
 
   test do
-    FileUtils.touch "foo.txt"
+    touch "foo.txt"
     system "#{bin}/trash", "foo.txt"
   end
 end
