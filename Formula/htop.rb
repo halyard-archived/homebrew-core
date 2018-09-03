@@ -1,8 +1,8 @@
 class Htop < Formula
   desc "Improved top (interactive process viewer)"
   homepage "https://hisham.hm/htop/"
-  url "https://github.com/hishamhm/htop/archive/3.0.0beta4.tar.gz"
-  sha256 "5f4cd645c40599efd4a9598a7cbd07bac77cf666427450a71d7b6dec5a4bf96f"
+  url "https://github.com/hishamhm/htop/archive/3.0.0beta5.tar.gz"
+  sha256 "c439add8d6a463699629fc3f0103f55b045d519c31611fa4a68629063238985a"
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
