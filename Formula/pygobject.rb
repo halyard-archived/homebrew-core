@@ -1,8 +1,8 @@
 class Pygobject < Formula
   desc "GNOME Python bindings (based on GObject Introspection)"
   homepage "https://live.gnome.org/PyGObject"
-  url "https://download.gnome.org/sources/pygobject/3.28/pygobject-3.28.3.tar.xz"
-  sha256 "3dd3e21015d06e00482ea665fc1733b77e754a6ab656a5db5d7f7bfaf31ad0b0"
+  url "https://download.gnome.org/sources/pygobject/3.30/pygobject-3.30.0.tar.xz"
+  sha256 "7d20ba1475df922f4c26c69274ab89f7e7730d2101e46846caaddc53afd56bd0"
 
   depends_on "pkg-config" => :build
   depends_on "libffi"
