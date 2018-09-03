@@ -1,8 +1,9 @@
 class GtkDoc < Formula
   desc "GTK+ documentation tool"
   homepage "https://www.gtk.org/gtk-doc/"
-  url "https://download.gnome.org/sources/gtk-doc/1.29/gtk-doc-1.29.tar.xz"
-  sha256 "14578e002496567276d310a62c9ffd6c56ee8806ce5079ffb0b81c4111f586b1"
+  url "https://download.gnome.org/sources/gtk-doc/1.28/gtk-doc-1.28.tar.xz"
+  sha256 "911e29e302252c96128965ee1f4067d5431a88e00ad1023a8bc1d6b922af5715"
+  revision 2
 
   depends_on "pkg-config" => :build
   depends_on "itstool" => :build
