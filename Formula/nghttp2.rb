@@ -1,8 +1,8 @@
 class Nghttp2 < Formula
   desc "HTTP/2 C Library"
   homepage "https://nghttp2.org/"
-  url "https://github.com/nghttp2/nghttp2/releases/download/v1.32.0/nghttp2-1.32.0.tar.xz"
-  sha256 "700a89d59fcc55acc2b18184001bfb3220fa6a6e543486aca35f40801cba6f7d"
+  url "https://github.com/nghttp2/nghttp2/releases/download/v1.33.0/nghttp2-1.33.0.tar.xz"
+  sha256 "4879ce9ff3320f5344b910ee1c46ed5e366edc2272620cf17d8e762724d7df1e"
 
   head do
     url "https://github.com/nghttp2/nghttp2.git"
@@ -28,8 +28,8 @@ class Nghttp2 < Formula
   depends_on "jemalloc" => :recommended
 
   resource "Cython" do
-    url "https://files.pythonhosted.org/packages/d2/12/8ef44cede251b93322e8503fd6e1b25a0249fa498bebec191a5a06adbe51/Cython-0.28.4.tar.gz"
-    sha256 "76ac2b08d3d956d77b574bb43cbf1d37bd58b9d50c04ba281303e695854ebc46"
+    url "https://files.pythonhosted.org/packages/21/89/ca320e5b45d381ae0df74c4b5694f1471c1b2453c5eb4bac3449f5970481/Cython-0.28.5.tar.gz"
+    sha256 "b64575241f64f6ec005a4d4137339fb0ba5e156e826db2fdb5f458060d9979e0"
   end
 
   # https://github.com/tatsuhiro-t/nghttp2/issues/125
