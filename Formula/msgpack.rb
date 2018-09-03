@@ -1,8 +1,8 @@
 class Msgpack < Formula
   desc "Library for a binary-based efficient data interchange format"
   homepage "https://msgpack.org/"
-  url "https://github.com/msgpack/msgpack-c/releases/download/cpp-3.0.1/msgpack-3.0.1.tar.gz"
-  sha256 "9859d44d336f9b023a79a3026bb6a558b2ea346107ab4eadba58236048650690"
+  url "https://github.com/msgpack/msgpack-c/releases/download/cpp-3.1.0/msgpack-3.1.0.tar.gz"
+  sha256 "98c168b06e8b4058c66e044e3744d49956ce7bc3664dc1679a33f8fffc84564d"
   head "https://github.com/msgpack/msgpack-c.git"
 
   depends_on "cmake" => :build
