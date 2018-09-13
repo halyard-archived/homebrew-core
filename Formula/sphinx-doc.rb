@@ -1,8 +1,8 @@
 class SphinxDoc < Formula
   desc "Tool to create intelligent and beautiful documentation"
   homepage "http://sphinx-doc.org"
-  url "https://files.pythonhosted.org/packages/ac/54/4ef326d0c654da1ed91341a7a1f43efc18a8c770ddd2b8e45df97cb79d82/Sphinx-1.7.8.tar.gz"
-  sha256 "a07050845cc9a2f4026a6035cc8ed795a5ce7be6528bbc82032385c10807dfe7"
+  url "https://files.pythonhosted.org/packages/52/f2/eb65961b97479eec6f89f53572113cb8bd5df70ed93c50a630a5b1bf5598/Sphinx-1.8.0.tar.gz"
+  sha256 "95acd6648902333647a0e0564abdb28a74b0a76d2333148aa35e5ed1f56d3c4b"
 
   keg_only <<~EOS
     this formula is mainly used internally by other formulae.
