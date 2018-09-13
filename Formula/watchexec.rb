@@ -1,8 +1,8 @@
 class Watchexec < Formula
   desc "Execute commands when watched files change"
   homepage "https://github.com/mattgreen/watchexec"
-  url "https://github.com/mattgreen/watchexec/releases/download/1.9.0/watchexec-1.9.0-x86_64-apple-darwin.tar.gz"
-  sha256 "01eebc8fe1ee8714dd1b18f8e88d617691aceff3adc99232d046557294728306"
+  url "https://github.com/mattgreen/watchexec/releases/download/1.9.2/watchexec-1.9.2-x86_64-apple-darwin.tar.gz"
+  sha256 "0e4765a01c994360917766e0d2bc9b6a8f6e5e190a37806d2c2552bc85ac7c04"
 
   def install
     bin.install "watchexec"
