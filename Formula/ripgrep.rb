@@ -1,8 +1,8 @@
 class Ripgrep < Formula
   desc "Search tool like grep and The Silver Searcher"
   homepage "https://github.com/BurntSushi/ripgrep"
-  url "https://github.com/BurntSushi/ripgrep/releases/download/0.9.0/ripgrep-0.9.0-x86_64-apple-darwin.tar.gz"
-  sha256 "36003ea8b62ad6274dc14140039f448cdf5026827d53cf24dad2d84005557a8c"
+  url "https://github.com/BurntSushi/ripgrep/releases/download/0.10.0/ripgrep-0.10.0-x86_64-apple-darwin.tar.gz"
+  sha256 "32754b4173ac87a7bfffd436d601a49362676eb1841ab33440f2f49c002c8967"
 
   def install
     bin.install "rg"
