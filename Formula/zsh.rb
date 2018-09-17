@@ -1,15 +1,15 @@
 class Zsh < Formula
   desc "UNIX shell (command interpreter)"
   homepage "https://www.zsh.org/"
-  url "https://www.zsh.org/pub/zsh-5.6.1.tar.xz"
-  sha256 "9566753f317d31b808b6b63a5622c71f25d473a6b5fea5c35ab1c7ed96fbb3e8"
+  url "https://www.zsh.org/pub/zsh-5.6.2.tar.xz"
+  sha256 "a50bd66c0557e8eca3b8fa24e85d0de533e775d7a22df042da90488623752e9e"
 
   depends_on "gdbm"
   depends_on "pcre"
 
   resource "htmldoc" do
-    url "https://www.zsh.org/pub/zsh-5.6.1-doc.tar.xz"
-    sha256 "b64a290c0176d8844d0bd7349b59078536f798cfc7f4eab175595dd75ae04896"
+    url "https://www.zsh.org/pub/zsh-5.6.2-doc.tar.xz"
+    sha256 "98973267547cbdd8471b52e3a2bbe415be2c2c473246536ed8914f685e260114"
   end
 
   def install
