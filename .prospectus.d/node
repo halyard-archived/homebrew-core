@@ -1,8 +1,8 @@
 item do
   expected do
-    github_release
-    repo 'nodejs/node'
-    regex /^v([\d.]+)$/
+    url_xpath
+    url 'https://nodejs.org/en/download/current/'
+    xpath '//*[@id="main"]/div/article/section[1]/p[1]/strong'
   end
 
   actual do
