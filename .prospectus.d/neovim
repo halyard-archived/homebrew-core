@@ -17,7 +17,7 @@ item do
       expected do
         url_xpath
         url 'https://luarocks.org/modules/gvvaughan/lpeg'
-        xpath '/html/body/div[1]/div[2]/div[3]/div[2]/a'
+        xpath '/html/body/div[1]/main/div[3]/div[2]/a'
       end
 
       actual do
@@ -33,7 +33,7 @@ item do
       expected do
         url_xpath
         url 'https://luarocks.org/modules/tarruda/mpack'
-        xpath '/html/body/div[1]/div[2]/div[3]/div[2]/a'
+        xpath '/html/body/div[1]/main/div[3]/div[2]/a'
       end
 
       actual do
