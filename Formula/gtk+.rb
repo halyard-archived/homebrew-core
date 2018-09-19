@@ -1,8 +1,8 @@
 class Gtkx < Formula
   desc "GUI toolkit"
   homepage "https://gtk.org/"
-  url "https://download.gnome.org/sources/gtk+/3.24/gtk+-3.24.0.tar.xz"
-  sha256 "02e991389277206253d79884d10e5aa06fd78fdf7a5096799dbe3c97a05e32a8"
+  url "https://download.gnome.org/sources/gtk+/3.24/gtk+-3.24.1.tar.xz"
+  sha256 "68387be307b99aadcdc653561d7a2a7f0113b93561fb18ded7075ec9ced5b02f"
 
   option "with-quartz-relocation", "Build with quartz relocation support"
 
