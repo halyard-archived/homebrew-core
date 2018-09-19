@@ -1,0 +1,13 @@
+item do
+  expected do
+    url_xpath
+    url 'https://github.com/luarocks/luarocks/wiki/Release-history'
+    xpath '//*[@id="wiki-body"]/div[1]/p/b'
+    regex /^Version ([\d.]+)$/
+  end
+
+  actual do
+    homebrew_formula
+    name 'luarocks'
+  end
+end

@@ -10,23 +10,4 @@ item do
     homebrew_formula
     name 'lua'
   end
-
-  deps do
-    item do
-      name 'resources::luarocks'
-
-      expected do
-        url_xpath
-        url 'https://github.com/luarocks/luarocks/wiki/Release-history'
-        xpath '//*[@id="wiki-body"]/div[1]/p/b'
-        regex /^Version ([\d.]+)$/
-      end
-
-      actual do
-        grep
-        file 'Formula/lua.rb'
-        regex /.*luarocks-([\d.]+)\.tar\.gz"$/
-      end
-    end
-  end
 end
