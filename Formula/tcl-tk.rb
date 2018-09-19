@@ -6,18 +6,15 @@ class TclTk < Formula
   version "8.6.8"
   sha256 "c43cb0c1518ce42b00e7c8f6eaddd5195c53a98f94adc717234a65cbcfd3f96a"
 
+
+  option "without-tcllib", "Don't build tcllib (utility modules)"
+  option "without-tk", "Don't build the Tk (window toolkit)"
+
   resource "tk" do
     url "https://downloads.sourceforge.net/project/tcl/Tcl/8.6.8/tk8.6.8-src.tar.gz"
     version "8.6.8"
     sha256 "49e7bca08dde95195a27f594f7c850b088be357a7c7096e44e1158c7a5fd7b33"
   end
-
-  keg_only :provided_by_macos,
-    "tk installs some X11 headers and macOS provides an (older) Tcl/Tk"
-
-  option "without-tcllib", "Don't build tcllib (utility modules)"
-  option "without-tk", "Don't build the Tk (window toolkit)"
-
 
   resource "tcllib" do
     url "https://downloads.sourceforge.net/project/tcllib/tcllib/1.19/tcllib-1.19.tar.gz"

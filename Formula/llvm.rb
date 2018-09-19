@@ -23,6 +23,41 @@ class Llvm < Formula
   url "https://releases.llvm.org/6.0.1/llvm-6.0.1.src.tar.xz"
   sha256 "b6d6c324f9c71494c0ccaf3dac1f16236d970002b42bb24a6c9e1634f7d0f4e2"
 
+  keg_only :provided_by_macos
+
+  option "without-compiler-rt", "Do not build Clang runtime support libraries for code sanitizers, builtins, and profiling"
+  option "without-libcxx", "Do not build libc++ standard library"
+  option "with-toolchain", "Build with Toolchain to facilitate overriding system compiler"
+  option "with-lldb", "Build LLDB debugger"
+  option "with-python@2", "Build bindings against Homebrew's Python 2"
+  option "with-shared-libs", "Build shared instead of static libraries"
+  option "without-libffi", "Do not use libffi to call external functions"
+  option "with-polly-gpgpu", "Enable Polly GPGPU"
+  option "without-rtti", "Disable RTTI (and exception handling)"
+
+  deprecated_option "with-python" => "with-python@2"
+
+  # https://llvm.org/docs/GettingStarted.html#requirement
+  depends_on "libffi" => :recommended
+
+  # for the 'dot' tool (lldb)
+  depends_on "graphviz" => :optional
+
+  depends_on "python@2" => :optional
+  depends_on "cmake" => :build
+
+  if build.with? "lldb"
+    depends_on "swig" if MacOS.version >= :lion
+    depends_on CodesignRequirement
+  end
+
+  # According to the official llvm readme, GCC 4.7+ is required
+  fails_with :gcc_4_0
+  fails_with :gcc
+  ("4.3".."4.6").each do |n|
+    fails_with :gcc => n
+  end
+
   resource "clang" do
     url "https://releases.llvm.org/6.0.1/cfe-6.0.1.src.tar.xz"
     sha256 "7c243f1485bddfdfedada3cd402ff4792ea82362ff91fbdac2dae67c6026b667"
@@ -68,41 +103,6 @@ class Llvm < Formula
   resource "polly" do
     url "https://releases.llvm.org/6.0.1/polly-6.0.1.src.tar.xz"
     sha256 "e7765fdf6c8c102b9996dbb46e8b3abc41396032ae2315550610cf5a1ecf4ecc"
-  end
-
-  keg_only :provided_by_macos
-
-  option "without-compiler-rt", "Do not build Clang runtime support libraries for code sanitizers, builtins, and profiling"
-  option "without-libcxx", "Do not build libc++ standard library"
-  option "with-toolchain", "Build with Toolchain to facilitate overriding system compiler"
-  option "with-lldb", "Build LLDB debugger"
-  option "with-python@2", "Build bindings against Homebrew's Python 2"
-  option "with-shared-libs", "Build shared instead of static libraries"
-  option "without-libffi", "Do not use libffi to call external functions"
-  option "with-polly-gpgpu", "Enable Polly GPGPU"
-  option "without-rtti", "Disable RTTI (and exception handling)"
-
-  deprecated_option "with-python" => "with-python@2"
-
-  # https://llvm.org/docs/GettingStarted.html#requirement
-  depends_on "libffi" => :recommended
-
-  # for the 'dot' tool (lldb)
-  depends_on "graphviz" => :optional
-
-  depends_on "python@2" => :optional
-  depends_on "cmake" => :build
-
-  if build.with? "lldb"
-    depends_on "swig" if MacOS.version >= :lion
-    depends_on CodesignRequirement
-  end
-
-  # According to the official llvm readme, GCC 4.7+ is required
-  fails_with :gcc_4_0
-  fails_with :gcc
-  ("4.3".."4.6").each do |n|
-    fails_with :gcc => n
   end
 
   def build_libcxx?
