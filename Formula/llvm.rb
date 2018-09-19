@@ -20,56 +20,54 @@ class Llvm < Formula
   desc "Next-gen compiler infrastructure"
   homepage "https://llvm.org/"
 
-  stable do
-    url "https://releases.llvm.org/6.0.1/llvm-6.0.1.src.tar.xz"
-    sha256 "b6d6c324f9c71494c0ccaf3dac1f16236d970002b42bb24a6c9e1634f7d0f4e2"
+  url "https://releases.llvm.org/6.0.1/llvm-6.0.1.src.tar.xz"
+  sha256 "b6d6c324f9c71494c0ccaf3dac1f16236d970002b42bb24a6c9e1634f7d0f4e2"
 
-    resource "clang" do
-      url "https://releases.llvm.org/6.0.1/cfe-6.0.1.src.tar.xz"
-      sha256 "7c243f1485bddfdfedada3cd402ff4792ea82362ff91fbdac2dae67c6026b667"
-    end
+  resource "clang" do
+    url "https://releases.llvm.org/6.0.1/cfe-6.0.1.src.tar.xz"
+    sha256 "7c243f1485bddfdfedada3cd402ff4792ea82362ff91fbdac2dae67c6026b667"
+  end
 
-    resource "clang-extra-tools" do
-      url "https://releases.llvm.org/6.0.1/clang-tools-extra-6.0.1.src.tar.xz"
-      sha256 "0d2e3727786437574835b75135f9e36f861932a958d8547ced7e13ebdda115f1"
-    end
+  resource "clang-extra-tools" do
+    url "https://releases.llvm.org/6.0.1/clang-tools-extra-6.0.1.src.tar.xz"
+    sha256 "0d2e3727786437574835b75135f9e36f861932a958d8547ced7e13ebdda115f1"
+  end
 
-    resource "compiler-rt" do
-      url "https://releases.llvm.org/6.0.1/compiler-rt-6.0.1.src.tar.xz"
-      sha256 "f4cd1e15e7d5cb708f9931d4844524e4904867240c306b06a4287b22ac1c99b9"
-    end
+  resource "compiler-rt" do
+    url "https://releases.llvm.org/6.0.1/compiler-rt-6.0.1.src.tar.xz"
+    sha256 "f4cd1e15e7d5cb708f9931d4844524e4904867240c306b06a4287b22ac1c99b9"
+  end
 
-    # Only required to build & run Compiler-RT tests on macOS, optional otherwise.
-    # https://clang.llvm.org/get_started.html
-    resource "libcxx" do
-      url "https://releases.llvm.org/6.0.1/libcxx-6.0.1.src.tar.xz"
-      sha256 "7654fbc810a03860e6f01a54c2297a0b9efb04c0b9aa0409251d9bdb3726fc67"
-    end
+  # Only required to build & run Compiler-RT tests on macOS, optional otherwise.
+  # https://clang.llvm.org/get_started.html
+  resource "libcxx" do
+    url "https://releases.llvm.org/6.0.1/libcxx-6.0.1.src.tar.xz"
+    sha256 "7654fbc810a03860e6f01a54c2297a0b9efb04c0b9aa0409251d9bdb3726fc67"
+  end
 
-    resource "libunwind" do
-      url "https://releases.llvm.org/6.0.1/libunwind-6.0.1.src.tar.xz"
-      sha256 "a8186c76a16298a0b7b051004d0162032b9b111b857fbd939d71b0930fd91b96"
-    end
+  resource "libunwind" do
+    url "https://releases.llvm.org/6.0.1/libunwind-6.0.1.src.tar.xz"
+    sha256 "a8186c76a16298a0b7b051004d0162032b9b111b857fbd939d71b0930fd91b96"
+  end
 
-    resource "lld" do
-      url "https://releases.llvm.org/6.0.1/lld-6.0.1.src.tar.xz"
-      sha256 "e706745806921cea5c45700e13ebe16d834b5e3c0b7ad83bf6da1f28b0634e11"
-    end
+  resource "lld" do
+    url "https://releases.llvm.org/6.0.1/lld-6.0.1.src.tar.xz"
+    sha256 "e706745806921cea5c45700e13ebe16d834b5e3c0b7ad83bf6da1f28b0634e11"
+  end
 
-    resource "lldb" do
-      url "https://releases.llvm.org/6.0.1/lldb-6.0.1.src.tar.xz"
-      sha256 "6b8573841f2f7b60ffab9715c55dceff4f2a44e5a6d590ac189d20e8e7472714"
-    end
+  resource "lldb" do
+    url "https://releases.llvm.org/6.0.1/lldb-6.0.1.src.tar.xz"
+    sha256 "6b8573841f2f7b60ffab9715c55dceff4f2a44e5a6d590ac189d20e8e7472714"
+  end
 
-    resource "openmp" do
-      url "https://releases.llvm.org/6.0.1/openmp-6.0.1.src.tar.xz"
-      sha256 "66afca2b308351b180136cf899a3b22865af1a775efaf74dc8a10c96d4721c5a"
-    end
+  resource "openmp" do
+    url "https://releases.llvm.org/6.0.1/openmp-6.0.1.src.tar.xz"
+    sha256 "66afca2b308351b180136cf899a3b22865af1a775efaf74dc8a10c96d4721c5a"
+  end
 
-    resource "polly" do
-      url "https://releases.llvm.org/6.0.1/polly-6.0.1.src.tar.xz"
-      sha256 "e7765fdf6c8c102b9996dbb46e8b3abc41396032ae2315550610cf5a1ecf4ecc"
-    end
+  resource "polly" do
+    url "https://releases.llvm.org/6.0.1/polly-6.0.1.src.tar.xz"
+    sha256 "e7765fdf6c8c102b9996dbb46e8b3abc41396032ae2315550610cf5a1ecf4ecc"
   end
 
   keg_only :provided_by_macos

@@ -8,10 +8,17 @@ class Rust < Formula
   option "with-llvm", "Build with brewed LLVM. By default, Rust's LLVM will be used."
 
   depends_on "cmake" => :build
+  depends_on "libssh2"
+  depends_on "openssl@1.0"
   depends_on "pkg-config"
   depends_on "llvm" => :optional
-  depends_on "openssl@1.0"
-  depends_on "libssh2"
+
+  # According to the official readme, GCC 4.7+ is required
+  fails_with :gcc_4_0
+  fails_with :gcc
+  ("4.3".."4.6").each do |n|
+    fails_with :gcc => n
+  end
 
   resource "cargo" do
     url "https://github.com/rust-lang/cargo.git", :tag => "0.30.0",
@@ -29,22 +36,14 @@ class Rust < Formula
     sha256 "24ea65fba1e1c317842c2d554659f483748a6b155cea53204b1126b142de9125"
   end
 
-  # According to the official readme, GCC 4.7+ is required
-  fails_with :gcc_4_0
-  fails_with :gcc
-  ("4.3".."4.6").each do |n|
-    fails_with :gcc => n
-  end
-
   def install
     # Fix build failure for compiler_builtins "error: invalid deployment target
     # for -stdlib=libc++ (requires OS X 10.7 or later)"
     ENV["MACOSX_DEPLOYMENT_TARGET"] = MacOS.version
 
-    # Prevent cargo from linking against a different library (like openssl@1.1)
-    # from libssh2 and causing segfaults
-    ENV["OPENSSL_INCLUDE_DIR"] = Formula["openssl@1.0"].opt_include
-    ENV["OPENSSL_LIB_DIR"] = Formula["openssl@1.0"].opt_lib
+    # Ensure that the `openssl` crate picks up the intended library.
+    # https://crates.io/crates/openssl#manual-configuration
+    ENV["OPENSSL_DIR"] = Formula["openssl@1.0"].opt_prefix
 
     # Fix build failure for cmake v0.1.24 "error: internal compiler error:
     # src/librustc/ty/subst.rs:127: impossible case reached" on 10.11, and for
@@ -67,8 +66,7 @@ class Rust < Formula
 
     resource("cargo").stage do
       ENV["RUSTC"] = bin/"rustc"
-      system "cargo", "build", "--release", "--verbose"
-      bin.install "target/release/cargo"
+      system "cargo", "install", "--root", prefix, "--path", "."
     end
 
     resource("racer").stage do
@@ -76,8 +74,7 @@ class Rust < Formula
       cargo_home = buildpath/"cargo_home"
       cargo_home.mkpath
       ENV["CARGO_HOME"] = cargo_home
-      system bin/"cargo", "build", "--release", "--verbose"
-      (libexec/"bin").install "target/release/racer"
+      system "cargo", "install", "--root", libexec, "--path", "."
       (bin/"racer").write_env_script(libexec/"bin/racer", :RUST_SRC_PATH => pkgshare/"rust_src")
     end
 

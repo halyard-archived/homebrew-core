@@ -2,16 +2,14 @@ class TclTk < Formula
   desc "Tool Command Language"
   homepage "https://www.tcl.tk/"
 
-  stable do
-    url "https://downloads.sourceforge.net/project/tcl/Tcl/8.6.8/tcl8.6.8-src.tar.gz"
-    version "8.6.8"
-    sha256 "c43cb0c1518ce42b00e7c8f6eaddd5195c53a98f94adc717234a65cbcfd3f96a"
+  url "https://downloads.sourceforge.net/project/tcl/Tcl/8.6.8/tcl8.6.8-src.tar.gz"
+  version "8.6.8"
+  sha256 "c43cb0c1518ce42b00e7c8f6eaddd5195c53a98f94adc717234a65cbcfd3f96a"
 
-    resource "tk" do
-      url "https://downloads.sourceforge.net/project/tcl/Tcl/8.6.8/tk8.6.8-src.tar.gz"
-      version "8.6.8"
-      sha256 "49e7bca08dde95195a27f594f7c850b088be357a7c7096e44e1158c7a5fd7b33"
-    end
+  resource "tk" do
+    url "https://downloads.sourceforge.net/project/tcl/Tcl/8.6.8/tk8.6.8-src.tar.gz"
+    version "8.6.8"
+    sha256 "49e7bca08dde95195a27f594f7c850b088be357a7c7096e44e1158c7a5fd7b33"
   end
 
   keg_only :provided_by_macos,
