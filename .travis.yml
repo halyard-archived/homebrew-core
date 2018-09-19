@@ -1,4 +1,6 @@
 dist: trusty
+before_install:
+- sudo apt-get install -y build-essential clang
 install:
 - git clone https://github.com/akerl/brew.git ~/.brew
 - git clone ../homebrew-core ~/.brew/Library/Taps/halyard/homebrew-core
