@@ -3,18 +3,35 @@
 class Qt < Formula
   desc "Cross-platform application and UI framework"
   homepage "https://www.qt.io/"
-  _version = "5.11.1"
-  url "https://download.qt.io/official_releases/qt/#{_version.to_s.split('.').take(2).join('.')}/#{_version}/single/qt-everywhere-src-#{_version}.tar.xz"
-  sha256 "39602cb08f9c96867910c375d783eed00fc4a244bffaa93b801225d17950fb2b"
+  url "https://download.qt.io/official_releases/qt/5.11/5.11.2/single/qt-everywhere-src-5.11.2.tar.xz"
+  sha256 "c6104b840b6caee596fa9a35bc5f57f67ed5a99d6a36497b6fe66f990a53ca81"
+  head "https://code.qt.io/qt/qt5.git", :branch => "5.11", :shallow => false
 
   keg_only "Qt 5 has CMake issues when linked"
 
-  option "with-docs", "Build documentation"
   option "with-examples", "Build examples"
 
   depends_on "pkg-config" => :build
   depends_on :xcode => :build
 
+  # Restore `.pc` files for framework-based build of Qt 5 on macOS, partially
+  # reverting <https://codereview.qt-project.org/#/c/140954/>
+  # Core formulae known to fail without this patch (as of 2016-10-15):
+  #   * gnuplot (with `--with-qt` option)
+  #   * mkvtoolnix (with `--with-qt` option, silent build failure)
+  #   * poppler (with `--with-qt` option)
+  patch do
+    url "https://raw.githubusercontent.com/Homebrew/formula-patches/e8fe6567/qt5/restore-pc-files.patch"
+    sha256 "48ff18be2f4050de7288bddbae7f47e949512ac4bcd126c2f504be2ac701158b"
+  end
+
+  # Chromium build failures with Xcode 10, fixed upstream:
+  # https://bugs.chromium.org/p/chromium/issues/detail?id=840251
+  # https://bugs.chromium.org/p/chromium/issues/detail?id=849689
+  patch do
+    url "https://raw.githubusercontent.com/Homebrew/formula-patches/962f0f/qt/xcode10.diff"
+    sha256 "c064398411c69f2e1c516c0cd49fcd0755bc29bb19e65c5694c6d726c43389a6"
+  end
 
   def install
     args = %W[
@@ -40,11 +57,6 @@ class Qt < Formula
     ENV.deparallelize
     system "make", "install"
 
-    if build.with? "docs"
-      system "make", "docs"
-      system "make", "install_docs"
-    end
-
     # Some config scripts will only find Qt in a "Frameworks" folder
     frameworks.install_symlink Dir["#{lib}/*.framework"]
 
@@ -64,9 +76,9 @@ class Qt < Formula
   end
 
   def caveats; <<~EOS
-    We agreed to the Qt opensource license for you.
+    We agreed to the Qt open source license for you.
     If this is unacceptable you should uninstall.
-    EOS
+  EOS
   end
 
   test do
