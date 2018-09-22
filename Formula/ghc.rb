@@ -5,8 +5,8 @@ class Ghc < Formula
 
   desc "Glorious Glasgow Haskell Compilation System"
   homepage "https://haskell.org/ghc/"
-  url "https://downloads.haskell.org/~ghc/8.4.3/ghc-8.4.3-src.tar.xz"
-  sha256 "ae47afda985830de8811243255aa3744dfb9207cb980af74393298b2b62160d6"
+  url "https://downloads.haskell.org/~ghc/8.6.1/ghc-8.6.1-src.tar.xz"
+  sha256 "2c25c26d1e5c47c7cbb2a1d8e6456524033e7a71409184dd3125e3fc5a3c7036"
 
   option "with-test", "Verify the build using the testsuite"
   option "without-docs", "Do not build documentation (including man page)"
