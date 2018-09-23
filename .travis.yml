@@ -6,7 +6,7 @@ install:
 - git clone ../homebrew-core ~/.brew/Library/Taps/halyard/homebrew-core
 - chmod g-w ~/.brew/Library/Taps/halyard/homebrew-core/Formula/*
 script:
-- "~/.brew/bin/brew audit --except=revision_and_version_scheme ~/.brew/Library/Taps/halyard/homebrew-core/Formula/*"
+- "~/.brew/bin/brew audit ~/.brew/Library/Taps/halyard/homebrew-core/Formula/*"
 notifications:
   email: false
   slack:
