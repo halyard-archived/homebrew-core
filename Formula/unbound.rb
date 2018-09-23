@@ -4,8 +4,8 @@ class Unbound < Formula
   url "https://www.unbound.net/downloads/unbound-1.8.0.tar.gz"
   sha256 "78f79d6d3b643fdcd74a14fc76542250da886c82f82bc55b51e189663d61b83f"
 
-  depends_on "openssl"
   depends_on "libevent"
+  depends_on "openssl"
 
   depends_on "python" => :optional
   depends_on "swig" if build.with?("python")

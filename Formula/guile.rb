@@ -12,12 +12,12 @@ class Guile < Formula
     depends_on "gettext" => :build
   end
 
-  depends_on "pkg-config"
-  depends_on "libtool"
-  depends_on "libffi"
-  depends_on "libunistring"
   depends_on "bdw-gc"
   depends_on "gmp"
+  depends_on "libffi"
+  depends_on "libtool"
+  depends_on "libunistring"
+  depends_on "pkg-config"
   depends_on "readline"
 
 

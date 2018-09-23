@@ -5,11 +5,11 @@ class GtkDoc < Formula
   sha256 "911e29e302252c96128965ee1f4067d5431a88e00ad1023a8bc1d6b922af5715"
   revision 2
 
-  depends_on "pkg-config" => :build
   depends_on "itstool" => :build
-  depends_on "gettext"
+  depends_on "pkg-config" => :build
   depends_on "docbook"
   depends_on "docbook-xsl"
+  depends_on "gettext"
   depends_on "libxml2"
   depends_on "source-highlight"
 

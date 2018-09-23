@@ -9,10 +9,10 @@ class GdkPixbuf < Formula
 
   depends_on "pkg-config" => :build
   depends_on "glib"
-  depends_on "jpeg"
-  depends_on "libtiff"
-  depends_on "libpng"
   depends_on "gobject-introspection"
+  depends_on "jpeg"
+  depends_on "libpng"
+  depends_on "libtiff"
 
 
   # gdk-pixbuf has an internal version number separate from the overall

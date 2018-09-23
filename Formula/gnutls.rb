@@ -5,10 +5,10 @@ class Gnutls < Formula
   sha256 "1936eb64f03aaefd6eb16cef0567457777618573826b94d03376bb6a4afadc44"
 
   depends_on "pkg-config" => :build
-  depends_on "libtasn1"
   depends_on "gmp"
-  depends_on "nettle"
+  depends_on "libtasn1"
   depends_on "libunistring"
+  depends_on "nettle"
   depends_on "p11-kit" => :recommended
   depends_on "guile" => :optional
   depends_on "unbound" => :optional

@@ -4,8 +4,8 @@ class Libcroco < Formula
   url "https://download.gnome.org/sources/libcroco/0.6/libcroco-0.6.12.tar.xz"
   sha256 "ddc4b5546c9fb4280a5017e2707fbd4839034ed1aba5b7d4372212f34f84f860"
 
-  depends_on "pkg-config" => :build
   depends_on "intltool" => :build
+  depends_on "pkg-config" => :build
   depends_on "glib"
 
 

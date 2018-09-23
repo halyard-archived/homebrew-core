@@ -7,10 +7,10 @@ class Pango < Formula
   head do
     url "https://git.gnome.org/browse/pango.git"
 
-    depends_on "automake" => :build
     depends_on "autoconf" => :build
-    depends_on "libtool" => :build
+    depends_on "automake" => :build
     depends_on "gtk-doc" => :build
+    depends_on "libtool" => :build
   end
 
   depends_on "pkg-config" => :build

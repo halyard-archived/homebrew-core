@@ -13,8 +13,8 @@ class P11Kit < Formula
     depends_on "libtool" => :build
   end
 
-  depends_on "libffi"
   depends_on "pkg-config" => :build
+  depends_on "libffi"
 
   def install
     # Fix "error: unknown type name 'locale_t'"

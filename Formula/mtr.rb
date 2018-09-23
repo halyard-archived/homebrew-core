@@ -5,11 +5,11 @@ class Mtr < Formula
   sha256 "568a52911a8933496e60c88ac6fea12379469d7943feb9223f4337903e4bc164"
   head "https://github.com/traviscross/mtr.git"
 
-  depends_on "automake" => :build
   depends_on "autoconf" => :build
+  depends_on "automake" => :build
   depends_on "pkg-config" => :build
-  depends_on "gtk+" => :optional
   depends_on "glib" => :optional
+  depends_on "gtk+" => :optional
 
 
   def install

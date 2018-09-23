@@ -19,10 +19,10 @@ class Curl < Formula
   option "with-gssapi", "Build with GSSAPI/Kerberos authentication support."
   option "with-nghttp2", "Build with HTTP/2 support (requires OpenSSL)"
 
-  depends_on "openssl"
   depends_on "pkg-config" => :build
-  depends_on "libssh2" => :optional
+  depends_on "openssl"
   depends_on "c-ares" => :optional
+  depends_on "libssh2" => :optional
   depends_on "nghttp2" => :optional
 
 

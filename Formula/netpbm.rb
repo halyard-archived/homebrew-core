@@ -5,10 +5,10 @@ class Netpbm < Formula
   version "10.73.20"
   version_scheme 1
 
-  depends_on "libtiff"
   depends_on "jasper"
   depends_on "jpeg"
   depends_on "libpng"
+  depends_on "libtiff"
 
   def install
     cp "config.mk.in", "config.mk"

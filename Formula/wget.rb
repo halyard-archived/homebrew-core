@@ -17,8 +17,8 @@ class Wget < Formula
 
   depends_on "pkg-config" => :build
   depends_on "openssl"
-  depends_on "pcre" => :optional
   depends_on "gpgme" => :optional
+  depends_on "pcre" => :optional
 
 
   def install

@@ -6,8 +6,6 @@ class Gcc < Formula
 
   # isl 0.20 compatibility
   # https://gcc.gnu.org/bugzilla/show_bug.cgi?id=86724
-  patch :DATA
-
   option "with-jit", "Build just-in-time compiler"
   option "with-nls", "Build with native language support (localization)"
 
@@ -18,6 +16,8 @@ class Gcc < Formula
 
   # GCC bootstraps itself, so it is OK to have an incompatible C++ stdlib
   cxxstdlib_check :skip
+
+  patch :DATA
 
   def version_suffix
     version.to_s.slice(/\d/)

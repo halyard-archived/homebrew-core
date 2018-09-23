@@ -4,10 +4,10 @@ class GobjectIntrospection < Formula
   url "https://download.gnome.org/sources/gobject-introspection/1.58/gobject-introspection-1.58.0.tar.xz"
   sha256 "27c1590a32749de0a5481ce897772547043e94bccba4bc0a7edb3d8513e401ec"
 
-  depends_on "pkg-config"
-  depends_on "glib"
   depends_on "cairo"
+  depends_on "glib"
   depends_on "libffi"
+  depends_on "pkg-config"
 
   resource "tutorial" do
     url "https://gist.github.com/7a0023656ccfe309337a.git",

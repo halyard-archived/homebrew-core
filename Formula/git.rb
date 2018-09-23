@@ -9,11 +9,11 @@ class Git < Formula
   option "without-completions", "Disable bash/zsh completions from 'contrib' directory"
   option "with-persistent-https", "Build git-remote-persistent-https from 'contrib' directory"
 
-  depends_on "pcre2" => :optional
-  depends_on "gettext" => :optional
   depends_on "go" => :build if build.with? "persistent-https"
-  depends_on "openssl" => :optional
   depends_on "curl" => :optional
+  depends_on "gettext" => :optional
+  depends_on "openssl" => :optional
+  depends_on "pcre2" => :optional
   depends_on "perl" => :optional
 
   resource "html" do

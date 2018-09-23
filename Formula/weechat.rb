@@ -6,13 +6,13 @@ class Weechat < Formula
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
+  depends_on "curl"
+  depends_on "gettext"
   depends_on "gnutls"
   depends_on "libgcrypt"
-  depends_on "gettext"
+  depends_on "lua"
   depends_on "perl"
   depends_on "python@2"
-  depends_on "curl"
-  depends_on "lua"
 
   def install
     args = std_cmake_args + %W[

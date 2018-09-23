@@ -11,8 +11,8 @@ class Doxygen < Formula
 
   depends_on "cmake" => :build
   depends_on "graphviz" => :optional
-  depends_on "qt" => :optional
   depends_on "llvm" => :optional
+  depends_on "qt" => :optional
 
 
   def install

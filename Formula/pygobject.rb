@@ -5,13 +5,13 @@ class Pygobject < Formula
   sha256 "e1335b70e36885bf1ae207ec1283a369b8fc3e080688046c1edb5a676edc11ce"
 
   depends_on "pkg-config" => :build
-  depends_on "libffi"
   depends_on "glib"
-  depends_on "python@2"
-  depends_on "python"
+  depends_on "gobject-introspection"
+  depends_on "libffi"
   depends_on "py2cairo"
   depends_on "py3cairo"
-  depends_on "gobject-introspection"
+  depends_on "python"
+  depends_on "python@2"
 
   def install
     Language::Python.each_python(build) do |python, _version|

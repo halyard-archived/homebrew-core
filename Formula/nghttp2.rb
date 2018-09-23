@@ -7,25 +7,25 @@ class Nghttp2 < Formula
   head do
     url "https://github.com/nghttp2/nghttp2.git"
 
-    depends_on "automake" => :build
     depends_on "autoconf" => :build
+    depends_on "automake" => :build
     depends_on "libtool" => :build
   end
 
   option "with-examples", "Compile and install example programs"
 
-  depends_on "python" => :optional
-  depends_on "sphinx-doc" => :build
-  depends_on "pkg-config" => :build
   depends_on "cunit" => :build
-  depends_on "c-ares"
-  depends_on "libev"
-  depends_on "openssl"
-  depends_on "libevent"
-  depends_on "jansson"
+  depends_on "pkg-config" => :build
+  depends_on "sphinx-doc" => :build
   depends_on "boost"
+  depends_on "c-ares"
+  depends_on "jansson"
+  depends_on "libev"
+  depends_on "libevent"
+  depends_on "openssl"
   depends_on "spdylay"
   depends_on "jemalloc" => :recommended
+  depends_on "python" => :optional
 
   resource "Cython" do
     url "https://files.pythonhosted.org/packages/21/89/ca320e5b45d381ae0df74c4b5694f1471c1b2453c5eb4bac3449f5970481/Cython-0.28.5.tar.gz"

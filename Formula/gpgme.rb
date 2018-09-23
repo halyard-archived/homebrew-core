@@ -6,8 +6,8 @@ class Gpgme < Formula
   revision 2
 
   depends_on "gnupg"
-  depends_on "libgpg-error"
   depends_on "libassuan"
+  depends_on "libgpg-error"
   depends_on "pth"
 
 

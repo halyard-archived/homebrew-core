@@ -4,9 +4,9 @@ class Swig < Formula
   url "https://github.com/swig/swig/archive/rel-3.0.12.tar.gz"
   sha256 "64971de92b8a1da0b9ffb4b51e9214bb936c4dbbc304367899cdb07280b94af6"
 
-  depends_on "pcre"
   depends_on "autoconf"
   depends_on "automake"
+  depends_on "pcre"
 
   def install
     system "./autogen.sh"

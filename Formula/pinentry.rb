@@ -5,8 +5,8 @@ class Pinentry < Formula
   sha256 "68076686fa724a290ea49cdf0d1c0c1500907d1b759a3bcbfbec0293e8f56570"
 
   depends_on "pkg-config" => :build
-  depends_on "libgpg-error"
   depends_on "libassuan"
+  depends_on "libgpg-error"
   depends_on "gtk+" => :optional
 
 

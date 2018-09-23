@@ -5,9 +5,9 @@ class Findutils < Formula
   mirror "https://ftpmirror.gnu.org/findutils/findutils-4.6.0.tar.gz"
   sha256 "ded4c9f73731cd48fec3b6bdaccce896473b6d8e337e9612e16cf1431bb1169d"
 
-  deprecated_option "default-names" => "with-default-names"
-
   option "with-default-names", "Do not prepend 'g' to the binary"
+
+  deprecated_option "default-names" => "with-default-names"
 
 
   def install

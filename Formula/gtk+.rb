@@ -7,12 +7,12 @@ class Gtkx < Formula
   option "with-quartz-relocation", "Build with quartz relocation support"
 
   depends_on "pkg-config" => :build
-  depends_on "gdk-pixbuf"
-  depends_on "jasper" => :optional
   depends_on "atk"
-  depends_on "pango"
+  depends_on "gdk-pixbuf"
   depends_on "gobject-introspection"
   depends_on "hicolor-icon-theme"
+  depends_on "pango"
+  depends_on "jasper" => :optional
 
   def install
     args = ["--disable-dependency-tracking",

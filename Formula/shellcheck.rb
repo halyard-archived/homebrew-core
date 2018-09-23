@@ -9,8 +9,8 @@ class Shellcheck < Formula
   sha256 "348a3f7892c1f28a44f188c00ac82f1b3bf899d9f81d14ddb0e306db26c937bb"
   head "https://github.com/koalaman/shellcheck.git"
 
-  depends_on "ghc" => :build
   depends_on "cabal-install" => :build
+  depends_on "ghc" => :build
   depends_on "pandoc" => :build
 
 

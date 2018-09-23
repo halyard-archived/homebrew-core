@@ -7,9 +7,9 @@ class Openssh < Formula
   revision 1
 
   depends_on "autoconf" => :build
+  depends_on "pkg-config" => :build
   depends_on "openssl@1.0"
   depends_on "ldns" => :optional
-  depends_on "pkg-config" => :build
 
 
   patch do

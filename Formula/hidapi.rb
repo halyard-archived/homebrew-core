@@ -11,15 +11,15 @@ class Hidapi < Formula
   # "hid_get_feature_report". As a consequence, many applications working
   # with HidApi were not behaving correctly on OSX.
   # pull request on Hidapi's repo: https://github.com/signal11/hidapi/pull/219
-  patch do
-    url "https://github.com/signal11/hidapi/pull/219.patch?full_index=1"
-    sha256 "c0ff6eb370d6b875c06d72724a1a12fa0bafcbd64b2610014abc50a516760240"
-  end
-
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
   depends_on "pkg-config" => :build
+
+  patch do
+    url "https://github.com/signal11/hidapi/pull/219.patch?full_index=1"
+    sha256 "c0ff6eb370d6b875c06d72724a1a12fa0bafcbd64b2610014abc50a516760240"
+  end
 
   def install
     system "./bootstrap"

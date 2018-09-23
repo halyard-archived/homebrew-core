@@ -6,8 +6,8 @@ class Libglade < Formula
   revision 2
 
   depends_on "pkg-config" => :build
-  depends_on "libxml2"
   depends_on "gtk+"
+  depends_on "libxml2"
 
 
   def install

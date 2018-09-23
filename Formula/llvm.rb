@@ -38,13 +38,12 @@ class Llvm < Formula
   deprecated_option "with-python" => "with-python@2"
 
   # https://llvm.org/docs/GettingStarted.html#requirement
+  depends_on "cmake" => :build
   depends_on "libffi" => :recommended
 
   # for the 'dot' tool (lldb)
   depends_on "graphviz" => :optional
-
   depends_on "python@2" => :optional
-  depends_on "cmake" => :build
 
   if build.with? "lldb"
     depends_on "swig" if MacOS.version >= :lion

@@ -5,8 +5,8 @@ class SwaggerCodegen < Formula
   sha256 "69aeddb2f602da7f22f9cb5049f230f26e45510bc1f7c756356dec1057614987"
   head "https://github.com/swagger-api/swagger-codegen.git"
 
-  depends_on :java => "1.8"
   depends_on "maven" => :build
+  depends_on :java => "1.8"
 
   def install
     # Need to set JAVA_HOME manually since maven overrides 1.8 with 1.7+

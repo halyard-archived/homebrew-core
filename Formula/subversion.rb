@@ -5,18 +5,16 @@ class Subversion < Formula
   sha256 "5b35e3a858d948de9e8892bf494893c9f7886782f6abbe166c0487c19cf6ed88"
 
   depends_on "pkg-config" => :build
+  depends_on "scons" => :build
   depends_on "swig" => :build
-  depends_on "apr-util"
   depends_on "apr"
+  depends_on "apr-util"
 
   # Always build against Homebrew versions instead of system versions for consistency.
   depends_on "lz4"
+  depends_on "openssl"
   depends_on "sqlite"
   depends_on "utf8proc"
-
-  # For Serf
-  depends_on "scons" => :build
-  depends_on "openssl"
 
   resource "serf" do
     url "https://www.apache.org/dyn/closer.cgi?path=serf/serf-1.3.9.tar.bz2"
