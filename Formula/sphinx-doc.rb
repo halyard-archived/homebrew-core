@@ -11,8 +11,8 @@ class SphinxDoc < Formula
 
   # generated from sphinx, setuptools, and numpydoc
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/67/76/f777f50a1303b481d575fcf2af7de336a23c88f17fb4b6e7894de6b602cd/setuptools-40.4.2.zip"
-    sha256 "65898ab8a1d1e205e37f6567d07d67560e9466dab02f66e1453c804f057ddb48"
+    url "https://files.pythonhosted.org/packages/6e/9c/6a003320b00ef237f94aa74e4ad66c57a7618f6c79d67527136e2544b728/setuptools-40.4.3.zip"
+    sha256 "acbc5740dd63f243f46c2b4b8e2c7fd92259c2ddb55a4115b16418a2ed371b15"
   end
 
   resource "alabaster" do
