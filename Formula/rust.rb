@@ -2,8 +2,8 @@ class Rust < Formula
   desc "Safe, concurrent, practical language"
   homepage "https://www.rust-lang.org/"
 
-  url "https://static.rust-lang.org/dist/rustc-1.29.0-src.tar.gz"
-  sha256 "a4eb34ffd47f76afe2abd813f398512d5a19ef00989d37306217c9c9ec2f61e9"
+  url "https://static.rust-lang.org/dist/rustc-1.29.1-src.tar.gz"
+  sha256 "f1b0728b66ce6bce6d72bbe5ea9e3a24ea22a045665da2ed8fcdfad14f61a349"
 
   option "with-llvm", "Build with brewed LLVM. By default, Rust's LLVM will be used."
 
@@ -26,8 +26,8 @@ class Rust < Formula
   end
 
   resource "racer" do
-    url "https://github.com/racer-rust/racer/archive/2.1.4.tar.gz"
-    sha256 "30f0e0cbbf53c13eceda5e51dd8e1366d787d70b0dcffaa67543844e4b31594d"
+    url "https://github.com/racer-rust/racer/archive/2.1.6.tar.gz"
+    sha256 "8b51e4c40d47f1453d7507e8c7a4f7309e11487a53a047e0d04b01a4bf010579"
   end
 
   resource "cargobootstrap" do
