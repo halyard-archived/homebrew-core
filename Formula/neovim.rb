@@ -7,14 +7,13 @@ class Neovim < Formula
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "gettext"
-  depends_on "luarocks"
   depends_on "jemalloc"
   depends_on "libtermkey"
   depends_on "libuv"
   depends_on "libvterm"
   depends_on "luajit"
+  depends_on "luarocks"
   depends_on "msgpack"
-  depends_on "python" if MacOS.version <= :snow_leopard
   depends_on "unibilium"
 
   resource "lpeg" do
@@ -32,15 +31,24 @@ class Neovim < Formula
       r.stage(buildpath/"deps-build/build/src/#{r.name}")
     end
 
-    ENV.prepend_path "LUA_PATH", "#{buildpath}/deps-build/share/lua/5.3/?.lua"
-    ENV.prepend_path "LUA_CPATH", "#{buildpath}/deps-build/lib/lua/5.3/?.so"
+    ENV.prepend_path "LUA_PATH", "#{buildpath}/deps-build/share/lua/5.1/?.lua"
+    ENV.prepend_path "LUA_CPATH", "#{buildpath}/deps-build/lib/lua/5.1/?.so"
     lua_path = "--lua-dir=#{Formula["luajit"].opt_prefix}"
 
     cd "deps-build" do
-      system "luarocks", "build", lua_path, "build/src/lpeg/lpeg-1.0.1-1.src.rock", "--tree=."
-      system "luarocks", "build", lua_path, "build/src/mpack/mpack-1.0.6-0.src.rock", "--tree=."
-      system "cmake", "../third-party", "-DUSE_BUNDLED=OFF", *std_cmake_args
-      system "make"
+      %w[
+        lpeg/lpeg-1.0.1-1.src.rock
+        mpack/mpack-1.0.6-0.src.rock
+      ].each do |rock|
+        dir, rock = rock.split("/")
+        cd "build/src/#{dir}" do
+          output = Utils.popen_read("luarocks", "unpack", lua_path, rock, "--tree=#{buildpath}/deps-build")
+          unpack_dir = output.split("\n")[-2]
+          cd unpack_dir do
+            system "luarocks", "make", lua_path, "--tree=#{buildpath}/deps-build"
+          end
+        end
+      end
     end
 
     mkdir "build" do
