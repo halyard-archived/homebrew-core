@@ -17,13 +17,13 @@ item do
       expected do
         url_xpath
         url 'https://luarocks.org/modules/gvvaughan/lpeg'
-        xpath '/html/body/div[1]/main/div[3]/div[2]/a'
+        xpath '//div[@class="version_row"][1]/a'
       end
 
       actual do
         grep
         file 'Formula/neovim.rb'
-        regex /.*\/lpeg-([\d.-]+).src.rock", :using => :nounzip$/
+        regex /.*\/lpeg-([\d.-]+)\.src\.rock"$/
       end
     end
 
@@ -33,13 +33,13 @@ item do
       expected do
         url_xpath
         url 'https://luarocks.org/modules/tarruda/mpack'
-        xpath '/html/body/div[1]/main/div[3]/div[2]/a'
+        xpath '//div[@class="version_row"][1]/a'
       end
 
       actual do
         grep
         file 'Formula/neovim.rb'
-        regex /.*\/mpack-([\d.-]+).src.rock", :using => :nounzip$/
+        regex /.*\/mpack-([\d.-]+)\.rockspec"$/
       end
     end
   end

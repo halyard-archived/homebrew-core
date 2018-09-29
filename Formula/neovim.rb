@@ -17,13 +17,13 @@ class Neovim < Formula
   depends_on "unibilium"
 
   resource "lpeg" do
-    url "https://luarocks.org/manifests/gvvaughan/lpeg-1.0.1-1.src.rock", :using => :nounzip
+    url "https://luarocks.org/manifests/gvvaughan/lpeg-1.0.1-1.src.rock"
     sha256 "149be31e0155c4694f77ea7264d9b398dd134eca0d00ff03358d91a6cfb2ea9d"
   end
 
   resource "mpack" do
-    url "https://luarocks.org/manifests/tarruda/mpack-1.0.6-0.src.rock", :using => :nounzip
-    sha256 "9068d9d3f407c72a7ea18bc270b0fa90aad60a2f3099fa23d5902dd71ea4cd5f"
+    url "https://luarocks.org/manifests/tarruda/mpack-1.0.7-0.rockspec"
+    sha256 "df625a029a3c313ed7503df09c831ddb70d72d31af302b5377e38d683546bce9"
   end
 
   def install
@@ -38,7 +38,7 @@ class Neovim < Formula
     cd "deps-build" do
       %w[
         lpeg/lpeg-1.0.1-1.src.rock
-        mpack/mpack-1.0.6-0.src.rock
+        mpack/mpack-1.0.7-0.rockspec
       ].each do |rock|
         dir, rock = rock.split("/")
         cd "build/src/#{dir}" do
