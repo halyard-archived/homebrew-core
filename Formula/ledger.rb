@@ -28,9 +28,6 @@ class Ledger < Formula
       --prefix=#{prefix}
       --boost=#{Formula["boost"].opt_prefix}
       --python
-      --
-      -DBUILD_DOCS=1
-      -DBUILD_WEB_DOCS=1
     ]
     system "./acprep", "opt", "make", *args
     system "./acprep", "opt", "make", "doc", *args
