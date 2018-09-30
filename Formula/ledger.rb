@@ -3,19 +3,15 @@ class Ledger < Formula
   homepage "https://ledger-cli.org/"
   url "https://github.com/ledger/ledger/archive/v3.1.1.tar.gz"
   sha256 "90f06561ab692b192d46d67bc106158da9c6c6813cc3848b503243a9dfd8548a"
-  revision 20
+  revision 21
   head "https://github.com/ledger/ledger.git"
-
-  option "with-debug", "Build with debugging symbols enabled"
-  option "with-docs", "Build HTML documentation"
-  option "without-python@2", "Build without python support"
 
   depends_on "cmake" => :build
   depends_on "boost"
+  depends_on "boost-python"
   depends_on "gmp"
   depends_on "mpfr"
-  depends_on "python@2" => :recommended
-  depends_on "boost-python" if build.with? "python@2"
+  depends_on "python@2"
 
   needs :cxx11
 
@@ -26,24 +22,23 @@ class Ledger < Formula
     inreplace "CMakeLists.txt", "set(BOOST_PYTHON python)",
                                 "set(BOOST_PYTHON python27)"
 
-    flavor = build.with?("debug") ? "debug" : "opt"
-
     args = %W[
       --jobs=#{ENV.make_jobs}
       --output=build
       --prefix=#{prefix}
       --boost=#{Formula["boost"].opt_prefix}
+      --python
+      --
+      -DBUILD_DOCS=1
+      -DBUILD_WEB_DOCS=1
     ]
-    args << "--python" if build.with? "python@2"
-    args += %w[-- -DBUILD_DOCS=1]
-    args << "-DBUILD_WEB_DOCS=1" if build.with? "docs"
-    system "./acprep", flavor, "make", *args
-    system "./acprep", flavor, "make", "doc", *args
-    system "./acprep", flavor, "make", "install", *args
+    system "./acprep", "opt", "make", *args
+    system "./acprep", "opt", "make", "doc", *args
+    system "./acprep", "opt", "make", "install", *args
 
     (pkgshare/"examples").install Dir["test/input/*.dat"]
     pkgshare.install "contrib"
-    pkgshare.install "python/demo.py" if build.with? "python@2"
+    pkgshare.install "python/demo.py"
     elisp.install Dir["lisp/*.el", "lisp/*.elc"]
     bash_completion.install pkgshare/"contrib/ledger-completion.bash"
   end
@@ -58,6 +53,6 @@ class Ledger < Formula
     assert_equal "          $-2,500.00  Equity", balance.read.chomp
     assert_equal 0, $CHILD_STATUS.exitstatus
 
-    system "python", pkgshare/"demo.py" if build.with? "python@2"
+    system "python", pkgshare/"demo.py"
   end
 end
