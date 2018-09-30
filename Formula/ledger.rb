@@ -8,26 +8,15 @@ class Ledger < Formula
 
   depends_on "cmake" => :build
   depends_on "boost"
-  depends_on "boost-python"
   depends_on "gmp"
   depends_on "mpfr"
-  depends_on "python@2"
-
-  needs :cxx11
 
   def install
-    ENV.cxx11
-
-    # Boost >= 1.67 Python components require a Python version suffix
-    inreplace "CMakeLists.txt", "set(BOOST_PYTHON python)",
-                                "set(BOOST_PYTHON python27)"
-
     args = %W[
       --jobs=#{ENV.make_jobs}
       --output=build
       --prefix=#{prefix}
       --boost=#{Formula["boost"].opt_prefix}
-      --python
     ]
     system "./acprep", "opt", "make", *args
     system "./acprep", "opt", "make", "doc", *args
@@ -35,7 +24,6 @@ class Ledger < Formula
 
     (pkgshare/"examples").install Dir["test/input/*.dat"]
     pkgshare.install "contrib"
-    pkgshare.install "python/demo.py"
     elisp.install Dir["lisp/*.el", "lisp/*.elc"]
     bash_completion.install pkgshare/"contrib/ledger-completion.bash"
   end
@@ -49,7 +37,5 @@ class Ledger < Formula
       "balance", "--collapse", "equity"
     assert_equal "          $-2,500.00  Equity", balance.read.chomp
     assert_equal 0, $CHILD_STATUS.exitstatus
-
-    system "python", pkgshare/"demo.py"
   end
 end
