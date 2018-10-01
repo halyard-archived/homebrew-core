@@ -36,7 +36,7 @@ class DocbookXsl < Formula
   end
 
   test do
-    system "xmlcatalog", "#{etc}/xml/catalog", "http://docbook.sourceforge.net/release/xsl/snapshot_9899/"
-    system "xmlcatalog", "#{etc}/xml/catalog", "http://docbook.sourceforge.net/release/xsl-ns/1.79.1/"
+    system "xmlcatalog", "#{etc}/xml/catalog", "https://docbook.sourceforge.net/release/xsl/snapshot_9899/"
+    system "xmlcatalog", "#{etc}/xml/catalog", "https://docbook.sourceforge.net/release/xsl-ns/1.79.1/"
   end
 end
