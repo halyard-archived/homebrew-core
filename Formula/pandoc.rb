@@ -5,9 +5,9 @@ class Pandoc < Formula
 
   desc "Swiss-army knife of markup format conversion"
   homepage "https://pandoc.org/"
-  _version = '2.3'
+  _version = '2.3.1'
   url "https://hackage.haskell.org/package/pandoc-#{_version}/pandoc-#{_version}.tar.gz"
-  sha256 "5b051a1bb7b894eefa1464ffce972df3bbd8a000286c4471fe8ca98a5806ce73"
+  sha256 "7451873d6b564e25f1def0444deb513e210466966e8318d57d7e146f7145c3f1"
   head "https://github.com/jgm/pandoc.git"
 
   depends_on "cabal-install" => :build
