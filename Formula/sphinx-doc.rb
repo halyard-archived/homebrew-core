@@ -76,8 +76,8 @@ class SphinxDoc < Formula
   end
 
   resource "pyparsing" do
-    url "https://files.pythonhosted.org/packages/cc/24/f185147523a3299a0dfbe21937d621060b3a7e98dfc672298641984769b3/pyparsing-2.2.1.tar.gz"
-    sha256 "f493ee323be1e94929416b3585eefcc04943115cecbaaa35a8c86d1a2368af19"
+    url "https://files.pythonhosted.org/packages/1a/e2/4a7ad8f2808e03caebd3ec0a250b4afbb26d4ba063c39c3286185dd06dd1/pyparsing-2.2.2.tar.gz"
+    sha256 "bc6c7146b91af3f567cf6daeaec360bc07d45ffec4cf5353f4d7a208ce7ca30a"
   end
 
   resource "pytz" do
