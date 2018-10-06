@@ -31,13 +31,15 @@ class PythonAT2 < Formula
   end
 
   resource "pip" do
-    url "https://files.pythonhosted.org/packages/69/81/52b68d0a4de760a2f1979b0931ba7889202f302072cc7a0d614211bc7579/pip-18.0.tar.gz"
-    sha256 "a0e11645ee37c90b40c46d607070c4fd583e2cd46231b1c06e389c5e814eed76"
+    url "https://files.pythonhosted.org/packages/45/ae/8a0ad77defb7cc903f09e551d88b
+443304a9bd6e6f124e75c0fbbf6de8f7/pip-18.1.tar.gz"
+    sha256 "c0a292bd977ef590379a3f05d7b7f65135487b67470f6281289a94e015650ea1"
   end
 
   resource "wheel" do
-    url "https://files.pythonhosted.org/packages/68/f0/545cbeae75f248c4ad7c2d062672cd7e046dd325a81b74fc02c62450d133/wheel-0.32.0.tar.gz"
-    sha256 "a26bc27230baaec9039972b7cb43db94b17c13e4d66a9ff6a4d46a0344c55c9a"
+    url "https://files.pythonhosted.org/packages/e2/d0/bb5eedd650e777039d984b209d22
+9b97fa2161916c920245a85c1ef07667/wheel-0.32.1.tar.gz"
+    sha256 "d215f4520a1ba1851a3c00ba2b4122665cd3d6b0834d2ba2816198b1e3024a0e"
   end
 
   # Patch to disable the search for Tk.framework, since Homebrew's Tk is
