@@ -31,14 +31,12 @@ class PythonAT2 < Formula
   end
 
   resource "pip" do
-    url "https://files.pythonhosted.org/packages/45/ae/8a0ad77defb7cc903f09e551d88b
-443304a9bd6e6f124e75c0fbbf6de8f7/pip-18.1.tar.gz"
+    url "https://files.pythonhosted.org/packages/45/ae/8a0ad77defb7cc903f09e551d88b443304a9bd6e6f124e75c0fbbf6de8f7/pip-18.1.tar.gz"
     sha256 "c0a292bd977ef590379a3f05d7b7f65135487b67470f6281289a94e015650ea1"
   end
 
   resource "wheel" do
-    url "https://files.pythonhosted.org/packages/e2/d0/bb5eedd650e777039d984b209d22
-9b97fa2161916c920245a85c1ef07667/wheel-0.32.1.tar.gz"
+    url "https://files.pythonhosted.org/packages/e2/d0/bb5eedd650e777039d984b209d229b97fa2161916c920245a85c1ef07667/wheel-0.32.1.tar.gz"
     sha256 "d215f4520a1ba1851a3c00ba2b4122665cd3d6b0834d2ba2816198b1e3024a0e"
   end
 
