@@ -1,8 +1,8 @@
 class Subversion < Formula
   desc "Version control system designed to be a better CVS"
   homepage "https://subversion.apache.org/"
-  url "https://www.apache.org/dyn/closer.cgi?path=subversion/subversion-1.10.2.tar.bz2"
-  sha256 "5b35e3a858d948de9e8892bf494893c9f7886782f6abbe166c0487c19cf6ed88"
+  url "https://www.apache.org/dyn/closer.cgi?path=subversion/subversion-1.10.3.tar.bz2"
+  sha256 "9f0daac8b84aefaa77ad54dd05ab578ecc939d8e72d08c0cd4f61315921dd9fc"
 
   depends_on "pkg-config" => :build
   depends_on "scons" => :build
