@@ -1,8 +1,8 @@
 class SwaggerCodegen < Formula
   desc "Generate clients, server stubs, and docs from an OpenAPI spec"
   homepage "https://swagger.io/swagger-codegen/"
-  url "https://github.com/swagger-api/swagger-codegen/archive/v3.0.1.tar.gz"
-  sha256 "6cd0343eec6bfe102fbbb5a1626396e351bdd90fe0d701e5ce965e6844bf4b11"
+  url "https://github.com/swagger-api/swagger-codegen/archive/v3.0.2.tar.gz"
+  sha256 "895e88b72d30048ce9cd00e2de4a6bf59db312e13b3498505b5a84b1a0cc18ae"
   head "https://github.com/swagger-api/swagger-codegen.git"
 
   depends_on "maven" => :build
