@@ -1,8 +1,8 @@
 class Cairo < Formula
   desc "Vector graphics library with cross-device output support"
   homepage "https://cairographics.org/"
-  url "https://cairographics.org/releases/cairo-1.14.12.tar.xz"
-  sha256 "8c90f00c500b2299c0a323dd9beead2a00353752b2092ead558139bd67f7bf16"
+  url "https://cairographics.org/releases/cairo-1.16.0.tar.xz"
+  sha256 "5e7b29b3f113ef870d1e3ecf8adf21f923396401604bda16d44be45e66052331"
 
   head do
     url "https://anongit.freedesktop.org/git/cairo", :using => :git
