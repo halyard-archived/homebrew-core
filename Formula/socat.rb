@@ -8,7 +8,6 @@ class Socat < Formula
   depends_on "openssl"
   depends_on "readline"
 
-
   def install
     system "./configure", "--prefix=#{prefix}", "--mandir=#{man}"
     system "make", "install"

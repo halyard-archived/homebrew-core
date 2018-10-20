@@ -1,7 +1,7 @@
 item do
   expected do
     url_xpath
-    url 'http://www.gnu.org.ua/software/gdbm/download.html'
+    url 'https://www.gnu.org.ua/software/gdbm/download.html'
     xpath '//*[@id="main"]/table/tbody[1]/tr/td[1]/a'
     regex /^gdbm-([\d.]+)\.tar\.gz$/
   end

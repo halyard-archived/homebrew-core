@@ -1,7 +1,7 @@
 item do
   expected do
     url_xpath
-    url 'http://git.savannah.gnu.org/cgit/tar.git/refs/tags'
+    url 'https://git.savannah.gnu.org/cgit/tar.git/refs/tags'
     xpath '//*[@id="cgit"]/div/table/tr[2]/td[1]/a'
     regex /^release_(\d+)_(\d+)$/, '\1.\2'
   end

@@ -1,7 +1,7 @@
 item do
   expected do
     url_xpath
-    url 'http://www.ijg.org/'
+    url 'https://www.ijg.org/'
     xpath '/html/body/p[2]/a[3]'
     regex /^jpegsrc\.v(\w+)\.tar\.gz$/
   end

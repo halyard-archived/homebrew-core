@@ -1,7 +1,7 @@
 item do
   expected do
     url_xpath
-    url 'http://git.savannah.gnu.org/cgit/bash.git/log/'
+    url 'https://git.savannah.gnu.org/cgit/bash.git/log/'
     xpath '//*[@id="cgit"]/div/table/tr[7]/td[2]/a[1]'
     #regex /Bash-([\d.]+) distribution sources and documentation/
     regex /Bash-([\d.]+) patch (\d+)/, '\1.\2'

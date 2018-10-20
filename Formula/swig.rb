@@ -1,6 +1,6 @@
 class Swig < Formula
   desc "Generate scripting interfaces to C/C++ code"
-  homepage "http://www.swig.org/"
+  homepage "https://github.com/swig"
   url "https://github.com/swig/swig/archive/rel-3.0.12.tar.gz"
   sha256 "64971de92b8a1da0b9ffb4b51e9214bb936c4dbbc304367899cdb07280b94af6"
 

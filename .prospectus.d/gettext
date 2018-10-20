@@ -1,7 +1,7 @@
 item do
   expected do
     url_xpath
-    url 'http://git.savannah.gnu.org/cgit/gettext.git/refs/'
+    url 'https://git.savannah.gnu.org/cgit/gettext.git/refs/'
     xpath '//*[@id="cgit"]/div[1]/table/tr[15]/td[1]/a'
     regex /^v([\d.]+)$/
   end

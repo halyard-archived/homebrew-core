@@ -1,7 +1,7 @@
 item do
   expected do
     url_xpath
-    url 'http://repo.or.cz/socat.git/tags'
+    url 'https://repo.or.cz/socat.git/tags'
     xpath '/html/body/span/table/tr[1]/td[2]/a'
     regex /^tag-([\d.]+)$/
   end

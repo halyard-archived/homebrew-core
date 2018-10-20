@@ -1,7 +1,7 @@
 item do
   expected do
     static
-    url = 'http://invisible-mirror.net/archives/ncurses/current/'
+    url = 'https://invisible-mirror.net/archives/ncurses/current/'
     page = Nokogiri::HTML(open(url)) { |config| config.strict.nonet }
     hrefs = page.xpath('//a').map { |x| x[:href] }
     latest = hrefs.select { |x| x =~ /^ncurses-.*\.tgz$/ }.sort.last
