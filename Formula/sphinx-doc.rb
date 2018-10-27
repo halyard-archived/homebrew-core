@@ -11,8 +11,8 @@ class SphinxDoc < Formula
 
   # generated from sphinx, setuptools, and numpydoc
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/6e/9c/6a003320b00ef237f94aa74e4ad66c57a7618f6c79d67527136e2544b728/setuptools-40.4.3.zip"
-    sha256 "acbc5740dd63f243f46c2b4b8e2c7fd92259c2ddb55a4115b16418a2ed371b15"
+    url "https://files.pythonhosted.org/packages/26/e5/9897eee1100b166a61f91b68528cb692e8887300d9cbdaa1a349f6304b79/setuptools-40.5.0.zip"
+    sha256 "2a2a200f4a760adbded23a091a00be2eca4e28efed65c6120ea275f7e89a1eab"
   end
 
   resource "alabaster" do
@@ -81,8 +81,8 @@ class SphinxDoc < Formula
   end
 
   resource "pytz" do
-    url "https://files.pythonhosted.org/packages/ca/a9/62f96decb1e309d6300ebe7eee9acfd7bccaeedd693794437005b9067b44/pytz-2018.5.tar.gz"
-    sha256 "ffb9ef1de172603304d9d2819af6f5ece76f2e85ec10692a524dd876e72bf277"
+    url "https://files.pythonhosted.org/packages/c7/df/68a3331691a604a8241335064cf20742338d66eb008da96d4c9f3e3d4c41/pytz-2018.6.tar.gz"
+    sha256 "642253af8eae734d1509fc6ac9c1aee5e5b69d76392660889979b9870610a46b"
   end
 
   resource "requests" do
