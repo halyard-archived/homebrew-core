@@ -8,8 +8,7 @@ class OpensslAT10 < Formula
   sha256 "50a98e07b1a89eb8f6a99477f262df71c6fa7bef77df4dc83025a2845c827d00"
   version_scheme 1
 
-  keg_only :provided_by_macos,
-    "Apple has deprecated use of OpenSSL in favor of its own TLS and crypto libraries"
+  keg_only :versioned_formula
 
   option "without-test", "Skip build-time tests (not recommended)"
 
