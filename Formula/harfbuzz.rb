@@ -1,8 +1,8 @@
 class Harfbuzz < Formula
   desc "OpenType text shaping engine"
   homepage "https://wiki.freedesktop.org/www/Software/HarfBuzz/"
-  url "https://www.freedesktop.org/software/harfbuzz/release/harfbuzz-2.0.1.tar.bz2"
-  sha256 "2f6ba8353c2e9bf1e64f49ea7a5729bb3b4a33c3b415bc75c37a08700073f425"
+  url "https://www.freedesktop.org/software/harfbuzz/release/harfbuzz-2.0.2.tar.bz2"
+  sha256 "f6de6c9dc89a56909227ac3e3dc9b18924a0837936ffd9633d13e981bcbd96e0"
 
   option "with-cairo", "Build command-line utilities that depend on Cairo"
 
