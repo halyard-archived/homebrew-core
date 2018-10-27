@@ -1,8 +1,8 @@
 class Python < Formula
   desc "Interpreted, interactive, object-oriented programming language"
   homepage "https://www.python.org/"
-  url "https://www.python.org/ftp/python/3.7.0/Python-3.7.0.tar.xz"
-  sha256 "0382996d1ee6aafe59763426cf0139ffebe36984474d0ec4126dd1c40a8b3549"
+  url "https://www.python.org/ftp/python/3.7.1/Python-3.7.1.tar.xz"
+  sha256 "fa7e2b8e8c9402f192ad56dc4f814089d1c4466c97d780f5e5acc02c04243d6d"
 
   pour_bottle? do
     reason <<~EOS
@@ -34,8 +34,8 @@ class Python < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/6e/9c/6a003320b00ef237f94aa74e4ad66c57a7618f6c79d67527136e2544b728/setuptools-40.4.3.zip"
-    sha256 "acbc5740dd63f243f46c2b4b8e2c7fd92259c2ddb55a4115b16418a2ed371b15"
+    url "https://files.pythonhosted.org/packages/26/e5/9897eee1100b166a61f91b68528cb692e8887300d9cbdaa1a349f6304b79/setuptools-40.5.0.zip"
+    sha256 "2a2a200f4a760adbded23a091a00be2eca4e28efed65c6120ea275f7e89a1eab"
   end
 
   resource "pip" do
@@ -44,8 +44,8 @@ class Python < Formula
   end
 
   resource "wheel" do
-    url "https://files.pythonhosted.org/packages/e2/d0/bb5eedd650e777039d984b209d229b97fa2161916c920245a85c1ef07667/wheel-0.32.1.tar.gz"
-    sha256 "d215f4520a1ba1851a3c00ba2b4122665cd3d6b0834d2ba2816198b1e3024a0e"
+    url "https://files.pythonhosted.org/packages/c2/00/21e3ecc8a9d484f9de995471c061aa3d8f02ae54bdfd9cbdddb59138c809/wheel-0.32.2.tar.gz"
+    sha256 "196c9842d79262bb66fcf59faa4bd0deb27da911dbc7c6cdca931080eb1f0783"
   end
 
   # Homebrew's tcl-tk is built in a standard unix fashion (due to link errors)
