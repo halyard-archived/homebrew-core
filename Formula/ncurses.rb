@@ -1,8 +1,8 @@
 class Ncurses < Formula
   desc "Text-based UI library"
   homepage "https://www.gnu.org/software/ncurses/"
-  url "https://invisible-mirror.net/archives/ncurses/current/ncurses-6.1-20181020.tgz"
-  sha256 "90f568903356f4d606f614b44d2d28d1aa5e03214f21f56ef31daf26e0083093"
+  url "https://invisible-mirror.net/archives/ncurses/current/ncurses-6.1-20181027.tgz"
+  sha256 "0224d240bd68d23b6cd6c2c6e07585346e17b4c12e128e4a08864921e2e5c6f6"
 
   keg_only :provided_by_macos
 
