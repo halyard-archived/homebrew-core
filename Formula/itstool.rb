@@ -1,26 +1,9 @@
 class Itstool < Formula
   desc "Make XML documents translatable through PO files"
   homepage "http://itstool.org/"
-  revision 2
 
-  stable do
-    url "http://files.itstool.org/itstool/itstool-2.0.4.tar.bz2"
-    sha256 "97c208b51da33e0b553e830b92655f8deb9132f8fbe9a646771f95c33226eb60"
-
-    # Upstream commit from 25 Oct 2017 "Be more careful about libxml2 memory management"
-    # See https://github.com/itstool/itstool/issues/17
-    patch do
-      url "https://github.com/itstool/itstool/commit/9b84c00.patch?full_index=1"
-      sha256 "c33f44affc27604c6a91a8ae2e992273bf588c228e635ea46d958e2c3046e9ca"
-    end
-  end
-
-  head do
-    url "https://github.com/itstool/itstool.git"
-
-    depends_on "autoconf" => :build
-    depends_on "automake" => :build
-  end
+  url "http://files.itstool.org/itstool/itstool-2.0.5.tar.bz2"
+  sha256 "100506f8df62cca6225ec3e631a8237e9c04650c77495af4919ac6a100d4b308"
 
   depends_on "libxml2"
 
