@@ -1,8 +1,8 @@
 class Netpbm < Formula
   desc "Image manipulation"
   homepage "https://netpbm.sourceforge.io/"
-  url "https://svn.code.sf.net/p/netpbm/code/stable", :revision => 3366
-  version "10.73.21"
+  url "https://svn.code.sf.net/p/netpbm/code/stable", :revision => 3413
+  version "10.73.22"
   version_scheme 1
 
   depends_on "jasper"
