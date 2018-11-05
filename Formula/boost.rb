@@ -1,16 +1,14 @@
 class Boost < Formula
   desc "Collection of portable C++ source libraries"
   homepage "https://www.boost.org/"
-  url "https://dl.bintray.com/boostorg/release/1.66.0/source/boost_1_66_0.tar.bz2"
-  sha256 "5721818253e6a0989583192f96782c4a98eb6204965316df9f5ad75819225ca9"
+  url "https://dl.bintray.com/boostorg/release/1.68.0/source/boost_1_68_0.tar.bz2"
+  sha256 "7f6130bc3cf65f56a618888ce9d5ea704fa10b462be126ad053e80e553d6d8b7"
   head "https://github.com/boostorg/boost.git"
 
   option "without-single", "Disable building single-threading variant"
   option "without-static", "Disable building static library variant"
-  option :cxx11
 
-  needs :cxx11 if build.cxx11?
-
+  needs :cxx14
 
   def install
     # Force boost to compile with the desired compiler
@@ -54,13 +52,11 @@ class Boost < Formula
       args << "link=shared"
     end
 
-    # Trunk starts using "clang++ -x c" to select C compiler which breaks C++11
-    # handling using ENV.cxx11. Using "cxxflags" and "linkflags" still works.
-    if build.cxx11?
-      args << "cxxflags=-std=c++11"
-      if ENV.compiler == :clang
-        args << "cxxflags=-stdlib=libc++" << "linkflags=-stdlib=libc++"
-      end
+    # Boost is using "clang++ -x c" to select C compiler which breaks C++14
+    # handling using ENV.cxx14. Using "cxxflags" and "linkflags" still works.
+    args << "cxxflags=-std=c++14"
+    if ENV.compiler == :clang
+      args << "cxxflags=-stdlib=libc++" << "linkflags=-stdlib=libc++"
     end
 
     system "./bootstrap.sh", *bootstrap_args
@@ -90,7 +86,7 @@ class Boost < Formula
       using namespace boost::algorithm;
       using namespace std;
 
-     int main()
+      int main()
       {
         string str("a,b");
         vector<string> strVec;
