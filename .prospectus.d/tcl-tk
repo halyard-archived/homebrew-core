@@ -18,7 +18,7 @@ item do
       expected do
         url_xpath
         url 'https://core.tcl.tk/tcllib/wiki?name=Downloads'
-        xpath '/html/body/div[5]/ul[2]/p[1]/b'
+        xpath '/html/body/div[4]/ul[2]/p[1]/b'
         regex /^([\d.]+) \(\w+ \d+, \d+\)$/
       end
 
