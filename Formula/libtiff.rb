@@ -1,21 +1,15 @@
 class Libtiff < Formula
   desc "TIFF library and utilities"
   homepage "http://libtiff.maptools.org/"
-  url "https://download.osgeo.org/libtiff/tiff-4.0.9.tar.gz"
-  mirror "https://fossies.org/linux/misc/tiff-4.0.9.tar.gz"
-  sha256 "6e7bdeec2c310734e734d19aae3a71ebe37a4d842e0e23dbb1b8921c0026cfcd"
-  revision 2
+  url "https://download.osgeo.org/libtiff/tiff-4.0.10.tar.gz"
+  sha256 "2c52d11ccaf767457db0c46795d9c7d1a8d8f76f68b0b800a3dfe45786b996e4"
 
-  option :cxx11
   option "with-xz", "Include support for LZMA compression"
 
   depends_on "jpeg"
   depends_on "xz" => :optional
 
-
   def install
-    ENV.cxx11 if build.cxx11?
-
     args = %W[
       --disable-dependency-tracking
       --prefix=#{prefix}
