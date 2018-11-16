@@ -21,9 +21,8 @@ class Rust < Formula
   end
 
   resource "cargo" do
-    url "https://github.com/rust-lang/cargo.git",
-        :tag      => "0.31.1",
-        :revision => "a1a4ad37271b61209cd55d21f2c83f2773cbe113"
+    url "https://github.com/rust-lang/cargo.git", :tag => "0.31.1",
+      :revision => "a1a4ad37271b61209cd55d21f2c83f2773cbe113"
   end
 
   resource "racer" do
