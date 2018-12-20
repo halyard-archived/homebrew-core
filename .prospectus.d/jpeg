@@ -1,9 +1,8 @@
 item do
   expected do
     url_xpath
-    url 'https://www.ijg.org/'
-    xpath '/html/body/p[2]/a[3]'
-    regex /^jpegsrc\.v(\w+)\.tar\.gz$/
+    url 'https://formulae.brew.sh/formula/jpeg'
+    xpath '//*[@id="default"]/table[1]/tbody/tr[1]/td[3]'
   end
 
   actual do
