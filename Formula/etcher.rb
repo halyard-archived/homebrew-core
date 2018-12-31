@@ -1,9 +1,9 @@
 class Etcher < Formula
   desc "Etcher"
   homepage "https://etcher.io/cli/"
-  url "https://github.com/resin-io/etcher/releases/download/v1.4.6/etcher-cli-1.4.6-darwin-x64.tar.gz"
-  version "1.4.6"
-  sha256 "37e78f02c667d01813f17a0321bbd9d60d78bbb1a2e0dfd5df00f586dd6cc715"
+  url "https://github.com/balena-io/etcher/releases/download/v1.4.9/balena-etcher-cli-1.4.9-darwin-x64.tar.gz"
+  version "1.4.9"
+  sha256 "0720a0bd021b7a7f686d99a90b916a37948eccbe5394ba0e24d1d96fcec843eb"
 
   def install
     libexec.install Dir["*"]
