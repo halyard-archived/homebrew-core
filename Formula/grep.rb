@@ -1,9 +1,9 @@
 class Grep < Formula
   desc "GNU grep, egrep and fgrep"
   homepage "https://www.gnu.org/software/grep/"
-  url "https://ftp.gnu.org/gnu/grep/grep-3.1.tar.xz"
-  mirror "https://ftpmirror.gnu.org/grep/grep-3.1.tar.xz"
-  sha256 "db625c7ab3bb3ee757b3926a5cfa8d9e1c3991ad24707a83dde8a5ef2bf7a07e"
+  url "https://ftp.gnu.org/gnu/grep/grep-3.3.tar.xz"
+  mirror "https://ftpmirror.gnu.org/grep/grep-3.3.tar.xz"
+  sha256 "b960541c499619efd6afe1fa795402e4733c8e11ebf9fafccc0bb4bccdc5b514"
 
   option "with-default-names", "Do not prepend 'g' to the binary"
 
