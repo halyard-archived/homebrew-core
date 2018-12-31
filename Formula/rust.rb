@@ -2,8 +2,8 @@ class Rust < Formula
   desc "Safe, concurrent, practical language"
   homepage "https://www.rust-lang.org/"
 
-  url "https://static.rust-lang.org/dist/rustc-1.30.1-src.tar.gz"
-  sha256 "36a38902dbd9a3e1240d46ab0f2ca40d2fd07c2ab6508ed7970c6c4c036b5b29"
+  url "https://static.rust-lang.org/dist/rustc-1.31.1-src.tar.gz"
+  sha256 "91d2fc22f08d986adab7a54eb3a6a9b99e490f677d2d092e5b9e4e069c23686a"
 
   option "with-llvm", "Build with brewed LLVM. By default, Rust's LLVM will be used."
 
@@ -21,8 +21,8 @@ class Rust < Formula
   end
 
   resource "cargo" do
-    url "https://github.com/rust-lang/cargo.git", :tag => "0.31.1",
-      :revision => "a1a4ad37271b61209cd55d21f2c83f2773cbe113"
+    url "https://github.com/rust-lang/cargo.git", :tag => "0.32.0",
+      :revision => "339d9f9c8f400010df3282ae5582bf3a0f739004"
   end
 
   resource "racer" do
@@ -32,8 +32,8 @@ class Rust < Formula
 
   resource "cargobootstrap" do
     # From https://github.com/rust-lang/rust/blob/#{version}/src/stage0.txt
-    url "https://static.rust-lang.org/dist/cargo-0.30.0-x86_64-apple-darwin.tar.gz"
-    sha256 "defc1ba047f09219a50ff39032b5d7aaf26563f6bed528b93055622eedfddabf"
+    url "https://static.rust-lang.org/dist/cargo-0.31.0-x86_64-apple-darwin.tar.gz"
+    sha256 "878129ffa369cdc09e7e414aeca8a72a7b14c8e50281b025e73e2ab87d690df9"
   end
 
   def install
