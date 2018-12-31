@@ -1,8 +1,8 @@
 class Perl < Formula
   desc "Highly capable, feature-rich programming language"
   homepage "https://www.perl.org/"
-  url "https://www.cpan.org/src/5.0/perl-5.28.0.tar.xz"
-  sha256 "059b3cb69970d8c8c5964caced0335b4af34ac990c8e61f7e3f90cd1c2d11e49"
+  url "https://www.cpan.org/src/5.0/perl-5.28.1.tar.xz"
+  sha256 "fea7162d4cca940a387f0587b93f6737d884bf74d8a9d7cfd978bc12cd0b202d"
   head "https://perl5.git.perl.org/perl.git", :branch => "blead"
 
   option "with-dtrace", "Build with DTrace probes"
