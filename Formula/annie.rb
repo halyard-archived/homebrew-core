@@ -1,9 +1,9 @@
 class Annie < Formula
   desc "Fast, simple and clean video downloader"
   homepage "https://github.com/iawia002/annie"
-  url "https://github.com/iawia002/annie/releases/download/0.8.3/annie_0.8.3_macOS_64-bit.tar.gz"
-  version "0.8.3"
-  sha256 "91cd007d483fdcf7b0d17b236dc54316b1b226c7b1b7761f9abb3e2a95d8aadc"
+  url "https://github.com/iawia002/annie/releases/download/0.9.0/annie_0.9.0_macOS_64-bit.tar.gz"
+  version "0.9.0"
+  sha256 "8e9263a5351d956a98bff25dc3837729cdd35cf27fa43a06c88e0454410857ac"
 
   def install
     bin.install "annie"
