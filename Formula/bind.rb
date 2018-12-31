@@ -1,13 +1,12 @@
 class Bind < Formula
   desc "Implementation of the DNS protocols"
   homepage "https://www.isc.org/downloads/bind/"
-  url "https://ftp.isc.org/isc/bind9/9.13.3/bind-9.13.3.tar.gz"
-  sha256 "76674cf2a3e61766aed5c7fd1ee6ed3da133a9e331b35b24f40efdf1bbac5b44"
+  url "https://ftp.isc.org/isc/bind9/9.13.5-W1/bind-9.13.5-W1.tar.gz"
+  sha256 "654d505e0a0cad46777b393f053631959555d876b1f2fbc8ddfad9b3dcdff6e0"
   head "https://source.isc.org/git/bind9.git"
 
   depends_on "openssl"
   depends_on "json-c" => :optional
-
 
   def install
     # enable DNSSEC signature chasing in dig
