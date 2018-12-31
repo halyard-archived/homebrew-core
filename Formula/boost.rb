@@ -1,12 +1,17 @@
 class Boost < Formula
   desc "Collection of portable C++ source libraries"
   homepage "https://www.boost.org/"
-  url "https://dl.bintray.com/boostorg/release/1.68.0/source/boost_1_68_0.tar.bz2"
-  sha256 "7f6130bc3cf65f56a618888ce9d5ea704fa10b462be126ad053e80e553d6d8b7"
+  url "https://dl.bintray.com/boostorg/release/1.69.0/source/boost_1_69_0.tar.bz2"
+  sha256 "8f32d4617390d1c2d16f26a27ab60d97807b35440d45891fa340fc2648b04406"
   head "https://github.com/boostorg/boost.git"
 
+  option "with-icu4c", "Build regexp engine with icu support"
   option "without-single", "Disable building single-threading variant"
   option "without-static", "Disable building static library variant"
+
+  deprecated_option "with-icu" => "with-icu4c"
+
+  depends_on "icu4c" => :optional
 
   needs :cxx14
 
@@ -19,7 +24,12 @@ class Boost < Formula
     # libdir should be set by --prefix but isn't
     bootstrap_args = ["--prefix=#{prefix}", "--libdir=#{lib}"]
 
-    bootstrap_args << "--without-icu"
+    if build.with? "icu4c"
+      icu4c_prefix = Formula["icu4c"].opt_prefix
+      bootstrap_args << "--with-icu=#{icu4c_prefix}"
+    else
+      bootstrap_args << "--without-icu"
+    end
 
     # Handle libraries that will not be built.
     without_libraries = ["python", "mpi"]
@@ -35,7 +45,7 @@ class Boost < Formula
             "--libdir=#{lib}",
             "-d2",
             "-j#{ENV.make_jobs}",
-            "--layout=tagged",
+            "--layout=tagged-1.66",
             "--user-config=user-config.jam",
             "-sNO_LZMA=1",
             "install"]
@@ -97,7 +107,7 @@ class Boost < Formula
         return 0;
       }
     EOS
-    system ENV.cxx, "test.cpp", "-std=c++1y", "-L#{lib}", "-lboost_system", "-o", "test"
+    system ENV.cxx, "test.cpp", "-std=c++14", "-stdlib=libc++", "-o", "test"
     system "./test"
   end
 end
