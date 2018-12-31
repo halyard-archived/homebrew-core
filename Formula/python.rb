@@ -1,8 +1,8 @@
 class Python < Formula
   desc "Interpreted, interactive, object-oriented programming language"
   homepage "https://www.python.org/"
-  url "https://www.python.org/ftp/python/3.7.1/Python-3.7.1.tar.xz"
-  sha256 "fa7e2b8e8c9402f192ad56dc4f814089d1c4466c97d780f5e5acc02c04243d6d"
+  url "https://www.python.org/ftp/python/3.7.2/Python-3.7.2.tar.xz"
+  sha256 "d83fe8ce51b1bb48bbcf0550fd265b9a75cdfdfa93f916f9e700aef8444bf1bb"
 
   option "with-tcl-tk", "Use Homebrew's Tk instead of macOS Tk (has optional Cocoa and threads support)"
   deprecated_option "with-brewed-tk" => "with-tcl-tk"
