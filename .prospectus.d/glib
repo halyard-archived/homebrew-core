@@ -1,10 +1,9 @@
 item do
   expected do
-    gitlab_tag
-    repo 'GNOME/glib'
-    endpoint 'https://gitlab.gnome.org'
-    regex /^(\d+\.\d*[02468]\.\d+)$/
-    filter /^(\d+\.\d*[02468]\.\d+)$/
+    url_xpath
+    url 'https://developer.gnome.org/glib/stable/'
+    xpath '//p[@class="releaseinfo"]'
+    regex /\s+for GLib ([\d.]+)\n.*/m
   end
 
   actual do
