@@ -20,8 +20,8 @@ class Llvm < Formula
   desc "Next-gen compiler infrastructure"
   homepage "https://llvm.org/"
 
-  url "https://releases.llvm.org/7.0.0/llvm-7.0.0.src.tar.xz"
-  sha256 "8bc1f844e6cbde1b652c19c1edebc1864456fd9c78b8c1bea038e51b363fe222"
+  url "https://releases.llvm.org/7.0.1/llvm-7.0.1.src.tar.xz"
+  sha256 "a38dfc4db47102ec79dcc2aa61e93722c5f6f06f0a961073bd84b78fb949419b"
 
   keg_only :provided_by_macos
 
