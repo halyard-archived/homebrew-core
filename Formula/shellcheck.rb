@@ -5,8 +5,8 @@ class Shellcheck < Formula
 
   desc "Static analysis and lint tool, for (ba)sh scripts"
   homepage "https://www.shellcheck.net/"
-  url "https://github.com/koalaman/shellcheck/archive/v0.5.0.tar.gz"
-  sha256 "348a3f7892c1f28a44f188c00ac82f1b3bf899d9f81d14ddb0e306db26c937bb"
+  url "https://github.com/koalaman/shellcheck/archive/v0.6.0.tar.gz"
+  sha256 "78f90aa8e618dc468bc1c36b6929216dc7a0c2679cd157e50919f7d8cc1899bc"
   head "https://github.com/koalaman/shellcheck.git"
 
   depends_on "cabal-install" => :build
