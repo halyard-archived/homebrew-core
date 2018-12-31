@@ -3,6 +3,7 @@ item do
     github_release
     repo 'neovim/neovim'
     regex /^v([\d.]+)$/
+    filter /^v([\d.]+)$/
   end
 
   actual do
