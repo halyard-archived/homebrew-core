@@ -1,14 +1,11 @@
 class Openssl < Formula
   desc "Cryptography and SSL/TLS Toolkit"
   homepage "https://openssl.org/"
-  url "https://www.openssl.org/source/openssl-1.1.0i.tar.gz"
-  sha256 "ebbfc844a8c8cc0ea5dc10b86c9ce97f401837f3fa08c17b2cdadc118253cf99"
+  url "https://www.openssl.org/source/openssl-1.1.1a.tar.gz"
+  sha256 "fc20130f8b7cbd2fb918b2f14e2f429e109c31ddd0fb38fc5d71d9ffed3f9f41"
 
   keg_only :provided_by_macos,
-    "Apple has deprecated use of OpenSSL in favor of its own TLS and crypto libraries"
-
-  option "without-test", "Skip build-time tests (not recommended)"
-
+    "openssl/libressl is provided by macOS so don't link an incompatible version"
 
   # SSLv2 died with 1.1.0, so no-ssl2 no longer required.
   # SSLv3 & zlib are off by default with 1.1.0 but this may not
@@ -43,7 +40,7 @@ class Openssl < Formula
     ENV.deparallelize
     system "perl", "./Configure", *(configure_args + arch_args)
     system "make"
-    system "make", "test" if build.with?("test")
+    system "make", "test"
     system "make", "install", "MANDIR=#{man}", "MANSUFFIX=ssl"
   end
 
@@ -71,7 +68,7 @@ class Openssl < Formula
     end
 
     openssldir.mkpath
-    (openssldir/"cert.pem").atomic_write(valid_certs.join("\n"))
+    (openssldir/"cert.pem").atomic_write(valid_certs.join("\n") << "\n")
   end
 
   def caveats; <<~EOS
@@ -81,7 +78,7 @@ class Openssl < Formula
 
     and run
       #{opt_bin}/c_rehash
-    EOS
+  EOS
   end
 
   test do

@@ -4,22 +4,16 @@
 class OpensslAT10 < Formula
   desc "SSL/TLS cryptography library"
   homepage "https://openssl.org/"
-  url "https://www.openssl.org/source/openssl-1.0.2p.tar.gz"
-  sha256 "50a98e07b1a89eb8f6a99477f262df71c6fa7bef77df4dc83025a2845c827d00"
+  url "https://www.openssl.org/source/openssl-1.0.2q.tar.gz"
+  sha256 "5744cfcbcec2b1b48629f7354203bc1e5e9b5466998bbccc5b5fcde3b18eb684"
   version_scheme 1
 
   keg_only :versioned_formula
 
-  option "without-test", "Skip build-time tests (not recommended)"
-
-  deprecated_option "without-check" => "without-test"
-
-  depends_on "makedepend" => :build
-
   def arch_args
     {
       :x86_64 => %w[darwin64-x86_64-cc enable-ec_nistp_64_gcc_128],
-      :i386 => %w[darwin-i386-cc],
+      :i386   => %w[darwin-i386-cc],
     }
   end
 
@@ -27,7 +21,8 @@ class OpensslAT10 < Formula
     --prefix=#{prefix}
     --openssldir=#{openssldir}
     no-ssl2
-    zlib-dynamic
+    no-ssl3
+    no-zlib
     shared
     enable-cms
   ]
@@ -40,14 +35,6 @@ class OpensslAT10 < Formula
     ENV.delete("PERL")
     ENV.delete("PERL5LIB")
 
-    # Load zlib from an explicit path instead of relying on dyld's fallback
-    # path, which is empty in a SIP context. This patch will be unnecessary
-    # when we begin building openssl with no-comp to disable TLS compression.
-    # https://langui.sh/2015/11/27/sip-and-dlopen
-    inreplace "crypto/comp/c_zlib.c",
-              'zlib_dso = DSO_load(NULL, "z", NULL, 0);',
-              'zlib_dso = DSO_load(NULL, "/usr/lib/libz.dylib", NULL, DSO_FLAG_NO_NAME_TRANSLATION);'
-
     if MacOS.prefer_64_bit?
       arch = Hardware::CPU.arch_64_bit
     else
@@ -58,13 +45,12 @@ class OpensslAT10 < Formula
     system "perl", "./Configure", *(configure_args + arch_args[arch])
     system "make", "depend"
     system "make"
-    system "make", "test" if build.with?("test")
-
+    system "make", "test"
     system "make", "install", "MANDIR=#{man}", "MANSUFFIX=ssl"
   end
 
   def openssldir
-    etc/"openssl"
+    etc/"openssl@1.0"
   end
 
   def post_install
@@ -87,7 +73,7 @@ class OpensslAT10 < Formula
     end
 
     openssldir.mkpath
-    (openssldir/"cert.pem").atomic_write(valid_certs.join("\n"))
+    (openssldir/"cert.pem").atomic_write(valid_certs.join("\n") << "\n")
   end
 
   def caveats; <<~EOS
@@ -98,12 +84,12 @@ class OpensslAT10 < Formula
 
     and run
       #{opt_bin}/c_rehash
-    EOS
+  EOS
   end
 
   test do
     # Make sure the necessary .cnf file exists, otherwise OpenSSL gets moody.
-    assert_predicate HOMEBREW_PREFIX/"etc/openssl/openssl.cnf", :exist?,
+    assert_predicate HOMEBREW_PREFIX/"etc/openssl@1.0/openssl.cnf", :exist?,
             "OpenSSL requires the .cnf file for some functionality"
 
     # Check OpenSSL itself functions as expected.
