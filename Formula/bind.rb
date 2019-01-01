@@ -4,23 +4,21 @@ class Bind < Formula
   url "https://ftp.isc.org/isc/bind9/9.13.5-W1/bind-9.13.5-W1.tar.gz"
   version "9.13.5-W1"
   sha256 "654d505e0a0cad46777b393f053631959555d876b1f2fbc8ddfad9b3dcdff6e0"
-  head "https://source.isc.org/git/bind9.git"
+  head "https://gitlab.isc.org/isc-projects/bind9.git"
 
+  depends_on "json-c"
   depends_on "openssl"
-  depends_on "json-c" => :optional
 
   def install
     # enable DNSSEC signature chasing in dig
     ENV["STD_CDEFINES"] = "-DDIG_SIGCHASE=1"
 
-    json = build.with?("json-c") ? "yes" : "no"
     system "./configure", "--prefix=#{prefix}",
-                          "--enable-threads",
-                          "--enable-ipv6",
+                          "--without-python",
                           "--with-openssl=#{Formula["openssl"].opt_prefix}",
-                          "--with-libjson=#{json}"
+                          "--with-libjson=#{Formula["json-c"].opt_prefix}"
 
-    # From the bind9 README: "Do not use a parallel "make"."
+    # From the bind9 README: "Do not use a parallel "make"
     ENV.deparallelize
     system "make"
     system "make", "install"
@@ -99,7 +97,7 @@ class Bind < Formula
                     print-time yes;
             };
     };
-    EOS
+  EOS
   end
 
   def localhost_zone; <<~EOS
@@ -114,7 +112,7 @@ class Bind < Formula
 
                 1D IN NS    @
                 1D IN A        127.0.0.1
-    EOS
+  EOS
   end
 
   def named_local; <<~EOS
@@ -128,14 +126,14 @@ class Bind < Formula
                   IN      NS      localhost.
 
     1       IN      PTR     localhost.
-    EOS
+  EOS
   end
 
   plist_options :startup => true
 
   def plist; <<~EOS
     <?xml version="1.0" encoding="UTF-8"?>
-    <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "https://www.apple.com/DTDs/PropertyList-1.0.dtd">
+    <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
     <plist version="1.0">
     <dict>
       <key>EnableTransactions</key>
@@ -155,7 +153,7 @@ class Bind < Formula
       <false/>
     </dict>
     </plist>
-    EOS
+  EOS
   end
 
   test do
