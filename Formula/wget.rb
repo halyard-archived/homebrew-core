@@ -1,8 +1,8 @@
 class Wget < Formula
   desc "Internet file retriever"
   homepage "https://www.gnu.org/software/wget/"
-  url "https://ftp.gnu.org/gnu/wget/wget-1.19.5.tar.gz"
-  sha256 "b39212abe1a73f2b28f4c6cb223c738559caac91d6e416a6d91d4b9d55c9faee"
+  url "https://ftp.gnu.org/gnu/wget/wget-1.20.1.tar.gz"
+  sha256 "b783b390cb571c837b392857945f5a1f00ec6b043177cc42abb8ee1b542ee1b3"
 
   head do
     url "https://git.savannah.gnu.org/git/wget.git"
