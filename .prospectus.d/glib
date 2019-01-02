@@ -3,7 +3,7 @@ item do
     url_xpath
     url 'https://developer.gnome.org/glib/stable/'
     xpath '//p[@class="releaseinfo"]'
-    regex /\s+for GLib ([\d.]+)\n.*/m
+    regex /^for GLib ([\d.]+)\n.*/m
   end
 
   actual do
