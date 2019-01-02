@@ -3,6 +3,7 @@ item do
     github_release
     repo 'swagger-api/swagger-codegen'
     regex /^v([\d.]+)$/
+    filter /^v[^2]\.[\d.]+$/
   end
 
   actual do
