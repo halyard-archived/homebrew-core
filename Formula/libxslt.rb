@@ -1,24 +1,12 @@
 class Libxslt < Formula
   desc "C XSLT library for GNOME"
   homepage "http://xmlsoft.org/XSLT/"
-  url "http://xmlsoft.org/sources/libxslt-1.1.32.tar.gz"
-  sha256 "526ecd0abaf4a7789041622c3950c0e7f2c4c8835471515fd77eec684a355460"
-
-  head do
-    url "https://git.gnome.org/browse/libxslt.git"
-
-    depends_on "autoconf" => :build
-    depends_on "automake" => :build
-    depends_on "libtool" => :build
-
-    # https://bugzilla.gnome.org/show_bug.cgi?id=743148
-    patch :DATA
-  end
+  url "http://xmlsoft.org/sources/libxslt-1.1.33.tar.gz"
+  sha256 "8e36605144409df979cab43d835002f63988f3dc94d5d3537c12796db90e38c8"
 
   keg_only :provided_by_macos
 
   depends_on "libxml2"
-
 
   def install
     if build.head?
