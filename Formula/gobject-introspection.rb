@@ -1,8 +1,8 @@
 class GobjectIntrospection < Formula
   desc "Generate introspection data for GObject libraries"
   homepage "https://live.gnome.org/GObjectIntrospection"
-  url "https://download.gnome.org/sources/gobject-introspection/1.58/gobject-introspection-1.58.3.tar.xz"
-  sha256 "025b632bbd944dcf11fc50d19a0ca086b83baf92b3e34936d008180d28cdc3c8"
+  url "https://download.gnome.org/sources/gobject-introspection/1.59/gobject-introspection-1.59.2.tar.xz"
+  sha256 "643b1b18ec16baf82ce46ad6dd0a0aee18abe667a25997c50070f68f1417daae"
 
   depends_on "cairo"
   depends_on "glib"
