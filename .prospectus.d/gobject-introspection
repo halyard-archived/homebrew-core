@@ -3,6 +3,8 @@ item do
     gitlab_tag
     repo 'GNOME/gobject-introspection'
     endpoint 'https://gitlab.gnome.org'
+    regex /^(\d+\.\d*[02468]\.\d+)$/
+    filter /^(\d+\.\d*[02468]\.\d+)$/
   end
 
   actual do
