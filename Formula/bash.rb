@@ -3,7 +3,7 @@ class Bash < Formula
   homepage "https://www.gnu.org/software/bash/"
   url "https://ftp.gnu.org/gnu/bash/bash-5.0.tar.gz"
   mirror "https://mirrors.kernel.org/gnu/bash/bash-5.0.tar.gz"
-  version "5.0.0"
+  version "5.0"
   sha256 "b4a80f2ac66170b2913efbfb9f2594f1f76c7b1afd11f799e22035d63077fb4d"
   head "https://git.savannah.gnu.org/git/bash.git"
 
