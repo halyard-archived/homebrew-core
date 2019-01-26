@@ -3,8 +3,8 @@ item do
     url_xpath
     url 'https://git.savannah.gnu.org/cgit/bash.git/log/'
     xpath '//*[@id="cgit"]/div/table/tr[2]/td[2]/a[1]'
-    regex /[bB]ash-([\d.]+) distribution sources and documentation/
-    #regex /Bash-([\d.]+) patch (\d+)/, '\1.\2'
+    #regex /[bB]ash-([\d.]+) distribution sources and documentation/
+    regex /Bash-([\d.]+) patch (\d+)/, '\1.\2'
   end
 
   actual do
