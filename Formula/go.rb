@@ -3,8 +3,9 @@ class Go < Formula
   homepage "https://golang.org"
 
   stable do
-    url "https://dl.google.com/go/go1.11.4.src.tar.gz"
-    sha256 "4cfd42720a6b1e79a8024895fa6607b69972e8e32446df76d6ce79801bbadb15"
+    url "https://dl.google.com/go/go1.11.5.src.tar.gz"
+    mirror "https://fossies.org/linux/misc/go1.11.5.src.tar.gz"
+    sha256 "bc1ef02bb1668835db1390a2e478dcbccb5dd16911691af9d75184bbe5aa943e"
 
     go_version = version.to_s.split(".")[0..1].join(".")
     resource "gotools" do
@@ -21,11 +22,6 @@ class Go < Formula
     end
   end
 
-  option "without-cgo", "Build without cgo (also disables race detector)"
-  option "without-race", "Build without race detector"
-
-  depends_on :macos => :mountain_lion
-
   # Don't update this unless this version cannot bootstrap the new version.
   resource "gobootstrap" do
     url "https://storage.googleapis.com/golang/go1.7.darwin-amd64.tar.gz"
@@ -34,13 +30,18 @@ class Go < Formula
   end
 
   def install
+    # Temporary workaround for garbage folders which were included in the 1.11.5 release tarball
+    mv Dir.glob("go/*"), "./"
+    rm_rf "go"
+    rm_rf "gocache"
+    rm_rf "tmp"
+
     (buildpath/"gobootstrap").install resource("gobootstrap")
     ENV["GOROOT_BOOTSTRAP"] = buildpath/"gobootstrap"
 
     cd "src" do
       ENV["GOROOT_FINAL"] = libexec
       ENV["GOOS"]         = "darwin"
-      ENV["CGO_ENABLED"]  = "0" if build.without?("cgo")
       system "./make.bash", "--no-clean"
     end
 
@@ -49,14 +50,11 @@ class Go < Formula
     libexec.install Dir["*"]
     bin.install_symlink Dir[libexec/"bin/go*"]
 
-    # Race detector only supported on amd64 platforms.
-    # https://golang.org/doc/articles/race_detector.html
-    if build.with?("cgo") && build.with?("race") && MacOS.prefer_64_bit?
-      system bin/"go", "install", "-race", "std"
-    end
+    system bin/"go", "install", "-race", "std"
 
     # Build and install godoc
     ENV.prepend_path "PATH", bin
+    ENV["GO111MODULE"] = "on"
     ENV["GOPATH"] = buildpath
     (buildpath/"src/golang.org/x/tools").install resource("gotools")
     cd "src/golang.org/x/tools/cmd/godoc/" do
@@ -64,16 +62,6 @@ class Go < Formula
       (libexec/"bin").install "godoc"
     end
     bin.install_symlink libexec/"bin/godoc"
-  end
-
-  def caveats; <<~EOS
-    A valid GOPATH is required to use the `go get` command.
-    If $GOPATH is not specified, $HOME/go will be used by default:
-      https://golang.org/doc/code.html#GOPATH
-
-    You may wish to add the GOROOT-based install location to your PATH:
-      export PATH=$PATH:#{opt_libexec}/bin
-    EOS
   end
 
   test do
@@ -95,9 +83,7 @@ class Go < Formula
     assert_predicate libexec/"bin/godoc", :exist?
     assert_predicate libexec/"bin/godoc", :executable?
 
-    if build.with? "cgo"
-      ENV["GOOS"] = "freebsd"
-      system bin/"go", "build", "hello.go"
-    end
+    ENV["GOOS"] = "freebsd"
+    system bin/"go", "build", "hello.go"
   end
 end
