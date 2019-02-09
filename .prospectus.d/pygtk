@@ -1,7 +1,8 @@
 item do
   expected do
-    github_tag
-    repo 'GNOME/pygtk'
+    gitlab_tag
+    repo 'Archive/pygtk'
+    endpoint 'https://gitlab.gnome.org'
     regex /^PYGTK_(\d+)_(\d+)_(\d+)$/, '\1.\2.\3'
     filter /^PYGTK_(\d+)_(\d+)_(\d+)$/
   end
