@@ -5,9 +5,7 @@ class Aria2 < Formula
   sha256 "3a44a802631606e138a9e172a3e9f5bcbaac43ce2895c1d8e2b46f30487e77a3"
 
   depends_on "pkg-config" => :build
-  depends_on "libssh2" => :optional
-
-  needs :cxx14
+  depends_on "libssh2"
 
   def install
     # Fix "error: use of undeclared identifier 'make_unique'"
@@ -19,14 +17,13 @@ class Aria2 < Formula
       --disable-dependency-tracking
       --prefix=#{prefix}
       --with-appletls
+      --with-libssh2
       --without-openssl
       --without-gnutls
       --without-libgmp
       --without-libnettle
       --without-libgcrypt
     ]
-
-    args << "--with-libssh2" if build.with? "libssh2"
 
     system "./configure", *args
     system "make", "install"
