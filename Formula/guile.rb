@@ -12,19 +12,14 @@ class Guile < Formula
     depends_on "gettext" => :build
   end
 
+  depends_on "gnu-sed" => :build
   depends_on "bdw-gc"
   depends_on "gmp"
   depends_on "libffi"
   depends_on "libtool"
   depends_on "libunistring"
-  depends_on "pkg-config"
+  depends_on "pkg-config" # guile-config is a wrapper around pkg-config.
   depends_on "readline"
-
-
-  fails_with :clang do
-    build 211
-    cause "Segfaults during compilation"
-  end
 
   def install
     system "./autogen.sh" unless build.stable?
@@ -37,6 +32,15 @@ class Guile < Formula
     # A really messed up workaround required on macOS --mkhl
     Pathname.glob("#{lib}/*.dylib") do |dylib|
       lib.install_symlink dylib.basename => "#{dylib.basename(".dylib")}.so"
+    end
+
+    # This is either a solid argument for guile including options for
+    # --with-xyz-prefix= for libffi and bdw-gc or a solid argument for
+    # Homebrew automatically removing Cellar paths from .pc files in favour
+    # of opt_prefix usage everywhere.
+    inreplace lib/"pkgconfig/guile-2.2.pc" do |s|
+      s.gsub! Formula["bdw-gc"].prefix.realpath, Formula["bdw-gc"].opt_prefix
+      s.gsub! Formula["libffi"].prefix.realpath, Formula["libffi"].opt_prefix
     end
 
     (share/"gdb/auto-load").install Dir["#{lib}/*-gdb.scm"]

@@ -6,14 +6,6 @@ class Mpfr < Formula
 
   depends_on "gmp"
 
-  fails_with :clang do
-    build 421
-    cause <<~EOS
-      clang build 421 segfaults while building in superenv;
-      see https://github.com/Homebrew/homebrew/issues/15061
-    EOS
-  end
-
   def install
     system "./configure", "--disable-dependency-tracking", "--prefix=#{prefix}",
                           "--disable-silent-rules"
