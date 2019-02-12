@@ -2,37 +2,45 @@ class Rust < Formula
   desc "Safe, concurrent, practical language"
   homepage "https://www.rust-lang.org/"
 
-  url "https://static.rust-lang.org/dist/rustc-1.31.1-src.tar.gz"
-  sha256 "91d2fc22f08d986adab7a54eb3a6a9b99e490f677d2d092e5b9e4e069c23686a"
+  stable do
+    url "https://static.rust-lang.org/dist/rustc-1.32.0-src.tar.gz"
+    sha256 "4c594c7712a0e7e8eae6526c464bf6ea1d82f77b4f61717c3fc28fb27ba2224a"
 
-  option "with-llvm", "Build with brewed LLVM. By default, Rust's LLVM will be used."
+    resource "cargo" do
+      url "https://github.com/rust-lang/cargo.git",
+          :tag      => "0.33.0",
+          :revision => "8610973aaf48615ba7dc9a38a9a2795ba6f36a31"
+    end
+
+    resource "racer" do
+      # Racer should stay < 2.1 for now as 2.1 needs the nightly build of rust
+      # See https://github.com/racer-rust/racer/tree/v2.1.2#installation
+      url "https://github.com/racer-rust/racer/archive/2.0.14.tar.gz"
+      sha256 "0442721c01ae4465843cb73b24f6caa0127c3308d72b944ad75736164756e522"
+    end
+  end
+
+  head do
+    url "https://github.com/rust-lang/rust.git"
+
+    resource "cargo" do
+      url "https://github.com/rust-lang/cargo.git"
+    end
+
+    resource "racer" do
+      url "https://github.com/racer-rust/racer.git"
+    end
+  end
 
   depends_on "cmake" => :build
   depends_on "libssh2"
-  depends_on "openssl@1.0"
+  depends_on "openssl"
   depends_on "pkg-config"
-  depends_on "llvm" => :optional
-
-  # According to the official readme, GCC 4.7+ is required
-  fails_with :gcc_4_2
-  ("4.3".."4.6").each do |n|
-    fails_with :gcc => n
-  end
-
-  resource "cargo" do
-    url "https://github.com/rust-lang/cargo.git", :tag => "0.32.0",
-      :revision => "339d9f9c8f400010df3282ae5582bf3a0f739004"
-  end
-
-  resource "racer" do
-    url "https://github.com/racer-rust/racer/archive/2.1.6.tar.gz"
-    sha256 "8b51e4c40d47f1453d7507e8c7a4f7309e11487a53a047e0d04b01a4bf010579"
-  end
 
   resource "cargobootstrap" do
     # From https://github.com/rust-lang/rust/blob/#{version}/src/stage0.txt
-    url "https://static.rust-lang.org/dist/cargo-0.31.0-x86_64-apple-darwin.tar.gz"
-    sha256 "878129ffa369cdc09e7e414aeca8a72a7b14c8e50281b025e73e2ab87d690df9"
+    url "https://static.rust-lang.org/dist/2018-12-20/cargo-0.32.0-x86_64-apple-darwin.tar.gz"
+    sha256 "1b4859322e731d90209a4f30cc63df10525ae77d7b7d964c09e3f7e6f0ae3b95"
   end
 
   def install
@@ -42,7 +50,7 @@ class Rust < Formula
 
     # Ensure that the `openssl` crate picks up the intended library.
     # https://crates.io/crates/openssl#manual-configuration
-    ENV["OPENSSL_DIR"] = Formula["openssl@1.0"].opt_prefix
+    ENV["OPENSSL_DIR"] = Formula["openssl"].opt_prefix
 
     # Fix build failure for cmake v0.1.24 "error: internal compiler error:
     # src/librustc/ty/subst.rs:127: impossible case reached" on 10.11, and for
@@ -52,8 +60,12 @@ class Rust < Formula
     ENV["SDKROOT"] = MacOS.sdk_path
 
     args = ["--prefix=#{prefix}"]
-    args << "--llvm-root=#{Formula["llvm"].opt_prefix}" if build.with? "llvm"
-    args << "--release-channel=stable"
+    args << "--disable-rpath" if build.head?
+    if build.head?
+      args << "--release-channel=nightly"
+    else
+      args << "--release-channel=stable"
+    end
     system "./configure", *args
     system "make"
     system "make", "install"
@@ -65,7 +77,7 @@ class Rust < Formula
 
     resource("cargo").stage do
       ENV["RUSTC"] = bin/"rustc"
-      system "cargo", "install", "--root", prefix, "--path", "."
+      system "cargo", "install", "--root", prefix, "--path", ".", "--features", "curl-sys/force-system-lib-on-osx"
     end
 
     resource("racer").stage do
