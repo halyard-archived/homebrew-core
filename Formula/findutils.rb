@@ -5,11 +5,6 @@ class Findutils < Formula
   mirror "https://ftpmirror.gnu.org/findutils/findutils-4.6.0.tar.gz"
   sha256 "ded4c9f73731cd48fec3b6bdaccce896473b6d8e337e9612e16cf1431bb1169d"
 
-  option "with-default-names", "Do not prepend 'g' to the binary"
-
-  deprecated_option "default-names" => "with-default-names"
-
-
   def install
     # Work around unremovable, nested dirs bug that affects lots of
     # GNU projects. See:
@@ -24,59 +19,47 @@ class Findutils < Formula
       --localstatedir=#{var}/locate
       --disable-dependency-tracking
       --disable-debug
+      --program-prefix=g
     ]
-    args << "--program-prefix=g" if build.without? "default-names"
 
     system "./configure", *args
     system "make", "install"
 
     # https://savannah.gnu.org/bugs/index.php?46846
     # https://github.com/Homebrew/homebrew/issues/47791
-    updatedb = (build.with?("default-names") ? "updatedb" : "gupdatedb")
-    (libexec/"bin").install bin/updatedb
-    (bin/updatedb).write <<~EOS
+    (libexec/"bin").install bin/"gupdatedb"
+    (bin/"gupdatedb").write <<~EOS
       #!/bin/sh
       export LC_ALL='C'
-      exec "#{libexec}/bin/#{updatedb}" "$@"
+      exec "#{libexec}/bin/gupdatedb" "$@"
     EOS
 
-    if build.without? "default-names"
-      [[prefix, bin], [share, man/"*"]].each do |base, path|
-        Dir[path/"g*"].each do |p|
-          f = Pathname.new(p)
-          gnupath = "gnu" + f.relative_path_from(base).dirname
-          (libexec/gnupath).install_symlink f => f.basename.sub(/^g/, "")
-        end
+    [[prefix, bin], [share, man/"*"]].each do |base, path|
+      Dir[path/"g*"].each do |p|
+        f = Pathname.new(p)
+        gnupath = "gnu" + f.relative_path_from(base).dirname
+        (libexec/gnupath).install_symlink f => f.basename.sub(/^g/, "")
       end
     end
+
+    libexec.install_symlink "gnuman" => "man"
   end
 
   def post_install
     (var/"locate").mkpath
   end
 
-  def caveats
-    if build.without? "default-names"
-      <<~EOS
-        All commands have been installed with the prefix 'g'.
-        If you do not want the prefix, install using the "with-default-names" option.
-
-        If you need to use these commands with their normal names, you
-        can add a "gnubin" directory to your PATH from your bashrc like:
-
-            PATH="#{opt_libexec}/gnubin:$PATH"
-
-        Additionally, you can access their man pages with normal names if you add
-        the "gnuman" directory to your MANPATH from your bashrc as well:
-
-            MANPATH="#{opt_libexec}/gnuman:$MANPATH"
-      EOS
-    end
+  def caveats; <<~EOS
+    All commands have been installed with the prefix "g".
+    If you need to use these commands with their normal names, you
+    can add a "gnubin" directory to your PATH from your bashrc like:
+      PATH="#{opt_libexec}/gnubin:$PATH"
+  EOS
   end
 
   test do
-    find = (build.with?("default-names") ? "find" : "gfind")
     touch "HOMEBREW"
-    assert_match "HOMEBREW", shell_output("#{bin}/#{find} .")
+    assert_match "HOMEBREW", shell_output("#{bin}/gfind .")
+    assert_match "HOMEBREW", shell_output("#{opt_libexec}/gnubin/find .")
   end
 end

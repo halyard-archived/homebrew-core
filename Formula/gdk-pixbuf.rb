@@ -4,16 +4,20 @@ class GdkPixbuf < Formula
   url "https://download.gnome.org/sources/gdk-pixbuf/2.38/gdk-pixbuf-2.38.0.tar.xz"
   sha256 "dd50973c7757bcde15de6bcd3a6d462a445efd552604ae6435a0532fbbadae47"
 
-  option "with-relocations", "Build with relocation support for bundles"
-  option "without-modules", "Disable dynamic module loading"
-
+  depends_on "gobject-introspection" => :build
+  depends_on "meson-internal" => :build
+  depends_on "ninja" => :build
   depends_on "pkg-config" => :build
+  depends_on "python" => :build
   depends_on "glib"
-  depends_on "gobject-introspection"
   depends_on "jpeg"
   depends_on "libpng"
   depends_on "libtiff"
 
+  patch do
+    url "https://raw.githubusercontent.com/Homebrew/formula-patches/3d39ffd/gdk-pixbuf/meson-patches.diff"
+    sha256 "eb78bdfd5452c617ea0873629a5ec8f502a986357aa2d1a462dc9f2551b37c38"
+  end
 
   # gdk-pixbuf has an internal version number separate from the overall
   # version number that specifies the location of its module and cache
@@ -28,27 +32,27 @@ class GdkPixbuf < Formula
   end
 
   def install
-    # fix libtool versions
-    # https://bugzilla.gnome.org/show_bug.cgi?id=776892
-    inreplace "configure", /LT_VERSION_INFO=.+$/, "LT_VERSION_INFO=\"3602:0:3602\""
-    ENV.append_to_cflags "-DGDK_PIXBUF_LIBDIR=\\\"#{HOMEBREW_PREFIX}/lib\\\""
+    inreplace "gdk-pixbuf/meson.build",
+              "-DGDK_PIXBUF_LIBDIR=\"@0@\"'.format(gdk_pixbuf_libdir)",
+              "-DGDK_PIXBUF_LIBDIR=\"@0@\"'.format('#{HOMEBREW_PREFIX}/lib')"
+
     args = %W[
-      --disable-dependency-tracking
-      --disable-maintainer-mode
-      --enable-debug=no
       --prefix=#{prefix}
-      --enable-introspection=yes
-      --disable-Bsymbolic
-      --enable-static
-      --without-gdiplus
+      -Dx11=false
+      -Ddocs=false
+      -Dgir=true
+      -Drelocatable=false
+      -Dnative_windows_loaders=false
+      -Dinstalled_tests=false
+      -Dman=false
     ]
 
-    args << "--enable-relocations" if build.with?("relocations")
-    args << "--disable-modules" if build.without?("modules")
-
-    system "./configure", *args
-    system "make"
-    system "make", "install"
+    ENV["DESTDIR"] = "/"
+    mkdir "build" do
+      system "meson", *args, ".."
+      system "ninja", "-v"
+      system "ninja", "install"
+    end
 
     # Other packages should use the top-level modules directory
     # rather than dumping their files into the gdk-pixbuf keg.
@@ -57,9 +61,6 @@ class GdkPixbuf < Formula
       s.change_make_var! "gdk_pixbuf_binarydir",
         HOMEBREW_PREFIX/"lib/gdk-pixbuf-#{gdk_so_ver}"/libv
     end
-
-    # Remove the cache. We will regenerate it in post_install
-    (lib/"gdk-pixbuf-#{gdk_so_ver}/#{gdk_module_ver}/loaders.cache").unlink
   end
 
   # The directory that loaders.cache gets linked into, also has the "loaders"
@@ -71,17 +72,6 @@ class GdkPixbuf < Formula
   def post_install
     ENV["GDK_PIXBUF_MODULEDIR"] = "#{module_dir}/loaders"
     system "#{bin}/gdk-pixbuf-query-loaders", "--update-cache"
-  end
-
-  def caveats
-    if build.with?("relocations") || HOMEBREW_PREFIX.to_s != "/usr/local"
-      <<~EOS
-        Programs that require this module need to set the environment variable
-          export GDK_PIXBUF_MODULEDIR="#{module_dir}/loaders"
-        If you need to manually update the query loader cache, set these variables then run
-          #{bin}/gdk-pixbuf-query-loaders --update-cache
-      EOS
-    end
   end
 
   test do

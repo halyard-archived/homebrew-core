@@ -1,8 +1,8 @@
 class Curl < Formula
   desc "Get a file from an HTTP, HTTPS or FTP server"
   homepage "https://curl.haxx.se/"
-  url "https://curl.haxx.se/download/curl-7.63.0.tar.bz2"
-  sha256 "9bab7ed4ecff77020a312d84cc5fb7eb02d58419d218f267477a724a17fd8dd8"
+  url "https://curl.haxx.se/download/curl-7.64.0.tar.bz2"
+  sha256 "d573ba1c2d1cf9d8533fadcce480d778417964e8d04ccddcc76e591d544cf2eb"
 
   head do
     url "https://github.com/curl/curl.git"
@@ -14,17 +14,7 @@ class Curl < Formula
 
   keg_only :provided_by_macos
 
-  option "with-libssh2", "Build with scp and sftp support"
-  option "with-c-ares", "Build with C-Ares async DNS support"
-  option "with-gssapi", "Build with GSSAPI/Kerberos authentication support."
-  option "with-nghttp2", "Build with HTTP/2 support (requires OpenSSL)"
-
   depends_on "pkg-config" => :build
-  depends_on "openssl"
-  depends_on "c-ares" => :optional
-  depends_on "libssh2" => :optional
-  depends_on "nghttp2" => :optional
-
 
   def install
     system "./buildconf" if build.head?
@@ -34,26 +24,14 @@ class Curl < Formula
       --disable-dependency-tracking
       --disable-silent-rules
       --prefix=#{prefix}
+      --with-darwinssl
+      --without-ca-bundle
+      --without-ca-path
     ]
-
-    # cURL has a new firm desire to find ssl with PKG_CONFIG_PATH instead of using
-    # "--with-ssl" any more. "when possible, set the PKG_CONFIG_PATH environment
-    # variable instead of using this option". Multi-SSL choice breaks w/o using it.
-    ENV.prepend_path "PKG_CONFIG_PATH", "#{Formula["openssl"].opt_lib}/pkgconfig"
-    args << "--with-ssl=#{Formula["openssl"].opt_prefix}"
-    args << "--with-ca-bundle=#{etc}/openssl/cert.pem"
-    args << "--with-ca-path=#{etc}/openssl/certs"
-
-    args << (build.with?("libssh2") ? "--with-libssh2" : "--without-libssh2")
-
-    if build.with? "c-ares"
-      args << "--enable-ares=#{Formula["c-ares"].opt_prefix}"
-    else
-      args << "--disable-ares"
-    end
 
     system "./configure", *args
     system "make", "install"
+    system "make", "install", "-C", "scripts"
     libexec.install "lib/mk-ca-bundle.pl"
   end
 
