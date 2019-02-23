@@ -1,8 +1,8 @@
 class Scons < Formula
   desc "Substitute for classic 'make' tool with autoconf/automake functionality"
   homepage "https://www.scons.org/"
-  url "https://downloads.sourceforge.net/project/scons/scons/3.0.3/scons-3.0.3.tar.gz"
-  sha256 "d8ec796b52586e269aec72c40b82289023c9ac9878c328bbf379a046460196f3"
+  url "https://downloads.sourceforge.net/project/scons/scons/3.0.4/scons-3.0.4.tar.gz"
+  sha256 "e2b8b36e25492720a05c0f0a92a219b42d11ce0c51e3397a1e8296dfea1d9b1a"
 
   def install
     man1.install gzip("scons-time.1", "scons.1", "sconsign.1")
