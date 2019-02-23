@@ -1,9 +1,8 @@
 class LibgpgError < Formula
   desc "Common error values for all GnuPG components"
   homepage "https://www.gnupg.org/related_software/libgpg-error/"
-  url "https://gnupg.org/ftp/gcrypt/libgpg-error/libgpg-error-1.33.tar.bz2"
-  sha256 "5d38826656e746c936e7742d9cde072b50baa3c4c49daa168a56813612bf03ff"
-
+  url "https://gnupg.org/ftp/gcrypt/libgpg-error/libgpg-error-1.35.tar.bz2"
+  sha256 "cbd5ee62a8a8c88d48c158fff4fc9ead4132aacd1b4a56eb791f9f997d07e067"
 
   def install
     system "./configure", "--disable-dependency-tracking",
