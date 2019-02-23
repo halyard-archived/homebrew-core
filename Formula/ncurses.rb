@@ -1,13 +1,12 @@
 class Ncurses < Formula
   desc "Text-based UI library"
   homepage "https://www.gnu.org/software/ncurses/"
-  url "https://invisible-mirror.net/archives/ncurses/current/ncurses-6.1-20190112.tgz"
-  sha256 "a25b7c37c8b50e2a1b02f9df6f65beafcab158e284b71600a9fe8bc868c84983"
+  url "https://invisible-mirror.net/archives/ncurses/current/ncurses-6.1-20190216.tgz"
+  sha256 "8204301ff26fed5a62ecab0a7e89ecf153375fdfa9f526b29ec6380330bc140a"
 
   keg_only :provided_by_macos
 
   depends_on "pkg-config" => :build
-
 
   def install
     # Fix the build for GCC 5.1
