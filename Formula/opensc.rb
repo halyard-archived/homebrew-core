@@ -5,28 +5,22 @@ class Opensc < Formula
   sha256 "2c5a0e4df9027635290b9c0f3addbbf0d651db5ddb0ab789cb0e978f02fd5826"
   head "https://github.com/OpenSC/OpenSC.git"
 
-  option "without-man-pages", "Skip building manual pages"
-
   depends_on "autoconf" => :build
   depends_on "automake" => :build
-  depends_on "docbook-xsl" => :build if build.with? "man-pages"
+  depends_on "docbook-xsl" => :build
   depends_on "libtool" => :build
   depends_on "pkg-config" => :build
   depends_on "openssl"
-
 
   def install
     args = %W[
       --disable-dependency-tracking
       --prefix=#{prefix}
-      --enable-sm
       --enable-openssl
       --enable-pcsc
+      --enable-sm
+      --with-xsl-stylesheetsdir=#{Formula["docbook-xsl"].opt_prefix}/docbook-xsl
     ]
-
-    if build.with? "man-pages"
-      args << "--with-xsl-stylesheetsdir=#{Formula["docbook-xsl"].opt_prefix}/docbook-xsl"
-    end
 
     system "./bootstrap"
     system "./configure", *args
