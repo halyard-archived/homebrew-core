@@ -1,12 +1,12 @@
 class Ykpers < Formula
   desc "YubiKey personalization library and tool"
   homepage "https://developers.yubico.com/yubikey-personalization/"
-  url "https://developers.yubico.com/yubikey-personalization/Releases/ykpers-1.19.0.tar.gz"
-  sha256 "2bc8afa16d495a486582bad916d16de1f67c0cce9bb0a35c3123376c2d609480"
+  url "https://developers.yubico.com/yubikey-personalization/Releases/ykpers-1.19.3.tar.gz"
+  sha256 "d9513ec7576bea36be37e3fb87a51d4522a28b6b0611ce64ad9fdf2cb7b21b4a"
 
   depends_on "pkg-config" => :build
+  depends_on "json-c"
   depends_on "libyubikey"
-  depends_on "json-c" => :recommended
 
   def install
     libyubikey_prefix = Formula["libyubikey"].opt_prefix
