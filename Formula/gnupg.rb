@@ -1,14 +1,8 @@
 class Gnupg < Formula
-  desc "GNU Privacy Guard: a free PGP replacement"
-  homepage "https://www.gnupg.org/"
-  url "https://gnupg.org/ftp/gcrypt/gnupg/gnupg-2.2.12.tar.bz2"
-  sha256 "db030f8b4c98640e91300d36d516f1f4f8fe09514a94ea9fc7411ee1a34082cb"
-
-  head do
-    url "https://dev.gnupg.org/source/gnupg.git"
-    depends_on "autoconf" => :build
-    depends_on "automake" => :build
-  end
+  desc "GNU Pretty Good Privacy (PGP) package"
+  homepage "https://gnupg.org/"
+  url "https://gnupg.org/ftp/gcrypt/gnupg/gnupg-2.2.13.tar.bz2"
+  sha256 "76c787a955f9e6e0ead47c9be700bfb9d454f955a7b7c7e697aa719bac7b11d8"
 
   depends_on "pkg-config" => :build
   depends_on "adns"
@@ -21,32 +15,16 @@ class Gnupg < Formula
   depends_on "libusb"
   depends_on "npth"
   depends_on "pinentry"
-  depends_on "readline"
-
-  #conflicts_with "gpg-agent", :because => "This GnuPG 2.1 includes gpg-agent"
-  #conflicts_with "dirmngr", :because => "This GnuPG 2.1 includes dirmngr"
-  #conflicts_with "gnupg2", :because => "This GnuPG 2.1 includes gnupg2 (duh)"
 
   def install
-    args = %W[
-      --disable-dependency-tracking
-      --disable-silent-rules
-      --prefix=#{prefix}
-      --sbindir=#{bin}
-      --sysconfdir=#{etc}
-      --enable-symcryptrun
-      --with-pinentry-pgm=#{Formula["pinentry"].opt_bin}/pinentry
-      --with-readline=#{Formula["readline"].opt_prefix}
-      --enable-large-secmem
-      --enable-all-tests
-    ]
-
-    if build.head?
-      args << '--enable-maintainer-mode'
-      system './autogen.sh'
-      system 'autoconf'
-    end
-    system "./configure", *args
+    system "./configure", "--disable-dependency-tracking",
+                          "--disable-silent-rules",
+                          "--prefix=#{prefix}",
+                          "--sbindir=#{bin}",
+                          "--sysconfdir=#{etc}",
+                          "--enable-all-tests",
+                          "--enable-symcryptrun",
+                          "--with-pinentry-pgm=#{Formula["pinentry"].opt_bin}/pinentry"
     system "make"
     system "make", "check"
     system "make", "install"
@@ -58,7 +36,7 @@ class Gnupg < Formula
   end
 
   test do
-    (testpath/"batch.gpg").write <<-EOS.undent
+    (testpath/"batch.gpg").write <<~EOS
       Key-Type: RSA
       Key-Length: 2048
       Subkey-Type: RSA
