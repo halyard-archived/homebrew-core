@@ -4,9 +4,6 @@ class Luajit < Formula
   url "https://luajit.org/download/LuaJIT-2.0.5.tar.gz"
   sha256 "874b1f8297c697821f561f9b73b57ffd419ed8f4278c82e05b48806d30c1e979"
 
-  option "with-debug", "Build with debugging symbols"
-  option "with-52compat", "Build with additional Lua 5.2 compatibility"
-
   def install
     # 1 - Override the hardcoded gcc.
     # 2 - Remove the "-march=i686" so we can set the march in cflags.
@@ -16,18 +13,16 @@ class Luajit < Formula
       f.change_make_var! "CCOPT_x86", ""
     end
 
+    # Per https://luajit.org/install.html: If MACOSX_DEPLOYMENT_TARGET
+    # is not set then it's forced to 10.4, which breaks compile on Mojave.
+    ENV["MACOSX_DEPLOYMENT_TARGET"] = MacOS.version
+
     ENV.O2 # Respect the developer's choice.
 
     args = %W[PREFIX=#{prefix}]
 
-    cflags = []
-    cflags << "-DLUAJIT_ENABLE_LUA52COMPAT" if build.with? "52compat"
-    cflags << "-DLUAJIT_ENABLE_GC64" if !build.stable? && build.with?("gc64")
-
-    args << "XCFLAGS=#{cflags.join(" ")}" unless cflags.empty?
-
-    # This doesn't yet work under superenv because it removes "-g"
-    args << "CCDEBUG=-g" if build.with? "debug"
+    # Build with 64-bit support
+    args << "XCFLAGS=-DLUAJIT_ENABLE_GC64" if build.head?
 
     system "make", "amalg", *args
     system "make", "install", *args
@@ -44,10 +39,8 @@ class Luajit < Formula
               "INSTALL_LMOD=#{HOMEBREW_PREFIX}/share/lua/${abiver}"
       s.gsub! "INSTALL_CMOD=${prefix}/${multilib}/lua/${abiver}",
               "INSTALL_CMOD=#{HOMEBREW_PREFIX}/${multilib}/lua/${abiver}"
-      if build.without? "gc64"
-        s.gsub! "Libs:",
-                "Libs: -pagezero_size 10000 -image_base 100000000"
-      end
+      s.gsub! "Libs:",
+              "Libs: -pagezero_size 10000 -image_base 100000000"
     end
 
     # Having an empty Lua dir in lib/share can mess with other Homebrew Luas.
