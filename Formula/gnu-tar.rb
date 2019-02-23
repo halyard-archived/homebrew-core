@@ -1,55 +1,42 @@
 class GnuTar < Formula
   desc "GNU version of the tar archiving utility"
   homepage "https://www.gnu.org/software/tar/"
-  url "https://ftp.gnu.org/gnu/tar/tar-1.31.tar.gz"
-  sha256 "b471be6cb68fd13c4878297d856aebd50551646f4e3074906b1a74549c40d5a2"
-
-  option "with-default-names", "Do not prepend 'g' to the binary"
+  url "https://ftp.gnu.org/gnu/tar/tar-1.32.tar.gz"
+  mirror "https://ftpmirror.gnu.org/tar/tar-1.32.tar.gz"
+  sha256 "b59549594d91d84ee00c99cf2541a3330fed3a42c440503326dab767f2fbb96c"
 
   def install
-    # Work around unremovable, nested dirs bug that affects lots of
-    # GNU projects. See:
-    # https://github.com/Homebrew/homebrew/issues/45273
-    # https://github.com/Homebrew/homebrew/issues/44993
-    # This is thought to be an el_capitan bug:
-    # https://lists.gnu.org/archive/html/bug-tar/2015-10/msg00017.html
-    ENV["gl_cv_func_getcwd_abort_bug"] = "no" if MacOS.version == :el_capitan
+    args = %W[
+      --prefix=#{prefix}
+      --mandir=#{man}
+      --program-prefix=g
+    ]
 
-    args = ["--prefix=#{prefix}", "--mandir=#{man}"]
-    args << "--program-prefix=g" if build.without? "default-names"
-
+    system "./bootstrap" if build.head?
     system "./configure", *args
     system "make", "install"
 
     # Symlink the executable into libexec/gnubin as "tar"
-    if build.without? "default-names"
-      (libexec/"gnubin").install_symlink bin/"gtar" =>"tar"
-      (libexec/"gnuman/man1").install_symlink man1/"gtar.1" => "tar.1"
-    end
+    (libexec/"gnubin").install_symlink bin/"gtar" =>"tar"
+    (libexec/"gnuman/man1").install_symlink man1/"gtar.1" => "tar.1"
+
+    libexec.install_symlink "gnuman" => "man"
   end
 
-  def caveats
-    if build.without? "default-names" then <<~EOS
-      gnu-tar has been installed as "gtar".
+  def caveats; <<~EOS
+    GNU "tar" has been installed as "gtar".
+    If you need to use it as "tar", you can add a "gnubin" directory
+    to your PATH from your bashrc like:
 
-      If you really need to use it as "tar", you can add a "gnubin" directory
-      to your PATH from your bashrc like:
-
-          PATH="#{opt_libexec}/gnubin:$PATH"
-
-      Additionally, you can access their man pages with normal names if you add
-      the "gnuman" directory to your MANPATH from your bashrc as well:
-
-          MANPATH="#{opt_libexec}/gnuman:$MANPATH"
-
-      EOS
-    end
+        PATH="#{opt_libexec}/gnubin:$PATH"
+  EOS
   end
 
   test do
-    tar = build.with?("default-names") ? bin/"tar" : bin/"gtar"
     (testpath/"test").write("test")
-    system tar, "-czvf", "test.tar.gz", "test"
-    assert_match /test/, shell_output("#{tar} -xOzf test.tar.gz")
+    system bin/"gtar", "-czvf", "test.tar.gz", "test"
+    assert_match /test/, shell_output("#{bin}/gtar -xOzf test.tar.gz")
+
+    assert_match /test/, shell_output("#{opt_libexec}/gnubin/tar -xOzf test.tar.gz")
   end
 end
