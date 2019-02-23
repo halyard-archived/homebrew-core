@@ -3,7 +3,7 @@ item do
     url_xpath
     url 'https://sourceforge.net/projects/giflib/files/?source=navbar'
     xpath '//*[@id="files"]/div[2]/div/a[1]/span[2]'
-    regex /^giflib-([\d.]+)\.tar\.bz2 \([\d.]+ \w+\)$/
+    regex /^giflib-([\d.]+)\.tar\.gz \([\d.]+ \w+\)$/
   end
 
   actual do
