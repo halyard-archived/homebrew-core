@@ -4,7 +4,18 @@ class Bash < Formula
   url "https://ftp.gnu.org/gnu/bash/bash-5.0.tar.gz"
   mirror "https://mirrors.kernel.org/gnu/bash/bash-5.0.tar.gz"
   sha256 "b4a80f2ac66170b2913efbfb9f2594f1f76c7b1afd11f799e22035d63077fb4d"
-  head "https://git.savannah.gnu.org/git/bash.git"
+  version "5.0.2"
+
+  %w[
+    001 f2fe9e1f0faddf14ab9bfa88d450a75e5d028fedafad23b88716bd657c737289
+    002 87e87d3542e598799adb3e7e01c8165bc743e136a400ed0de015845f7ff68707
+  ].each_slice(2) do |p, checksum|
+    patch :p0 do
+      url "https://ftp.gnu.org/gnu/bash/bash-5.0-patches/bash50-#{p}"
+      mirror "https://mirrors.kernel.org/gnu/bash/bash-5.0-patches/bash50-#{p}"
+      sha256 checksum
+    end
+  end
 
   def install
     # When built with SSH_SOURCE_BASHRC, bash will source ~/.bashrc when
