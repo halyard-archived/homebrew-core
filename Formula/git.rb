@@ -5,16 +5,8 @@ class Git < Formula
   sha256 "9d2e91e2faa2ea61ba0a70201d023b36f54d846314591a002c610ea2ab81c3e9"
   head "https://github.com/git/git.git", :shallow => false
 
-  option "with-blk-sha1", "Compile with the block-optimized SHA1 implementation"
-  option "without-completions", "Disable bash/zsh completions from 'contrib' directory"
-  option "with-persistent-https", "Build git-remote-persistent-https from 'contrib' directory"
-
-  depends_on "go" => :build if build.with? "persistent-https"
-  depends_on "curl" => :optional
-  depends_on "gettext" => :optional
-  depends_on "openssl" => :optional
-  depends_on "pcre2" => :optional
-  depends_on "perl" => :optional
+  depends_on "gettext"
+  depends_on "pcre2"
 
   resource "html" do
     url "https://www.kernel.org/pub/software/scm/git/git-htmldocs-2.20.1.tar.xz"
@@ -26,41 +18,35 @@ class Git < Formula
     sha256 "060acce347cfb712d0c7dfe7578c5291fde2d3d807917b2828c8aae3c90876ba"
   end
 
+  resource "Net::SMTP::SSL" do
+    url "https://cpan.metacpan.org/authors/id/R/RJ/RJBS/Net-SMTP-SSL-1.04.tar.gz"
+    sha256 "7b29c45add19d3d5084b751f7ba89a8e40479a446ce21cfd9cc741e558332a00"
+  end
+
   def install
     # If these things are installed, tell Git build system not to use them
     ENV["NO_FINK"] = "1"
     ENV["NO_DARWIN_PORTS"] = "1"
-    ENV["V"] = "1" # build verbosely
     ENV["NO_R_TO_GCC_LINKER"] = "1" # pass arguments to LD correctly
     ENV["PYTHON_PATH"] = which("python")
     ENV["PERL_PATH"] = which("perl")
+    ENV["USE_LIBPCRE2"] = "1"
+    ENV["INSTALL_SYMLINKS"] = "1"
+    ENV["LIBPCREDIR"] = Formula["pcre2"].opt_prefix
+    ENV["V"] = "1" # build verbosely
 
     perl_version = Utils.popen_read("perl --version")[/v(\d+\.\d+)(?:\.\d+)?/, 1]
-    # If building with a non-system Perl search everywhere declared in @INC.
-    perl_inc = Utils.popen_read("perl -e 'print join\":\",@INC'").sub(":.", "")
 
-    if build.with? "perl"
-      ENV["PERLLIB_EXTRA"] = perl_inc
-    elsif MacOS.version >= :mavericks
-      ENV["PERLLIB_EXTRA"] = %W[
-        #{MacOS.active_developer_dir}
-        /Library/Developer/CommandLineTools
-        /Applications/Xcode.app/Contents/Developer
-      ].uniq.map do |p|
-        "#{p}/Library/Perl/#{perl_version}/darwin-thread-multi-2level"
-      end.join(":")
-    end
+    ENV["PERLLIB_EXTRA"] = %W[
+      #{MacOS.active_developer_dir}
+      /Library/Developer/CommandLineTools
+      /Applications/Xcode.app/Contents/Developer
+    ].uniq.map do |p|
+      "#{p}/Library/Perl/#{perl_version}/darwin-thread-multi-2level"
+    end.join(":")
 
     unless quiet_system ENV["PERL_PATH"], "-e", "use ExtUtils::MakeMaker"
       ENV["NO_PERL_MAKEMAKER"] = "1"
-    end
-
-    ENV["BLK_SHA1"] = "1" if build.with? "blk-sha1"
-    ENV["NO_GETTEXT"] = "1" if build.without? "gettext"
-
-    if build.with? "pcre2"
-      ENV["USE_LIBPCRE2"] = "1"
-      ENV["LIBPCREDIR"] = Formula["pcre2"].opt_prefix
     end
 
     args = %W[
@@ -71,21 +57,18 @@ class Git < Formula
       LDFLAGS=#{ENV.ldflags}
     ]
 
-    if build.with?("openssl") || MacOS.version < :yosemite
-      openssl_prefix = Formula["openssl"].opt_prefix
-      args += %W[NO_APPLE_COMMON_CRYPTO=1 OPENSSLDIR=#{openssl_prefix}]
-    else
-      args += %w[NO_OPENSSL=1 APPLE_COMMON_CRYPTO=1]
-    end
+    args += %w[NO_OPENSSL=1 APPLE_COMMON_CRYPTO=1]
 
     system "make", "install", *args
+
+    git_core = libexec/"git-core"
 
     # Install the macOS keychain credential helper
     cd "contrib/credential/osxkeychain" do
       system "make", "CC=#{ENV.cc}",
                      "CFLAGS=#{ENV.cflags}",
                      "LDFLAGS=#{ENV.ldflags}"
-      bin.install "git-credential-osxkeychain"
+      git_core.install "git-credential-osxkeychain"
       system "make", "clean"
     end
 
@@ -97,7 +80,7 @@ class Git < Formula
     # Install the netrc credential helper
     cd "contrib/credential/netrc" do
       system "make", "test"
-      bin.install "git-credential-netrc"
+      git_core.install "git-credential-netrc"
     end
 
     # Install git-subtree
@@ -105,26 +88,14 @@ class Git < Formula
       system "make", "CC=#{ENV.cc}",
                      "CFLAGS=#{ENV.cflags}",
                      "LDFLAGS=#{ENV.ldflags}"
-      bin.install "git-subtree"
+      git_core.install "git-subtree"
     end
 
-    if build.with? "persistent-https"
-      cd "contrib/persistent-https" do
-        system "make"
-        bin.install "git-remote-persistent-http",
-                    "git-remote-persistent-https",
-                    "git-remote-persistent-https--proxy"
-      end
-    end
-
-    if build.with? "completions"
-      # install the completion script first because it is inside "contrib"
-      bash_completion.install "contrib/completion/git-completion.bash"
-      bash_completion.install "contrib/completion/git-prompt.sh"
-
-      zsh_completion.install "contrib/completion/git-completion.zsh" => "_git"
-      cp "#{bash_completion}/git-completion.bash", zsh_completion
-    end
+    # install the completion script first because it is inside "contrib"
+    bash_completion.install "contrib/completion/git-completion.bash"
+    bash_completion.install "contrib/completion/git-prompt.sh"
+    zsh_completion.install "contrib/completion/git-completion.zsh" => "_git"
+    cp "#{bash_completion}/git-completion.bash", zsh_completion
 
     elisp.install Dir["contrib/emacs/*.el"]
     (share/"git-core").install "contrib"
@@ -138,10 +109,11 @@ class Git < Formula
     chmod 0644, Dir["#{share}/doc/git-doc/**/*.{html,txt}"]
     chmod 0755, Dir["#{share}/doc/git-doc/{RelNotes,howto,technical}"]
 
-    # To avoid this feature hooking into the system OpenSSL, remove it.
-    # If you need it, install git --with-openssl.
-    if MacOS.version >= :yosemite && build.without?("openssl")
-      rm "#{libexec}/git-core/git-imap-send"
+    rm "#{libexec}/git-core/git-imap-send"
+
+    # git-send-email needs Net::SMTP::SSL
+    resource("Net::SMTP::SSL").stage do
+      (share/"perl5").install "lib/Net"
     end
 
     # This is only created when building against system Perl, but it isn't
@@ -165,5 +137,14 @@ class Git < Formula
     system bin/"git", "add", "haunted", "house"
     system bin/"git", "commit", "-a", "-m", "Initial Commit"
     assert_equal "haunted\nhouse", shell_output("#{bin}/git ls-files").strip
+
+    # Check Net::SMTP::SSL was installed correctly.
+    %w[foo bar].each { |f| touch testpath/f }
+    system bin/"git", "add", "foo", "bar"
+    system bin/"git", "commit", "-a", "-m", "Second Commit"
+    assert_match "Authentication Required", shell_output(
+      "#{bin}/git send-email --to=dev@null.com --smtp-server=smtp.gmail.com " \
+      "--smtp-encryption=tls --confirm=never HEAD^ 2>&1", 255
+    )
   end
 end
