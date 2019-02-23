@@ -4,7 +4,7 @@ before_install:
 install:
 - git clone https://github.com/akerl/brew.git ~/.brew
 - git clone ../homebrew-core ~/.brew/Library/Taps/homebrew/homebrew-core
-- chmod g-w ~/.brew/Library/Taps/halyard/homebrew-core/Formula/*
+- chmod g-w ~/.brew/Library/Taps/homebrew/homebrew-core/Formula/*
 script:
 - "~/.brew/bin/brew audit --except=revision_and_version_scheme,url_is_not_binary ~/.brew/Library/Taps/halyard/homebrew-core/Formula/*"
 notifications:
