@@ -2,8 +2,8 @@ item do
   expected do
     github_tag
     repo 'akerl/voyager'
-    regex /^([\d.]+)$/
-    filter /^([\d.]+)$/
+    regex /^v([\d.]+)$/
+    filter /^v([\d.]+)$/
   end
 
   actual do
