@@ -2,40 +2,25 @@ class Rust < Formula
   desc "Safe, concurrent, practical language"
   homepage "https://www.rust-lang.org/"
 
-  stable do
-    url "https://static.rust-lang.org/dist/rustc-1.32.0-src.tar.gz"
-    sha256 "4c594c7712a0e7e8eae6526c464bf6ea1d82f77b4f61717c3fc28fb27ba2224a"
-
-    resource "cargo" do
-      url "https://github.com/rust-lang/cargo.git",
-          :tag      => "0.33.0",
-          :revision => "8610973aaf48615ba7dc9a38a9a2795ba6f36a31"
-    end
-
-    resource "racer" do
-      # Racer should stay < 2.1 for now as 2.1 needs the nightly build of rust
-      # See https://github.com/racer-rust/racer/tree/v2.1.2#installation
-      url "https://github.com/racer-rust/racer/archive/2.0.14.tar.gz"
-      sha256 "0442721c01ae4465843cb73b24f6caa0127c3308d72b944ad75736164756e522"
-    end
-  end
-
-  head do
-    url "https://github.com/rust-lang/rust.git"
-
-    resource "cargo" do
-      url "https://github.com/rust-lang/cargo.git"
-    end
-
-    resource "racer" do
-      url "https://github.com/racer-rust/racer.git"
-    end
-  end
+  url "https://static.rust-lang.org/dist/rustc-1.32.0-src.tar.gz"
+  sha256 "4c594c7712a0e7e8eae6526c464bf6ea1d82f77b4f61717c3fc28fb27ba2224a"
 
   depends_on "cmake" => :build
   depends_on "libssh2"
   depends_on "openssl"
   depends_on "pkg-config"
+
+  resource "cargo" do
+    url "https://github.com/rust-lang/cargo.git", :tag => "0.33.0",
+        :revision => "8610973aaf48615ba7dc9a38a9a2795ba6f36a31"
+  end
+
+  resource "racer" do
+    # Racer should stay < 2.1 for now as 2.1 needs the nightly build of rust
+    # See https://github.com/racer-rust/racer/tree/v2.1.2#installation
+    url "https://github.com/racer-rust/racer/archive/2.0.14.tar.gz"
+    sha256 "0442721c01ae4465843cb73b24f6caa0127c3308d72b944ad75736164756e522"
+  end
 
   resource "cargobootstrap" do
     # From https://github.com/rust-lang/rust/blob/#{version}/src/stage0.txt
@@ -60,12 +45,7 @@ class Rust < Formula
     ENV["SDKROOT"] = MacOS.sdk_path
 
     args = ["--prefix=#{prefix}"]
-    args << "--disable-rpath" if build.head?
-    if build.head?
-      args << "--release-channel=nightly"
-    else
-      args << "--release-channel=stable"
-    end
+    args << "--release-channel=stable"
     system "./configure", *args
     system "make"
     system "make", "install"
