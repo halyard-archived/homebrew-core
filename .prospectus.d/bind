@@ -2,7 +2,7 @@ item do
   expected do
     url_xpath
     url 'https://www.isc.org/downloads/'
-    xpath '//div[@class="row"][2]/div/div/div[@class="software_status"]/table/tbody/tr[2]/td[1]'
+    xpath '//div[@class="row"][4]/div/div/div[@class="software_status"]/table/tbody/tr[2]/td[1]'
   end
 
   actual do
