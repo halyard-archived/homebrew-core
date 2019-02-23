@@ -1,9 +1,8 @@
 class Node < Formula
   desc "Platform built on V8 to build network applications"
   homepage "https://nodejs.org/"
-  url "https://nodejs.org/dist/v11.9.0/node-v11.9.0.tar.gz"
-  sha256 "d7f3d73d443f52c1c689fe88b9e55c35401b2207d251dc47b2d6a86a6d95758b"
-  head "https://github.com/nodejs/node.git"
+  url "https://nodejs.org/dist/v11.10.0/node-v11.10.0.tar.gz"
+  sha256 "45835c210955cd05cab259e664cc19a6f2748dbda6bc9e13edc9a2e8cc498770"
 
   depends_on "pkg-config" => :build
   depends_on "python@2" => :build
@@ -12,8 +11,8 @@ class Node < Formula
   # We track major/minor from upstream Node releases.
   # We will accept *important* npm patch releases when necessary.
   resource "npm" do
-    url "https://registry.npmjs.org/npm/-/npm-6.5.0.tgz"
-    sha256 "b0c25f9610085da20921e7eec6ddcecef7fc5ffa6c1b2ddd4007edd5e8414eb2"
+    url "https://registry.npmjs.org/npm/-/npm-6.8.0.tgz"
+    sha256 "216f33e0cb87886f5601b4878302bd4ae822a8eeb06887fdb8986f64b4ede980"
   end
 
   def install
