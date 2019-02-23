@@ -2,51 +2,41 @@ class GnuSed < Formula
   desc "GNU implementation of the famous stream editor"
   homepage "https://www.gnu.org/software/sed/"
   url "https://ftp.gnu.org/gnu/sed/sed-4.7.tar.xz"
-  mirror "https://ftpmirror.gnu.org/sed/sed-4.7.tar.xz"
   sha256 "2885768cd0a29ff8d58a6280a270ff161f6a3deb5690b2be6c49f46d4c67bd6a"
 
-  option "with-default-names", "Do not prepend 'g' to the binary"
-
-  #conflicts_with "ssed", :because => "both install share/info/sed.info"
-
-  deprecated_option "default-names" => "with-default-names"
+  conflicts_with "ssed", :because => "both install share/info/sed.info"
 
   def install
-    args = ["--prefix=#{prefix}", "--disable-dependency-tracking"]
-    args << "--program-prefix=g" if build.without? "default-names"
+    args = %W[
+      --prefix=#{prefix}
+      --disable-dependency-tracking
+      --program-prefix=g
+    ]
 
     system "./configure", *args
     system "make", "install"
 
-    if build.without? "default-names"
-      (libexec/"gnubin").install_symlink bin/"gsed" =>"sed"
-      (libexec/"gnuman/man1").install_symlink man1/"gsed.1" => "sed.1"
-    end
+    (libexec/"gnubin").install_symlink bin/"gsed" =>"sed"
+    (libexec/"gnuman/man1").install_symlink man1/"gsed.1" => "sed.1"
+
+    libexec.install_symlink "gnuman" => "man"
   end
 
-  def caveats
-    if build.without? "default-names" then <<~EOS
-      The command has been installed with the prefix "g".
-      If you do not want the prefix, install using the "with-default-names" option.
+  def caveats; <<~EOS
+    GNU "sed" has been installed as "gsed".
+    If you need to use it as "sed", you can add a "gnubin" directory
+    to your PATH from your bashrc like:
 
-      If you need to use these commands with their normal names, you
-      can add a "gnubin" directory to your PATH from your bashrc like:
         PATH="#{opt_libexec}/gnubin:$PATH"
-
-      Additionally, you can access their man pages with normal names if you add
-      the "gnuman" directory to your MANPATH from your bashrc as well:
-        MANPATH="#{opt_libexec}/gnuman:$MANPATH"
-      EOS
-    end
+  EOS
   end
 
   test do
     (testpath/"test.txt").write "Hello world!"
-    if build.with? "default-names"
-      system "#{bin}/sed", "-i", "s/world/World/g", "test.txt"
-    else
-      system "#{bin}/gsed", "-i", "s/world/World/g", "test.txt"
-    end
+    system "#{bin}/gsed", "-i", "s/world/World/g", "test.txt"
+    assert_match /Hello World!/, File.read("test.txt")
+
+    system "#{opt_libexec}/gnubin/sed", "-i", "s/world/World/g", "test.txt"
     assert_match /Hello World!/, File.read("test.txt")
   end
 end
