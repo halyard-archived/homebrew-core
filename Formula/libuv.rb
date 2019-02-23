@@ -1,17 +1,14 @@
 class Libuv < Formula
   desc "Multi-platform support library with a focus on asynchronous I/O"
   homepage "https://github.com/libuv/libuv"
-  url "https://github.com/libuv/libuv/archive/v1.24.1.tar.gz"
-  sha256 "0d026c8f68c4d7b7c59de8f485f262ac71c24e0f3a80d740a25d20edd2f2774e"
-
-  option "with-test", "Execute compile time checks (Requires Internet connection)"
+  url "https://github.com/libuv/libuv/archive/v1.26.0.tar.gz"
+  sha256 "e414cf74615b7dae768f0f5667092f1d4975f5067c087bcbe0641e241ebe4693"
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
   depends_on "pkg-config" => :build
   depends_on "sphinx-doc" => :build
-
 
   def install
     # This isn't yet handled by the make install process sadly.
@@ -27,7 +24,6 @@ class Libuv < Formula
                           "--disable-silent-rules",
                           "--prefix=#{prefix}"
     system "make"
-    system "make", "check" if build.with? "test"
     system "make", "install"
   end
 
