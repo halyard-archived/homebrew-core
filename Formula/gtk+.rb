@@ -1,37 +1,41 @@
 class Gtkx < Formula
   desc "GUI toolkit"
   homepage "https://gtk.org/"
-  url "https://download.gnome.org/sources/gtk+/3.24/gtk+-3.24.3.tar.xz"
-  sha256 "5708fa534d964b1fb9a69d15758729d51b9a438471d4612dc153f595904803bd"
+  url "https://download.gnome.org/sources/gtk+/2.24/gtk+-2.24.32.tar.xz"
+  sha256 "b6c8a93ddda5eabe3bfee1eb39636c9a03d2a56c7b62828b359bf197943c582e"
 
-  option "with-quartz-relocation", "Build with quartz relocation support"
-
+  depends_on "gobject-introspection" => :build
   depends_on "pkg-config" => :build
   depends_on "atk"
   depends_on "gdk-pixbuf"
-  depends_on "gobject-introspection"
   depends_on "hicolor-icon-theme"
   depends_on "pango"
-  depends_on "jasper" => :optional
+
+  # Patch to allow Eiffel Studio to run in Cocoa / non-X11 mode, as well as Freeciv's freeciv-gtk2 client
+  # See:
+  # - https://bugzilla.gnome.org/show_bug.cgi?id=757187
+  # referenced from
+  # - https://bugzilla.gnome.org/show_bug.cgi?id=557780
+  # - Homebrew/homebrew-games#278
+  patch do
+    url "https://bug757187.bugzilla-attachments.gnome.org/attachment.cgi?id=331173"
+    sha256 "ce5adf1a019ac7ed2a999efb65cfadeae50f5de8663638c7f765f8764aa7d931"
+  end
 
   def install
     args = ["--disable-dependency-tracking",
             "--disable-silent-rules",
             "--prefix=#{prefix}",
+            "--enable-static",
             "--disable-glibtest",
             "--enable-introspection=yes",
             "--with-gdktarget=quartz",
             "--disable-visibility"]
 
-    args << "--enable-quartz-relocation" if build.with?("quartz-relocation")
-
-    if build.head?
-      inreplace "autogen.sh", "libtoolize", "glibtoolize"
-      ENV["NOCONFIGURE"] = "yes"
-      system "./autogen.sh"
-    end
     system "./configure", *args
     system "make", "install"
+
+    inreplace bin/"gtk-builder-convert", %r{^#!/usr/bin/env python$}, "#!/usr/bin/python"
   end
 
   test do
