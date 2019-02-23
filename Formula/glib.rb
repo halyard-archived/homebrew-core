@@ -1,11 +1,11 @@
 class Glib < Formula
   desc "Core application library for C"
   homepage "https://developer.gnome.org/glib/"
-  url "https://download.gnome.org/sources/glib/2.58/glib-2.58.2.tar.xz"
-  sha256 "c7b24ed6536f1a10fc9bce7994e55c427b727602e78342821f1f07fb48753d4b"
+  url "https://download.gnome.org/sources/glib/2.58/glib-2.58.3.tar.xz"
+  sha256 "8f43c31767e88a25da72b52a40f3301fefc49a665b56dc10ee7cc9565cbe7481"
 
-  option "with-test", "Build a debug build and run tests. NOTE: Not all tests succeed yet"
-
+  # autoconf, automake and libtool can be removed when
+  # bug 780271 is fixed and gio.patch is modified accordingly
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "gtk-doc" => :build
@@ -47,18 +47,27 @@ class Glib < Formula
       --with-gio-module-dir=#{HOMEBREW_PREFIX}/lib/gio/modules
     ]
 
-    # next two lines can be removed when bug 780271 is fixed and gio.patch is modified accordingly
+    # next two lines can be removed when bug 780271 is fixed and gio.patch
+    # is modified accordingly
     ENV["NOCONFIGURE"] = "1"
     system "./autogen.sh"
 
     system "./configure", *args
 
-    # disable creating directory for GIO_MODULE_DIR, we will do this manually in post_install
-    inreplace "gio/Makefile", "$(mkinstalldirs) $(DESTDIR)$(GIO_MODULE_DIR)", ""
+    # disable creating directory for GIO_MODULE_DIR, we will do
+    # this manually in post_install
+    inreplace "gio/Makefile",
+              "$(mkinstalldirs) $(DESTDIR)$(GIO_MODULE_DIR)",
+              ""
+
+    # ensure giomoduledir contains prefix, as this pkgconfig variable will be
+    # used by glib-networking and glib-openssl to determine where to install
+    # their modules
+    inreplace "gio-2.0.pc",
+              "giomoduledir=#{HOMEBREW_PREFIX}/lib/gio/modules",
+              "giomoduledir=${prefix}/lib/gio/modules"
 
     system "make"
-    # the spawn-multithreaded tests require more open files
-    system "ulimit -n 1024; make check" if build.with? "test"
     system "make", "install"
 
     # `pkg-config --libs glib-2.0` includes -lintl, and gettext itself does not
