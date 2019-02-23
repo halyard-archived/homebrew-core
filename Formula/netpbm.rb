@@ -1,14 +1,19 @@
 class Netpbm < Formula
   desc "Image manipulation"
   homepage "https://netpbm.sourceforge.io/"
-  url "https://svn.code.sf.net/p/netpbm/code/stable", :revision => 3474
-  version "10.73.24"
+  # Maintainers: Look at https://sourceforge.net/p/netpbm/code/HEAD/tree/
+  # for stable versions and matching revisions.
+  url "https://svn.code.sf.net/p/netpbm/code/stable", :revision => 3546
+  version "10.73.25"
   version_scheme 1
+  head "https://svn.code.sf.net/p/netpbm/code/trunk"
 
   depends_on "jasper"
   depends_on "jpeg"
   depends_on "libpng"
   depends_on "libtiff"
+
+  conflicts_with "jbigkit", :because => "both install `pbm.5` and `pgm.5` files"
 
   def install
     cp "config.mk.in", "config.mk"
