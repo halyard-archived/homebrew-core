@@ -1,12 +1,9 @@
 class Perl < Formula
   desc "Highly capable, feature-rich programming language"
   homepage "https://www.perl.org/"
-  url "https://www.cpan.org/src/5.0/perl-5.28.1.tar.xz"
-  sha256 "fea7162d4cca940a387f0587b93f6737d884bf74d8a9d7cfd978bc12cd0b202d"
+  url "https://www.cpan.org/src/5.0/perl-5.28.1.tar.gz"
+  sha256 "3ebf85fe65df2ee165b22596540b7d5d42f84d4b72d84834f74e2e0b8956c347"
   head "https://perl5.git.perl.org/perl.git", :branch => "blead"
-
-  option "with-dtrace", "Build with DTrace probes"
-  option "with-test", "Run build-time tests"
 
   # Prevent site_perl directories from being removed
   skip_clean "lib/perl5/site_perl"
@@ -27,7 +24,6 @@ class Perl < Formula
       -Dusethreads
     ]
 
-    args << "-Dusedtrace" if build.with? "dtrace"
     args << "-Dusedevel" if build.head?
 
     system "./Configure", *args
@@ -41,7 +37,7 @@ class Perl < Formula
     (lib/"perl5/#{version}/darwin-thread-multi-2level/CORE").install_symlink buildpath/"libperl.dylib"
 
     system "make"
-    system "make", "test" if build.with?("test") || build.bottle?
+    system "make", "test"
 
     # Remove the symlink so the library actually gets installed.
     rm lib/"perl5/#{version}/darwin-thread-multi-2level/CORE/libperl.dylib"
