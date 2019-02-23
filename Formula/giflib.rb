@@ -1,8 +1,8 @@
 class Giflib < Formula
   desc "Library and utilities for processing GIFs"
   homepage "https://giflib.sourceforge.io/"
-  url "https://downloads.sourceforge.net/project/giflib/giflib-5.1.4.tar.bz2"
-  sha256 "df27ec3ff24671f80b29e6ab1c4971059c14ac3db95406884fc26574631ba8d5"
+  url "https://downloads.sourceforge.net/project/giflib/giflib-5.1.6.tar.gz"
+  sha256 "53968f6d39bb4b99f57cc29887a09a3ca500e33b69fb259edaf4f6a622c8b578"
 
 
   def install
