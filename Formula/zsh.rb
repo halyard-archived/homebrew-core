@@ -1,36 +1,35 @@
 class Zsh < Formula
   desc "UNIX shell (command interpreter)"
   homepage "https://www.zsh.org/"
-  url "https://www.zsh.org/pub/zsh-5.6.2.tar.xz"
-  sha256 "a50bd66c0557e8eca3b8fa24e85d0de533e775d7a22df042da90488623752e9e"
+  url "https://downloads.sourceforge.net/project/zsh/zsh/5.7.1/zsh-5.7.1.tar.xz"
+  mirror "https://www.zsh.org/pub/zsh-5.7.1.tar.xz"
+  sha256 "7260292c2c1d483b2d50febfa5055176bd512b32a8833b116177bf5f01e77ee8"
 
-  depends_on "gdbm"
+  depends_on "ncurses"
   depends_on "pcre"
 
   resource "htmldoc" do
-    url "https://www.zsh.org/pub/zsh-5.6.2-doc.tar.xz"
-    sha256 "98973267547cbdd8471b52e3a2bbe415be2c2c473246536ed8914f685e260114"
+    url "https://downloads.sourceforge.net/project/zsh/zsh-doc/5.7.1/zsh-5.7.1-doc.tar.xz"
+    mirror "https://www.zsh.org/pub/zsh-5.7.1-doc.tar.xz"
+    sha256 "3053670250e23905c940592c79428d7f67495fa05b0fff49dfaab9172c4239b4"
   end
 
   def install
-    args = %W[
-      --prefix=#{prefix}
-      --enable-fndir=#{pkgshare}/functions
-      --enable-scriptdir=#{pkgshare}/scripts
-      --enable-site-fndir=#{HOMEBREW_PREFIX}/share/zsh/site-functions
-      --enable-site-scriptdir=#{HOMEBREW_PREFIX}/share/zsh/site-scripts
-      --enable-runhelpdir=#{pkgshare}/help
-      --enable-cap
-      --enable-maildir-support
-      --enable-multibyte
-      --enable-pcre
-      --enable-zsh-secure-free
-      --with-tcsetpgrp
-      --enable-unicode9
-      --enable-etcdir=/etc
-    ]
-
-    system "./configure", *args
+    system "./configure", "--prefix=#{prefix}",
+                          "--enable-fndir=#{pkgshare}/functions",
+                          "--enable-scriptdir=#{pkgshare}/scripts",
+                          "--enable-site-fndir=#{HOMEBREW_PREFIX}/share/zsh/site-functions",
+                          "--enable-site-scriptdir=#{HOMEBREW_PREFIX}/share/zsh/site-scripts",
+                          "--enable-runhelpdir=#{pkgshare}/help",
+                          "--enable-cap",
+                          "--enable-maildir-support",
+                          "--enable-multibyte",
+                          "--enable-pcre",
+                          "--enable-zsh-secure-free",
+                          "--enable-unicode9",
+                          "--enable-etcdir=/etc",
+                          "--with-tcsetpgrp",
+                          "DL_EXT=bundle"
 
     # Do not version installation directories.
     inreplace ["Makefile", "Src/Makefile"],
