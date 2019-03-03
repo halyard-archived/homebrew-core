@@ -1,0 +1,12 @@
+item do
+  expected do
+    gitlab_tag
+    repo 'libidn/libidn2'
+    regex /^libidn2-([\d.]+)$/
+  end
+
+  actual do
+    homebrew_formula
+    name 'libidn2'
+  end
+end

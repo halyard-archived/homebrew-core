@@ -8,9 +8,6 @@ class Mtr < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "pkg-config" => :build
-  depends_on "glib" => :optional
-  depends_on "gtk+" => :optional
-
 
   def install
     # We need to add this because nameserver8_compat.h has been removed in Snow Leopard
@@ -18,9 +15,9 @@ class Mtr < Formula
     args = %W[
       --disable-dependency-tracking
       --prefix=#{prefix}
+      --without-glib
+      --without-gtk
     ]
-    args << "--without-gtk" if build.without? "gtk+"
-    args << "--without-glib" if build.without? "glib"
     system "./bootstrap.sh"
     system "./configure", *args
     system "make", "install"
@@ -29,7 +26,7 @@ class Mtr < Formula
   def caveats; <<~EOS
     mtr requires root privileges so you will need to run `sudo mtr`.
     You should be certain that you trust any software you grant root privileges.
-    EOS
+  EOS
   end
 
   test do

@@ -4,18 +4,8 @@ class Tmux < Formula
   url "https://github.com/tmux/tmux/releases/download/2.8/tmux-2.8.tar.gz"
   sha256 "7f6bf335634fafecff878d78de389562ea7f73a7367f268b66d37ea13617a2ba"
 
-  head do
-    url "https://github.com/tmux/tmux.git"
-
-    depends_on "autoconf" => :build
-    depends_on "automake" => :build
-    depends_on "libtool" => :build
-  end
-
   depends_on "pkg-config" => :build
   depends_on "libevent"
-  depends_on "utf8proc" => :optional
-
 
   resource "completion" do
     url "https://raw.githubusercontent.com/imomaliev/tmux-bash-completion/homebrew_1.0.0/completions/tmux"
@@ -23,15 +13,11 @@ class Tmux < Formula
   end
 
   def install
-    system "sh", "autogen.sh" if build.head?
-
     args = %W[
       --disable-Dependency-tracking
       --prefix=#{prefix}
       --sysconfdir=#{etc}
     ]
-
-    args << "--enable-utf8proc" if build.with?("utf8proc")
 
     ENV.append "LDFLAGS", "-lresolv"
     system "./configure", *args
@@ -45,7 +31,7 @@ class Tmux < Formula
   def caveats; <<~EOS
     Example configuration has been installed to:
       #{opt_pkgshare}
-    EOS
+  EOS
   end
 
   test do

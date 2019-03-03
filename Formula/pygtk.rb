@@ -3,7 +3,6 @@ class Pygtk < Formula
   homepage "http://www.pygtk.org/"
   url "https://download.gnome.org/sources/pygtk/2.24/pygtk-2.24.0.tar.bz2"
   sha256 "cd1c1ea265bd63ff669e92a2d3c2a88eb26bcd9e5363e0f82c896e649f206912"
-  revision 2
 
   depends_on "pkg-config" => :build
   depends_on "atk"
@@ -11,8 +10,6 @@ class Pygtk < Formula
   depends_on "gtk+"
   depends_on "py2cairo"
   depends_on "pygobject"
-  depends_on "libglade" => :optional
-
 
   def install
     ENV.append "CFLAGS", "-ObjC"

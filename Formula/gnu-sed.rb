@@ -4,8 +4,6 @@ class GnuSed < Formula
   url "https://ftp.gnu.org/gnu/sed/sed-4.7.tar.xz"
   sha256 "2885768cd0a29ff8d58a6280a270ff161f6a3deb5690b2be6c49f46d4c67bd6a"
 
-  conflicts_with "ssed", :because => "both install share/info/sed.info"
-
   def install
     args = %W[
       --prefix=#{prefix}

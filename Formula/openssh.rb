@@ -1,40 +1,66 @@
 class Openssh < Formula
-  desc "SSH client and server"
+  desc "OpenBSD freely-licensed SSH connectivity tools"
   homepage "https://www.openssh.com/"
   url "https://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-7.9p1.tar.gz"
   version "7.9p1"
   sha256 "6b4b3ba2253d84ed3771c8050728d597c91cfce898713beb7b64a305b6f11aad"
 
-  depends_on "autoconf" => :build
   depends_on "pkg-config" => :build
-  depends_on "openssl@1.0"
-  depends_on "ldns" => :optional
+  depends_on "ldns"
+  depends_on "openssl"
+
+  resource "com.openssh.sshd.sb" do
+    url "https://opensource.apple.com/source/OpenSSH/OpenSSH-209.50.1/com.openssh.sshd.sb"
+    sha256 "a273f86360ea5da3910cfa4c118be931d10904267605cdd4b2055ced3a829774"
+  end
+
+  # Both these patches are applied by Apple.
+  patch do
+    url "https://raw.githubusercontent.com/Homebrew/patches/1860b0a74/openssh/patch-sandbox-darwin.c-apple-sandbox-named-external.diff"
+    sha256 "d886b98f99fd27e3157b02b5b57f3fb49f43fd33806195970d4567f12be66e71"
+  end
 
   patch do
-    url "https://gist.githubusercontent.com/akerl/689a443754e8046a7793da894787a5ca/raw/8c1496c264d551f8306f6fa3217be3981696ed5b/gistfile1.txt"
-    sha256 "0963bcaeabfc8a1b8db7de1a0901725b7e18d7d807a7ee211b963e4cf34d4b91"
+    url "https://raw.githubusercontent.com/Homebrew/patches/d8b2d8c2/openssh/patch-sshd.c-apple-sandbox-named-external.diff"
+    sha256 "3505c58bf1e584c8af92d916fe5f3f1899a6b15cc64a00ddece1dc0874b2f78f"
   end
 
   def install
     ENV.append "CPPFLAGS", "-D__APPLE_SANDBOX_NAMED_EXTERNAL__"
 
+    # Ensure sandbox profile prefix is correct.
+    # We introduce this issue with patching, it's not an upstream bug.
+    inreplace "sandbox-darwin.c", "@PREFIX@/share/openssh", etc/"ssh"
+
     args = %W[
-      --with-libedit
-      --with-pam
-      --with-kerberos5
       --prefix=#{prefix}
       --sysconfdir=#{etc}/ssh
-      --with-ssl-dir=#{Formula["openssl@1.0"].opt_prefix}
+      --with-ldns
+      --with-libedit
+      --with-kerberos5
+      --with-pam
+      --with-ssl-dir=#{Formula["openssl"].opt_prefix}
     ]
-
-    args << "--with-ldns" if build.with? "ldns"
 
     system "./configure", *args
     system "make"
+    ENV.deparallelize
     system "make", "install"
+
+    buildpath.install resource("com.openssh.sshd.sb")
+    (etc/"ssh").install "com.openssh.sshd.sb" => "org.openssh.sshd.sb"
   end
 
   test do
-    system bin/"ssh", "--version"
+    assert_match "OpenSSH_", shell_output("#{bin}/ssh -V 2>&1")
+
+    begin
+      pid = fork { exec sbin/"sshd", "-D", "-p", "8022" }
+      sleep 2
+      assert_match "sshd", shell_output("lsof -i :8022")
+    ensure
+      Process.kill(9, pid)
+      Process.wait(pid)
+    end
   end
 end

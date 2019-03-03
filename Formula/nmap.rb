@@ -7,8 +7,6 @@ class Nmap < Formula
 
   depends_on "openssl"
 
-  conflicts_with "ndiff", :because => "both install `ndiff` binaries"
-
   def install
     ENV.deparallelize
 
