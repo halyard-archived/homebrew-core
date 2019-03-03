@@ -38,7 +38,6 @@ class Ledger < Formula
     (pkgshare/"examples").install Dir["test/input/*.dat"]
     pkgshare.install "contrib"
     pkgshare.install "python/demo.py"
-    elisp.install Dir["lisp/*.el", "lisp/*.elc"]
     bash_completion.install pkgshare/"contrib/ledger-completion.bash"
   end
 
