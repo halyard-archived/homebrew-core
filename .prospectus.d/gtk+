@@ -1,9 +1,9 @@
 item do
   expected do
     url_xpath
-    url 'https://developer.gnome.org/gtk3/'
-    xpath '//*[@id="container"]/div[1]/div[3]/div[1]/ul/li[1]/a'
-    regex /^gtk3-html-([\d.]+)\.tar\.gz$/
+    url 'https://ftp.gnome.org/pub/gnome/sources/gtk+/2.24/'
+    xpath '/html/body/pre/a[5]'
+    regex /^LATEST-IS-([\d.]+)$/
   end
 
   actual do
