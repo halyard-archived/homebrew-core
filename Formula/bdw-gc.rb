@@ -1,22 +1,14 @@
 class BdwGc < Formula
   desc "Garbage collector for C and C++"
   homepage "https://github.com/ivmai/bdwgc"
-  url "https://github.com/ivmai/bdwgc/releases/download/v8.0.2/gc-8.0.2.tar.gz"
-  sha256 "4e8ca4b5b72a3a27971daefaa9b621f0a716695b23baa40b7eac78de2eeb51cb"
-
-  head do
-    url "https://github.com/ivmai/bdwgc.git"
-    depends_on "autoconf" => :build
-    depends_on "automake" => :build
-    depends_on "libtool"  => :build
-  end
+  url "https://github.com/ivmai/bdwgc/releases/download/v8.0.4/gc-8.0.4.tar.gz"
+  sha256 "436a0ddc67b1ac0b0405b61a9675bca9e075c8156f4debd1d06f3a56c7cd289d"
 
   depends_on "libatomic_ops" => :build
   depends_on "pkg-config" => :build
 
 
   def install
-    system "./autogen.sh" if build.head?
     system "./configure", "--disable-debug",
                           "--disable-dependency-tracking",
                           "--prefix=#{prefix}",
