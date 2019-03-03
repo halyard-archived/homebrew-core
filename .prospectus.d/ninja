@@ -1,0 +1,12 @@
+item do
+  expected do
+    github_release
+    repo 'ninja-build/ninja'
+    regex /^v([\d.]+)$/
+  end
+
+  actual do
+    homebrew_formula
+    name 'ninja'
+  end
+end

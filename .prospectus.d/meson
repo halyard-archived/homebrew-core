@@ -1,0 +1,11 @@
+item do
+  expected do
+    github_release
+    repo 'mesonbuild/meson'
+  end
+
+  actual do
+    homebrew_formula
+    name 'meson'
+  end
+end
