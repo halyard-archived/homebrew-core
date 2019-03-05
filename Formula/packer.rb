@@ -1,9 +1,9 @@
 class Packer < Formula
   desc "Tool for creating identical machine images for multiple platforms"
   homepage "https://www.packer.io/"
-  url "https://releases.hashicorp.com/packer/1.3.4/packer_1.3.4_darwin_amd64.zip"
-  version "1.3.4"
-  sha256 "f17aae1e7e9c76b2cead6726ff5b68f2dd0284f86296ea883d29d33771631abe"
+  url "https://releases.hashicorp.com/packer/1.3.5/packer_1.3.5_darwin_amd64.zip"
+  version "1.3.5"
+  sha256 "22a3442b896120a47f077396e02b14c9474aba8c50fa306f3e6625597546c474"
 
 
   def install
