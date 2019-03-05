@@ -11,8 +11,8 @@ class Rust < Formula
   depends_on "pkg-config"
 
   resource "cargo" do
-    url "https://github.com/rust-lang/cargo.git", :tag => "0.33.0",
-        :revision => "8610973aaf48615ba7dc9a38a9a2795ba6f36a31"
+    url "https://github.com/rust-lang/cargo.git", :tag => "0.34.0",
+        :revision => "5c6aa46e6f28661270979696e7b4c2f0dff8628f"
   end
 
   resource "racer" do
