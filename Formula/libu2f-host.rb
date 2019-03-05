@@ -1,8 +1,8 @@
 class Libu2fHost < Formula
   desc "Host-side of the Universal 2nd Factor (U2F) protocol"
   homepage "https://developers.yubico.com/libu2f-host/"
-  url "https://developers.yubico.com/libu2f-host/Releases/libu2f-host-1.1.7.tar.xz"
-  sha256 "917a259f2977538bc31e13560c830a11e49f54f27908372c774bbbb042d2dcff"
+  url "https://developers.yubico.com/libu2f-host/Releases/libu2f-host-1.1.8.tar.xz"
+  sha256 "d47cfe32cf2b5fd844535d9183d22c962764d8bd4b50f5d4de5705bd6406da9d"
 
   depends_on "pkg-config" => :build
   depends_on "hidapi"
