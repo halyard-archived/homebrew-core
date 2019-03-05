@@ -1,7 +1,7 @@
 class Glib < Formula
   desc "Core application library for C"
   homepage "https://developer.gnome.org/glib/"
-  url "https://download.gnome.org/sources/glib/2.58/glib-2.58.3.tar.xz"
+  url "https://download.gnome.org/sources/glib/2.60/glib-2.60.0.tar.xz"
   sha256 "8f43c31767e88a25da72b52a40f3301fefc49a665b56dc10ee7cc9565cbe7481"
 
   # autoconf, automake and libtool can be removed when
