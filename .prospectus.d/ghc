@@ -2,8 +2,7 @@ item do
   expected do
     url_xpath
     url 'https://www.haskell.org/ghc/download.html'
-    xpath '/html/body/table[2]/tr[2]/td[2]/h1/h1/ul/li/a/@href'
-    regex /^https:\/\/www\.haskell\.org\/ghc\/download_ghc_(\d+)_(\d+)_(\d+)\.html$/, '\1.\2.\3'
+    xpath '/html/body/table[2]/tr[2]/td[2]/h1/h1/ul/li/a'
   end
 
   actual do
