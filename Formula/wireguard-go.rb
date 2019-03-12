@@ -5,10 +5,11 @@ class WireguardGo < Formula
   sha256 "53dc611524c40cddd242c972a9559f9793e128a0ce772483f12a2704c9f48c54"
   head "https://git.zx2c4.com/wireguard-go", :using => :git
 
-  depends_on "dep" => :build
   depends_on "go" => :build
 
   def install
+    ENV["GOPATH"] = HOMEBREW_CACHE/"go_cache"
+
     system "make", "PREFIX=#{prefix}", "install"
   end
 
