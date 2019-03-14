@@ -1,8 +1,8 @@
 class Bind < Formula
   desc "Implementation of the DNS protocols"
   homepage "https://www.isc.org/downloads/bind/"
-  url "https://ftp.isc.org/isc/bind9/9.14.0rc2/bind-9.14.0rc2.tar.gz"
-  sha256 "3127a7ae9bd046dbd1470850bdc0990ba1e694d728d18600edcf73f0826646d2"
+  url "https://ftp.isc.org/isc/bind9/9.14.0rc3/bind-9.14.0rc3.tar.gz"
+  sha256 "16de60971fb7e3ac5fbc1b2ed9fbbe4b90bdf6b1f64e650996cdc6ac6e9bc38c"
 
   depends_on "json-c"
   depends_on "openssl"
