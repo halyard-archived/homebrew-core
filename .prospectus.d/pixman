@@ -2,10 +2,10 @@ require 'open-uri'
 
 item do
   expected do
-    static
-    url = 'https://cairographics.org/releases/'
-    regex = /.*LATEST-pixman-([\d.]+).*/m
-    set open(url).read.sub(regex, '\1')
+    url_xpath
+    url 'https://cgit.freedesktop.org/pixman/refs/tags'
+    xpath '//*[@id="cgit"]/div[1]/table/tr[2]/td[1]/a'
+    regex /^pixman-([\d.]+)$/
   end
 
   actual do

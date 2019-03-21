@@ -2,7 +2,7 @@ item do
   expected do
     url_xpath
     url 'https://ftp.gnome.org/pub/gnome/sources/gtk+/2.24/'
-    xpath '//*[@id="indexlist"]/tbody/tr[4]/td[2]/a'
+    xpath '//*[@id="indexlist"]/tr[4]/td[2]/a'
     regex /^LATEST-IS-([\d.]+)$/
   end
 
