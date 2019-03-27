@@ -1,12 +1,17 @@
 class Isl < Formula
   desc "Integer Set Library for the polyhedral model"
   homepage "http://isl.gforge.inria.fr"
-  url "https://deb.debian.org/debian/pool/main/i/isl/isl_0.20.orig.tar.xz"
-  sha256 "a5596a9fb8a5b365cb612e4b9628735d6e67e9178fae134a816ae195017e77aa"
+  version "0.21"
+  url "https://repo.or.cz/isl.git/snapshot/054c4050f2f9f229fe90b102d076f7ad97dcbce4.tar.gz"
+  sha256 "fc61cdc56a14b49443b6d20589e451da483c948036ce4bf90288b3d3a870d231"
 
   depends_on "gmp"
+  depends_on "autoconf" => :build
+  depends_on "automake" => :build
+  depends_on "libtool" => :build
 
   def install
+    system "./autogen.sh"
     system "./configure", "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}",
