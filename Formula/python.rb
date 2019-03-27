@@ -1,8 +1,8 @@
 class Python < Formula
   desc "Interpreted, interactive, object-oriented programming language"
   homepage "https://www.python.org/"
-  url "https://www.python.org/ftp/python/3.7.2/Python-3.7.2.tgz"
-  sha256 "f09d83c773b9cc72421abba2c317e4e6e05d919f9bcf34468e192b6a6c8e328d"
+  url "https://www.python.org/ftp/python/3.7.3/Python-3.7.3.tgz"
+  sha256 "d62e3015f2f89c970ac52343976b406694931742fbde2fed8d1ce8ebb4e1f8ff"
 
   depends_on "pkg-config" => :build
   depends_on "gdbm"
