@@ -2,7 +2,7 @@ item do
   expected do
     url_xpath
     url 'http://libtiff.maptools.org/'
-    xpath '/html/body/table/tr[3]/td/a'
+    xpath '/html/body/table/tr[4]/td/a'
     regex /^v([\d.]+)$/
   end
 
