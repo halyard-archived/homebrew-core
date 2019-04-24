@@ -3,6 +3,7 @@ item do
     github_tag
     repo 'swig/swig'
     regex /^rel-([\d.]+)$/
+    filter /^rel-([\d.]+)$/
   end
 
   actual do
