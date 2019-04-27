@@ -4,7 +4,7 @@ class Ipmitool < Formula
   url "https://downloads.sourceforge.net/project/ipmitool/ipmitool/1.8.18/ipmitool-1.8.18.tar.bz2"
   sha256 "0c1ba3b1555edefb7c32ae8cd6a3e04322056bc087918f07189eeedfc8b81e01"
 
-  depends_on "openssl@1.0"
+  depends_on "openssl"
 
   # https://sourceforge.net/p/ipmitool/bugs/433/#89ea and
   # https://sourceforge.net/p/ipmitool/bugs/436/ (prematurely closed):
