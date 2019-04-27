@@ -23,7 +23,7 @@ class Ipmitool < Formula
     a8862d7508fb138b1c286eea958700cca63c9476 1a0da3f34ff623cb3afc95a452d0b7f97b23c9818700602c519a57c8cdaa373e
   ].each_slice(2) do |patch_commit, patch_checksum|
     patch do
-      url "https://github.com/ipmitool/ipmitool/commit/#{patch_commit}.patch"
+      url "https://github.com/ipmitool/ipmitool/commit/#{patch_commit}.patch?full_index=1"
       sha256 patch_checksum
     end
   end
