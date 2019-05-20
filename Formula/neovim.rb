@@ -37,7 +37,7 @@ class Neovim < Formula
 
     cd "deps-build" do
       %w[
-        lpeg/lpeg-1.0.1-1.src.rock
+        lpeg/lpeg-1.0.2-1.src.rock
         mpack/mpack-1.0.7-0.rockspec
       ].each do |rock|
         dir, rock = rock.split("/")
