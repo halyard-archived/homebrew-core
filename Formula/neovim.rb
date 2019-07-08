@@ -1,10 +1,12 @@
 class Neovim < Formula
   desc "Ambitious Vim-fork focused on extensibility and agility"
   homepage "https://neovim.io/"
-  url "https://github.com/neovim/neovim/archive/v0.3.4.tar.gz"
-  sha256 "a641108bdebfaf319844ed46b1bf35d6f7c30ef5aeadeb29ba06e19c3274bc0e"
+
+  url "https://github.com/neovim/neovim/archive/v0.3.8.tar.gz"
+  sha256 "953e134568d824dad7cbf32ee3114951732f9a750c462e430e6b593f418af76c"
 
   depends_on "cmake" => :build
+  depends_on "luarocks" => :build
   depends_on "pkg-config" => :build
   depends_on "gettext"
   depends_on "jemalloc"
@@ -12,7 +14,6 @@ class Neovim < Formula
   depends_on "libuv"
   depends_on "libvterm"
   depends_on "luajit"
-  depends_on "luarocks"
   depends_on "msgpack"
   depends_on "unibilium"
 
@@ -22,8 +23,13 @@ class Neovim < Formula
   end
 
   resource "mpack" do
-    url "https://luarocks.org/manifests/tarruda/mpack-1.0.7-0.rockspec"
-    sha256 "df625a029a3c313ed7503df09c831ddb70d72d31af302b5377e38d683546bce9"
+    url "https://github.com/libmpack/libmpack-lua/releases/download/1.0.7/libmpack-lua-1.0.7.tar.gz"
+    sha256 "68565484a3441d316bd51bed1cacd542b7f84b1ecfd37a8bd18dd0f1a20887e8"
+  end
+
+  resource "inspect" do
+    url "https://luarocks.org/manifests/kikito/inspect-3.1.1-0.src.rock"
+    sha256 "ea1f347663cebb523e88622b1d6fe38126c79436da4dbf442674208aa14a8f4c"
   end
 
   def install
@@ -37,8 +43,9 @@ class Neovim < Formula
 
     cd "deps-build" do
       %w[
-        lpeg/lpeg-1.0.2-1.src.rock
         mpack/mpack-1.0.7-0.rockspec
+        lpeg/lpeg-1.0.2-1.src.rock
+        inspect/inspect-3.1.1-0.src.rock
       ].each do |rock|
         dir, rock = rock.split("/")
         cd "build/src/#{dir}" do
