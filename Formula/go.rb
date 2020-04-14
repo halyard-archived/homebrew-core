@@ -2,20 +2,31 @@ class Go < Formula
   desc "Open source programming language to build simple/reliable/efficient software"
   homepage "https://golang.org"
 
-  url "https://dl.google.com/go/go1.12.1.src.tar.gz"
-  mirror "https://fossies.org/linux/misc/go1.12.1.src.tar.gz"
-  sha256 "0be127684df4b842a64e58093154f9d15422f1405f1fcff4b2c36ffc6a15818a"
+  stable do
+    url "https://dl.google.com/go/go1.14.2.src.tar.gz"
+    mirror "https://fossies.org/linux/misc/go1.14.2.src.tar.gz"
+    sha256 "98de84e69726a66da7b4e58eac41b99cbe274d7e8906eeb8a5b7eb0aadee7f7c"
 
-  go_version = version.to_s.split(".")[0..1].join(".")
-  resource "gotools" do
-    url "https://go.googlesource.com/tools.git",
-        :branch => "release-branch.go#{go_version}"
+    go_version = version.to_s.split(".")[0..1].join(".")
+    resource "gotools" do
+      url "https://go.googlesource.com/tools.git",
+          :branch => "release-branch.go#{go_version}"
+    end
   end
+
+  head do
+    url "https://go.googlesource.com/go.git"
+
+    resource "gotools" do
+      url "https://go.googlesource.com/tools.git"
+    end
+  end
+
+  depends_on :macos => :el_capitan
 
   # Don't update this unless this version cannot bootstrap the new version.
   resource "gobootstrap" do
     url "https://storage.googleapis.com/golang/go1.7.darwin-amd64.tar.gz"
-    version "1.7"
     sha256 "51d905e0b43b3d0ed41aaf23e19001ab4bc3f96c3ca134b48f7892485fc52961"
   end
 
@@ -38,7 +49,6 @@ class Go < Formula
 
     # Build and install godoc
     ENV.prepend_path "PATH", bin
-    ENV["GO111MODULE"] = "on"
     ENV["GOPATH"] = buildpath
     (buildpath/"src/golang.org/x/tools").install resource("gotools")
     cd "src/golang.org/x/tools/cmd/godoc/" do
@@ -68,6 +78,7 @@ class Go < Formula
     assert_predicate libexec/"bin/godoc", :executable?
 
     ENV["GOOS"] = "freebsd"
+    ENV["GOARCH"] = "amd64"
     system bin/"go", "build", "hello.go"
   end
 end
